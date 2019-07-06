@@ -1,0 +1,22 @@
+{
+  "Productos": [
+    {
+      "titulo": "Cerradura",
+      "foto": "este es su producto",
+      "marca": "Schlage",
+      "descripcion": "Connect Century",
+      "garantia": "20 years",
+      "precio": "921.000",
+      "solicitar": "ahora"
+    },
+    {
+      "titulo": "Cerradura",
+      "foto": "este es su producto",
+      "marca": "Schlage",
+      "descripcion": "Accent cromado manija",
+      "garantia": "10 years",
+      "precio": "43.000",
+      "solicitar": "now"
+    }
+  ]
+}

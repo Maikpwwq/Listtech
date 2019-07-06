@@ -1,0 +1,54 @@
+.Menu {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.Menu-container {
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #282c34;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.Menu-app {
+    text-align: center
+}
+
+.Menu-grupo {
+    text-align: center
+}
+
+Menu-header-navegacion {
+    text-align: center
+}
+
+.Menu-objeto-navegacion {
+    text-align: center
+}
+
+.Menu-icono {
+    text-align: center
+}
+
+.Menu-header {
+
+}
+
+.Menu-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.Menu-link {
+  color: #61dafb;
+}
+
+
+
+
+
+

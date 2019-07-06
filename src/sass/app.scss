@@ -1,0 +1,37 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://fonts.googleapis.com/css?family=Monserrat:);
+@import url(https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css);
+
+/*<link rel="stylesheet" href="h ttps://fonts.googleapis.com/css?family=Nunito:200,600" type="text/css" >
+<link rel="stylesheet" href="h ttps://fonts.googleapis.com/css?family=Monserrat:300,400,400i,600,700|Open+Sans" type="text/css" >
+<link rel="stylesheet" href="h ttps://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" >*/
+
+
+// Variables
+@import "variables";
+
+// Custom
+@import "custom";
+
+// Personalizado
+@import 'personalizado';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+// @import "node_modules/boostrap-sass/assets/stylesheets/bootstrap";
+
+// Tailwind
+//@import '~tailwind/scss/tailwind';
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
