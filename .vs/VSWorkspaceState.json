@@ -1,12 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
+    "\\functions\\lib",
+    "\\functions\\src",
     "\\src\\containers",
-    "\\src\\hooks",
-    "\\src\\imagenes",
-    "\\src\\tienda"
+    "\\src\\productos"
   ],
-  "SelectedNode": "\\src\\containers\\App.js",
+  "SelectedNode": "\\composer.lock",
   "PreviewInSolutionExplorer": false
 }

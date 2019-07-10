@@ -1,23 +1,38 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 //import Textarea from './use/Textarea';
-import '../css/Formcontacto.css';
+/*import '../css/Formcontacto.css';*/
 
 import styled from 'styled-components'
 
 /* Style FromCont */
 const FormContStyle = styled.form`
+    padding: 3px 3px;
+    font-size: 24px;
+    font-weight: 360;
+    font - family: Arial, Helvetica, sans - serif;
+    letter-spacing:1.2px;
+    margins:5px 0 0 0;
     text-align: center;    
     box-sizing: border-box;   
     height: auto;
+    color: black;
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 `;
 
 const FormContacto = styled.div`
     vertical-align: bottom;
-    width: 90%;
+    width: 100%;
+    height: 100%;
 `;
 
 const FormContheader = styled.div`
+    padding: 6px 6px;
+    font-size: 29px;
+    font-weight: 390;
     text-align: center;    
     box-sizing: border-box;
     color: white;
@@ -27,10 +42,16 @@ const FormContactoGrupo = styled.div`
     text-align: left;
     display: block;
     height:auto;
+    width: 100%;
 `;
 
 const Textinput = styled.input`
     cursor: text;
+    height:auto;
+`;
+
+const Titulo = styled.label`
+    color: white;
     height:auto;
 `;
 
@@ -98,9 +119,9 @@ class Formcontacto extends Component {
                         {this.state.title}
                     </FormContheader>
                     <FormContactoGrupo>
-                        <label>
+                        <Titulo>
                             Titulo del mensaje:
-                        </label>
+                        </Titulo>
                         <Textinput
                             type="text"
                             name="titulo"
@@ -111,9 +132,9 @@ class Formcontacto extends Component {
                             defaultChecked=""
                             placeholder="Title"                            
                         /><br /> 
-                        <label>
+                        <Titulo>
                             Solicitud:
-                        </label>
+                        </Titulo>
                         <select
                             name="solicitud"
                             value={this.state.solicitud}
@@ -123,9 +144,9 @@ class Formcontacto extends Component {
                             <option value="cotizacion">Cotizacio&#769;n</option>
                             <option value="otro">Otro</option>
                         </select> <br />
-                        <label>
+                        <Titulo>
                             Nombre:
-                        </label>
+                        </Titulo>
                         <Textinput
                             type="text"
                             name="nombre"
@@ -135,9 +156,9 @@ class Formcontacto extends Component {
                             defaultChecked=""
                             placeholder="Registre su Nombre"
                         /> <br />
-                        <label>
+                        <Titulo>
                             Email: 
-                        </label>
+                        </Titulo>
                         <Textinput
                             type="text"
                             name="email"
@@ -147,9 +168,9 @@ class Formcontacto extends Component {
                             defaultChecked=""
                             placeholder="Ingrese su direccion de email"
                         /><br />
-                        <label>
+                        <Titulo>
                             Nu&#769;mero de contacto:
-                        </label>
+                        </Titulo>
                         <Textinput
                             type="number"
                             name="telefono"
@@ -159,9 +180,9 @@ class Formcontacto extends Component {
                             defaultChecked=""
                             placeholder="Ingrese su numero telefonico"
                         /><br />
-                        <label>
+                        <Titulo>
                             Requerimiento: 
-                        </label>
+                        </Titulo>
                         <Textinput
                             type="textarea"
                             rows="7"

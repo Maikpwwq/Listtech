@@ -39,7 +39,9 @@ import VonDuprin from '../imagenes/ecommerce-marcas/VonDuprin.png';
 import styled from 'styled-components'
 
 const MarcasStyle = styled.div`
-    background-color: black;
+    background: #1f4037;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #99f2c8, #1f4037);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #99f2c8, #1f4037); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     text-color: white; 
     text-align: center;
     box-sizing: border-box;
@@ -47,7 +49,7 @@ const MarcasStyle = styled.div`
 `;
 
 const MarcasContenedor = styled.div`
-
+    align: center;
 `;
 
 const MarcasHeader = styled.header`

@@ -30,6 +30,22 @@ const ProductosyServiciosGrupo = styled.div`
     
 `;
 
+const Lineaul = styled.ul`
+    display: none;    
+    position: absolute;
+    padding: 16px;
+    height: auto;
+    cursor: col-resize;
+    pointer-events: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    
+    &:hover{
+    display: block;
+    background-color: #666666;
+    }
+`;
+
 const ProductosyServiciosLinea = styled.button`
     display: block;
     padding: 8px 16px;
@@ -39,47 +55,37 @@ const ProductosyServiciosLinea = styled.button`
     cursor: row-resize;
     color: Black;
     text-decoration: none;
-
-    :active {
-    background-color: #4CAF50;
-    color: white;
-    }
-
-    :hover {
-    background-color: #555,
-    display: block;
-    color: white;
-    }
-    
-    :hover .Lineaul{
-    display: block;
-    }
-`;
-
-/* z - index only works on positioned elements
- * position: absolute 
- * position: relative
- * position: fixed
- * position: sticky*/
-
-const Lineaul = styled.ul`
-    display: none;    
     position: relative;
-    padding: 16px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10;
-    
-    :hover{
+
+    &:active {
+    background-color: #666666;
+    color: white;
+    }
+
+    &:hover {
+    background-color: ##a6a6a6,
     display: block;
+    }
+    
+    &:hover ${Lineaul}{
+    display: block;
+    position: sticky;
+    overflow: auto;
+    background-color: #666666,
+    color: white;
     }
 `;
 
 const Lineali = styled.li`
     display: block;
-    position: absolute;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #666666;
     padding: 12px 16px;
     z-index: 10;
+
+    &:hover {
+    background-color: #666666;
+    color: white;    }
 `;
 
 class Productosyservicios extends Component {

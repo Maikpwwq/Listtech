@@ -8,6 +8,18 @@ import createStore from './createReduxStore'
 const store = createStore()
 */
 
+/* CommonJS Modules:
+const firebase = require('firebase/app');
+require('firebase/<PACKAGE>');
+
+ES Modules:
+import firebase from 'firebase/app';
+import 'firebase/<PACKAGE>';
+
+Typescript:
+import * as firebase from 'firebase/app';
+import 'firebase/<PACKAGE>'; */
+
 import App from './containers/App';
 
 import * as serviceWorker from './serviceWorker';
@@ -15,6 +27,8 @@ import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
 import 'firebase/auth';
 import 'firebase/database';
+
+
 
 
 

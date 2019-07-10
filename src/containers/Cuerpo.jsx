@@ -12,6 +12,29 @@ import Carrousel from '../components/Carrousel';
 
 import styled from 'styled-components'
 
+/*background - attachment: fixed;
+background - attachment: local;
+background - attachment: scroll;*/
+
+/* z - index only works on positioned elements
+ * position: absolute 
+ * position: relative
+ * position: fixed
+ * position: sticky*/
+
+/* overflow: scroll; hidden; auto; visible; */
+
+/* 
+    padding: 19px;
+    font-size: 36px;
+    font-weight: 390;
+    text-align: center;
+    font - family: Arial, Helvetica, sans - serif;
+    letter-spacing:1.2px;
+    margins:5em 0 0 0;
+    color:#ffffff;   
+ */ 
+
 /* Style Main */
 const MainStyle = styled.div`
     text-align: center;    
@@ -73,6 +96,10 @@ const Maingrupo = styled.main`
     display: inline-block;
     padding: 0;
     width: 100%;
+    background: #0575E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 `;
 
 const Mainrow = styled.div`
@@ -88,13 +115,16 @@ columns: 260px 3;*/
 /* height Should be removed. Only for demonstration */
 /* Left and right column */
 /* Middle column */
-const Maincolumns = styled.div/*.attrs(props => ({
+
+/*.attrs(props => ({
 
     Side: { flex: 1 },    
 
     Middle: { flex: 2 },        
 
-}))*/`
+}))*/
+
+const Maincolumns = styled.div`
 
     padding: 10px;
     height: 600px;     
@@ -110,26 +140,6 @@ const Mainfooter = styled.footer`
     height:auto;
     width: 100%;
 `;
-
-/*background - attachment: fixed;
-background - attachment: local;
-background - attachment: scroll;*/
-
-
-/*const Button = styled.button`
-    background: transparent;
-    border-radius: 3px;
-    border: 2px solid palevioletred;
-    color: palevioletred;
-    margin: 0.5em 1em;
-    padding: 0.25em 1em;
-
-    $ {props => props.primary && css`
-       background: palevioletred;
-       color: white; 
-    `}
-`;*/
-
 
 /*const Main = ({ children }) => (
     <MainStyle>
@@ -162,8 +172,8 @@ const Cuerpo = ( props ) => (
 
                 </Mainrow>
 
-                <Nosotros />
                 <ConoceMas />
+                <Nosotros />
 
             </Maingrupo>
             <Mainfooter>

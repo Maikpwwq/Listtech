@@ -17,12 +17,16 @@ const SocialStyled = styled.div`
 `;
 
 const SocialHeader = styled.div`
-
+    padding: 9px;
 `;
 
 const SocialRedes = styled.div`
     display: inblock;
     width: 100%;
+    background: black;
+    border-radius: 3px;
+    padding: 6px 6px;
+    margin: 1px 6px;
 `;
 
 const Socialgrupo = styled.div`
@@ -42,14 +46,13 @@ const SocialSiguenos = styled.li`
     box-sizing: border-box;
     display: inline;
 `;
-
+/*
 const SocialAnchor = styled.a`
     color: #212121;
     text-decoration: none;
     font-size: 1.2em;
 `;
 
-/*
  const Color = {
       facebook:'#3B5998';
       twitter:'#38A1F3';
@@ -76,7 +79,7 @@ class Social extends Component {
     constructor() {
         super();
         this.state = {
-            title: 'Social',
+            title: 'SIGUENOS COMO:',
         }
     }
 
@@ -86,8 +89,7 @@ class Social extends Component {
                 <SocialRedes>
 
                     <SocialHeader>
-                        <h3 className="Social-siguenos"
-                        >Siguenos como </h3>
+                        <strong>{this.state.title}<br /></strong>
                     </SocialHeader>
 
                     <Socialgrupo>
@@ -97,7 +99,7 @@ class Social extends Component {
                                 <img src={logoinstagram} alt="Instagram" />
                                 <a href="https://www.instagram.com/list_tech"
                                     title="Instagram"
-                                    class="Social-icono Social-icono--instagram"
+                                    className="Social-icono Social-icono--instagram"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >Instagram

@@ -10,7 +10,10 @@ import Visa from "../imagenes/medios de pago/visa.png";
 import AmericanExpress from "../imagenes/medios de pago/americanexpress.png";
 import MasterCard from "../imagenes/medios de pago/mastercard.png";
 import Paypal from "../imagenes/medios de pago/paypal.png";	
-import logo from '../imagenes/Listtech-Logo.png';
+
+import logo from '../imagenes/Listtech-Control-Acceso.png';
+
+import indicador from '../imagenes/redes/indentador.png';
 
 import styled from 'styled-components'
 
@@ -26,9 +29,9 @@ const Footerstyle = styled.footer`
 `;
 
 const FooterLogo = styled.img`
-    border-radius: 100%;
-    width: 160px;
-    height: 160px;
+    border-radius: 6%;
+    width: 360px;
+    height: auto;
     pointer-events: none;
     border: 2px solid #black;
     margin: 0 auto;
@@ -60,9 +63,24 @@ const Footercolumns = styled.div`
 `;
 
 const FooterMenu = styled.nav`
-    padding: 20px;
-    font-size: 35px;
-    font-weight: 400;
+    padding: 19px;
+    font-size: 36px;
+    font-weight: 390;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto; 
+
+    ul{
+    list-style-type: none;
+    }
+
+    li{
+    display: inline-block;
+    }
+`;
+
+const EnlacesMenu = styled.a` 
+    display: inline;
+    align: left;
 `;
 
 const FooterSiguenos = styled.nav`
@@ -111,7 +129,9 @@ const FooterCopyright = styled.div`
     text-align: center;
     padded:top; 
     spaced:bottom;
-    background:#47476b;
+    background: #0f0c29; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
 
 /*
@@ -152,17 +172,21 @@ class Footer extends Component {
                     <Footercolumns>                        
                         <FooterMenu>
                             <ul>
-                                <li>
-                                    <a href="/mas/informacion"><h2>Informacio&#769;n</h2></a>
+                                <li>  
+                                    <EnlacesMenu href="/mas/informacion"><img src={indicador} alt="indicador" />
+                                        <h2>Informacio&#769;n</h2></EnlacesMenu>
                                 </li>
-                                <li>
-                                    <a href="/mas/politicas-privacidad"><h3>Poli&#769;ticas de privacidad</h3></a>
+                                <li className="display-inline">        
+                                    <EnlacesMenu href="/mas/politicas-privacidad"> <img src={indicador} alt="indicador" />
+                                        <h3>Poli&#769;ticas de privacidad</h3></EnlacesMenu>                               
                                 </li>
-                                <li>
-                                    <a href="/mas/promociones"><h3>Promociones</h3></a>
+                                <li>  
+                                    <EnlacesMenu href="/mas/promociones"><img src={indicador} alt="indicador" />
+                                        <h3>Promociones</h3></EnlacesMenu>
                                 </li>
-                                <li>
-                                    <a href="mas/eventos"><h3>Eventos</h3></a>
+                                <li>  
+                                    <EnlacesMenu href="mas/eventos"><img src={indicador} alt="indicador" />
+                                        <h3>Eventos</h3></EnlacesMenu>
                                 </li>                                                                                                                                        
                             </ul>
                             <Contacto />
@@ -171,7 +195,7 @@ class Footer extends Component {
                     <Footercolumns>
                         <FooterSiguenos>                            
                             <ul>                    
-                                <li> <h2> LISTTECTH SAS </h2>                                                                        
+                                <li>                                                                        
                                      <FooterLogo src={logo} alt=""/>						                
                                 </li>       
                             </ul>

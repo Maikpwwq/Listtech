@@ -17,10 +17,6 @@ const ConocemasHeader = styled.header`
     display: inblock;
     width: 100%;
     font-size: 35px;
-
-    p {
-    font-size: 21px;
-    }
 `;
 
 const ProductosyserviciosMas = styled.div`
@@ -28,11 +24,13 @@ const ProductosyserviciosMas = styled.div`
     grid-template-columns: auto auto auto;
     padding: 20px;
     font-size: 21px;
+`;
 
-    h3 {
-    font-weight: bold;
+const SemiTitulo = styled.h2`
     color: orange;
-    }
+    font - weight: semibold;
+    padding: 20px;
+    font - size: 27px;
 `;
 
 class ConoceMas extends Component {
@@ -48,16 +46,12 @@ class ConoceMas extends Component {
             <ConocemasStyle>
                 <ConocemasHeader>
                     {this.state.title}<br />
-                    <p> A la vanguardia en el suministro de equipos, soluciones de acceso suspendido <br />
-                        para trabajos en alturas y, dispositivos para control de acceso del personal. 
-                    </p>
-                    <p>Disen&#771;o e implementacion de sistemas estructurados de redes para distribucio&#769;n <br />
-                        y conectividad de voz, datos, electricidad y conexiones especiales.</p>
+
                 </ConocemasHeader>                                        
                 <ProductosyserviciosMas>
 
                     <div className="Garantia-descripcion" >                        
-                        <h3 className="text-yellow-500">Garanti&#769;a</h3>
+                        <SemiTitulo><strong>GARANTI&#769;A</strong></SemiTitulo>
                         <ul className="">
                             <li>Producto compatible</li>
                             <li>Producto de calidad </li >
@@ -70,27 +64,27 @@ class ConoceMas extends Component {
                     </div>
 
                     <div className="Productosyservicios-tendencias ">
-                        <h3 className="text-yellow-500">Tendencias</h3>
+                        <SemiTitulo><strong>TENDENCIAS</strong></SemiTitulo>
                         <ul className="">
-                            <li> Nueva li&#769;nea black </li >
-                            <li> Deja atra&#769;s las llaves </li >
-                            <li> Cerraduras electronicas Touch - Sense - Connect </li >
-                            <li> Control de acceso </li >
-                            <li> identificacio&#769;n biome&#769;trica vascular. </li >
-                            <li> reconocimiento dactilar. </li >
-                            <li> registro de marcaciones en puntos de venta </li >
+                            <li> Nueva li&#769;nea black. </li >
+                            <li> Deja atra&#769;s las llaves. </li >
+                            <li> Cerraduras electronicas-Touch -Sense -Connect. </li >
+                            <li> Control de acceso. </li >
+                            <li> identificacio&#769;n biome&#769;trica. </li >
+                            <li> Reconocimiento dactilar. </li >
+                            <li> Registro de marcaciones en puntos de venta. </li >
                         </ul>
                     </div>
 
                     <div className="Productosyservicios-seguridad ">
-                        <h3 className="text-yellow-500">Ma&#769;s de seguridad</h3>
+                        <SemiTitulo><strong>MA&#769;S DE SEGURIDAD</strong></SemiTitulo>
                         <ul className="">
-                            <li> Mantenimiento Preventivo </li >
-                            <li> consultora&#769;s en Sistemas </li >
-                            <li> Software y plataformas tecnolo&#769;gicas de informacio&#769;n </li >
-                            <li> Control de Visitantes y Contratistas </li >
-                            <li> Sistema para Programacio&#769;n </li >
-                            <li> Control y Liquidacio&#769;n de Tiempos Laborados </li >
+                            <li> Mantenimiento Preventivo. </li >
+                            <li> Consultora&#769;s en Sistemas. </li >
+                            <li> Software y plataformas tecnolo&#769;gicas de informacio&#769;n. </li >
+                            <li> Control de Visitantes y Contratistas. </li >
+                            <li> Sistema para Programacio&#769;n. </li >
+                            <li> Control y Liquidacio&#769;n de Tiempos Laborados. </li >
                         </ul>
                     </div>                        
 
