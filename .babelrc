@@ -8,6 +8,7 @@
   "plugins": [
     "transform-class-properties",
     "@babel/plugin-proposal-class-properties",
-    "polished"
+    "polished",
+    "styled-components"
   ]
 }

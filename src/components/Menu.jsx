@@ -109,6 +109,10 @@ const DesplegarMenu = styled.button`
     border: 2px solid #black;
     background-color: #333;
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
+
+    &:hover ${DropdownContenido}{
+    display: block;
+    }
 `;
 
 const Desplegar = styled.div`
@@ -117,10 +121,6 @@ const Desplegar = styled.div`
     padding: 5px;
     position:relative;
     display: block;
-
-    &:hover ${DropdownContenido}{
-    display: block;
-    }
 
     &:hover ${DesplegarMenu}{
     background-color: #0066ff;

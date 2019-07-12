@@ -3,67 +3,18 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 
+import App from './containers/App';
+/*import Carrousel from './components/Carrousel';*/
+
+import * as serviceWorker from './serviceWorker';
+
+
 /*import { Provider } from 'react-redux'
 import createStore from './createReduxStore'
 const store = createStore()
 */
-
-/* CommonJS Modules:
-const firebase = require('firebase/app');
-require('firebase/<PACKAGE>');
-
-ES Modules:
-import firebase from 'firebase/app';
-import 'firebase/<PACKAGE>';
-
-Typescript:
-import * as firebase from 'firebase/app';
-import 'firebase/<PACKAGE>'; */
-
-import App from './containers/App';
-
-import * as serviceWorker from './serviceWorker';
-
-import * as firebase from 'firebase';
-import 'firebase/auth';
-import 'firebase/database';
-
-
-
-
-
 //import Rebase from 're-base';
-
-// Your web app's Firebase configuration
-/*var firebaseConfig = {
-    apiKey: "AIzaSyCPvcNLJ_cQ_JVK8aA-oYoOCrzoWdlPdFs",
-    authDomain: "listtech-28538.firebaseapp.com",
-    databaseURL: "https://listtech-28538.firebaseio.com",
-    projectId: "listtech-28538",
-    storageBucket: "",
-    messagingSenderId: "485504383937",
-    appId: "1:485504383937:web:4c66540a646e7776"
-};*/
-
-const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
-    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID,
-};
-
-// Initialize Firebase
-// var app = firebase.initializeApp({ ... });
-// const app =
-firebase.initializeApp(firebaseConfig)
 //const base = Rebase.createClass(app.database())
-var root = document.getElementById('root');
-var dbRef = firebase.database().ref().child('text');
-dbRef.on('value', snap => root.innerText = snap.val());
-
 //export {base}
 
 /*const rootElement = document.getElementById('root')

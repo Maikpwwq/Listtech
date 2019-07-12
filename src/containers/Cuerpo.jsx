@@ -24,6 +24,8 @@ background - attachment: scroll;*/
 
 /* overflow: scroll; hidden; auto; visible; */
 
+/* text - transform: uppercase; lowercase; capitalize */
+
 /* 
     padding: 19px;
     font-size: 36px;

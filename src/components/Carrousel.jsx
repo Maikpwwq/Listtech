@@ -11,7 +11,6 @@ import prev from '../imagenes/prev.png';
 
 import data from '../productos/Productos.js'
 
-
 import styled from 'styled-components'
 
 /* Style Carrousel */
@@ -23,38 +22,76 @@ const CarrouselStyle = styled.div`
     box-sizing: border-box;
 `;
 
-const CarrouselContainer = styled.div`
-    width: 100%;
-    height: 100%; 
-    display: block;
-    background: #1F1C2C;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #928DAB, #1F1C2C);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #928DAB, #1F1C2C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    display: block;   
+const Carousel = styled.div`
+    width: 800px;
+    height: 600px; 
+    display: inline-block;
+    position: sticky;
+    overflow: scroll
+    background: #1F1C2C;  
+    background: -webkit - linear - gradient(to top, #928DAB, #1F1C2C); 
+    background: linear - gradient(to top, #928DAB, #1F1C2C);
 `;
 
 /* Style  */
 
-const CarrouselProductos = styled.div`
-    display: inline;    
+const CarrouselProductos = styled.div`    
     float: left;
-    width: auto;
-    height: auto; 
-    margin: 0px;    
+    /*width: auto;    
+    height: auto; */
+    margin: 5px;   
+
+    &:after {
+    content:'';
+    display: block;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    outline: 5px solid #61DAFE;
+    position: relative;
+    }
+`;
+
+/*`translateX(-${ property.index * (100 / properties.length) }%)`*/
+
+const CarrouselWrapper = styled.div`
+    position: relative;
+    display: -webkit - flex; /* Safari */
+    -webkit - align - items: center; /* Safari 7.0+ */
+    display: flex;
+    align - items: center;
+    transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);       
 `;
 
 const CarrouselListaProducto = styled.div`
-    display: inline - flex;
-    float: left;
+    position: absolute;
     top: auto; 
     right: auto; 
     bottom: auto; 
     left: auto; 
     z-index: auto; 
     max-width: 100 %;
-    margin: auto;
-    position: sticky; /* absolute relative */
-    overflow: auto;    
+    margin: auto;            
+
+    .Producto {
+    flex: 1;
+    min-width: 460px;
+    }
+
+    .FichaProducto {
+    flex: 1;
+    min-width: 200px;
+    opacity: 0.7;
+    transform: scale(0.8);
+    box-shadow: none;
+    background-color: white;
+    border-color: white;
+    transition: opacity 300ms linear, border-color 300ms linear, background-color 300ms linear,transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        .FichaDetalles {
+        opacity: 0;
+        transition: opacity 150ms linear;
+        }
+    }    
 `;
 
 const CarrouselDescripcion = styled.div`
@@ -75,6 +112,7 @@ const CarrouselDescripcion = styled.div`
 const Prev = styled.button` 
     cursor: pointer;
     position: absolute;
+    vertical-align: middle;
     top: 50 %;
     width: auto;
     margin - top: -22px;
@@ -85,6 +123,7 @@ const Prev = styled.button`
     transition: 0.6s ease;
     border - radius: 0 3px 3px 0;
     user - select: none;
+    left: 0;
 
     &:hover {
     background-color: rgba(0,0,0,0.8);
@@ -97,7 +136,7 @@ const Next = styled.button`
     position: absolute;
     top: 50 %;
     width: auto;
-    margin - top: -22px;
+    margin - top: +22px;
     padding: 16px;
     color: white;
     font - weight: bold;
@@ -123,14 +162,14 @@ class Carrousel extends Component {
         this.state = {
             Productos: data.Productos,
             Producto: data.Productos[0]
-        };
+        };    
     }
 
     nextProducto = () => {
         const nuevoindex = this.state.Producto.index + 1;
         this.setState({
-            Producto: data.Productos[nuevoindex]
-        })
+                Producto: data.Productos[nuevoindex]
+            })
     }
 
     prevProducto = () => {
@@ -140,27 +179,47 @@ class Carrousel extends Component {
         })
     }
 
+    currentSlide = () => {
+        const actualindex = this.state.Producto.index;
+        console.log("Actual", actualindex);
+    }
+
     render() {
 
         const { Productos, Producto } = this.state;
 
+        console.log("Seleccion", Producto);
+
         return (
             <CarrouselStyle >
 
-                <CarrouselContainer>
+                <Carousel>
 
                     <CarrouselProductos>
 
                         <CarrouselListaProducto>
-
-                            < Fichaproducto Producto={Producto} />
-
+                            <CarrouselWrapper>
+                                {
+                                    Productos.map(Producto => (
+                                        <Fichaproducto Producto={Producto}
+                                            key={Producto.index}
+                                            /*id={Producto._id}*/
+                                        />
+                                    ))
+                                }       
+                            </CarrouselWrapper>
                         </CarrouselListaProducto>
 
-                        <Next id="Carrusel-next-producto" onClick={() => this.nextProducto()} disabled={Producto.index === data.Productos.length - 1}>
+                        <Next id="Carrusel-next-producto"
+                            onClick={() => this.nextProducto()}
+                            disabled={Producto.index === data.Productos.length - 1}
+                        > Siguiente
                             <img src={next} alt="" />
                         </Next>
-                        <Prev id="Carrusel-prev-producto" onClick={() => this.prevProducto()} disabled={Producto.index === 0}>
+                        <Prev id="Carrusel-prev-producto"
+                            onClick={() => this.prevProducto()}
+                            disabled={Producto.index === 0}
+                        > Anterior
                             <img src={prev} alt="" />
                         </Prev>
 
@@ -168,13 +227,16 @@ class Carrousel extends Component {
 
                     <CarrouselDescripcion id="carrusel_imagenes_marcas" >
                         <div>
-                            <span onClick="currentSlide(1)"></span>
-                            <span class="dot" onClick="CurrentSlide(2)"></span>
-                            <span class="dot" onClick="CurrentSlide(3)"></span>
+                            <span className="dot" onClick="currentSlide(1)">
+                            </span>
+                            <span className="dot" onClick="CurrentSlide(2)">
+                            </span>
+                            <span className="dot" onClick="CurrentSlide(3)">
+                            </span>
                         </div>
                     </CarrouselDescripcion>
 
-                </CarrouselContainer>
+                </Carousel>
 
             </CarrouselStyle>   
     )
@@ -295,9 +357,6 @@ function handleComprar = (index) => {
         slides[this.slideIndex - 1].style.display = "block";
         descripciones[this.slideIndex - 1].className += " active";
     }
-
-
-
 */
 
 /*const Carrousel = (props) => {*/

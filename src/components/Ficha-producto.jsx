@@ -1,22 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../css/Fichaproducto.css';
+/*import '../css/Fichaproducto.css';*/
 
 import styled from 'styled-components';
 
 const StyledFicha = styled.div`
+    align: center;
+    box-sizing: border-box;
+    justify-content: center;
     margin: 0 auto;
     padding: 0;
+    display: inline;
 `;
 
-const FichaProducto = styled.div`
-    display: none;
+
+    /*display: none;*/
     /* Fading animation */
+const FichaProducto = styled.div`
     -webkit - animation - name: fade;
     -webkit - animation - duration: 1.5s;
     animation - name: fade;
     animation - duration: 1.5s;
+    border: 3px #f3f3f3 solid;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s linear;
+    cursor: pointer;
+    background-color: #f3f3f3;
+    padding: 10px;
+    min-width: 220px;
+    display: block;
+    text-align: left;
+    margin: 0 auto;
 
     @-webkit - keyframes fade {
         from { opacity: .4 }
@@ -30,17 +45,16 @@ const FichaProducto = styled.div`
 `;
 
 const Productoimg = styled.img`
-    display: inline - flex;
-    float: left;
     Width: auto;
     height: 100%;
 `;
 
 const Titulo = styled.div`
-    color: #f2f2f2;
-    font - size: 15px;
+    color: #0066cc;
+    font - size: 21px;
+    text-transform: uppercase; /* lowercase; capitalize */
+    font-weight: bold;
     padding: 8px 12px;
-    position: absolute;
     bottom: 8px;
     width: 100 %;
     text - align: center;
@@ -49,19 +63,23 @@ const Titulo = styled.div`
 const Fichaheader = styled.div`
     margin: 0;
     display:block;
+    align: center,
     padding: 0;
     list-style-type: none;
 `;
 
 const IndexSpan = styled.span`
+    text-align: right;
     margin: 0;
     padding: 0;
     list-style-type: none;
 `;
 
 const FichaDetalles = styled.div`
+    display: flex;
     margin: 0;
     padding: 0;
+    position: relative;
     list-style-type: none;
 `;
 
@@ -77,10 +95,10 @@ const FichaLi = styled.li`
 `;
 
 const Precio = styled.div`
-    color: #f2f2f2;
-    font-size: 12px;
+    color: #0066cc;
+    position: relative;
+    font-size: 19px;
     padding: 8px 12px;
-    position: absolute;
     top: 0;
 `;
 
@@ -99,7 +117,7 @@ const Fichaproducto = ({ Producto }) => {
 
     return(
         < StyledFicha >
-            <FichaProducto key={`Ficha-${index}`} target="_blank">
+            <FichaProducto id={`Ficha-${index}`} key="id" target="_blank">
 
                 <Fichaheader>
                     <IndexSpan> {index + 1} </IndexSpan>
@@ -123,8 +141,8 @@ const Fichaproducto = ({ Producto }) => {
                                     {solicitud}
                                 </span>
                                 <button className="btn btn-danger"
-                                > Agregar a compras
-                            </button>
+                                    > Agregar a compras
+                                </button>
                             </FichaproductoInteraccion>                        
 
                         </FichaLi>                
@@ -137,8 +155,8 @@ const Fichaproducto = ({ Producto }) => {
     )
 }
 
-export default Fichaproducto;
+Fichaproducto.propTypes = {
+    Producto: PropTypes.object.isRequired
+}
 
-/*<Ficha-producto
-    dataProductos={props.datab}
-/>*/
+export default Fichaproducto;
