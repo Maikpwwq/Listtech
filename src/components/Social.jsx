@@ -95,52 +95,49 @@ class Social extends Component {
                     <Socialgrupo>
                         <SocialLista>
 
-                            <SocialSiguenos>
-                                <img src={logoinstagram} alt="Instagram" />
+                            <SocialSiguenos>                                
                                 <a href="https://www.instagram.com/list_tech"
                                     title="Instagram"
                                     className="Social-icono Social-icono--instagram"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                >Instagram
+                                > <img src={logoinstagram} alt="Instagram" /> Instagram
                             </a></SocialSiguenos>
 
-                            <SocialSiguenos><img src={logotwitter} alt="Twitter" />
+                            <SocialSiguenos>
                                 <a href="http://twitter.com/"
                                     title="Twitter"
                                     className="Social-icono Social-icono--twitter"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                >Twitter
+                                ><img src={logotwitter} alt="Twitter" /> Twitter
                             </a></SocialSiguenos>
 
-                            <SocialSiguenos>
-                                <img src={logofacebook} alt="Facebook" />
+                            <SocialSiguenos>                                
                                 <a href="https://www.facebook.com/Listtech.seguridad.electronica/"
                                     title="Facebook"
                                     className="Social-icono Social-icono--facebook"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                >Facebook
+                                ><img src={logofacebook} alt="Facebook" />Facebook
                             </a></SocialSiguenos>
 
-                            <SocialSiguenos>
-                                <img src={logolinkedin} alt="Linkedin" />
+                            <SocialSiguenos>                                
                                 <a href="http://www.linkedin.com/"
                                     title="LinkedIn"
                                     className="Social-icono Social-icono--linkedin"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                >Linked In
+                                ><img src={logolinkedin} alt="Linkedin" />Linked In
                             </a></SocialSiguenos>
 
-                            <SocialSiguenos><img src={logoyoutube} alt="Youtube" />
+                            <SocialSiguenos>
                                 <a href="http://www.youtube.com/"
                                     title="Youtube"
                                     className="Social-icono Social-icono--youtube"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                >Youtube
+                                ><img src={logoyoutube} alt="Youtube" />Youtube
                             </a></SocialSiguenos>
                     
                         </SocialLista>

@@ -81,6 +81,7 @@ const FooterMenu = styled.nav`
 const EnlacesMenu = styled.a` 
     display: inline;
     align: left;
+    width: 100%;
 `;
 
 const FooterSiguenos = styled.nav`
@@ -176,7 +177,7 @@ class Footer extends Component {
                                     <EnlacesMenu href="/mas/informacion"><img src={indicador} alt="indicador" />
                                         <h2>Informacio&#769;n</h2></EnlacesMenu>
                                 </li>
-                                <li className="display-inline">        
+                                <li>        
                                     <EnlacesMenu href="/mas/politicas-privacidad"> <img src={indicador} alt="indicador" />
                                         <h3>Poli&#769;ticas de privacidad</h3></EnlacesMenu>                               
                                 </li>

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 /*import '../css/Fichaproducto.css';*/
 
-/*import React from 'react';*/
 import Conjuntoproductos from '../imagenes/ecommerce-productos/ConjuntoProductos.png';
 
 /* Importar Cerraduras electronicas */
@@ -188,7 +187,7 @@ const Fichaproducto = ({ Producto }) => {
                 <Fichaheader>
                     <IndexSpan> {index + 1} </IndexSpan>
                     <Titulo>{titulo}</Titulo>                    
-                    <Productoimg src={{imagen}} alt={'imagen'} />
+                    <Productoimg src={imagen} alt={'imagen'} />
                 </Fichaheader>                
 
                 <FichaDetalles>

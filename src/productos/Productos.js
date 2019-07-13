@@ -16,7 +16,7 @@ const data = {
             "_id": "1024537866frt",
             "index": 1,
             "titulo": "Cerradura mecanica",
-            "imagen": "AMG100CFingerprint",
+            "imagen": "{AMG100CFingerprint}",
             "marca": "Schlage",
             "descripcion": "Accent cromado manija",
             "garantia": "10 years",
