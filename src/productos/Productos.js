@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';*/
 import Conjuntoproductos from '../imagenes/ecommerce-productos/ConjuntoProductos.png';
 
 /* Importar Cerraduras electronicas */
