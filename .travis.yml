@@ -5,7 +5,8 @@ cache:
 node_js:
    - '9'
 git:
-   depth: 3
+   depth: 25
+   quiet: true
 scripts:
    - yarn build
    - echo 'https://listtech.com.co' > public/CNAME
