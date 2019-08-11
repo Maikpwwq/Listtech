@@ -19,5 +19,9 @@ deploy:
    target-branch: master
    commit_message: "Deploy Release ${TRAVIS_TAG}"
    on:
+<<<<<<< HEAD
       branch: desarrollo
 bundler_args: --retry 5
+=======
+      branch: desarrollo
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629

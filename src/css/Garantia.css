@@ -1,0 +1,36 @@
+.Garantia {
+  text-align: center;
+}
+
+.Garantia-container {
+  background-color: #282c34;
+  text-align: center;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Garantia-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Garantia-descripcion {
+    
+}
+
+.Garantia-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.Garantia-link {
+  color: #61dafb;
+}
+

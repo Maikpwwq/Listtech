@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\build",
     "\\public",
     "\\src",
@@ -8,5 +9,10 @@
     "\\src\\rutas"
   ],
   "SelectedNode": "\\src\\components\\Form-contacto.jsx",
+=======
+    "\\src\\productos"
+  ],
+  "SelectedNode": "\\src",
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
   "PreviewInSolutionExplorer": false
 }

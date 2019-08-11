@@ -1,5 +1,12 @@
 import React from 'react'; 
 
+<<<<<<< HEAD
+=======
+import Footer from '../containers/Footer.jsx';
+
+import Buscador from '../components/Buscador.jsx';
+import Menu from '../components/Menu.jsx';
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 import Nosotros from '../components/Nosotros.jsx';
 import Marcas from '../components/Marcas.jsx';
 import Productosyservicios from '../components/Productos-y-servicios.jsx';
@@ -8,15 +15,92 @@ import Carrousel from '../components/Carrousel';
 
 import styled from 'styled-components'
 
+<<<<<<< HEAD
+=======
+/*background - attachment: fixed;
+background - attachment: local;
+background - attachment: scroll;*/
+
+/* z - index only works on positioned elements
+ * position: absolute 
+ * position: relative
+ * position: fixed
+ * position: sticky*/
+
+/* overflow: scroll; hidden; auto; visible; */
+
+/* text - transform: uppercase; lowercase; capitalize */
+
+/* 
+    padding: 19px;
+    font-size: 36px;
+    font-weight: 390;
+    text-align: center;
+    font - family: Arial, Helvetica, sans - serif;
+    letter-spacing:1.2px;
+    margins:5em 0 0 0;
+    color:#ffffff;   
+ */ 
+
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 /* Style Main */
 const MainStyle = styled.div`
     text-align: center;    
     box-sizing: border-box;   
 `;
 
+<<<<<<< HEAD
 const MainContainer = styled.div`    
 `;
 
+=======
+const MainDark = styled.div`
+    font - family: Arial, Helvetica, sans - serif;
+    font-weight: 400;
+    letter-spacing:1.2px;
+    margins:5em 0 0 0;
+    color:#ffffff;
+    --styled - select - placeholder__color: #999;
+    --styled - select__color: white;
+    --styled - select__background - color: #555;
+    --styled - select__border - color: black;
+    --styled - select__border - width: 3px;
+    --styled - select__border - radius: 5px;
+
+    --styled - select - menu - outer__margin: 10px 0 0 0;
+    --styled - select - menu - outer__padding: 0;
+    --styled - select - menu - outer__background - color: #555;
+    --styled - select - menu - outer__border - color: black;
+    --styled - select - menu - outer__border - style: solid;
+    --styled - select - menu - outer__border - width: 3px;
+
+    --styled - select - option__background - color: #444;
+
+    --styled - select - option__color--focused: #eee;
+    --styled - select - option__background - color--focused: #333;
+
+    --styled - select - option__color--selected: #eee;
+    --styled - select - option__background - color--selected: #444;
+
+    @media (max-width: 600px) {    
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    }
+
+`;
+
+/* Style the header */
+const Mainheader = styled.header`
+    background - color: #0099cc;
+    padding: 30px;    
+    display: inline;
+    text - align: center;
+    font - size: 35px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+`;
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 
 /* Style the body Container for flexboxes */
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -60,6 +144,20 @@ const Maincolumns = styled.div`
     height: 600px;     
 `;
 
+<<<<<<< HEAD
+=======
+/* Style the footer */
+const Mainfooter = styled.footer`
+    background - color: #3c3c3c;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    height:auto;
+    width: 100%;
+`;
+
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 /*const Main = ({ children }) => (
     <MainStyle>
         {children}
@@ -68,7 +166,15 @@ const Maincolumns = styled.div`
 
 const Cuerpo = ( props ) => (
     <MainStyle>
+<<<<<<< HEAD
         <MainContainer>
+=======
+        <MainDark>
+            <Mainheader>
+                <Buscador />
+                <Menu titulo="Contenido" />
+            </Mainheader>
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
             <Maingrupo>
 
                 <Mainrow>
@@ -91,7 +197,14 @@ const Cuerpo = ( props ) => (
                 <Nosotros />
 
             </Maingrupo>
+<<<<<<< HEAD
         </MainContainer>
+=======
+            <Mainfooter>
+                <Footer />
+            </Mainfooter>
+        </MainDark>
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
     </MainStyle>
 );
 

@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import '../css/Marcas.css';
 import logo from '../imagenes/Listtech-Logo.png';
 
+<<<<<<< HEAD
 import { NavLink } from 'react-router-dom';
 
+=======
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 /*<script type="text/javascript">
     var dropdown=new TINY.dropdown.init("dropdown", {id: 'menu', active:'menuhover'});
 </script> */
@@ -160,9 +163,20 @@ class Menu extends Component {
             <MenuStyle>
                 <Menunav>                                            
                     <MenuGrupo id="Menu">
+<<<<<<< HEAD
                         <Menuli><NavLink to="/">                            
                             <Menuimg src={logo} alt="logo" />                            
                         </NavLink></Menuli>
+=======
+                        <Menuli><figure >                            
+                            <Menua
+                             href="https://Dezzpo.com"
+                             target="_blank"
+                             rel="noopener noreferrer"
+                            > <Menuimg src={logo} alt="logo" />
+                            </Menua>
+                        </figure></Menuli>
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                         <Menuli><Menua href="../containers/App"
                                 >HOME
                         </Menua></Menuli>
@@ -181,6 +195,7 @@ class Menu extends Component {
                         <Desplegar><DesplegarMenu href="javascript:void(0)"
                                 >PRODUCTOS Y SERVICIOS
                             </DesplegarMenu>
+<<<<<<< HEAD
                             <DropdownContenido>                                
                                 <Contenido href="./productos/1 Cerraduras electrónicas">
                                     1.	LI&#769;NEA CERRADURAS ELECTRO&#769;NICAS</Contenido>
@@ -199,6 +214,28 @@ class Menu extends Component {
                                 <Contenido href="./productos/8 Acceso suspendido en alturas">
                                     8.	LÍNEA ACCESO SUSPENDIDO EN ALTURAS</Contenido>
                             </DropdownContenido>
+=======
+                            <DropdownContenido>
+                                <Contenido href="/producto/candados-y-cerrojos-de-seguridad">
+                                    CERRADURAS ELE&#769;CTRONICAS</Contenido>
+                                <Contenido href="/producto/candados-y-cerrojos-de-seguridad">
+                                    CERRADURAS MECA&#769;NICAS</Contenido>
+                                <Contenido href="/producto/control-de-acceso-peatonal-y-vehicular">
+                                    CIERRA PUERTAS</Contenido>
+                                <Contenido href="/producto/proteccion-e-incendios">
+                                    BISAGRAS Y PIVOTES</Contenido>
+                                <Contenido href="/producto/proteccion-e-incendios">
+                                    REDES CABLEADO ESTRUCTURADO</Contenido>
+                                <Contenido href="/producto/cableado-estructurado">
+                                    SALIDAS PUSH EMERGENCI&#769;A</Contenido>
+                                <Contenido href="/producto/cableado-estructurado">
+                                    SENSORES Y HUELGAS ELECTRONICAS</Contenido>
+                                <Contenido href="/producto/soluciones-de-acceso-suspendido-alturas">
+                                    SOLUCIONES DE ACCESO SUSPENDIDO ALTURAS</Contenido>
+                                <Contenido href="/producto/mecanismos-de-suspension">
+                                    MECANISMOS DE SUSPENSION</Contenido>
+                            </DropdownContenido>                                                                
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                         </Desplegar> 
                     </MenuGrupo>
                 </Menunav>

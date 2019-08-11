@@ -4,12 +4,18 @@ import * as firebase from "firebase/app";
 // Add the Firebase products that you want to use
 import "firebase/auth";
 import "firebase/database";
+<<<<<<< HEAD
 import "firebase/storage";
 import 'firebase/firebase-firestore';
 import { auth } from "./node_modules/firebase/index";
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
+=======
+
+// TODO: Replace the following with your app's Firebase project configuration
+var firebaseConfig = {
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
     apiKey: process.env.REACT_APP_FIREBASE_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
     databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
@@ -19,6 +25,7 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
+<<<<<<< HEAD
 class AuthFirebase {
     constructor() {
         // Initialize Firebase
@@ -89,3 +96,7 @@ export default database();
 export default auth();
 
 
+=======
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629

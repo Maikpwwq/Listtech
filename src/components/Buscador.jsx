@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import '../css/Buscador.css';
 
@@ -13,6 +14,17 @@ import Registro from '../components/Registro';
 import logo from '../imagenes/Listtech-Logo.png'
 import carrito from '../imagenes/medios de pago/carrito_ico.png'
 
+=======
+import React from 'react';
+import '../css/Buscador.css';
+
+import Social from './Social';
+
+import logo from '../imagenes/Listtech-Logo.png'
+import carrito from '../imagenes/medios de pago/carrito_ico.png'
+
+
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 import styled from 'styled-components'
 
 const BuscadorStyle = styled.div`
@@ -64,10 +76,13 @@ const BuscadorLogo = styled.img`
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
 `;
 
+<<<<<<< HEAD
 const Acceder = styled.div`
     
 `
 
+=======
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 const CarroCompras = styled.div`
     align: center;
     padding: 10px 10px;
@@ -104,6 +119,7 @@ const Submitinput = styled.input`
     background: #bfbfbf;
 `;
 
+<<<<<<< HEAD
 /*
  firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
@@ -201,3 +217,50 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(Buscador);   
+=======
+const Buscador = () => (
+
+    <BuscadorStyle>
+        <BuscadorHeader>
+            <BuscadorIngreso>
+                <article className="Ingreso">
+                    <a href="/components/inicio.sesion.php">Inicio de sesio&#769;n</a>
+                    <a href="/components/registro.php"> Cliente nuevo</a>
+                </article>
+                <Redes>
+                    <Social />                    
+                </Redes>
+            </BuscadorIngreso>
+
+            <LogoEncabezado>
+                <a href="/tienda/">
+                    <BuscadorLogo src={logo} alt="" />
+                </a>
+            </LogoEncabezado>
+
+            <CarroCompras>
+                <article className="Carrito-icono">
+                    <a href="../tienda/carrito.php">
+                        <img src={carrito} alt="" />
+                        <p>CARRO DE COMPRAS</p></a>
+                </article>
+                <article className="Carrito-contador">
+                    <a href="../tienda/carrito.php" className="cantidad">
+                        0	</a>
+                </article>
+            </CarroCompras>                                       
+        </BuscadorHeader>
+
+        <BuscadorEcommerce>
+            <form action="/tienda/buscador.php" method="get" name="cms_frm_buscador">
+                <Textinput name="dsbusqueda" id="dsbusqueda"
+                    placeholder="Qué estás buscando?" />
+                <Submitinput value="HACER BU&#769;SQUEDA" />
+            </form>
+        </BuscadorEcommerce>
+
+    </BuscadorStyle>                        
+)
+
+export default Buscador;
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629

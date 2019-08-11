@@ -1,16 +1,92 @@
 // import React, { ReactChild } from 'react';
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { connect } from 'react-redux'
 
 import Fichaproducto from './Ficha-producto';
 
 import { NavLink } from 'react-router-dom'; 
 
+=======
+/*import { connect } from 'react-redux'*/
+
+import '../css/Carrousel.css';
+
+import Fichaproducto from './Ficha-producto';
+
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 import next from '../imagenes/next.png';
 import prev from '../imagenes/prev.png';
 
 import data from '../productos/Productos.js'
 
+<<<<<<< HEAD
+=======
+import Conjuntoproductos from '../imagenes/ecommerce-productos/ConjuntoProductos.png';
+
+/* Importar Cerraduras electronicas */
+/* AMG100CFingerprint ATSRelojProximidad Handpunch1000 LCD701RD SchlageAD400 SchlageCO100 SchlageCO220 SchlageConnectCentury SchlageCSCamelot SchlageLE SchlageLectoresCTEMT15MT11 SchlageMultitechReaders SchlageNDE SchlageSEncode SchlageSense SchlageWP10354LE SchlageCOSeries SchlageAD400401Series SchlageCO220Series SchlageControlSeries SchlageFSeriesHandPunch SchlageMultitechCredentials*/
+import AMG100CFingerprint from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/AMG 100C Fingerprint.png';
+/* import ATSRelojProximidad from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/ATS Reloj Proximidad.jpg';
+import Handpunch1000 from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Handpunch-1000.jpg';
+import LCD701RD from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/LCD 701RD.jpg';
+import SchlageAD400 from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage AD400.jpg';
+import SchlageCO100 from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage CO 100.jpg';
+import SchlageCO220 from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage CO-220.jpg';
+import SchlageConnectCentury from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage Connect Century.jpg';
+import SchlageCSCamelot from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage CS Camelot.jpg';
+import SchlageLE from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage LE.jpg';
+import SchlageLectoresCTEMT15MT11 from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage Lectores CTE-MT15-MT11.jpg';
+import SchlageMultitechReaders from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage Multi-tech_Readers.jpg';
+import SchlageNDE from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage NDE.jpg';
+import SchlageSEncode from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage S-Encode.jpg';
+import SchlageSense from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage Sense.png';
+import SchlageWP10354LE from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage WP-10354 - LE.jpg';
+import SchlageCOSeries from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage-CO-Series.jpg';
+import SchlageAD400401Series from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage-AD400-401_Series.jpg';
+import SchlageCO220Series from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage-CO-220_Series.jpg';
+import SchlageControlSeries from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage-Control_Series.jpg';
+import SchlageFSeriesHandPunch from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage-F_Series_HandPunch.jpg';
+import SchlageMultitechCredentials from '../imagenes/ecommerce-productos/Cerraduras Electronicas ControlAcceso/Schlage-Multi-tech_Credentials.jpg';
+
+/* Importar Cerraduras mecanicas */
+/* BehavioralHealth */
+import BehavioralHealth from '../imagenes/ecommerce-productos/Cerraduras Mecanicas ControlAcceso/Behavioral Health.jpg';
+
+/* Importar Cierra Puertas */
+/* FalconSC60AL */
+import FalconSC60AL from '../imagenes/ecommerce-productos/Cierra Puertas/Falcon SC60AL.jpg';
+
+/* Importar Mecanismos de Suspencion */
+/*import  from '../imagenes/ecommerce-productos/Mecanismos Suspension/.png';*/
+
+/* Importar Pivotes Bisagras */
+/* BisagraContinuaInox */
+/*import BisagraContinuaInox from '../imagenes/ecommerce-productos/Pivotes Bisagras/Bisagra Continua Inox.jpg';
+
+/* Importar Redes Cableado Estructurado */
+/* Camera887x488 */
+/*import Camera887x488 from '../imagenes/ecommerce-productos/Redes Cableado Estructurado/camera-887x488.jpg';
+
+/* Importar Salidas Push Emergencia */
+/* BarraAntiPanicoBriton378 */
+import BarraAntiPanicoBriton378 from '../imagenes/ecommerce-productos/Salidas Push Emergencia/Barra Anti Panico Briton-378.jpg';
+
+/* Importar Sensores Huelgas Electronicas */
+/* SeriesElectricStrikes */
+/*import SeriesElectricStrikes from '../imagenes/ecommerce-productos/Sensores Huelgas Electronicas/45-Series-Electric-Strikes.jpg';
+
+/* Importar Acceso Suspendido Alturas */
+/* BMU540x272 */
+/*import BMU540x272 from '../imagenes/ecommerce-productos/Acceso Suspendido Alturas/BMU-540x272.jpg';
+
+/* Importar Mecanismos Suspension */
+/* import  from '../imagenes/ecommerce-productos/Mecanismos Suspension/.png';*/
+
+/**/
+
+
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 import styled from 'styled-components'
 
 /* Style Carrousel */
@@ -153,6 +229,10 @@ const Next = styled.button`
 
 `;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 class Carrousel extends Component {
 
     constructor(props) {
@@ -199,6 +279,7 @@ class Carrousel extends Component {
                         <CarrouselListaProducto>
                             <CarrouselWrapper>
                                 {
+<<<<<<< HEAD
                                     Productos && Productos.map((Producto,index) => (
                                         <NavLink to={{
                                             pathname: `/productos/${index}-${Producto.name}`,
@@ -207,6 +288,13 @@ class Carrousel extends Component {
                                             key={`Producto-${index}`}
                                             /*id={Producto._id}*/
                                         /></NavLink>
+=======
+                                    Productos.map(Producto => (
+                                        <Fichaproducto Producto={Producto}
+                                            key={Producto.index}
+                                            /*id={Producto._id}*/
+                                        />
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                                     ))
                                 }       
                             </CarrouselWrapper>
@@ -246,6 +334,7 @@ class Carrousel extends Component {
 }
 
 /*key = {`Carrousel-${index}`}*/
+<<<<<<< HEAD
 
 const mapStateToProps = (state) => {
     return {
@@ -307,11 +396,97 @@ case '8 Acceso suspendido en alturas':
 
 var slideIndex = [1,1];
 showSlides(slideIndex);
+=======
+    
+export default Carrousel;
+
+
+
+/*= ({ producto, i }) =>*/
+
+/* var slideIndex = [1,1];
+showSlides(slideIndex);
+
+// Class the members of each slideshow group with different CSS classes 
+var slideId = ["CarrouselListaProducto1", "CarrouselListaProducto2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+// Next/previous controls
+function plusSlides(n, no) {
+    showSlides(slideIndex[no] += n, no);
+}
+
+// Thumbnail image controls
+function currentSlide(n,no) {
+    showSlides(slideIndex[no] = n, no);
+}
+
+function showSlides(n, no) {
+    var i;
+    var x = document.getElementsByClassName(slideId[no]);
+    if (n > x.length) { slideIndex[no] = 1 }
+    if (n < 1) { slideIndex[no] = x.length }
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x[slideIndex[no] - 1].style.display = "block";
+}
+
+function showSlides(n) {
+    console.log('Renderizado Productos');
+    var i;
+    var slides = document.getElementsByClassName("CarrouselProducto");
+    var dots = document.getElementsByClassName("CarrouselDescripcion");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}*/
+
+
+
+
+// import * as comprar from '../Compras.json';
+// compras: [...this.state.compras, compra]
+// const Fichaproducto = ({ titulo, foto, marca, descripcion, garantia, precio, solicitar }) => {
+
+/*const [active, setActive] = true;
+
+function handleComprar = (index) => {
+    event.preventDefault();
+    this.props.onAddComprar(this.state);
+    if (window.confirm('Deseas agregar este producto al carrito de compras')) {
+        setActive(!active)
+        this.setState({
+            comprar: this.state.compras.filter((event, i) => {
+                return i == index
+            })
+        })
+    }
+},
+
+//onClick= {this.handleComprar}
+
+                    <div> {active &&
+                        <Compras onAddComprar={this.state.comprar}>
+                        <h1> Compras </h1>
+                        </Compras>
+                     } </div>
+
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
         this.slideIndex = 1;
         this.showSlides = this.showSlides.bind(this);
         this.showSlides = this.showSlides(this.slideIndex);
     }
 
+<<<<<<< HEAD
 // Class the members of each slideshow group with different CSS classes
 var slideId = [
 "1 Cerraduras electrónicas", 
@@ -346,13 +521,40 @@ showSlides(1, 1);
 
         if(n > slides.length) { this.slideIndex[no] = 1 }
         if (n < 1) { this.slideIndex[no] = slides.length }
+=======
+    // Next/previous controls
+    PlusSlides= (n) => {
+        this.showSlides(this.slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    CurrentSlide= (n) => {
+        this.showSlides(this.slideIndex = n);
+    }
+
+    showSlides= (n) => {
+        var i = ([]);
+        var slides = document.getElementsByClassName("CarrouselProducto");
+        var descripciones = document.getElementsByClassName("CarrouselDescripcion");
+        if(n > slides.length) { this.slideIndex = 1 }
+        if (n < 1) { this.slideIndex = slides.length }
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
         for (i = 0; i < descripciones.length; i++) {
             descripciones[i].className = descripciones[i].className.replace(" active", "");
         }
+<<<<<<< HEAD
         slides[this.slideIndex[no] - 1].style.display = "block";
         descripciones[this.slideIndex - 1].className += " active";
     }
 */
+=======
+        slides[this.slideIndex - 1].style.display = "block";
+        descripciones[this.slideIndex - 1].className += " active";
+    }
+*/
+
+/*const Carrousel = (props) => {*/
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629

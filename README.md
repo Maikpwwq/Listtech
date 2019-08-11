@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 Rama actual de desarrollo para el sitio web Listtech.com.co
 
 Ofrecemos información, instalación, confianza y, soporte para la seguridad y, control de acceso en sus instalaciones
 
 Info React
 
+=======
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

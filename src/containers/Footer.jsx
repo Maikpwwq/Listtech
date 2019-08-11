@@ -18,6 +18,7 @@ import indicador from '../imagenes/redes/indentador.png';
 import styled from 'styled-components'
 
 const Footerstyle = styled.footer`
+<<<<<<< HEAD
     background - color: #3c3c3c;
     padding: 10px;
     text-align: center;
@@ -28,6 +29,8 @@ const Footerstyle = styled.footer`
 `;
 
 const FooterComponent = styled.footer`
+=======
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
     text-align: right;
     box-sizing: border-box;
     width: 100%;
@@ -175,7 +178,11 @@ class Footer extends Component {
 
     render() {
         return (
+<<<<<<< HEAD
             <Footerstyle><FooterComponent>
+=======
+            <Footerstyle>
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                 <Footerrow>
                     <FooterHeader className="Footer-header">
                         {this.props.title}
@@ -241,7 +248,11 @@ class Footer extends Component {
                 <FooterCopyright>
                     <p> Copyright 2019 | Listtech SAS Todos los derechos reservados</p>
                 </FooterCopyright>
+<<<<<<< HEAD
             </FooterComponent>
+=======
+
+>>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
             </Footerstyle>            
         );
     }
