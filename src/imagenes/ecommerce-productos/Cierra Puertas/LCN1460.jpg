@@ -1,0 +1,4520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
+<html>
+
+
+
+		  
+		  
+		  
+<head>
+    
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/etc/designs/allegion-us-2-design-config/favicon.ico"/>
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/etc/designs/allegion-us-2-design-config/favicon.ico"/>
+    
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="google-site-verification" content="0B8RAwi1O5suNUIpADmRpKrSeVPB94Zi4BKr1j4Cyi4" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
+    <script>
+        // dataLayer object added for DTM to read the page parameters
+        var dataLayer;
+        dataLayer = [{'pageTitle': 'LCN', 'pagesitesection':'Products' , 'pagesitesubsection':'Brand' , 'pagesitetertiarysection':'LCN'}];
+    </script>
+	
+
+
+		  
+		  
+		  
+<script src="//assets.adobedtm.com/5a3d000522eac1e7c7a61679f8c4787ea943dedb/satelliteLib-0d7994c2a98742d892f11c43800b42e3808127d5.js"></script>
+
+
+ <link rel="stylesheet" href="/etc/designs/allegion-us-2/clientlibs/main.min.css" type="text/css"/>
+
+
+
+	
+
+  	
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	
+
+
+    <title>LCN</title>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+    
+    
+<script type="text/javascript" src="/etc.clientlibs/clientlibs/granite/jquery.min.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/clientlibs/granite/utils.min.js"></script>
+
+
+
+
+
+
+<script type="text/javascript">
+            (function() {
+                window.ContextHub = window.ContextHub || {};
+
+                /* setting paths */
+                ContextHub.Paths = ContextHub.Paths || {};
+                ContextHub.Paths.CONTEXTHUB_PATH = "/etc/cloudsettings/default/contexthub";
+                ContextHub.Paths.RESOURCE_PATH = "\/content\/allegion\u002Dus\u002D2\/en\/home\/products\/brands\/lcn\/_jcr_content\/contexthub";
+                ContextHub.Paths.SEGMENTATION_PATH = "\/etc\/segmentation\/contexthub";
+                ContextHub.Paths.CQ_CONTEXT_PATH = "";
+
+                /* setting initial constants */
+                ContextHub.Constants = ContextHub.Constants || {};
+                ContextHub.Constants.ANONYMOUS_HOME = "/home/users/-/-vFCHA2G-MvMYxRGDmck";
+                ContextHub.Constants.MODE = "no-ui";
+            }());
+        </script><script src="/etc/cloudsettings/default/contexthub.kernel.js" type="text/javascript"></script>
+</head>
+
+
+
+
+
+
+		  
+		  
+		  
+
+
+
+<body>
+    <p id="sitesection" class="sr-only">products</p>
+    <div class="container wrapper">
+		
+	    	<div class="disclaimer-disp">
+          		<div class="disclaimer iparsys parsys"><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="disclaimer iparsys parsys"><div class="cmp cmp-title section">
+
+
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>      
+
+
+
+
+
+
+<input type="hidden" name="cookieName" id="cookieName" value="allegion-us-2-en-new"/>
+<input type="hidden" name="position" id="position" value="bottom"/>
+<input type="hidden" name="eucompliance" id="eucompliance"/>
+
+<div id="iubenda-cs-banner-new" style="display:none;" class="iubenda-banner-new">
+  <div class="iubenda-content-new">
+    <div class="iubenda-cs-rationale-new">
+     <a class="iubenda-cs-close-btn-new" href="javascript:void(0);">X</a>
+      <div class="iubenda-banner-content">
+     	 <p>Notice<br>
+This website or its third party tools use cookies, which are necessary to its functioning and required to achieve the purposes illustrated in the cookie policy. If you want to know more or withdraw your consent to all or some of the cookies, please refer to the&nbsp;<a href="https://www.allegion.com/corp/en/footer/cookies-policy.html">cookie policy</a>.<br>
+By closing this banner, scrolling this page, clicking a link or continuing to browse otherwise, you agree to the use of cookies.<br>
+</p>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+    function onLoadPage() {
+     var eucompliancecheck = $("#eucompliance").val();
+     if(eucompliancecheck == 'true'){
+     	setUserAcceptsCookies("sat_track",eucompliancecheck,0);
+     }
+     var cookiepos = $("#position").val();
+    //here we need to check whether the cookie already exist or not
+
+     var cookieStringName = $("#cookieName").val();
+     cookieStringName = cookieStringName.trim();
+
+ 	 var cookieFlag = getCookie(cookieStringName); 
+
+	 if((!cookieFlag) && !(cookieStringName == '')){
+
+         if(cookiepos == 'bottom' ){
+
+             $('#iubenda-cs-banner-new').addClass("banner-bottom");
+
+         }else{
+
+             $('#iubenda-cs-banner-new').addClass("banner-top");
+         }
+
+	     $('#iubenda-cs-banner-new').delay(2000).fadeIn(400);
+      }
+	}
+
+    function setUserAcceptsCookies(cookieName,cookieValue,exprdays){
+    	if(exprdays > 0)
+    	{
+        	var d = new Date();
+        	d.setTime(d.getTime()+(exprdays*24*60*60*1000));
+        	var	expires = "expires=" + d.toGMTString() + '; path=/';
+        	document.cookie = cookieName + '=' + cookieValue + "; " + expires;
+    	}
+    	else
+    	{
+	        document.cookie = cookieName + '=' + cookieValue + "; path=/"
+	    }
+	}
+
+	// Storing the consent in a cookie -- start
+    function getCookie(cookieName)
+    {
+    	var name = cookieName + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++)
+        {
+        	var c = ca[i].trim();
+            if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+        }
+        return "";
+    }
+
+    function hideContainerDisclaimer() {
+		$('.iubenda-banner-new').animate({
+			opacity: 0,
+			height: 0
+		}, 300, function() {
+			$('.iubenda-banner-new').hide(0);
+		});
+	}
+
+    $('.iubenda-cs-close-btn-new').click(function(){
+    	var cookiename = $("#cookieName").val();
+        setUserAcceptsCookies(cookiename,'true',30);
+        hideContainerDisclaimer();
+        return true;
+	});
+
+	$(document).ready(function() {
+		onLoadPage();
+	});
+</script>
+
+<style>
+
+.iubenda-banner-new {
+  position: fixed;
+  width: 100% !important;
+  z-index: 99999998 !important;
+  background-color: #333333;
+  height: 15%;
+  overflow-y: auto;
+}
+
+@media(min-width:320px) and (max-width:374px) {
+
+	.iubenda-banner-new {
+		//height: 30%;
+	}
+	.iubenda-banner-content p {
+		font-size: 11px !important;
+	}
+
+	.iubenda-banner-content a {
+		font-size: 11px !important;
+	}
+}
+
+@media(min-width:375px) and (max-width:599px) {
+	.iubenda-banner-new {
+		//height: 25%;
+	}
+	.iubenda-banner-content p {
+		font-size: 13px !important;
+	}
+
+	.iubenda-banner-content a {
+		font-size: 13px !important;
+	}
+}
+
+@media(min-width:600px) and (max-width:767px) {
+	.iubenda-banner-new {
+		//height: 25%;
+	}
+}
+
+
+.banner-top{top:0px;}
+.banner-bottom{bottom:0px;}
+
+.iubenda-content-new {
+  margin: 0 auto;
+  padding: 20px;
+  width: auto;
+  color: #fff;
+}
+.iubenda-cs-rationale-new {
+  max-width: 900px;
+  position: relative;
+  margin: 0 auto;
+}
+.iubenda-cs-close-btn-new {
+  color: #fff !important;
+  position: absolute !important;
+  right: 0 !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  margin-right: -17px !important;  
+}
+.iubenda-cs-cookie-policy-lnk {
+  text-decoration: underline;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+}
+.iubenda-banner-content p {
+    font-family:Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif; 
+    font-size: 14px;
+}
+.iubenda-banner-content a {
+    font-family:Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif; 
+    color:#dc582a;
+    font-size: 14px;
+}
+
+.iubenda-banner-content a:hover {
+    font-family:Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif; 
+    color:#337ab7;
+    font-size: 14px;
+}
+.disclaimer {
+
+    padding:0px;
+}
+
+</style></div>
+</div>
+</div>
+</div>
+  
+        	</div>
+		
+		
+
+
+		  
+		  
+		  
+
+<div class="header-path header parbase">
+
+
+
+
+
+
+
+
+
+		  
+		  
+		  
+
+
+
+
+
+
+<script>
+
+    var loggedOut = "null";  
+
+    if(loggedOut){
+       sessionStorage.clear();
+       document.cookie = "alle_verify=; path="+window.location.pathname.replace(".html","")+"; expires=Thu, 01 Jan 1971 00:00:00 UTC;"; 
+    }
+
+</script>
+
+        <header>
+		<div class="content-section">
+
+            <div class="row logo_section">
+                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-9">
+                    <a href="/en/home.html"><img class="hidden-xs logo_image" src="/content/dam/allegion-us-2/allegion-logo-images/allegion-logo.png"></a>
+                    <a href="/en/home.html"><img class="visible-xs header_mob" src="/content/dam/allegion-us-2/allegion-logo-images/allegion_logo_mob.png"></a>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-7 col-xs-3 login">	
+					
+
+                           <div class=" row login_auth" >
+	  							<div class="col-sm-11" >
+	                                <a target="_self" href="/en/home/login.html">Login</a>
+
+	                            </div>   
+	                             <div class="col-sm-1" style="padding-left:  0px;">
+	            					<i class="fa fa-user" aria-hidden="true" style="font-size: xx-large;transform: translateY(-10px);"></i>
+	          					</div>
+
+	                   	 </div>
+                       	  
+                    <div class="row"> </div>	
+					
+                    
+                         
+                         	
+                             
+								<div class="col-lg-8 col-md-6 col-sm-5 col-xs-3 hidden-xs text-right">
+                                    
+                                    	
+                                        
+                                          	<a href="/en/home/locator.html">Locators</a>
+                                        
+                                    
+                                </div>			
+							 
+                             
+                             
+                        
+                    
+                	
+                    <a href="javascript:;" class="lnksearch"><i class="fa fa-search search_icon_mob" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div> <!--content class ends-->
+
+        <div class="blackborder"></div>
+
+            <div class="content-section">
+            <div class="row">
+                <nav class="navbar navbar-default mynav">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<label>menu</label>
+								<span class="txtburgermenu">MENU</span>
+							</button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+
+								
+                                
+                                     
+                                         
+                                        
+                                            
+                                            
+                                            
+                                            
+                                                
+                                                
+
+                                                <li><a class="" href="/en/home/document-library/all-documents.html" data-hover="Document Library">Document Library</a><i class="fa pull-right hidden-lg hidden-md hidden-sm fa-angle-right"
+                                        		aria-hidden="true"></i></li>
+                                            
+                                         
+                                         
+                                            
+                                             
+                                    
+                                         
+                                        
+                                            
+												<li><a href="#" class="products_tab" data-hover="Products">Products</a><i class="fa pull-right hidden-lg hidden-md hidden-sm fa-angle-right"
+                                        		aria-hidden="true"></i></li>
+												
+                                                
+                                            
+                                            
+                                            
+                                            
+                                         
+                                         
+                                            
+
+                                                
+                                                
+                                                     
+                                                          
+                                                			
+                                                         <li class="hidden-lg hidden-md hidden-sm"><a href="/en/home/locator.html">Locators</a> <i class="fa pull-right hidden-lg hidden-md hidden-sm fa-angle-right"
+                                       					 aria-hidden="true"></i></li>
+                                                    
+                                                
+                                                
+                                            
+                                             
+                                    
+                                         
+                                        
+                                            
+                                            
+                                                <li><a href="#" class=" dropdown_tab" data-name="Trade" data-hover="Trade">Trade</a><i class="fa pull-right hidden-lg hidden-md hidden-sm fa-angle-right" aria-hidden="true"></i></li>
+                                            
+                                            
+                                            
+                                         
+                                         
+                                            
+                                             
+                                    
+                                         
+                                        
+                                            
+                                            
+                                                <li><a href="#" class=" dropdown_tab" data-name="Markets" data-hover="Markets">Markets</a><i class="fa pull-right hidden-lg hidden-md hidden-sm fa-angle-right" aria-hidden="true"></i></li>
+                                            
+                                            
+                                            
+                                         
+                                         
+                                            
+                                             
+                                    
+                                         
+                                        
+                                            
+                                            
+                                            
+                                            
+                                                
+                                                
+
+                                                <li><a class="" href="/en/home/alliances.html" data-hover="Alliances">Alliances</a><i class="fa pull-right hidden-lg hidden-md hidden-sm fa-angle-right"
+                                        		aria-hidden="true"></i></li>
+                                            
+                                         
+                                         
+                                            
+                                             
+                                    
+                                         
+                                        
+                                            
+                                            
+                                            
+                                            
+                                                
+                                                
+
+                                                <li><a class="" href="/en/home/training.html" data-hover="Training">Training</a><i class="fa pull-right hidden-lg hidden-md hidden-sm fa-angle-right"
+                                        		aria-hidden="true"></i></li>
+                                            
+                                         
+                                         
+                                            
+                                             
+                                    
+                                         
+                                        
+                                            
+                                            
+                                                <li><a href="#" class="borderbottom dropdown_tab" data-name="Support" data-hover="Support">Support</a><i class="fa pull-right hidden-lg hidden-md hidden-sm fa-angle-right" aria-hidden="true"></i></li>
+                                            
+                                            
+                                            
+                                         
+                                         
+                                            
+                                             
+                                    
+                                
+                                
+								
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </div>
+
+
+                 <!-- class content-section ends-->  
+            </div>
+             <div class="blackborder"></div>
+    </header>
+	
+<!--Demo div starts-->
+
+<div id="demo">
+
+                <div class="container" >
+                    <div class="row selectbyrow">
+                        <div class="col-xs-12">
+                            
+                            
+                                  
+												
+                                            	
+                                                
+                                                    
+                                                <div class="col-xs-6">
+                                                    <button type="button" id="btn_brand" class="btn_brand" data-target="#demo">Select by Brand</button>
+												</div>
+                                                
+                                                
+                                      			
+
+
+                                   
+												
+                                            	
+                                                
+												
+                                                 
+                                                <div class="col-xs-6">
+                                                    <button type="button" id="btn_category" class="btn_category">Select by Category</button>
+                                                </div>
+                                                 
+                                      			
+
+
+                                   
+
+                            
+                            
+                        </div>
+
+
+                    </div>
+                    <div id="brandcontainer" class="row brandcontainer">
+
+                        
+						
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/advantage.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Advantage_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/falcon.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Falcon_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/brio.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Brio_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/glynn-johnson.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Glynn_Johnson_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/ives.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Ives_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/lcn.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/LCN_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/locknetics.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Locknetics_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/republic.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Republic_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/schlage.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Schlage_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/steelcraft.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Steelcraft_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/von-duprin.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Von_Duprin_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                                  
+                                      
+								  
+									<div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+										<a href="/en/home/products/brands/zero-international.html"><img class="img-responsive" src="/content/dam/allegion-us-2/brand-logos/Brand_Dropdown/Zero_120x120.png"></a>
+									</div>
+                        	
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+                        
+                    </div>
+                    <div id="categorycontainer" class="row categorycontainer">
+						<div class="five-cols"> 
+                            
+                            
+                                
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/biometrics.html" class="categorylinks">Biometrics</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/credentials.html" class="categorylinks">Credentials</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/door-control.html" class="categorylinks">Door Control</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/doors-and-frames.html" class="categorylinks">Doors and Frames</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/electric-strikes.html" class="categorylinks">Electric Strikes</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/electrified-locks.html" class="categorylinks">Electrified Locks</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/electromagnetic-locks.html" class="categorylinks">Electromagnetic Locks</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/electronic-locks.html" class="categorylinks">Electronic Locks</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/exit-devices.html" class="categorylinks">Exit Devices</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/key-systems.html" class="categorylinks">Key Systems</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/mechanical-accessories.html" class="categorylinks">Mechanical Accessories</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/mechanical-locks.html" class="categorylinks">Mechanical Locks</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/power-supplies.html" class="categorylinks">Power Supplies</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/readers.html" class="categorylinks">Readers</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/sealing-solutions.html" class="categorylinks">Sealing Solutions</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                                   		
+                            			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 categorybox">
+                                			<a href="/en/home/products/categories/system-accessories.html" class="categorylinks">System Accessories</a>
+											
+                            			</div>
+                                    
+                            	
+                                    
+                            	
+                                    
+                            	
+                            
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+   <div>
+ <span id="closeDropDown" class="close-img-dropdown pull-right" onclick="endAnimateClose(this);"></span>
+    </div>
+          </div>
+
+<!-- Demo div ends-->
+
+
+
+<!--dropdown menu div-->
+
+ <div id="dropdown-menu">
+
+				
+                   
+                         
+                           
+                          	
+                                
+
+                               
+                            
+                           
+                          	
+                                
+
+                               
+                            
+                           
+                          	
+                                  
+
+                               		 
+                                     
+
+
+                                   	 <div class="container" id="Trade">
+										 <div class="row">
+
+											
+                                            	
+                                                
+													<a href="/en/home/trade.html"><label>Trade</label></a>
+                                                 
+                                      		
+
+                                            
+                                                
+                                                          
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/trade/architect.html">Architect</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/trade/authorized-distributor.html">Authorized Distributor</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/trade/locksmith.html">Locksmith</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/trade/integrator.html">Security Integrator</a>
+					                                            </div>
+                                                              
+														  
+                                                
+                                             
+                                        </div>  
+										<div>
+										<span id="closeDropDown" class="close-img-dropdown pull-right" onclick="endAnimateClose(this);"></span>
+                                         </div>
+                                    </div>
+
+
+                                
+
+                               
+                            
+                           
+                          	
+                                  
+
+                               		 
+                                     
+
+
+                                   	 <div class="container" id="Markets">
+										 <div class="row">
+
+											
+                                            	
+                                                
+													<a href="/en/home/markets.html"><label>Markets</label></a>
+                                                 
+                                      		
+
+                                            
+                                                
+                                                          
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/markets/education.html">Education</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/markets/healthcare.html">Healthcare</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/markets/multi-family.html">Multi-Family</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/markets/government.html">Government</a>
+					                                            </div>
+                                                              
+														  
+                                                
+                                             
+                                        </div>  
+										<div>
+										<span id="closeDropDown" class="close-img-dropdown pull-right" onclick="endAnimateClose(this);"></span>
+                                         </div>
+                                    </div>
+
+
+                                
+
+                               
+                            
+                           
+                          	
+                                
+
+                               
+                            
+                           
+                          	
+                                
+
+                               
+                            
+                           
+                          	
+                                  
+
+                               		 
+                                     
+
+
+                                   	 <div class="container" id="Support">
+										 <div class="row">
+
+											
+                                            	
+                                                    <h2 class="avenir-book">Support</h2>
+													<a href="/en/home/support.html"><span class="clr-black-bullet avenir-black see-all">View All Support</span></a>
+                                                
+                                                
+                                      		
+
+                                            
+                                                
+                                                          
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/support/doc-lib-redr.html">Document Library</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/support/download-templates-redr.html">Template Directory</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/support/library.html">Search</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/support/knowledge-center.html">Knowledge &nbsp; Center</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/support/idighardware.html">iDigHardware</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/support/register-schlage-express.html">Schlage Express</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/support/register-handnet.html">HandNet </a>
+					                                            </div>
+                                                              
+														  
+                                                              
+                                                         		
+					                                            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-4 brandbox bggray">
+				    	                                            <a class="categorylinks" href="/en/home/support/contact-us.html">Contact Us</a>
+					                                            </div>
+                                                              
+														  
+                                                              
+														  
+                                                              
+														  
+                                                              
+														  
+                                                              
+														  
+                                                              
+														  
+                                                              
+														  
+                                                
+                                             
+                                        </div>  
+										<div>
+										<span id="closeDropDown" class="close-img-dropdown pull-right" onclick="endAnimateClose(this);"></span>
+                                         </div>
+                                    </div>
+
+
+                                
+
+                               
+                            
+						 
+
+                     
+
+          </div> 
+
+<!--dropdown menu div-->
+
+
+<!--overlay div-->
+<div class="overlay-menu"></div>
+
+<!--overlay div>-->
+
+<div class="navbar-search search-div searchbox_animate_hide" id="search_box">
+        <span class="close-img-dropdown pull-right" id="closeSearchBox" onclick="endAnimateClose(this);"></span>
+        <div id="search-form" data-search-path="" class="search-box">
+			<span class="searchBox-icon"></span>
+			<input type="text" class="search-query" placeholder="Ask us your question" autocomplete="off" type="text">
+			<a class="press-enter">Press Enter</a>
+		</div>
+</div>
+
+<!-- search box -->  
+</div>
+
+	    	
+
+
+		  
+		  
+		  
+
+<div class="banner-par banner parbase">
+
+
+		  
+		  
+		  
+
+
+
+<div class="row">
+     <div id="myCarousel" class="carousel slide" data-ride="">
+     <!-- Wrapper for slides -->
+     <div class="carousel-inner " role="listbox">
+         <div class="item active">
+          
+            
+    
+<picture alt="" title="">
+			<!--[if IE 9]><video style="display: none;"><![endif]-->
+			<source srcset="/content/allegion-us-2/en/home/products/brands/lcn/jcr:content/banner-par.image.1280.high.jpg/1507153382631.jpg" media="(min-width: 1025px)">
+			<source srcset="/content/allegion-us-2/en/home/products/brands/lcn/jcr:content/banner-par.image.1024.high.jpg/1507153382631.jpg" media="(min-width: 769px) and (max-width: 1024px)">
+			<source srcset="/content/allegion-us-2/en/home/products/brands/lcn/jcr:content/banner-par.image.768.high.jpg/1507153382631.jpg" media="(min-width: 641px) and (max-width: 768px)">
+			<source srcset="/content/allegion-us-2/en/home/products/brands/lcn/jcr:content/banner-par.image.640.high.jpg/1507153382631.jpg" media="(min-width: 481px) and (max-width: 640px)">
+			<source srcset="/content/allegion-us-2/en/home/products/brands/lcn/jcr:content/banner-par.image.480.medium.jpg/1507153382631.jpg" media="(min-width: 321px) and (max-width: 480px)">
+			<source srcset="/content/allegion-us-2/en/home/products/brands/lcn/jcr:content/banner-par.image.320.medium.jpg/1507153382631.jpg" media="(max-width: 320px)">
+			<!--[if IE 9]></video><![endif]-->
+			<img src="/content/allegion-us-2/en/home/products/brands/lcn/_jcr_content/banner-par.image.1024.low.jpg/1507153382631.jpg" srcset="/content/allegion-us-2/en/home/products/brands/lcn/jcr:content/banner-par.image.1024.medium.jpg/1507153382631.jpg" alt="" title="" class="hero_img">
+			<noscript>
+		        <img src="/content/allegion-us-2/en/home/products/brands/lcn/_jcr_content/banner-par.image.1024.low.jpg/1507153382631.jpg" alt="" title="" class="hero_img">
+		    </noscript>
+</picture>
+
+            
+       
+	     <div class="overlay-carousel2">
+           <div class="row">
+               <div class="col-lg-12 col-md-10 col-xs-12 security_text">
+                  <div class="content-section">
+                       <img src="/content/dam/allegion-us-2/brand-logos/Product_Pages/LCN_brand_page.png" class="bannerBrandLogo" alt="LCN Logo"/>
+                  </div> 
+                  <div class="content-section banner-text">
+					<p>LCN products can be found in many high-traffic facilities such as schools, hospitals, government buildings, and correctional facilities. With innovative door closure solutions, LCN products are trusted to work seamlessly during critical moments.</p>
+<p>With our high standards of performance, customers have peace of mind knowing their facilities are protected. We have 35 different series of closers and door hardware to choose from with up to 30 years of operating life on our products. LCN has unmatched expertise to meet all safety and security challenges. &nbsp;</p>
+
+                   </div>  
+                  </div>
+                </div>
+            </div>
+         </div>                 
+      </div>        
+     </div>
+</div></div>
+
+
+<div class="content-section t2-t4-content-section" id="">        
+
+    <div class="product-list-content parsys"><div class="productList section">
+
+
+
+		  
+		  
+		  
+
+
+
+
+
+<input id="pageIndexField" type="hidden" value="1" />
+
+
+
+
+
+
+
+
+
+
+<div class="product-brand-lp-content content-section" id="plp-main-container">
+    <a name="top"></a>
+
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+			<!-- product categories content starts-->
+
+                <div class="pblpc-left-col">
+                    <div class="hidden-lg hidden-md hidden-sm col-xs-12" id="btnfilters">
+                       <label>
+                       <span class="glyphicon glyphicon-chevron-down" ></span>Filters
+                       </label>
+                	</div>
+				<nav class="nav multilevel-accordion hidden-xs" role="navigation">
+					<div class="panel-body">
+
+						
+							
+
+
+
+							
+								
+									
+
+										<ul class="nav__list">
+
+												
+
+												<li>
+													 
+														
+															
+														
+														
+													  <input type="radio" id="group-"
+													name="selector1" /> <input id="group--chk"
+													type="checkbox" hidden /> <label
+													for="group-" class="test"
+													data-ref="allegion-us-2:categories/door-control"> Door Control
+														<span class="glyphicon glyphicon-chevron-down level-accor-check"
+														for="group--chk"></span>
+												</label>
+													<div class="check"></div>   
+														
+															<ul class="group-list">
+                                                                
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  <input type="radio"
+																		id="sub-group--1"
+																		name="selector2" /> <input
+																		id="sub-group--1-chk"
+																		type="checkbox" hidden /> <label
+																		for="sub-group--1"
+																		class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted"><span
+																			class="glyphicon glyphicon-chevron-down level-accor-check"
+																			for="sub-group--1-chk"></span>
+																			Surface-Mounted</label>
+																		<div class="check"></div>  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-1"
+																										name="selector3"> <label
+																										for="s-f-option--1-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/heavy-duty">Heavy Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-3"
+																										name="selector3"> <label
+																										for="s-f-option--1-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/light-duty">Light Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-2"
+																										name="selector3"> <label
+																										for="s-f-option--1-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/medium-duty">Medium Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-1"
+																										name="selector3"> <label
+																										for="s-f-option--5-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electrohydraulic">Electrohydraulic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-2"
+																										name="selector3"> <label
+																										for="s-f-option--5-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electromechanical">Electromechanical</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-3"
+																										name="selector3"> <label
+																										for="s-f-option--5-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/pneumatic">Pneumatic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-4"
+																										name="selector3"> <label
+																										for="s-f-option--5-4"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/accessories">Accessories</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+                                                                
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-1"
+																										name="selector3"> <label
+																										for="s-f-option--1-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/heavy-duty">Heavy Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-3"
+																										name="selector3"> <label
+																										for="s-f-option--1-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/light-duty">Light Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-2"
+																										name="selector3"> <label
+																										for="s-f-option--1-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/medium-duty">Medium Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  <input type="radio"
+																		id="sub-group--2"
+																		name="selector2" /> <input
+																		id="sub-group--2-chk"
+																		type="checkbox" hidden /> <label
+																		for="sub-group--2"
+																		class="test" data-ref="allegion-us-2:categories/door-control/overhead-concealed"><span
+																			class="glyphicon glyphicon-chevron-right level-accor-check"
+																			for="sub-group--2-chk"></span>
+																			Overhead-Concealed</label>
+																		<div class="check"></div>  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-1"
+																										name="selector3"> <label
+																										for="s-f-option--5-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electrohydraulic">Electrohydraulic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-2"
+																										name="selector3"> <label
+																										for="s-f-option--5-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electromechanical">Electromechanical</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-3"
+																										name="selector3"> <label
+																										for="s-f-option--5-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/pneumatic">Pneumatic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-4"
+																										name="selector3"> <label
+																										for="s-f-option--5-4"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/accessories">Accessories</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+                                                                
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-1"
+																										name="selector3"> <label
+																										for="s-f-option--1-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/heavy-duty">Heavy Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-3"
+																										name="selector3"> <label
+																										for="s-f-option--1-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/light-duty">Light Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-2"
+																										name="selector3"> <label
+																										for="s-f-option--1-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/medium-duty">Medium Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  <input type="radio"
+																		id="sub-group--3"
+																		name="selector2" /> <input
+																		id="sub-group--3-chk"
+																		type="checkbox" hidden /> <label
+																		for="sub-group--3"
+																		class="test" data-ref="allegion-us-2:categories/door-control/fire-and-life-safety"><span
+																			class="glyphicon glyphicon-chevron-right level-accor-check"
+																			for="sub-group--3-chk"></span>
+																			Fire-And-Life-Safety</label>
+																		<div class="check"></div>  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-1"
+																										name="selector3"> <label
+																										for="s-f-option--5-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electrohydraulic">Electrohydraulic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-2"
+																										name="selector3"> <label
+																										for="s-f-option--5-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electromechanical">Electromechanical</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-3"
+																										name="selector3"> <label
+																										for="s-f-option--5-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/pneumatic">Pneumatic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-4"
+																										name="selector3"> <label
+																										for="s-f-option--5-4"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/accessories">Accessories</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+                                                                
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-1"
+																										name="selector3"> <label
+																										for="s-f-option--1-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/heavy-duty">Heavy Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-3"
+																										name="selector3"> <label
+																										for="s-f-option--1-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/light-duty">Light Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-2"
+																										name="selector3"> <label
+																										for="s-f-option--1-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/medium-duty">Medium Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  <input type="radio"
+																		id="sub-group--4"
+																		name="selector2" /> <input
+																		id="sub-group--4-chk"
+																		type="checkbox" hidden /> <label
+																		for="sub-group--4"
+																		class="test" data-ref="allegion-us-2:categories/door-control/high-security"><span
+																			class="glyphicon glyphicon-chevron-right level-accor-check"
+																			for="sub-group--4-chk"></span>
+																			High Security</label>
+																		<div class="check"></div>  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-1"
+																										name="selector3"> <label
+																										for="s-f-option--5-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electrohydraulic">Electrohydraulic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-2"
+																										name="selector3"> <label
+																										for="s-f-option--5-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electromechanical">Electromechanical</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-3"
+																										name="selector3"> <label
+																										for="s-f-option--5-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/pneumatic">Pneumatic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-4"
+																										name="selector3"> <label
+																										for="s-f-option--5-4"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/accessories">Accessories</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+                                                                
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-1"
+																										name="selector3"> <label
+																										for="s-f-option--1-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/heavy-duty">Heavy Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-3"
+																										name="selector3"> <label
+																										for="s-f-option--1-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/light-duty">Light Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--1-2"
+																										name="selector3"> <label
+																										for="s-f-option--1-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/surface-mounted/medium-duty">Medium Duty</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																			
+																				
+																			
+																		  
+																			
+																		
+																	</li>
+																
+																	
+																	
+																	<li>
+																		 
+																			
+																				
+																			
+																			
+																		  <input type="radio"
+																		id="sub-group--5"
+																		name="selector2" /> <input
+																		id="sub-group--5-chk"
+																		type="checkbox" hidden /> <label
+																		for="sub-group--5"
+																		class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators"><span
+																			class="glyphicon glyphicon-chevron-down level-accor-check"
+																			for="sub-group--5-chk"></span>
+																			Automatic Operators</label>
+																		<div class="check"></div>  
+																			
+																				<ul class="sub-group-list">
+                                                                                    
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-1"
+																										name="selector3"> <label
+																										for="s-f-option--5-1"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electrohydraulic">Electrohydraulic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-2"
+																										name="selector3"> <label
+																										for="s-f-option--5-2"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/electromechanical">Electromechanical</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-3"
+																										name="selector3"> <label
+																										for="s-f-option--5-3"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/pneumatic">Pneumatic</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+														
+																					
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+                                                                                 
+																						
+																						
+
+																						
+																						<li>
+																							<div class="panel-body">
+																								<ul class="s-level">
+																									<li><input type="radio"
+																										id="s-f-option--5-4"
+																										name="selector3"> <label
+																										for="s-f-option--5-4"
+																										class="test" data-ref="allegion-us-2:categories/door-control/automatic-operators/accessories">Accessories</label>
+
+																										<div class="check"></div></li>
+																								</ul>
+																							</div>
+																						</li>
+
+																						
+																						
+                                                                                 
+														
+
+																				</ul>
+																			
+																		
+																	</li>
+																
+                                                                
+															</ul>
+														
+													
+
+												</li>
+                                            
+										</ul>
+                                        <div id="clear" style="cursor:pointer"> Clear All </div>
+									
+								
+
+
+							
+						
+
+
+					</div>
+				</nav>
+			</div>
+			<!-- pblpc-left-col -->
+		</div>
+
+
+		<!--plp right col-->
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+
+			<div class="pblpc-right-col">
+
+				
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-4040xp.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10065_LC_4040XP_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>4040XP Series Closer</h3>
+							<p>This heavy-duty closer is LCN’s most durable surface-mounted closer, designed for the most demanding applications.</p>
+<ul>
+<li>Cast iron</li>
+<li>For high traffic and high abuse</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-4010-4020-4110.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10069_LC_4010_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>4010/4020/4110 Series Closers</h3>
+							<p>These heavy-duty closers are designed specifically for unique applications. They meet the demands for high-traffic installations.</p>
+<ul>
+<li>Cast iron</li>
+<li>Application-specific handed<br>
+<br>
+</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-4030.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10066_LC_4030_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>4030 Series Closer</h3>
+							<p>This heavy-duty closer has a universal design for doors where narrow frames are not a concern.</p>
+<ul>
+<li>Cast iron</li>
+<li>For moderate traffic<br>
+</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-4000t.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10039_LC_4000T_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>4000T Series Closer</h3>
+							<p>This heavy-duty closer is designed&nbsp;to reliably control fire and smoke barrier doors.</p>
+<ul>
+<li>Cast iron</li>
+<li>For use with wall magnet<br>
+</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-4050.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10074_LC_4050_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>4050 Series Closer</h3>
+							<p>This heavy-duty closer is ideal for commercial building applications and competitive specification situations.</p>
+<ul>
+<li>Cast aluminum</li>
+<li>For high-traffic areas<br>
+</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-1460.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10068_LC_1460_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>1460 Series Closer</h3>
+							<p>This universal medium-duty closer offers a variety of options, along with fast and accurate installation.</p>
+<ul>
+<li>Cast iron</li>
+<li>For moderate traffic<br>
+</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-1450.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10073_LC_1450_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>1450 Series Closer</h3>
+							<p>This medium-duty closer is designed to deliver consistent and dependable performance from new construction to aftermarket replacement.</p>
+<ul>
+<li>Cast aluminum</li>
+<li>For moderate traffic<br>
+<br>
+</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-1260.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10067_LC_1260_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>1260 Series Closer</h3>
+							<p>This light-to-medium duty closer is designed to fit into the most common commercial foot print.</p>
+<ul>
+<li>Cast iron</li>
+<li>For low traffic areas<br>
+</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-1250.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10072_LC_1250_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>1250 Series Closer</h3>
+							<p>This light-duty closer combines dependable operation and low maintenance for ideal new construction and aftermarket replacement.</p>
+<ul>
+<li>Cast aluminum</li>
+<li>For low traffic areas<br>
+<br>
+</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+				<div class="row">
+					
+                    <a href="/en/home/products/categories/door-control/lcn-2010-5010.html">
+						<div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
+							<img class="img-responsive" src="/content/dam/allegion-us-2/product-page-images/LCN/WP_10058_LC_2010_Series.jpg" alt="">
+						</div>
+						<div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+							<img src="/content/dam/allegion-us-2/brand-logos/Product_Cards/LCN_product_card.png" class="img-responsive brandimg"/>
+							<h3>2010/5010 Series Closers</h3>
+							<p>These closers are designed for institutional, high-traffic installation. They provide complete concealment in the frame.</p>
+<ul>
+<li>Cast iron</li>
+<li>Heavy-duty closers<br>
+&nbsp;</li>
+</ul>
+
+						</div>
+					</a>
+				</div>
+ 			 
+             
+
+			</div>
+
+
+
+			<!-- pblpc-right-col end-->
+			<!-- Pagination starts -->
+            
+			<div class="pagination">
+
+
+
+				
+
+
+					
+					
+						
+					
+					
+
+					<span class="pagination-button" data-paging-action="previous"
+						data-page-index="0"> <a href="javascript:void(0)" onclick="onClickProductLoad('/en/home/products/brands/lcn/_jcr_content/product-list-content/productlist.html','0');" class="disabled">&laquo; Previous</a>
+					</span>
+
+					<span><b>1-10</b>
+						of 24 records</span>
+
+					<span class="pagination-button" data-paging-action="next"
+						data-page-index="2"> <a href="javascript:void(0)" onclick="onClickProductLoad('/en/home/products/brands/lcn/_jcr_content/product-list-content/productlist.html','2');" class="">Next &raquo;</a>
+					</span>
+
+
+				
+
+			</div>
+
+			
+
+			<!-- Pagination ends -->
+		</div>
+
+	</div>
+
+
+
+
+
+	<!-- products categories content ends-->
+
+
+</div>
+<a class="screentop"></a>
+
+<div class="loader" id="loader" style="display:none"></div>
+<!--overlay div-->
+<div class="overlay-menu"></div>
+
+<!--overlay div>-->
+
+<div style="clear: both"></div>
+
+<style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid;
+  color: rgb(255, 103, 51);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index:991;
+  position: absolute;
+  background:transparent;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}    
+</style>
+
+<script>
+			function getParameterByName(name, url) {
+				if (!url) url = window.location.href;
+				name = name.replace(/[\[\]]/g, "\$&");
+				var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+					results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+			function FindByAttributeValue(attribute, value)    {
+				var All = document.getElementsByTagName('*');
+				for (var i = 0; i < All.length; i++)       {
+					if (All[i].getAttribute(attribute) == value) { return All[i]; }
+				}
+			}
+			var tagName = getParameterByName('tagName');
+			
+			
+			var optionSelected='';
+			//console.log("optionSelected1 " + optionSelected);
+			if(tagName !== null) {
+				optionSelected = tagName;
+				//console.log("optionSelected " + optionSelected);
+			}
+			
+			
+			//console.log("tagName " + tagName);
+			
+			function removeParam(parameter)
+			{
+			  var url=document.location.href;
+			  var urlparts= url.split('?');
+
+			 if (urlparts.length>=2)
+			 {
+			  var urlBase=urlparts.shift(); 
+			  var queryString=urlparts.join("?"); 
+
+			  var prefix = encodeURIComponent(parameter)+'=';
+			  var pars = queryString.split(/[&;]/g);
+			  for (var i= pars.length; i-->0;)               
+				  if (pars[i].lastIndexOf(prefix, 0)!==-1)   
+					  pars.splice(i, 1);
+			  url = urlBase+'?'+pars.join('&');
+			  window.history.pushState('',document.title,url); // added this line to push the new url directly to url bar .
+
+			}
+			return url;
+			}
+			
+			
+			
+    		
+    		var pathh = '/content/allegion-us-2/en/home/products/categories';
+    		var storeCookie = 'allegion-us-2:brand/lcn';
+ 			function getFacetSelection(tagg) {
+                if(pathh == "/content/allegion-us-2/en/home/products/categories" || pathh == "/content/allegion-ca/en/home/products/categories" ){
+					$.cookie('facetSelection', storeCookie , { path: '/' });
+                }
+                if (typeof $.cookie('facetSelection') == 'undefined'  || $.cookie('facetSelection') == "null") {
+                    $.cookie('facetSelection', "" , { path: '/' });
+                }
+				var facetSelectionLocal = $.cookie('facetSelection');
+				facetSelectionLocal = optionSelected;
+		        return facetSelectionLocal;
+			}
+			
+    		function onChecked(tagg) {
+				//console.log("tagg " + tagg);
+                var queryString="?temp=1";
+		        var temp = optionSelected;
+                var currentTag= $(tagg).attr('data-ref');
+				//console.log("currentTag " + currentTag);				
+                var oldBrandStored;
+                var oldCategoryStored;
+		        if($(tagg).attr("data-checked") == "true" && ($(tagg).attr('data-ref').indexOf("allegion-us-2:categories"))!= -1) {
+                    temp = optionSelected;
+					//console.log("temp " + optionSelected);
+                    var count=0;
+                    var newCheckParamCat = temp.split(",");
+                    for (var p=0;p<newCheckParamCat.length;p++)
+                    {
+                        if((newCheckParamCat[p].indexOf("allegion-us-2:categories"))!= -1){
+                        oldCategoryStored=newCheckParamCat[p];
+                            if(currentTag == oldCategoryStored){
+                                count++;
+                                var newValue = oldCategoryStored.substring(0,oldCategoryStored.lastIndexOf("/"));
+                                if(newValue == "allegion-us-2:categories"){
+                                    newValue = "";
+                                }
+                                temp = temp.replace(newCheckParamCat[p],newValue);
+                            } else if(oldCategoryStored.indexOf(currentTag)!= -1){
+                                count++;
+                                var newValue = currentTag.substring(0,currentTag.lastIndexOf("/"));
+                                if(newValue == "allegion-us-2:categories"){
+                                    newValue = "";
+                                }
+                                temp = temp.replace(newCheckParamCat[p],newValue);
+                            } else {
+                                count++;
+                                temp=temp.replace(newCheckParamCat[p],currentTag);
+                            }
+                        }
+                    }
+                    if(temp=="" && count==0){
+                        temp = $(tagg).attr('data-ref');
+                    } else if(temp!="" && count==0){
+						temp = temp+","+$(tagg).attr('data-ref');
+                    }
+		        }
+                if($(tagg).attr("data-checked") == "true" && ($(tagg).attr('data-ref').indexOf("allegion-us-2:brand"))!= -1) {
+                    temp = optionSelected;
+                    var newCheckParamBrand = temp.split(",");
+                    for (var q=0;q<newCheckParamBrand.length;q++)
+                    {
+                        if((newCheckParamBrand[q].indexOf("allegion-us-2:brand"))!= -1){
+							oldBrandStored = newCheckParamBrand[q];
+                            temp=temp.replace(newCheckParamBrand[q],"");
+                        }
+                        temp=temp.replace(",","");
+                    }
+                    if(currentTag != oldBrandStored){ 
+                        if(temp != "" && typeof(temp) != undefined && temp !="undefined"){
+                            temp = temp+","+$(tagg).attr('data-ref');
+                        } else {
+                            temp = $(tagg).attr('data-ref');
+                        }
+                    }
+		        }
+            	if($(tagg).attr("id") == "clear"){
+                	temp="";
+            	}
+		        optionSelected = temp;
+	    		$.cookie('facetSelection', getFacetSelection(tagg), { path: '/' });
+                $.cookie('pageIndexPLP', 1, { path: '/' });
+		    }
+    		function replaceAll(find, replace,str) { 
+		        var re = new RegExp(find, 'g'); 
+		        str = str.replace(re, replace); 
+		        return str; 
+		    }
+    		function onClickProductLoad(currentVal,pageLink){
+				window.location.href="#top";
+                $("#loader").show();
+                $("#loader").css("left", ($(window).width()/2) ).css("top", ($(scroll).height()/2) );
+                $(".overlay-menu").show();
+                $(".overlay-menu").height($(scroll).height()).width($(window).width());  
+                $(".overlay-menu").css("opacity",0.6);
+                if(typeof pageLink != 'undefined' && pageLink != ''){
+			    	$.cookie('pageIndexPLP', pageLink, { path: '/' });
+		    	}
+		        var queryString="?temp=1";
+                if(optionSelected!=""){
+                var tagToBePassed = optionSelected.split(",");
+                    for (var m=0;m<tagToBePassed.length;m++)
+                    {
+                        queryString = queryString+"&tag="+tagToBePassed[m];
+                    }
+                }
+				if(queryString.indexOf('tag')==-1){
+					queryString = queryString +"&tag="+storeCookie;    
+		    		currentVal = currentVal+queryString+"&requestType=ajaxCall&pageIndex="+pageLink;
+				}else{
+                	if(pathh == "/content/allegion-us-2/en/home/products/categories" || pathh == "/content/allegion-ca/en/home/products/categories" ){
+                    	queryString = queryString +"&tag="+storeCookie;
+                	}
+		            currentVal = currentVal+queryString+"&requestType=ajaxCall&pageIndex="+pageLink;
+				}
+		       //Added to maintain the user facet selection order
+		       currentVal = currentVal+ "&checkParam=" + optionSelected;
+			   //console.log("currentVal " + currentVal);
+		        $.ajax({
+		            cache:false,
+		            url: currentVal,
+		            success: function(responseText, opts) {   
+                        $("#loader").hide();
+                        $(".overlay-menu").hide();
+		            	$('.productList').empty();
+		                $('.productList').append(responseText);
+		            },
+		            failure: function(responseText, opts) {
+                        $(".overlay-menu").hide();
+                        $("#loader").hide();
+		            }
+		        });
+			} // end onClickProductLoad()
+$(document).ready(function() {
+    var requestType = "";
+	
+	if(requestType == ""){
+	
+		$.cookie('facetSelection', null, { path: '/' });
+        $.cookie('pageIndexPLP', 1, { path: '/' });
+		$.cookie('cookieLevel1List', null, { path: '/' });
+		$.cookie('cookieLevel2List', null, { path: '/' });
+		$.cookie('cookieLevel3List', null, { path: '/' });
+		$.cookie('cookieBrandIdList', null, { path: '/' });
+		$.cookie('cookieBrandNameList', null, { path: '/' });    
+	}
+    var cookieLevel1List="";
+    var cookieLevel2List="";
+    var cookieLevel3List="";
+    var cookieBrandIdList="";
+    var cookieBrandNameList="";
+    var levelTags1List = "[allegion-us-2:categories/door-control]";
+    var levelTags2List = "[allegion-us-2:categories/door-control/surface-mounted, allegion-us-2:categories/door-control/overhead-concealed, allegion-us-2:categories/door-control/fire-and-life-safety, allegion-us-2:categories/door-control/high-security, allegion-us-2:categories/door-control/automatic-operators]";
+    var levelTags3List = "[allegion-us-2:categories/door-control/surface-mounted/heavy-duty, allegion-us-2:categories/door-control/surface-mounted/light-duty, allegion-us-2:categories/door-control/surface-mounted/medium-duty, allegion-us-2:categories/door-control/automatic-operators/electrohydraulic, allegion-us-2:categories/door-control/automatic-operators/electromechanical, allegion-us-2:categories/door-control/automatic-operators/pneumatic, allegion-us-2:categories/door-control/automatic-operators/accessories]";
+    var brandTagIdListVar = "[allegion-us-2:brand/lcn]";
+    var brandNameListVar = "[LCN]";
+    if(requestType == ""){
+    var plainLevelTags1List = levelTags1List.replace("[","").replace("]","").split(",");
+    for (var i=0;i<plainLevelTags1List.length;i++)
+	{
+        if(cookieLevel1List != ""){
+			cookieLevel1List = cookieLevel1List + "," + plainLevelTags1List[i].trim();
+        }else {
+            cookieLevel1List = plainLevelTags1List[i].trim();
+        }
+	}
+    var plainLevelTags2List = levelTags2List.replace("[","").replace("]","").split(",");
+    for (var j=0;j<plainLevelTags2List.length;j++)
+	{
+        if(cookieLevel2List != ""){
+			cookieLevel2List = cookieLevel2List + "," + plainLevelTags2List[j].trim();
+        }else {
+            cookieLevel2List = plainLevelTags2List[j].trim();
+        }
+	}
+    var plainLevelTags3List = levelTags3List.replace("[","").replace("]","").split(",");
+    for (var k=0;k<plainLevelTags3List.length;k++)
+	{
+        if(cookieLevel3List != ""){
+			cookieLevel3List = cookieLevel3List + "," + plainLevelTags3List[k].trim();
+        }else {
+            cookieLevel3List = plainLevelTags3List[k].trim();
+        }
+	}
+    var plainBrandTagIdListVar = brandTagIdListVar.replace("[","").replace("]","").split(",");
+    for (var x=0;x<plainBrandTagIdListVar.length;x++)
+	{
+        if(cookieBrandIdList != ""){
+			cookieBrandIdList = cookieBrandIdList + "," + plainBrandTagIdListVar[x].trim();
+        }else {
+            cookieBrandIdList = plainBrandTagIdListVar[x].trim();
+        }
+	}
+    var plainBrandNameListVar = brandNameListVar.replace("[","").replace("]","").split(",");
+    for (var y=0;y<plainBrandNameListVar.length;y++)
+	{
+        if(cookieBrandNameList != ""){
+			cookieBrandNameList = cookieBrandNameList + "," + plainBrandNameListVar[y].trim();
+        }else {
+            cookieBrandNameList = plainBrandNameListVar[y].trim();
+        }
+	}
+}
+    if(requestType == ""){
+    $.cookie('cookieLevel1List', cookieLevel1List, { path: '/' });
+    $.cookie('cookieLevel2List', cookieLevel2List, { path: '/' });
+    $.cookie('cookieLevel3List', cookieLevel3List, { path: '/' });
+    $.cookie('cookieBrandIdList', cookieBrandIdList, { path: '/' });
+    $.cookie('cookieBrandNameList', cookieBrandNameList, { path: '/' });
+    }
+    var facetSelectionLocal = "";
+	if (typeof $.cookie('facetSelection') == 'undefined'  || $.cookie('facetSelection') == "null") {
+		$.cookie('facetSelection', getFacetSelection(), { path: '/' });
+        //$.cookie('pageIndexPLP', $("#pageIndexField").val(), { path: '/' });
+	$(".test").each(function(index) {
+             $(this).attr("data-checked","false");
+             $(this).siblings("input[type=radio]").prop("checked",false);
+              $(this).parents(".group-list").parent("li").find("input[type=checkbox]").first().prop("checked",false);
+             $(this).parents(".group-list").parent("li").find("input[type=radio]").first().prop("checked",false);
+             $(this).parents(".sub-group-list").parent("li").find("input[type=checkbox]").first().prop("checked",false);
+             $(this).parents(".sub-group-list").parent("li").find("input[type=radio]").first().prop("checked",false);
+             $(this).siblings("input[type=checkbox]").prop("checked",false);
+         });
+    }else{
+        var afterAjaxSel = $.cookie('facetSelection');
+        var newCategoryChk = afterAjaxSel.split(",");
+                   for (var d=0;d<newCategoryChk.length;d++)
+                    {
+                      $(".test").each(function(index) {
+                     if($(this).attr("data-ref") == newCategoryChk[d]) {
+                         $(this).attr("data-checked","true");
+                         $(this).siblings("input[type=radio]").prop("checked",true);
+                          if(requestType == "ajaxCall"){
+                               $(this).parents(".group-list").parent("li").find("input[type=checkbox]").first().prop("checked",true);
+                               $(this).parents(".group-list").parent("li").find("input[type=radio]").first().prop("checked",true);
+                               $(this).parents(".sub-group-list").parent("li").find("input[type=checkbox]").first().prop("checked",true);
+                               $(this).parents(".sub-group-list").parent("li").find("input[type=radio]").first().prop("checked",true);
+							   $(this).siblings("input[type=checkbox]").prop("checked",true);
+                               $("nav.multilevel-accordion").removeClass("hidden-xs");
+                               $("#btnfilters").find("span").addClass("accord-rotate");
+        				}
+                     }
+		        		});
+                    }
+        if(requestType == "ajaxCall"){
+			$("#group-seperator .group-list").css("overflow","visible");
+        }
+    }
+    //$(document).on("click",".nav__list label",function(event){
+    $(".nav__list label").click(function(){
+		
+        if($(this).parent("li").attr("class")=="category-list"){
+             $(".category-list").find(" > label").attr("data-checked","false");
+        }
+        if($(this).parents("ul").attr("class")=="f-level" ){
+             		$(".f-level").find("label").attr("data-checked","false");
+        }
+        /*if($(this).attr("for")!="brand-group-1"){
+}*/
+        if($(this).attr("for")!="brand-group-1"){
+        $(this).attr("data-checked","true");    
+        $("a.screentop").trigger("click");
+		$("#loader").show();
+        $("#loader").css("left", ($(window).width()/2) ).css("top", ($(scroll).height()/2) );
+        $(".overlay-menu").show();
+        $(".overlay-menu").height($(scroll).height()).width($(window).width());  
+        $(".overlay-menu").css("opacity",0.6);    
+        onChecked(this);
+        onClickProductLoad('/en/home/products/brands/lcn/_jcr_content/product-list-content/productlist.html','');
+        }
+     });
+    $("#clear").click(function(){
+		    $.cookie('facetSelection', null, { path: '/' });
+            $.cookie('pageIndexPLP', 1, { path: '/' });
+            $(".category-list").find(" > label").attr("data-checked","false");
+            $(".f-level").find("label").attr("data-checked","false");
+         if(true){
+        	window.location.href="#top";
+            $("#loader").show();
+            $("#loader").css("left", ($(window).width()/2) ).css("top", ($(scroll).height()/2) );
+            $(".overlay-menu").show();
+            $(".overlay-menu").height($(scroll).height()).width($(window).width());  
+            $(".overlay-menu").css("opacity",0.6);    
+        onChecked(this);
+        onClickProductLoad('/en/home/products/brands/lcn/_jcr_content/product-list-content/productlist.html','');
+        }
+     });
+    $("a.screentop").click(function(){
+		window.location.href="#top";
+    });
+	
+	if(tagName !== null) {
+        //console.log("1 " + FindByAttributeValue("data-ref",tagName));
+		$(FindByAttributeValue("data-ref",tagName)).attr("data-checked","true");
+		//onChecked(FindByAttributeValue("data-ref",tagName));
+		
+		onClickProductLoad('/en/home/products/brands/lcn/_jcr_content/product-list-content/productlist.html','');
+        removeParam("tagName");
+	}
+});
+</script></div>
+
+</div>
+
+
+</div> 
+         </div>
+        	
+
+
+		  
+		  
+		  
+
+<div class="footer-path footer parbase">
+
+
+		  
+		  
+		  
+
+
+
+
+
+
+
+
+<footer>
+        <div class="content-section">
+            <div class="row footer-social-links">
+<!-- footer links start -->
+<div class="main_footer col-lg-10 col-md-10 col-sm-10 col-xs-12">
+   <ul class="footer-links">
+	 
+
+    	
+
+			
+           	
+			
+                <li>
+				
+    				
+                	
+                    	<a href="http://www.allegion.com/corp/en/about.html" target="_blank"> About</a>
+                	
+             	
+                </li>
+			  
+           	
+			
+                <li>
+				
+    				
+                	
+                    	<a href="http://www.allegion.com/corp/en/careers.html" target="_blank"> Careers</a>
+                	
+             	
+                </li>
+			  
+           	
+			
+                <li>
+				
+    				
+             			<a href="/en/home/support/contact-us.html"> Contact</a>
+                	
+                	
+             	
+                </li>
+			  
+           	
+			
+                <li>
+				
+    				
+                	
+                    	<a href="https://usmarketing.allegion.com/acton/fs/blocks/showLandingPage/a/17877/p/p-0110/t/page/fm/0" target="_blank"> Mailing List</a>
+                	
+             	
+                </li>
+			  
+
+	
+
+
+   	</ul>
+</div>
+<!-- footer links end -->
+
+<!-- social links start -->
+<div class="social-links col-lg-2 col-md-2 col-sm-2 col-xs-12">
+    
+   <ul class="social-icon">
+	
+    
+        
+            
+            
+
+            <li>
+            
+                
+                
+                    <a href="https://twitter.com/AllegionUS" target="_blank" title="Twitter"> <i class="fa fa-twitter" aria-hidden="true" title="Twitter"></i></a>
+                
+            
+            </li>
+        
+            
+            
+
+            <li>
+            
+                
+                
+                    <a href="https://www.linkedin.com/company/allegion-us" target="_blank" title="LinkedIn"> <i class="fa fa-linkedin-square" aria-hidden="true" title="LinkedIn"></i></a>
+                
+            
+            </li>
+        
+            
+            
+
+            <li>
+            
+                
+                
+                    <a href="https://www.youtube.com/user/allegionus" target="_blank" title="Youtube"> <i class="fa fa-youtube" aria-hidden="true" title="Youtube"></i></a>
+                
+            
+            </li>
+        
+    
+
+</ul>
+            </div>
+    </div>
+<!-- social links end -->
+
+<div class="col-lg-12">  
+            	<ul class="row-fluid navigation ">
+                	                
+                                                               
+                            
+                               
+                                   
+								
+                                    <li class="navigation-item "><a target="_blank" href="https://www.allegion.com/corp/en/footer/privacy-statement.html">Privacy</a></li>
+                                
+                              
+                            
+                               
+                                   
+								
+                                    <li class="navigation-item "><a target="_blank" href="https://www.allegion.com/corp/en/footer/cookies-policy.html">Cookie Policy</a></li>
+                                
+                              
+                            
+                               
+                                   
+								
+                                    <li class="navigation-item "><a target="_blank" href="https://www.allegion.com/corp/en/footer/policies.html">Policies</a></li>
+                                
+                              
+                                           
+                                        
+                    
+            	</ul>        
+            <p>© Allegion plc, 2017 | Block D, Iveagh Court, Harcourt Road, Dublin 2, Co. Dublin, Ireland.</p>
+<p>REGISTERED IN IRELAND WITH LIMITED LIABILITY REGISTERED NUMBER 527370</p>
+<p>Allegion is an equal opportunity and affirmative action employer.</p>
+
+        </div>
+            <div style="clear:both"></div>
+	</div>
+
+ </footer>
+</div>
+
+
+
+   		
+
+
+		  
+		  
+		  
+
+	<script type="text/javascript" src="/etc/designs/allegion-us-2/clientlibs/main.min.js"></script>
+
+
+		<div class="cloudservices servicecomponents"><script type="text/javascript">_satellite.pageBottom();</script>
+</div>
+
+   		<!--Inbenta Integration-->
+    	<script src="//us2allegion.inbenta.com/jsonp/inbenta.js"></script>
+   		
+</body>
+
+</html>
