@@ -36,7 +36,7 @@ componenteWillUnmount() {
 
 const App = () => {
 
-    const [firebaseInitialized, setFirebaseInitialized] = useState(false)
+    const [firebaseInitialized, setFirebaseInitialized] = useState(false);
 
     useEffect(() => {        
         firebase.isInitialized().then(val => {

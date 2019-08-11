@@ -1,28 +1,35 @@
-<<<<<<< HEAD
-import React from 'react';
-import '../css/Compras.css';
+import React, { Component } from 'react';
 
 //import { Navlink } from 'react-router-dom'; 
 import { connect } from 'react-redux';
 
-/*const Carrito = props => (
+/*
+ *
+//onClick= {this.handleComprar}
+
+                    <div> {active &&
+                        <Compras onAddComprar={this.state.comprar}>
+                        <h1> Compras </h1>
+                        </Compras>
+                     } </div>
+ * 
+ * function handleComprar = (index) => {
+    event.preventDefault();
+    this.props.onAddComprar(this.state);
+    if (window.confirm('Deseas agregar este producto al carrito de compras')) {
+        setActive(!active)
+        this.setState({
+            comprar: this.state.compras.filter((event, i) => {
+                return i == index
+            })
+        })
+    }
+},
+ * const Carrito = props => (
     compras = {props.onAddComprar}
-    <div> {active &&
-) */ 
-
-const Compras = props => {
-    this.state = { title: 'Compras',}   
-
+    const [active, setActive] = true;
     const compra = props.location.state;
-
-    return (
-=======
-import React, { Component } from 'react';
-import '../css/Compras.css';
-
-
-/*const Carrito = props => (
-    compras = {props.onAddComprar}
+    <div> {active &&
 ) */ 
 
 class Compras extends Component {
@@ -35,7 +42,6 @@ class Compras extends Component {
 
     render() {
         return (
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
             <div className="Compras">
                 <div className="Compras-container">
                     <header className="Compras-header">
@@ -44,17 +50,13 @@ class Compras extends Component {
                     <nav className="Compras-app navbar navbar-dark bg-dark">
                         <h2>Articulos</h2>
                         <span className="badge badge-pill badge-light ml-2">
-<<<<<<< HEAD
-                            <FichaProducto compra={compra}/>    
-=======
-                            
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
+                            <FichaProducto compra={compra} />
                         </span>
                     </nav>
                 </div>
             </div>
-<<<<<<< HEAD
-    );
+        );
+    }
 }
 // {this.state.compras.lenght}
 
@@ -63,12 +65,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(null, mapDispatchToProps)(Compras);
-=======
-        );
-    }
-}
-
-// {this.state.compras.lenght}
-
-export default Compras;
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629

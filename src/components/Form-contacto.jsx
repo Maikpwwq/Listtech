@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 import React, { Component, useState } from 'react';
-=======
-import React, { Component } from 'react';
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 import PropTypes from 'prop-types';
 //import Textarea from './use/Textarea';
 /*import '../css/Formcontacto.css';*/
 
-<<<<<<< HEAD
 import useSendForm from '../hooks/SendForm';
 import { connect } from 'react-redux';
 
@@ -16,13 +11,7 @@ import { storage, database } from '../../init-firebase';
 import styled from 'styled-components'
 
 /* Style FromCont */
-const FormContStyle = styled.div`
-=======
-import styled from 'styled-components'
-
-/* Style FromCont */
 const FormContStyle = styled.form`
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
     padding: 3px 3px;
     font-size: 24px;
     font-weight: 360;
@@ -33,7 +22,6 @@ const FormContStyle = styled.form`
     box-sizing: border-box;   
     height: auto;
     color: black;
-<<<<<<< HEAD
     background: #232526;  
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #414345, #232526);  
@@ -43,7 +31,6 @@ const FormContStyle = styled.form`
 `;
 
 const FormContacto = styled.form`
-=======
     background: #232526;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -51,7 +38,6 @@ const FormContacto = styled.form`
 `;
 
 const FormContacto = styled.div`
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
     vertical-align: bottom;
     width: 100%;
     height: 100%;
@@ -95,7 +81,6 @@ class Formcontacto extends Component {
             nombre: 'Nombre',
             email: 'Ingrese una cuenta de correo valida',
             telefono: 'Su numero de contacto',
-<<<<<<< HEAD
             mensaje: 'Especifique el requerimiento estaremos en contacto pronto',
             contactar: 'Enviar',
             SendForm: false,
@@ -103,14 +88,7 @@ class Formcontacto extends Component {
         this.SendForm = this.SendForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.onChange = this.onChange.bind(this);   
-=======
-            mensaje:'Especifique el requerimiento estaremos en contacto pronto',
-            contactar: ''
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);        
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
+        this.onChange = this.onChange.bind(this);           
     }
 
     static defaultProps = {
@@ -125,7 +103,6 @@ class Formcontacto extends Component {
 
     state = {
         value: this.props.value
-<<<<<<< HEAD
     };   
 
     handleChange = (event) => {
@@ -137,23 +114,12 @@ class Formcontacto extends Component {
                 alert("Tu numero telefónico deben ser números");
             }
         }
-=======
-    };
-
-    handleChange = (event) => {
-    // handleChange(e) {
-        // const {}=;
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
         // El evento altera los datos guardados 
         this.setState({
             [name]: value
         });
         console.log(this.state, 'Escribiendo ...');
-<<<<<<< HEAD
-    };    
+    };  
 
     onChange = (event) => {
         const file = event.target.files[0];
@@ -199,29 +165,7 @@ class Formcontacto extends Component {
                         <FormContheader>
                             {this.state.title}
                         </FormContheader>
-=======
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(this.state, 'Enviando la data ...');
-        alert('Se envio correctamente su solicitud: ' + this.state.value);
-    }
-
-    render() {
-        return (
-            <FormContStyle
-                onSubmit={this.handleSubmit}
-                action="/Formcontacto"
-                method="post"
-                >
-                <FormContacto>
-                    <FormContheader>
-                        {this.state.title}
-                    </FormContheader>
-                    <FormContactoGrupo>
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
-                        <Titulo>
+                          <Titulo>
                             Titulo del mensaje:
                         </Titulo>
                         <Textinput
@@ -262,21 +206,13 @@ class Formcontacto extends Component {
                             Email: 
                         </Titulo>
                         <Textinput
-<<<<<<< HEAD
                             type="email"
-=======
-                            type="text"
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                             name="email"
                             value={this.state.email}
                             onChange={this.handleChange}
                             className="form-control"                           
                             defaultChecked=""
-<<<<<<< HEAD
                             placeholder="Ingrese su direccio&#769;n de email"
-=======
-                            placeholder="Ingrese su direccion de email"
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                         /><br />
                         <Titulo>
                             Nu&#769;mero de contacto:
@@ -300,7 +236,6 @@ class Formcontacto extends Component {
                             name="mensaje"
                             value={this.state.mensaje}
                             onChange={this.handleChange}
-<<<<<<< HEAD
                             className="materialize-textarea"                            
                             defaultChecked=""
                             placeholder="Ingrese una descripcion de su Requerimiento"
@@ -310,7 +245,6 @@ class Formcontacto extends Component {
                             type="submit"
                             name="contactar"
                             value={this.state.contactar}
-=======
                             className="form-control"                            
                             defaultChecked=""
                             placeholder="Ingrese una descripcion de su Requerimiento"
@@ -320,24 +254,19 @@ class Formcontacto extends Component {
                             type="submit"
                             name="contactar"
                             value="Enviar"
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                             onChange={this.handleChange}
                             className="btn btn-primary"                            
                             defaultChecked=""
                             placeholder="Enviar"
                         />
                     </FormContactoGrupo>
-<<<<<<< HEAD
                     }
-=======
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                 </FormContacto>
             </FormContStyle>
         )
     };
 }
 
-<<<<<<< HEAD
 const mapStateToProps = state => {
     return {
         user: state.user,
@@ -345,6 +274,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Formcontacto);
-=======
-export default Formcontacto;
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629

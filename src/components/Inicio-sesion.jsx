@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { Component } from 'react';
 //import { useState } from 'react';
 
@@ -14,10 +14,6 @@ import { database } from '../../init-firebase.js';
 import { connect } from 'react-redux';
 import { setUser, setLogin } from '../actions/actions'
 
-=======
-import React from 'react';
-import logo from '../imagenes/Listtech-Logo.png';
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 import styled from 'styled-components'
 
 /* Style InicioSesion */
@@ -71,13 +67,10 @@ const LoginDivider = styled.div`
     margin: 1rem auto;
 `;
 
-<<<<<<< HEAD
 const LoginWithEmail = styled.form`
     
 `;
 
-=======
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 const FormInput = styled.div`
 
     .input{
@@ -110,7 +103,6 @@ const FooterRegistro = styled.div`
     
 `;
 
-<<<<<<< HEAD
 class InicioSesion extends Component {
 
     constructor(props) {

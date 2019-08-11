@@ -3,31 +3,24 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); 
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
 const { DuplicatesPlugin } = require("inspectpack/plugin");
-<<<<<<< HEAD
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const Dotenv = require("dotenv-webpack");
-=======
-var DashboardPlugin = require("webpack-dashboard/plugin");
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 
 module.exports = {
     // mode: 'production', //'development'
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
-<<<<<<< HEAD
         publicPath: '/',
         filename: 'bundle.js'
     },
     resolve: {
         extensions: ['web.js', 'js', 'web.ts', 'ts', 'web.tsx', 'tsx', 'json', 'web.jsx', 'jsx', 'node'],
-=======
         publicPath: "/build/",
         filename: 'bundle.js'
     },
     resolve: {
         extensions: ['.json', '.js', '.jsx', '.css'],
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
         alias: {
             'react': path.resolve('./node_modules/react'),
             'react-dom': path.resolve('./node_modules/react-dom'),
@@ -44,25 +37,17 @@ module.exports = {
                 use: ['babel-loader', 'astroturf/loader'],                          
 
                 test: /\.html$/,
-<<<<<<< HEAD
                 exclude: /node_modules/,
-=======
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                 use: [{
                     loader: "html-loader",
                 }],
 
                 test: /\.(css|scss)$/,
-<<<<<<< HEAD
                 exclude: /node_modules/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'style-loader', 'postcss-loader'],
                 options: {
                     importLoaders: 1,
                 }
-
-=======
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'style-loader', 'postcss-loader'],
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
                 use: [{
@@ -74,12 +59,9 @@ module.exports = {
             }
         ]
     },
-<<<<<<< HEAD
     devServer: {
         historyApiFallback: true,
     },
-=======
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
     plugins: [
         new HtmlWebPackPlugin({
             template: "./build/index.html/",
@@ -104,9 +86,6 @@ module.exports = {
             verbose: false
         }),
         new DashboardPlugin(),
-<<<<<<< HEAD
         new Dotenv(), 
-=======
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
     ] 
 }

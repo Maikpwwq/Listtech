@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 /*import '../css/Social.css';*/
 /*import styled, { ThemeProvider } from 'styles-components';*/
 
-
-<<<<<<< HEAD
 import logofacebook from '../imagenes/redes/facebook';
-=======
 import logofacebook from '../imagenes/redes/facebook.png';
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
 import logoinstagram from '../imagenes/redes/instagram.png';
 import logotwitter from '../imagenes/redes/twitter.png';
 import logoyoutube from '../imagenes/redes/youtube.png';

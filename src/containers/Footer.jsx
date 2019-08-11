@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/Footer.css';
 
 import Social from '../components/Social';
 import Contacto from '../components/Contacto.jsx';
@@ -18,7 +17,6 @@ import indicador from '../imagenes/redes/indentador.png';
 import styled from 'styled-components'
 
 const Footerstyle = styled.footer`
-<<<<<<< HEAD
     background - color: #3c3c3c;
     padding: 10px;
     text-align: center;
@@ -29,8 +27,6 @@ const Footerstyle = styled.footer`
 `;
 
 const FooterComponent = styled.footer`
-=======
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
     text-align: right;
     box-sizing: border-box;
     width: 100%;
@@ -178,85 +174,78 @@ class Footer extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
-            <Footerstyle><FooterComponent>
-=======
             <Footerstyle>
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
-                <Footerrow>
-                    <FooterHeader className="Footer-header">
-                        {this.props.title}
-                    </FooterHeader>            
-                    <Footercolumns>                        
-                        <FooterMenu>
-                            <ul>
-                                <li>  
-                                    <EnlacesMenu href="/mas/informacion"><img src={indicador} alt="indicador" />
-                                        <h2>Informacio&#769;n</h2></EnlacesMenu>
-                                </li>
-                                <li>        
-                                    <EnlacesMenu href="/mas/politicas-privacidad"> <img src={indicador} alt="indicador" />
-                                        <h3>Poli&#769;ticas de privacidad</h3></EnlacesMenu>                               
-                                </li>
-                                <li>  
-                                    <EnlacesMenu href="/mas/promociones"><img src={indicador} alt="indicador" />
-                                        <h3>Promociones</h3></EnlacesMenu>
-                                </li>
-                                <li>  
-                                    <EnlacesMenu href="mas/eventos"><img src={indicador} alt="indicador" />
-                                        <h3>Eventos</h3></EnlacesMenu>
-                                </li>                                                                                                                                        
-                            </ul>
-                            <Contacto />
-                        </FooterMenu>
-                    </Footercolumns>
-                    <Footercolumns>
-                        <FooterSiguenos>                            
-                            <ul>                    
-                                <li>                                                                        
-                                     <FooterLogo src={logo} alt=""/>						                
-                                </li>       
-                            </ul>
-                            <Social />
-                            <Formcontacto />
-                        </FooterSiguenos>
-                    </Footercolumns>
-                </Footerrow>
+                <FooterComponent>
+                    <Footerrow>
+                        <FooterHeader className="Footer-header">
+                            {this.props.title}
+                        </FooterHeader>
+                        <Footercolumns>
+                            <FooterMenu>
+                                <ul>
+                                    <li>
+                                        <EnlacesMenu href="/mas/informacion"><img src={indicador} alt="indicador" />
+                                            <h2>Informacio&#769;n</h2></EnlacesMenu>
+                                    </li>
+                                    <li>
+                                        <EnlacesMenu href="/mas/politicas-privacidad"> <img src={indicador} alt="indicador" />
+                                            <h3>Poli&#769;ticas de privacidad</h3></EnlacesMenu>
+                                    </li>
+                                    <li>
+                                        <EnlacesMenu href="/mas/promociones"><img src={indicador} alt="indicador" />
+                                            <h3>Promociones</h3></EnlacesMenu>
+                                    </li>
+                                    <li>
+                                        <EnlacesMenu href="mas/eventos"><img src={indicador} alt="indicador" />
+                                            <h3>Eventos</h3></EnlacesMenu>
+                                    </li>
+                                </ul>
+                                <Contacto />
+                            </FooterMenu>
+                        </Footercolumns>
+                        <Footercolumns>
+                            <FooterSiguenos>
+                                <ul>
+                                    <li>
+                                        <FooterLogo src={logo} alt="" />
+                                    </li>
+                                </ul>
+                                <Social />
+                                <Formcontacto />
+                            </FooterSiguenos>
+                        </Footercolumns>
+                    </Footerrow>
 
-                <Chat>
-                    <ChatWhatsapp href="https://api.whatsapp.com/send?phone=573156787036"
-                        class="btn_chat" target="_blank" rel="noopener noreferrer"
+                    <Chat>
+                        <ChatWhatsapp href="https://api.whatsapp.com/send?phone=573156787036"
+                            class="btn_chat" target="_blank" rel="noopener noreferrer"
                         >Chatea en li&#769;nea
                     </ChatWhatsapp>
-                </Chat>
+                    </Chat>
 
-                <FormasPago>
-                    <ListaPago>
-                        <MediosPago>
-                            <img src={Pse} alt="Pse" /></MediosPago>
-                        <MediosPago>
-                            <img src={Visa} alt="Visa" /></MediosPago>
-                        <MediosPago>
-                            <img src={AmericanExpress} alt="americanexpress" /></MediosPago>
-                        <MediosPago>
-                            <img src={MasterCard} alt="mastercard" /></MediosPago>
-                        <MediosPago>
-                            <img src={Paypal} alt="paypal" /></MediosPago>
-                    </ListaPago>
-                </FormasPago>
+                    <FormasPago>
+                        <ListaPago>
+                            <MediosPago>
+                                <img src={Pse} alt="Pse" /></MediosPago>
+                            <MediosPago>
+                                <img src={Visa} alt="Visa" /></MediosPago>
+                            <MediosPago>
+                                <img src={AmericanExpress} alt="americanexpress" /></MediosPago>
+                            <MediosPago>
+                                <img src={MasterCard} alt="mastercard" /></MediosPago>
+                            <MediosPago>
+                                <img src={Paypal} alt="paypal" /></MediosPago>
+                        </ListaPago>
+                    </FormasPago>
 
-                <FooterCopyright>
-                    <p> Copyright 2019 | Listtech SAS Todos los derechos reservados</p>
-                </FooterCopyright>
-<<<<<<< HEAD
-            </FooterComponent>
-=======
+                    <FooterCopyright>
+                        <p> Copyright 2019 | Listtech SAS Todos los derechos reservados</p>
+                    </FooterCopyright>
+                </FooterComponent>
 
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
             </Footerstyle>            
         );
     }
 }
 
 export default Footer;                               
-
