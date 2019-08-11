@@ -223,7 +223,7 @@ class InicioSesion extends Component {
 
                             <LoginFacebook
                                 data-reactid="4">
-                                <button onClick={loginFacebook}>
+                                <button onClick={this.loginFacebook}>
                                     <a href="/login/facebook/"
                                         className="btn-fcbk btn--big btn--responsive"
                                         data-reactid="5">
@@ -236,7 +236,7 @@ class InicioSesion extends Component {
 
                             <LoginGmail
                                 data-reactid="8">
-                                <button onClick={loginGmail}>
+                                <button onClick={this.loginGmail}>
                                     <a href="/login/gmail/"
                                         class="btn-twt btn--big btn--responsive"
                                         data-reactid="9">
