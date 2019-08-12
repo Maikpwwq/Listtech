@@ -1,7 +1,6 @@
 import React, { Component, useState } from 'react';
 import PropTypes from 'prop-types';
 //import Textarea from './use/Textarea';
-/*import '../css/Formcontacto.css';*/
 
 import useSendForm from '../hooks/SendForm';
 import { connect } from 'react-redux';
@@ -37,7 +36,7 @@ const FormContacto = styled.form`
 
 `;
 
-const FormContacto = styled.div`
+const FormContactoContainer = styled.div`
     vertical-align: bottom;
     width: 100%;
     height: 100%;
@@ -149,7 +148,7 @@ class Formcontacto extends Component {
 
         return (           
             <FormContStyle>
-                <FormContacto
+                <FormContactoContainer
                     onSubmit={this.handleSubmit}
                     action="/Formcontacto"
                     method="post"
@@ -261,7 +260,7 @@ class Formcontacto extends Component {
                         />
                     </FormContactoGrupo>
                     }
-                </FormContacto>
+                </FormContactoContainer>
             </FormContStyle>
         )
     };

@@ -42,6 +42,26 @@ const ColumnaIzquierda = styled.div`
     
 `;
 
+
+/*
+ firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        console.log(firebaseUser);
+        btnLogout.classList.remove('hide');
+    }
+    else {
+        console.log('not logged in');
+        btnLogout.classList.add('hide');
+    }
+});
+
+
+    // Evento Cerrar Sesion
+    btnLogout.addEventListener('click', e => {
+        auth().signOut();
+    });
+*/
+
 class Perfil extends Component {    
 
     constructor(props) {

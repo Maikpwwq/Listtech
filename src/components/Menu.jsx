@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/Marcas.css';
+
 import logo from '../imagenes/Listtech-Logo.png';
 
 import { NavLink } from 'react-router-dom';
@@ -139,10 +139,6 @@ const Contenido = styled.a`
     }
 `;
 
-/*const Menulink = styled.logo`
-    color: #61dafb;
-`;*/
-
 class Menu extends Component {
     constructor() {
         super();
@@ -151,11 +147,11 @@ class Menu extends Component {
             titulo: '',
         }
     }
-
-    //console.log('Renderizado Menu', { this.state.title }, { this.props.titulo })    
-
+   
     render() {
-        
+
+        console.log('Renderizado Menu')        
+
         return (
             <MenuStyle>
                 <Menunav>                                            

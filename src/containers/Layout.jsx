@@ -4,6 +4,7 @@ import Footer from '../containers/Footer.jsx';
 import Header from '../containers/Header.jsx';
 import Cuerpo from '../containers/Cuerpo.jsx';
 
+/*import styled, { ThemeProvider } from 'styles-components';*/
 import styled from 'styled-components'
 
 /*background - attachment: fixed;

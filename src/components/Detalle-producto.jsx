@@ -21,7 +21,24 @@ const DetalleProductoContent = styled.div`
 const DetalleProducto = ({ Producto }) => {
 
     const { index, titulo, imagen, precio, marca, descripcion, garantia, solicitud } = Producto
+    /*
+    const [modal, setModal] = useState(false);
+    const showModal = () => {
+        setModal(!modal)
+    }
 
+    <Modal
+        show={modal}
+        close={showModal}
+    >
+        {props.login ? <Registro />
+            :
+            <div className="Modal-login">
+                <InicioSesion />
+            </div>
+        }
+    </Modal>
+    */
     return (
         <DetalleProductoStyled>
 

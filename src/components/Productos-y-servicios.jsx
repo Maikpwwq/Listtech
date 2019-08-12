@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/Productosyservicios.css';
 
 //import * as{ default as Productos } from '../Productos.json';
 //import * as{ default as Compras } from '../Compras.json';
@@ -96,11 +95,8 @@ class Productosyservicios extends Component {
         }   
     }               
 
-<<<<<<< HEAD
     id = props.match.params.id; 
 
-=======
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
     render() {
 
         return (
@@ -111,27 +107,18 @@ class Productosyservicios extends Component {
                     </ProductosHeader>
                     <ProductosyServiciosGrupo>
                         <ProductosyServiciosLinea
-<<<<<<< HEAD
+
                         > 1.	LI&#769;NEA CERRADURAS ELECTR&#769;NICAS
                             <Lineaul>                                                                
                                 <Lineali> Cerraduras puertas de seguridad </Lineali>
                                 <Lineali> Cerraduras comerciales </Lineali>
                                 <Lineali> Conjuntos para entrada principal </Lineali>
                                 <Lineali> Automatizacio&#769;n vehicular - Barreras - Antenas </Lineali >
-=======
-                            >CERRADURAS ELE&#769;CTRONICAS
-                            <Lineaul>                                
-                                <Lineali> Automatizacio&#769;n vehicular </Lineali >
-                                <Lineali> Cerraduras residenciales </Lineali>
-                                <Lineali> Cerraduras comerciales </Lineali>
-                                <Lineali> Conjuntos para entrada principal </Lineali>
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
-                                <Lineali> Puertas inteligentes </Lineali >
                             </Lineaul>                
                         </ProductosyServiciosLinea>
 
                         <ProductosyServiciosLinea
-<<<<<<< HEAD
+
                         > 2.	LI&#769;NEA CERRADURAS MECA&#769;NICAS
                             <Lineaul>
                                 <Lineali> Cerraduras puertas de seguridad </Lineali>
@@ -151,38 +138,11 @@ class Productosyservicios extends Component {
                                 <Lineali> Pivotes Continuos </Lineali >
                                 <Lineali> Bisagras de piso</Lineali >
                                 <Lineali> Bisagras para puertas</Lineali >                                
-=======
-                            >CERRADURAS MECA&#769;NICAS
-                            <Lineaul>
-                                <Lineali> Cerraduras residenciales </Lineali>
-                                <Lineali> Cerraduras comerciales </Lineali>
-                                <Lineali> Conjuntos para entrada principal </Lineali>
-                                <Lineali> Barreras vehiculares </Lineali >
-                                <Lineali> Antenas vehiculares </Lineali >
-                                <Lineali> Torniquetes </Lineali >
-                                <Lineali> Motores para garaje </Lineali >
-                                <Lineali> Motores abatibles </Lineali >
-                                <Lineali> Motores corredizos </Lineali >
-                                <Lineali> Motores levadizos </Lineali >
-                                <Lineali> Sistemas de intrusio&#769;n </Lineali >                                
-                                <Lineali> Puertas de seguridad </Lineali >
-                                <Lineali> Puertas de vidrio </Lineali >
-                                <Lineali> Puertas tipo reja </Lineali >
-                                <Lineali> Puertas seccionales </Lineali >
                             </Lineaul>                
                         </ProductosyServiciosLinea>
 
                         <ProductosyServiciosLinea
-                        >CIERRA PUERTAS
-                            <Lineaul>
-                                <Lineali> Brazos hidra&#769;ulicos </Lineali >
-                                <Lineali> Cierrapuertas de piso</Lineali >
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
-                            </Lineaul>
-                        </ProductosyServiciosLinea>
 
-                        <ProductosyServiciosLinea
-<<<<<<< HEAD
                         > 4.	LI&#769;NEA SALIDAS PUSH EMERGENCIA
                             <Lineaul>
                                 <Lineali> Vidrios laminados </Lineali >
@@ -190,59 +150,30 @@ class Productosyservicios extends Component {
                                 <Lineali> Barras antipatico </Lineali >
                                 <Lineali> Puertas cortafuegos </Lineali >
                                 <Lineali> Pestillos de tracción </Lineali >                                 
-=======
-                        >BISAGRAS Y PIVOTES
-                            <Lineaul>
-                                <Lineali> Pivotes Continuos </Lineali >
-                                <Lineali> Bisagras de piso</Lineali >
-                                <Lineali> Bisagras para puertas</Lineali >
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                             </Lineaul>
                         </ProductosyServiciosLinea>
 
                         <ProductosyServiciosLinea
-<<<<<<< HEAD
+
                         > 5.	LI&#769;NEA CIERRA PUERTAS
                             <Lineaul>
                                 <Lineali> Brazos hidra&#769;ulicos </Lineali >
                                 <Lineali> Cierrapuertas de piso</Lineali >                                
-=======
-                        >REDES CABLEADO ESTRUCTURADO
-                            <Lineaul>
-                                <Lineali> Sistemas CCTV  </Lineali >
-                                <Lineali> Control de acceso </Lineali >
-                                <Lineali> Cableado estructurado </Lineali >
-                                <Lineali> Plantas telefe&#769;nicas </Lineali >
-                                <Lineali> Video porteros </Lineali >
-                                <Lineali> Ca&#769;maras de seguridad </Lineali >
-                                <Lineali> Alarmas ala&#769;mbricas  </Lineali >
-                                <Lineali> Alarmas inala&#769;mbricas </Lineali >
-                                <Lineali> Cerco ele&#769;ctrico perimetral </Lineali >
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                             </Lineaul>
                         </ProductosyServiciosLinea>
 
                         <ProductosyServiciosLinea
-<<<<<<< HEAD
+
                         > 6.	LI&#769;NEA SENSORES Y CANTONERAS ELECTRO&#769;NICAS
                             <Lineaul>
                                 <Lineali> Sensores Movimiento-Proximidad-Impacto-Humo-Contacto </Lineali >
                                 <Lineali> Cantoneras - Huelgas Electrónicas </Lineali >
                                 <Lineali> Interruptores </Lineali >
                                 <Lineali> Pulsadores electromagnéticos para puertas </Lineali >
-=======
-                        >SALIDAS PUSH EMERGENCI&#769;A
-                            <Lineaul>
-                                <Lineali> Vidrios laminados </Lineali >
-                                <Lineali> Vertical Rod </Lineali >
-                                <Lineali> Barras antipatico </Lineali >
-                                <Lineali> Puertas cortafuegos </Lineali >
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                             </Lineaul>               
                         </ProductosyServiciosLinea>
                 
                         <ProductosyServiciosLinea
-<<<<<<< HEAD
                         > 7.	LI&#769;NEA REDES CABLEADO ESTRUCTURADO
                             <Lineaul>
                                 <Lineali> Sistemas de intrusio&#769;n </Lineali >            
@@ -253,18 +184,11 @@ class Productosyservicios extends Component {
                                 <Lineali> Video Porteros – DVR - UVR - Plantas telefónicas - Sirenas </Lineali >
                                 <Lineali> Ca&#769;maras de seguridad – Bala - Domos </Lineali >
                                 <Lineali> Alarmas ala&#769;mbricas e inala&#769;mbricas </Lineali >                                
-=======
-                        >SENSORES Y HUELGAS ELECTRONICAS
-                            <Lineaul>
-                                <Lineali> Sensores </Lineali >
-                                <Lineali> ES </Lineali >
-                                <Lineali> Electroimanes </Lineali >
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                             </Lineaul>
                         </ProductosyServiciosLinea>
 
                         <ProductosyServiciosLinea
-<<<<<<< HEAD
+
                         > 8.	LI&#769;NEA ACCESO SUSPENDIDO EN ALTURAS
                             <Lineaul>
                                 <Lineali> Andamios ele&#769;ctricos certificados </Lineali >
@@ -277,22 +201,6 @@ class Productosyservicios extends Component {
                                 <Lineali> Motores para plataformas Y Cajas de control central </Lineali >                                
                                 <Lineali> Torre Gru&#769;as </Lineali >
                                 <Lineali> Mecanismos de suspensio&#769;n </Lineali >                               
-=======
-                            >ACCESO SUSPENDIDO EN ALTURAS
-                            <Lineaul>
-                                <Lineali> Andamios ele&#769;ctricos certificados </Lineali >
-                                <Lineali> Plataformas Colgantes </Lineali >
-                                <Lineali> Plataformas Cremallera </Lineali >
-                                <Lineali> Elevadores(Ascensores) </Lineali >
-                                <Lineali> Unidades permanentes en edificios </Lineali >
-                                <Lineali> Unidad de mantenimiento BMU </Lineali >
-                                <Lineali> Sistemas tipo pescante </Lineali >
-                                <Lineali> Torre Gr�as </Lineali >
-                                <Lineali> Sistema permanente de suspensio&#769;n pra&#769;ctico y seguro </Lineali >
-                                <Lineali> Plataformas temporales suspendidas (TSP) </Lineali >
-                                <Lineali> Traccio&#769;n por carga autoalimentada Motores para plataformas  </Lineali >
-                                <Lineali> Caja de control central </Lineali >
-                                <Lineali> Cable de acero </Lineali >
                             </Lineaul>
                         </ProductosyServiciosLinea>                
 
@@ -313,7 +221,6 @@ class Productosyservicios extends Component {
                                 <Lineali> Cuerdas este&#769;ticas y dina&#769;micas </Lineali >
                                 <Lineali> Kits de rescate </Lineali >
                                 <Lineali> Freno de seguridad </Lineali >
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
                             </Lineaul>
                         </ProductosyServiciosLinea>
                     </ProductosyServiciosGrupo>                                                

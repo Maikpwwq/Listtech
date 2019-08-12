@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-/*import '../css/Contacto.css';*/
 
 import styled from 'styled-components'
 

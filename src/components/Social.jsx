@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-/*import '../css/Social.css';*/
-/*import styled, { ThemeProvider } from 'styles-components';*/
 
-import logofacebook from '../imagenes/redes/facebook';
 import logofacebook from '../imagenes/redes/facebook.png';
 import logoinstagram from '../imagenes/redes/instagram.png';
 import logotwitter from '../imagenes/redes/twitter.png';

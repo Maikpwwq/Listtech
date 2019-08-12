@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CircularProgress } from '@material-ui/core';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -14,7 +15,7 @@ import InicioSesion from '../components/Inicio-sesion.jsx';
 import Registro from '../components/Registro.jsx';
 import Contacto from '../components/Contacto.jsx';
 import Compras from '../components/Compras.jsx';
-import Tienda from '../components/Tienda.jsx';
+//import Tienda from '../components/Tienda.jsx';
 import Marcas from '../components/Marcas.jsx';
 import Nosotros from '../components/Nosotros.jsx';
 import ConoceMas from '../components/ConoceMas.jsx';
@@ -24,8 +25,6 @@ import NotFound from '../paginas/NotFound';
 import useGetData from '../hooks/useGetData';
 const data = useGetData();
 
-import { CircularProgress } from '@material-ui/core'
-
 /* componentWillMount() {
 
 }
@@ -33,6 +32,8 @@ import { CircularProgress } from '@material-ui/core'
 componenteWillUnmount() {
 
 } */
+
+//<Route exact path="/tienda" component={Tienda} />
 
 const App = () => {
 
@@ -47,8 +48,8 @@ const App = () => {
     useEffect(() => {
         firebase().onAuthStateChanged((user) => {
             if (user) {
-                props.setUser(user);
-                props.setLogin(true);
+                this.props.setUser(user);
+                this.props.setLogin(true);
             }
         });
     }, []);
@@ -70,7 +71,7 @@ const App = () => {
                         <Route exact path="/registro" component={Registro} />
                         <Route exact path="/contacto" component={Contacto} />
                         <Route exact path="/compras" component={Compras} />
-                        <Route exact path="/tienda" component={Tienda} />
+                        
                         <Route exact path="/marcas" component={Marcas} />
                         <Route exact path="/nosotros" component={Nosotros} />
                         <Route exact path="/conocemas" component={ConoceMas} />                        

@@ -6,8 +6,6 @@ import Fichaproducto from './Ficha-producto';
 
 import { NavLink } from 'react-router-dom'; 
 
-import Fichaproducto from './Ficha-producto';
-
 import next from '../imagenes/next.png';
 import prev from '../imagenes/prev.png';
 
@@ -155,6 +153,109 @@ const Next = styled.button`
 
 `;
 
+/*key = {`Carrousel-${index}`}*/
+/* 
+const initState = {}
+const lineaProductos = (state = initState, action) => {
+    switch (Producto.Linea) { 
+    case '1 Cerraduras electrónicas':
+            return {
+                ...state,
+                : action.payload
+            }
+case '2 Cerraduras mecánicas':
+            return {
+                ...state,
+                : action.payload
+            }
+case '3 Accesorios Soporte':
+            return {
+                ...state,
+                : action.payload
+            }
+case '4 Salidas PUSH emergencia':
+            return {
+                ...state,
+                : action.payload
+            }
+case '5 Cierra puertas':
+            return {
+                ...state,
+                : action.payload
+            }
+case '6 Sensores y cantoneras electrónicas':
+            return {
+                ...state,
+                : action.payload
+            }
+case '7 Redes cableado estructurado':
+            return {
+                ...state,
+                : action.payload
+            }
+case '8 Acceso suspendido en alturas':
+            return {
+                ...state,
+                : action.payload
+            }
+    default:
+            return state;
+    }
+}
+
+var slideIndex = [1,1];
+showSlides(slideIndex);  
+        this.slideIndex = 1;
+        this.showSlides = this.showSlides.bind(this);
+        this.showSlides = this.showSlides(this.slideIndex);
+    }
+
+// Class the members of each slideshow group with different CSS classes
+var slideId = [
+"1 Cerraduras electrónicas", 
+"2 Cerraduras mecánicas"
+"3 Accesorios Soporte"
+"4 Salidas PUSH emergencia"
+"5 Cierra puertas"
+"6 Sensores y cantoneras electrónicas"
+"7 Redes cableado estructurado"
+"8 Acceso suspendido en alturas"
+]
+
+showSlides(1, 0);
+showSlides(1, 1);
+
+    // Next/previous controls
+    PlusSlides= (n, no) => {
+        this.showSlides(this.slideIndex[no] += n, no);
+    }
+
+    // Thumbnail image controls
+    CurrentSlide= (n,no) => {
+        this.showSlides(this.slideIndex[no] = n, no);
+    } 
+
+    showSlides= (n, no) => {
+        console.log('Renderizado Productos');
+        var i = ([]);
+        var slides = document.getElementsByClassName(slideId[no]);        
+        // var dots
+        var descripciones = document.getElementsByClassName("CarrouselDescripcion");
+
+        if(n > slides.length) { this.slideIndex[no] = 1 }
+        if (n < 1) { this.slideIndex[no] = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < descripciones.length; i++) {
+            descripciones[i].className = descripciones[i].className.replace(" active", "");
+        }
+        slides[this.slideIndex[no] - 1].style.display = "block";
+        descripciones[this.slideIndex - 1].className += " active";
+    }
+*/
+
+
 class Carrousel extends Component {
 
     constructor(props) {
@@ -247,7 +348,6 @@ class Carrousel extends Component {
     };
 }
 
-/*key = {`Carrousel-${index}`}*/
 
 const mapStateToProps = (state) => {
     return {
@@ -256,104 +356,3 @@ const mapStateToProps = (state) => {
 }
     
 export default connect(mapStateToProps) (Carrousel);
-
-
-/* 
-const initState = {}
-const lineaProductos = (state = initState, action) => {
-    switch (Producto.Linea) { 
-    case '1 Cerraduras electrónicas':
-            return {
-                ...state,
-                : action.payload
-            }
-case '2 Cerraduras mecánicas':
-            return {
-                ...state,
-                : action.payload
-            }
-case '3 Accesorios Soporte':
-            return {
-                ...state,
-                : action.payload
-            }
-case '4 Salidas PUSH emergencia':
-            return {
-                ...state,
-                : action.payload
-            }
-case '5 Cierra puertas':
-            return {
-                ...state,
-                : action.payload
-            }
-case '6 Sensores y cantoneras electrónicas':
-            return {
-                ...state,
-                : action.payload
-            }
-case '7 Redes cableado estructurado':
-            return {
-                ...state,
-                : action.payload
-            }
-case '8 Acceso suspendido en alturas':
-            return {
-                ...state,
-                : action.payload
-            }
-    default:
-            return state;
-    }
-}
-
-var slideIndex = [1,1];
-showSlides(slideIndex);  
-        this.slideIndex = 1;
-        this.showSlides = this.showSlides.bind(this);
-        this.showSlides = this.showSlides(this.slideIndex);
-    }
-showSlides(1, 0);
-showSlides(1, 1);
-
-// Class the members of each slideshow group with different CSS classes
-var slideId = [
-"1 Cerraduras electrónicas", 
-"2 Cerraduras mecánicas"
-"3 Accesorios Soporte"
-"4 Salidas PUSH emergencia"
-"5 Cierra puertas"
-"6 Sensores y cantoneras electrónicas"
-"7 Redes cableado estructurado"
-"8 Acceso suspendido en alturas"
-]
-
-    // Next/previous controls
-    PlusSlides= (n, no) => {
-        this.showSlides(this.slideIndex[no] += n, no);
-    }
-
-    // Thumbnail image controls
-    CurrentSlide= (n,no) => {
-        this.showSlides(this.slideIndex[no] = n, no);
-    } 
-
-    showSlides= (n, no) => {
-        console.log('Renderizado Productos');
-        var i = ([]);
-        var slide = document.getElementsByClassName(slideId[no]);        
-        // var dots
-        var descripciones = document.getElementsByClassName("CarrouselDescripcion");
-
-        if(n > slides.length) { this.slideIndex[no] = 1 }
-        if (n < 1) { this.slideIndex[no] = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < descripciones.length; i++) {
-            descripciones[i].className = descripciones[i].className.replace(" active", "");
-        }
-        slides[this.slideIndex[no] - 1].style.display = "block";
-        descripciones[this.slideIndex - 1].className += " active";
-    }
-*/

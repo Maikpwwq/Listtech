@@ -27,7 +27,7 @@ const data = {
             {
                 "_id": "SCH-AD-400",
                 "index": 0,
-                "titulo": "Cerradura Bloqueo Red Inalámbrica AD-400",
+                "titulo": "Cerradura Bloqueo Red Inala&#769;mbrica AD-400",
                 "imagen": "Cerradura Bloqueo Red Inalámbrica AD-400",
                 "marca": "Schlage",
                 "descripcion": "cuentan con lector de credenciales incorporado y sensores de control de acceso para una instalación simplificada. El AD-400 permite una amplia gama de opciones de credenciales, incluidas las credenciales de PIN, banda magnética, proximidad (125 kHz) e inteligente (13.56 MHz); Los lectores de tarjetas + PIN están disponibles para mayor seguridad.",
@@ -386,7 +386,7 @@ const data = {
                 "titulo": "Cerraduras B571 con indicador de ocupación",
                 "imagen": "Cerraduras B571 con indicador de ocupación",
                 "marca": "Schlage",
-                "descripcion": "El cerrojo es lanzado o retraído por una unidad de giro hacia adentro. El indicador de ocupación en el exterior indica "En uso" o "Vacante". Fácil de instalar, este cerrojo Schlage se puede ajustar para adaptarse a conjuntos de 2 3/8 in o 2 3/4 in.",
+                "descripcion": "El cerrojo es lanzado o retraído por una unidad de giro hacia adentro. El indicador de ocupación en el exterior indica En uso o Vacante. Fácil de instalar, este cerrojo Schlage se puede ajustar para adaptarse a conjuntos de 2 3/8 in o 2 3/4 in.",
                 "garantia": "5 years",
                 "precio": "$159.600",
                 "solicitud": "ya"

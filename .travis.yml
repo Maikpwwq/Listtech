@@ -20,5 +20,4 @@ deploy:
    commit_message: "Deploy Release ${TRAVIS_TAG}"
    on:
       branch: desarrollo
-bundler_args: --retry 5
-      branch: desarrollo
+bundler_args: --retry 5      

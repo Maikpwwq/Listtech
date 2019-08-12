@@ -1,5 +1,4 @@
 ﻿import React, { Component } from 'react';
-/*import '../css/Garantia.css';*/
 
 import styled from 'styled-components'
 

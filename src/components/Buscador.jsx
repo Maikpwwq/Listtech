@@ -102,26 +102,6 @@ const Submitinput = styled.input`
     background: #bfbfbf;
 `;
 
-
-/*
- firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser) {
-        console.log(firebaseUser);
-        btnLogout.classList.remove('hide');
-    }
-    else {
-        console.log('not logged in');
-        btnLogout.classList.add('hide');
-    }
-});
-
-
-    // Evento Cerrar Sesion
-    btnLogout.addEventListener('click', e => {
-        auth().signOut();
-    });
-*/
-
 const Buscador = props => {
 
     const [modal, setModal] = useState(false);

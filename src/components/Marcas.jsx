@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/Marcas.css';
 
 /* Yale McKinney https://accesshardware.com/manufacturers-a-d/ */
 
@@ -66,10 +65,6 @@ const Marcasgrupo = styled.div`
 const MarcasLista = styled.ul`
    display: block;
 `;
-
-
-
- 
 
 class Marcas extends Component {
     constructor() {

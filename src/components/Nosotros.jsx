@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/Nosotros.css';
 
 import styled from 'styled-components'
 
