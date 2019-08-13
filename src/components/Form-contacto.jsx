@@ -2,10 +2,10 @@ import React, { Component, useState } from 'react';
 import PropTypes from 'prop-types';
 //import Textarea from './use/Textarea';
 
-import useSendForm from '../hooks/SendForm';
+import useSendForm from '../hooks/useSendForm';
 import { connect } from 'react-redux';
 
-import { storage, database } from '../../init-firebase';
+import { storage, database } from '../init-firebase';
 
 import styled from 'styled-components'
 
@@ -139,12 +139,46 @@ class Formcontacto extends Component {
         console.log(this.state, 'Enviando la data ...');
         alert('Se envio correctamente su solicitud: ' + this.state.value);         
 
+        const form = new FormData(event.target);
+        const newDate = new Date().toISOString();
+
+        const requerimiento = {
+            'date': newDate,
+            'titulo': form.get('titulo'),
+            'solicitud': form.get('solicitud'),
+            'nombre': form.get('nombre'),
+            'email': form.get('email'),
+            'telefono': form.get('telefono'),
+            'mensaje': form.get('mensaje'),
+            'contactar': form.get('contactar'),
+        }
+
+        /*this.db.collection('requerimientos').get()
+        .then((snapshot) => {
+            snapshot.docs.forEach(doc => {
+                render(doc);
+            })
+        });*/
+
+        storage.ref().child(this.db.collection('contactos').add({
+            nombre: form.nombre.value,
+            email: form.email.value,
+            telefono: form.telefono.value,
+        }));
+
+        // Resetear los valores en blanco
+        //form.nombre.value = '',
+        //form.email.value = '',    
+
+        // Empujar el requerimiento a la base de datos y asignar su verificacion
+        database.ref('Requerimientos').push(requerimiento)
+            .then(() => setSendForm(true))
+            .catch(() => setSendForm(false))
+
         const SendForm = useSendForm();        
     });
 
     render() {
-
-        const { SendForm } = this.state
 
         return (           
             <FormContStyle>

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 const Modal = props => {
 
-    const ModalClass = classNames(Modal - wrapper, {
+    const ModalClass = classNames( 'Modal-wrapper', (event) => {
         showModal: props.show,
     });
 

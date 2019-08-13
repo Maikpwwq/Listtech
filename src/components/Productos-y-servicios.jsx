@@ -95,7 +95,7 @@ class Productosyservicios extends Component {
         }   
     }               
 
-    id = props.match.params.id; 
+    //id = this.props.match.params.id; 
 
     render() {
 

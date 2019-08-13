@@ -1,15 +1,12 @@
-
 import React, { Component } from 'react';
 //import { useState } from 'react';
 
 import logo from '../imagenes/Listtech-Logo.png';
 import { NavLink } from 'react-router-dom';
 
-import { auth, provider, googleprovider } from '../../init-firebase.js'
+import { auth, database, facebookprovider, googleprovider } from '../init-firebase.js'
 import * as firebase from 'firebase/app';
 /*import * as firebaseui from 'firebaseui'*/
-
-import { database } from '../../init-firebase.js';
 
 import { connect } from 'react-redux';
 import { setUser, setLogin } from '../actions/actions'
@@ -124,13 +121,24 @@ class InicioSesion extends Component {
     }
 
     loginFacebook = () => {
-        auth().signInWithPopup(provider)
+        auth().signInWithPopup(facebookprovider)
             .then(({ user }) => {
                 this.props.setUser(user);
                 this.props.setLogin(true);
+                this.props.setToken = user.credential.accessToken;
                 this.props.history.push('/perfil');
                 console.log(user);
-            });
+            })
+            .catch(({ error }) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            })
     };
 
     loginGmail = () => {
@@ -138,9 +146,20 @@ class InicioSesion extends Component {
             .then(({ user }) => {
                 this.props.setUser(user);
                 this.props.setLogin(true);
+                this.props.setToken = user.credential.accessToken;
                 this.props.history.push('/perfil');
                 console.log(user);
-            });
+            })
+            .catch (({ error }) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            })
     };
     
     handleChange = (event) => {

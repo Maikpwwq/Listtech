@@ -30,7 +30,10 @@ import { connect } from 'react-redux';
     const [active, setActive] = true;
     const compra = props.location.state;
     <div> {active &&
-) */ 
+) 
+
+<FichaProducto compra={compra} />
+*/ 
 
 class Compras extends Component {
     constructor() {
@@ -50,7 +53,7 @@ class Compras extends Component {
                     <nav className="Compras-app navbar navbar-dark bg-dark">
                         <h2>Articulos</h2>
                         <span className="badge badge-pill badge-light ml-2">
-                            <FichaProducto compra={compra} />
+                          ZzzzZZzz  
                         </span>
                     </nav>
                 </div>

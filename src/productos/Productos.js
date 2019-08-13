@@ -23,7 +23,7 @@
 const data = {
     "Productos": [
         {
-        "1 Cerraduras electrónicas": [
+        "1-Cerraduras-electrónicas": [
             {
                 "_id": "SCH-AD-400",
                 "index": 0,
@@ -170,7 +170,7 @@ const data = {
             ]
         },
         {
-        "2 Cerraduras mecánicas": [
+        "2-Cerraduras-mecánicas": [
             {
                 "_id": "PDQ-SD-PHL",
                 "index": 0,
@@ -680,7 +680,7 @@ const data = {
             ]
         },
         {
-        "3 Accesorios Soporte": [
+        "3-Accesorios-Soporte": [
             {
                 "_id": "LCN-SEH",
                 "index": 0,
@@ -728,7 +728,7 @@ const data = {
             ]
         },
         {
-        "4 Salidas PUSH emergencia": [
+        "4-Salidas-PUSH-emergencia": [
             {
                 "_id": "VONDUPRIN-98-99-33-35A",
                 "index": 0,
@@ -853,7 +853,7 @@ const data = {
             ]
         },
         {
-        "5 Cierra puertas": [
+        "5-Cierra-puertas": [
             {
                 "_id": "FALCON-SC70A",
                 "index": 0,
@@ -1154,7 +1154,7 @@ const data = {
             ]
         },
         {
-        "6 Sensores y cantoneras electrónicas": [
+        "6-Sensores-y-cantoneras-electrónicas": [
             {
                 "_id": "SCH-M400",
                 "index": 0,
@@ -1253,7 +1253,7 @@ const data = {
                 "garantia": "9 years",
                 "precio": "$240.000",
                 "solicitud": "ya"
-            }
+            },
             {
                 "_id": "LCK-CS",
                 "index": 9,
@@ -1367,7 +1367,7 @@ const data = {
             ]
         },
         {
-        "7 Redes cableado estructurado": [
+        "7-Redes-cableado-estructurado": [
             {
                 "_id": "AMG-100C",
                 "index": 0,
@@ -1679,7 +1679,7 @@ const data = {
             ]
         },
         {
-        "8 Acceso suspendido en alturas": [
+        "8-Acceso-suspendido-en-alturas": [
             {
                 "_id": "1024537865klj",
                 "index": 0,
@@ -1785,3 +1785,5 @@ const data = {
 ]}
 
 export default data;
+// export { Productos };
+// export { 1-Cerraduras-electrónicas, 2-Cerraduras-mecánicas, 3-Accesorios-Soporte, 4-Salidas-PUSH-emergencia, 5-Cierra-puertas, 6-Sensores-y-cantoneras-electrónicas, 7-Redes-cableado-estructurado, 8-Acceso-suspendido-en-alturas}

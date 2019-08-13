@@ -3,7 +3,7 @@ import { CircularProgress } from '@material-ui/core';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as firebase from '../../init-firebase.js'
+import * as firebase from '../init-firebase.js'
 import { setUser, setLogin } from '../actions/actions.js';
 
 import Layout from '../containers/Layout.jsx';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { storage, database } from '../../init-firebase';
+import { storage, database } from '../init-firebase';
 import { connect } from 'react-redux';
 
 import styled from 'styled-components';

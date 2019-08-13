@@ -1,11 +1,11 @@
 {
   "Productos": [
     {
-      "1 Cerraduras electrónicas": [
+      "1-Cerraduras-electrónicas": [
         {
           "_id": "SCH-AD-400",
           "index": 0,
-          "titulo": "Cerradura Bloqueo Red Inalámbrica AD-400",
+          "titulo": "Cerradura Bloqueo Red Inala&#769;mbrica AD-400",
           "imagen": "Cerradura Bloqueo Red Inalámbrica AD-400",
           "marca": "Schlage",
           "descripcion": "cuentan con lector de credenciales incorporado y sensores de control de acceso para una instalación simplificada. El AD-400 permite una amplia gama de opciones de credenciales, incluidas las credenciales de PIN, banda magnética, proximidad (125 kHz) e inteligente (13.56 MHz); Los lectores de tarjetas + PIN están disponibles para mayor seguridad.",
@@ -148,7 +148,7 @@
       ]
     },
     {
-      "2 Cerraduras mecánicas": [
+      "2-Cerraduras-mecánicas": [
         {
           "_id": "PDQ-SD-PHL",
           "index": 0,
@@ -364,8 +364,7 @@
           "titulo": "Cerraduras B571 con indicador de ocupación",
           "imagen": "Cerraduras B571 con indicador de ocupación",
           "marca": "Schlage",
-          "descripcion": "\"El cerrojo es lanzado o retraído por una unidad de giro hacia adentro. El indicador de ocupación en el exterior indica \"En",
-          "uso\" o \"Vacante\". Fácil de instalar, este cerrojo Schlage se puede ajustar para adaptarse a conjuntos de 2 3/8 in o 2 3/4 in.\"",
+          "descripcion": "El cerrojo es lanzado o retraído por una unidad de giro hacia adentro. El indicador de ocupación en el exterior indica En uso o Vacante. Fácil de instalar, este cerrojo Schlage se puede ajustar para adaptarse a conjuntos de 2 3/8 in o 2 3/4 in.",
           "garantia": "5 years",
           "precio": "$159.600",
           "solicitud": "ya"
@@ -659,7 +658,7 @@
       ]
     },
     {
-      "3 Accesorios Soporte": [
+      "3-Accesorios-Soporte": [
         {
           "_id": "LCN-SEH",
           "index": 0,
@@ -707,7 +706,7 @@
       ]
     },
     {
-      "4 Salidas PUSH emergencia": [
+      "4-Salidas-PUSH-emergencia": [
         {
           "_id": "VONDUPRIN-98-99-33-35A",
           "index": 0,
@@ -832,7 +831,7 @@
       ]
     },
     {
-      "5 Cierra puertas": [
+      "5-Cierra-puertas": [
         {
           "_id": "FALCON-SC70A",
           "index": 0,
@@ -1133,7 +1132,7 @@
       ]
     },
     {
-      "6 Sensores y cantoneras electrónicas": [
+      "6-Sensores-y-cantoneras-electrónicas": [
         {
           "_id": "SCH-M400",
           "index": 0,
@@ -1346,7 +1345,7 @@
       ]
     },
     {
-      "7 Redes cableado estructurado": [
+      "7-Redes-cableado-estructurado": [
         {
           "_id": "AMG-100C",
           "index": 0,
@@ -1654,11 +1653,11 @@
           "garantia": "10 years",
           "precio": "$176.000",
           "solicitud": "ya"
-        },
+        }
       ]
     },
     {
-      "8 Acceso suspendido en alturas": [
+      "8-Acceso-suspendido-en-alturas": [
         {
           "_id": "1024537865klj",
           "index": 0,
@@ -1760,6 +1759,6 @@
         }
 
       ]
-    },        
+    }
   ]
 }

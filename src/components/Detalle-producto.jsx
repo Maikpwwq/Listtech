@@ -1,8 +1,9 @@
 import React from 'react';
-import styled from 'styled-components'
 
 import FichaProducto from './Ficha-producto.jsx';
-import { Productos } from '../productos/Productos';
+import Producto from '../productos/Productos';
+
+import styled from 'styled-components'
 
 const DetalleProductoStyled = styled.div`
     text-align: center;
@@ -21,6 +22,8 @@ const DetalleProductoContent = styled.div`
 const DetalleProducto = ({ Producto }) => {
 
     const { index, titulo, imagen, precio, marca, descripcion, garantia, solicitud } = Producto
+
+    console.log('Ver a detalle', { Producto });
     /*
     const [modal, setModal] = useState(false);
     const showModal = () => {
@@ -46,7 +49,7 @@ const DetalleProducto = ({ Producto }) => {
 
                 <DetalleProductoContent>
 
-                    <FichaProducto> Ver a detalle {Productos} </FichaProducto>
+                    <FichaProducto> Ver a detalle </FichaProducto>
 
                 </DetalleProductoContent>
 

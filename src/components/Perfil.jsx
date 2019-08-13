@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import logo from '../imagenes/Listtech-Logo.png';
 
-import firebase from '../../init-firebase.js'
+import firebase from '../init-firebase.js'
 import { connect } from 'react-redux';
-import { setUser, setLogin } from '../actions/index.js';
+import { setUser, setLogin } from '../actions/actions.js';
 
 import styled from 'styled-components'
 
@@ -81,9 +81,9 @@ class Perfil extends Component {
     logoutFacebook = () => {
         firebase().singOut()
             .then(() => {
-                props.setUser({});
-                props.setLogin(false);
-                props.history.push('/');
+                this.props.setUser({});
+                this.props.setLogin(false);
+                this.props.history.push('/');
                 console.log('Sesion finalizada');
             });
     };
