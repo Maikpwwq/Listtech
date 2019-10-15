@@ -5,7 +5,8 @@ import './css/index.css';
 
 import rootReducer from './reducers/rootReducer.js';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 import App from './rutas/App.js';
 
@@ -16,7 +17,9 @@ import * as serviceWorker from './serviceWorker';
 //export {base}
 
 const initialState = {};
-const store = createStore(rootReducer, initialState);
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
+
+export default store;
 
 ReactDOM.render(
     <Provider store={store}>

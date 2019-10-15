@@ -1,18 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< HEAD
-    "\\build",
+    "\\functions",
+    "\\functions\\lib",
+    "\\node_modules\\react",
     "\\public",
     "\\src",
+    "\\src\\actions",
     "\\src\\components",
-    "\\src\\rutas"
+    "\\vendor"
   ],
-  "SelectedNode": "\\src\\components\\Form-contacto.jsx",
-=======
-    "\\src\\productos"
-  ],
-  "SelectedNode": "\\src",
->>>>>>> c3abce94de5f2b226248ef01468d2c1030a9f629
+  "SelectedNode": "\\src\\init-firebase.js",
   "PreviewInSolutionExplorer": false
 }

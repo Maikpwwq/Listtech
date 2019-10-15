@@ -1,10 +1,10 @@
 import React from 'react'; 
 
-import Nosotros from '../components/Nosotros.jsx';
-import Marcas from '../components/Marcas.jsx';
-import Productosyservicios from '../components/Productos-y-servicios.jsx';
-import ConoceMas from '../components/ConoceMas.jsx';
-import Carrousel from '../components/Carrousel';
+import Nosotros from '../components/marca/Nosotros.jsx';
+import Marcas from '../components/marca/Marcas.jsx';
+import Productosyservicios from '../components/productos/Productos-y-servicios.jsx';
+import ConoceMas from '../components/marca/ConoceMas.jsx';
+import Carrousel from '../components/productos/Carrousel';
 
 import styled from 'styled-components'
 

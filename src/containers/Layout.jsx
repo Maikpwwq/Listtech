@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Footer from '../containers/Footer.jsx';
-import Header from '../containers/Header.jsx';
-import Cuerpo from '../containers/Cuerpo.jsx';
+import Footer from './Footer.jsx';
+import Header from './Header.jsx';
+import Cuerpo from './Cuerpo.jsx';
 
 /*import styled, { ThemeProvider } from 'styles-components';*/
 import styled from 'styled-components'

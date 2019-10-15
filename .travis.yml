@@ -10,6 +10,8 @@ git:
 scripts:
    - yarn build
    - echo 'https://listtech.com.co' > public/CNAME
+   - npm install
+   - npm test
 deploy:
    provider: pages
    skip-cleanup: true

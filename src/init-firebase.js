@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 
 // Firebase App (the core Firebase SDK) is always required and must be listed first
-import * as firebase from "firebase/app";
+import * as app from "firebase/app";
 
 // Add the Firebase products that you want to use
 import * as auth from "firebase/auth";
 import * as database from "firebase/database";
-import * as storage from "firebase/storage";  
+import * as storage from "firebase/storage";    
 import * as firestore from 'firebase/firebase-firestore';
-// import { auth } from "./node_modules/firebase/index";
+
+// Initialize Firebase
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
@@ -21,7 +24,7 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
-class AuthFirebase extends Component {
+class Firebase extends Component {
 
     constructor(props) {
         super(props);
@@ -31,74 +34,103 @@ class AuthFirebase extends Component {
         }
 
         // Initialize Firebase
-        firebase.initializeApp({
-            credential: firebase.credential.cert((firebaseConfig)),
+        app.initializeApp({
+            credential: app.credential.cert((firebaseConfig)),
             databaseURL: 'https://listtech-28538.firebaseio.com/' // URL de nuestro proyecto
         });       
+
+        // * this.serverValue = app.database.ServerValue;
+        this.emailAuthProvider = new app.auth.EmailAuthProvider;
 
         this.auth = this.auth.bind(this);
         this.firestore = this.firestore.bind(this);       
         this.storage = this.storage.bind(this);
-        this.database = this.database.bind(this);
-        this.facebookprovider = new firebase.auth.FacebookAuthProvider();
-        this.googleprovider = new firebase.auth.GoogleAuthProvider();
+        this.db = this.database.bind(this);
+
+        // Facebook Provider URL de redireccionamiento de OAuth:
+
+        //provider.addScope('https://listtech-28538.firebaseapp.com/__/auth/handler');
+        //provider.addScope('user_birthday');    
+
+        // Google Provider
+
+
+        this.facebookProvider = new app.auth.FacebookAuthProvider();
+        this.googleProvider = new app.auth.GoogleAuthProvider();
     }
 
     auth = () => {
-        firebase.auth()
+        app.auth()
     };
 
     firestore = () => {
-        firebase.firestore()
+        app.firestore()
+        app.firestore.settings({ timestampsInSnapshots: true })
     };
 
     storage = () => {
-        firebase.storage()
+        app.storage()
     };
 
-    database = () => {
-        firebase.database()
+    db = () => {
+        app.database()
     };
 
     // Lenguaje del OAuth
     lenguaje = () => {
-        firebase.auth().languageCode = 'es'
+        app.auth().languageCode = 'es'
     };
         
-    // Facebook Provider URL de redireccionamiento de OAuth:
-    facebookprovider = () => {
-        new firebase.auth.FacebookAuthProvider()
-    };
-
-    //provider.addScope('https://listtech-28538.firebaseapp.com/__/auth/handler');
-    //provider.addScope('user_birthday');    
-
-    // Google Provider
-    googleprovider = () => {
-        new firebase.auth.GoogleAuthProvider()
-    };
-
+    
     // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     // Nombre público del proyecto: listtech@2019,
     // Correo electrónico de asistencia para proyectos: m.michael1024@gmail.com,
 
-
     root = document.getElementById('root');
 
-    dbRef = firebase.database().ref().child('text');
+    dbRef = app.database().ref().child('text');
     //dbRef.on('value', snap => root.innerText = snap.val());
-    //firestore.settings({ timestampsInSnapshots:true })
 
-    login(email, password) {
-        return this.auth.signInWithEmailAndPassword(email, password)
+    //     
+
+    // *** Auth API ***
+
+    doIniciarSesion (email, clave) {
+        return this.auth.signInWithEmailAndPassword(email, clave)
     }
 
-    logout() {
-        return this.auth.signOut()
-    }
+    doCrearUsuarioConEmailClave = (email, clave) =>
+        this.auth.createUserWithEmailAndPassword(email, clave);
 
-    async register(name, email, password) {
-        await this.auth.createUserWithEmailAndPassword(email, password)
+    doRegistraseConEmailClave = (email, clave) =>
+        this.auth.signInWithEmailAndPassword(email, clave);
+
+    doIniciarSesionConFacebook = () =>
+        this.auth.logInWithPopup(this.facebookProvider);
+
+    doIniciarSesionConGmail = () =>
+        this.auth.logInWithPopup(this.googleProvider);
+
+    doRegistrarseConGoogle = () =>
+        this.auth.signInWithPopup(this.googleProvider);
+
+    doRegistrarseConFacebook = () =>
+        this.auth.signInWithPopup(this.facebookProvider);
+
+    doCerrarSesion = () => { return this.auth.signOut() };
+
+    doClaveReset = email => this.auth.sendPasswordResetEmail(email);
+
+    doEnviarEmailVerificacion = () =>
+        this.auth.currentUser.sendEmailVerification({
+            url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
+        });
+
+    doActualizarClave = clave =>
+        this.auth.currentUser.actualizarClave(clave);
+
+    async register(name, email, clave) {
+        await this.auth.createUserWithEmailAndPassword(email, clave)
         return this.auth.currentUser.updateProfile({
             displayName: name
         })
@@ -128,9 +160,44 @@ class AuthFirebase extends Component {
         const quote = await this.firestore.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).get()
         return quote.get('quote')
     }
+
+    // *** Merge Auth and DB User API *** //
+    onAuthUserListener = (next, fallback) =>
+        this.auth.onAuthStateChanged(authUser => {
+            if (authUser) {
+                this.user(authUser.uid)
+                    .once('value')
+                    .then(snapshot => {
+                        const dbUser = snapshot.val();
+                        // default empty roles
+                        if (!dbUser.roles) {
+                            dbUser.roles = {};
+                        }
+                        // merge auth and db user
+                        authUser = {
+                            uid: authUser.uid,
+                            email: authUser.email,
+                            emailVerified: authUser.emailVerified,
+                            providerData: authUser.providerData,
+                            ...dbUser,
+                        };
+                        next(authUser);
+                    });
+            } else {
+                fallback();
+            }
+        });
+
+    // *** User API ***
+    user = uid => this.db.ref(`users/${uid}`);
+    users = () => this.db.ref('users');
+
+    // *** Message API ***
+    message = uid => this.db.ref(`messages/${uid}`);
+    messages = () => this.db.ref('messages');
+
 }
 
-export default new AuthFirebase();
+export default new Firebase();
 
-// export { auth, storage, database}
-export { storage, database, auth, facebookprovider, googleprovider }
+// export { storage, database, auth, facebookProvider, googleProvider }
