@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+
+import { connect } from 'react-redux';
 import classNames from 'classnames';
 
 function Modal(props) {
 
     const ModalClass =
         classNames('Modal-wrapper', (event) => {
-        showModal: props.show,
-    })
+            showModal: props.show
+    });
 
     return (
         <div classNames="Modal">

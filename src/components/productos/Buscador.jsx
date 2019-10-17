@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import Modal from '../components/micelaneos/Modal.jsx';
+import Modal from '../micelaneos/Modal.jsx';
 import Social from '../marca/Social';
 
-import InicioSesion from '../components/usuarios/Inicio-sesion';
-import Registro from '../components/usuarios/Registro';
+import InicioSesion from '../usuarios/Inicio-sesion';
+import Registro from '../usuarios/Registro';
 
 import logo from '../../imagenes/Listtech-Logo.png'
 import carrito from '../../imagenes/medios de pago/carrito_ico.png'

@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 //import { useState } from 'react';
 import logo from '../../imagenes/Listtech-Logo.png';
 
-import { NavLink } from 'react-router-dom';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import { ConFirebase } from '../administracion/Index-firebase';
-import * as ROUTES from '../../rutas/App.js';
-import * as ROLES from '../administracion/Roles';
 
+import * as ROLES from '../administracion/Roles';
 
 import { auth, database, facebookProvider, googleProvider } from '../../init-firebase.js'
 import * as firebase from 'firebase/app';
@@ -23,7 +21,7 @@ import { setUsuario, setInicioSesion } from '../../actions/actions'
 /* Style Registro */
 import styled from 'styled-components'
 
-const FormRegistro = styled.form`
+const Registro = styled.form`
     text-align: center;
     box-sizing: border-box;
     display: block;
@@ -113,7 +111,7 @@ const FooterInicioSesion = styled.div`
    // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-   // The email of the user's account used.
+   // The email of the usuario's account used.
     var email = error.email;
    // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
@@ -129,8 +127,8 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
   esta cuenta y asociar sus cuentas en su página de perfil.
 `;
 
-class Registro extends Component {
-
+class PaginaRegistro extends Component {
+    autorizarUsuario
     constructor(props) {
         super(props);
         this.state = {
@@ -138,43 +136,42 @@ class Registro extends Component {
             txtEmail : document.getElementById('txtEmail'),
             txtTelefono : document.getElementById('txtTelefono'),
             txtclave : document.getElementById('txtclave'),
-            btnLogin : document.getElementById('btnLogin'),
+            btnInicioSesion: document.getElementById('btnInicioSesion'),
             btnRegistro : document.getElementById('btnRegistro'),
-            btnLogout : document.getElementById('btnLogout'),
+            btnCerrarSesion: document.getElementById('btnCerrarSesion'),
 
         }
         this.RegistroConFacebook = this.RegistroConFacebook.bind(this);
         this.RegistroConGmail = this.RegistroConGmail.bind(this);
         this.SendForm = this.SendForm.bind(this);
-        this.firebaseUser = this.firebaseUser.bind(this);
+        this.firebaseusuario = this.firebaseusuario.bind(this);
         this.onCambios = this.onCambios.bind(this);
-        this.onEnviar = this.onEnviar.bind(this);
-        this.onChange = this.onChange.bind(this);
+        this.onEnviar = this.onEnviar.bind(this);      
     }
 
     RegistroConFacebook = () => {        
         this.props.firebase
             .doRegistrarseConFacebook()
-            .then(socialAuthUser => {
-                // Create a user in your Firebase Realtime Database too
+            .then(socialautorizarUsuario => {
+                // Create a usuario in your Firebase Realtime Database too
                 return
 
-                this.props.firebase.user(socialAuthUser.user.uid).set({
-                    username: socialAuthUser.additionalUserInfo.profile.name,
-                    email: socialAuthUser.additionalUserInfo.profile.email,
+                this.props.firebase.usuario(socialautorizarUsuario.usuario.uid).set({
+                    usuarioname: socialautorizarUsuario.additionalusuarioInfo.profile.name,
+                    email: socialautorizarUsuario.additionalusuarioInfo.profile.email,
                     roles: {},
                 });
             })
-            .then(({ user }) => {
-                this.props.setUser(user);
-                this.props.setLogin(true);
-                this.props.setToken = user.credential.accessToken;
+            .then(({ usuario }) => {
+                this.props.setUsuario(usuario);
+                this.props.setInicioSesion(true);
+                this.props.setToken = usuario.credential.accessToken;
                 this.props.history.push('/perfil');
-                console.log(user);
+                console.log(usuario);
             })
             .then(() => {
                 this.setState({ error: null });
-                this.props.history.push(ROUTES.HOME);
+                this.props.history.push('/inicio/');
             })
             .catch(error => {
                 if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
@@ -190,26 +187,26 @@ class Registro extends Component {
     RegistroConGmail = () => {
         this.props.firebase
             .doRegistrarseConGmail()
-            .then(socialAuthUser => {
-                // Create a user in your Firebase Realtime Database too
+            .then(socialautorizarUsuario => {
+                // Create a usuario in your Firebase Realtime Database too
                 return
 
-                this.props.firebase.user(socialAuthUser.user.uid).set({
-                    username: socialAuthUser.additionalUserInfo.profile.name,
-                    email: socialAuthUser.additionalUserInfo.profile.email,
+                this.props.firebase.usuario(socialautorizarUsuario.usuario.uid).set({
+                    usuarioname: socialautorizarUsuario.additionalusuarioInfo.profile.name,
+                    email: socialautorizarUsuario.additionalusuarioInfo.profile.email,
                     roles: {},
                 });
             })
-            .then(({ user }) => {
-                this.props.setUser(user);
+            .then(({ usuario }) => {
+                this.props.setusuario(usuario);
                 this.props.setLogin(true);
-                this.props.setToken = user.credential.accessToken;
+                this.props.setToken = usuario.credential.accessToken;
                 this.props.history.push('/perfil');
-                console.log(user);
+                console.log(usuario);
             })
             .then(() => {
                 this.setState({ error: null });
-                this.props.history.push(ROUTES.HOME);
+                this.props.history.push('/inicio/');
             })
             .catch(error => {
                 if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
@@ -222,13 +219,13 @@ class Registro extends Component {
         event.preventDefault();
     };
 
-    firebaseUser = () => {
-        auth().onAuthStateChanged(this.firebaseUser)
-        if (this.firebaseUser) {
-            console.log(this.firebaseUser);
+    firebaseusuario = () => {
+        auth().onAuthStateChanged(this.firebaseusuario)
+        if (this.firebaseusuario) {
+            console.log(this.firebaseusuario);
         }
         else {
-            console.log('not logged in');
+            console.log('Sin iniciar sesión aun');
         }
     };
 
@@ -255,19 +252,19 @@ class Registro extends Component {
         alert('Se envio correctamente su solicitud: ' + this.state.value);
 
         this.props.firebase
-            .doCreateUserWithEmailAndPassword(email, claveUno)
-            .then((authUser) => {
-                // Create a user in your Firebase realtime database
-                return this.props.firebase.user(authUser.user.uid).set({
-                    username,
+            .doCrearUsuarioConEmailClave(email, claveUno)
+            .then((autorizarUsuario) => {
+                // Create a usuario in your Firebase realtime database
+                return this.props.firebase.usuario(autorizarUsuario.usuario.uid).set({
+                    usuarioname,
                     email,
                     roles,
                 });
             })
 
             .then(() => {
-                this.setState({ ...INITIAL_STATE });
-                this.props.history.push(ROUTES.HOME);
+                this.setState({ ...ESTADO_REPOSO });
+                this.props.history.push('/inicio/');
             })
 
             .catch(error => {
@@ -282,9 +279,9 @@ class Registro extends Component {
         const newDate = new Date().toISOString();
         // const [fotoPerfil, setFotoPerfil]  = useState('');
         const usuario = {
-            'fotoPerfil': this.props.user.photoURL,
-            'userContact': this.props.user.email,
-            'userName': this.props.user.displayName,
+            'fotoPerfil': this.props.usuario.photoURL,
+            'usuarioContact': this.props.usuario.email,
+            'usuarioName': this.props.usuario.displayName,
             'date': newDate,
             'nombre': form.get('nombre'),
             'email': form.get('email'),
@@ -292,7 +289,7 @@ class Registro extends Component {
             'clave': form.get('clave'),
         }
 
-        database.ref('Users').push(usuario)
+        database.ref('usuarios').push(usuario)
             .then(response => console.log(response))
             .catch(error => console.log(error))
     };
@@ -301,9 +298,9 @@ class Registro extends Component {
     btnRegistro = ('click', (event) => {
         // Get Email and pass        
         const email = this.txtEmail.value;
-        const pass = this.txtclave.value;
+        const clave = this.txtclave.value;
         // Sing up
-        const promise = auth.createUserWithEmailAndclave(email, pass);
+        const promise = auth.crearUsuarioConEmailClave(email, clave);
         // firebase.register(nombre, email, telefono, clave)
         this.props.history.replace('/perfil')
 
@@ -313,10 +310,10 @@ class Registro extends Component {
 
     render() {
         const isInvalid =
-            passwordOne !== passwordTwo ||
-            passwordOne === '' ||
+            claveUno !== claveDos ||
+            claveUno === '' ||
             email === '' ||
-            username === '';
+            usuarioname === '';
 
 
         return (
@@ -342,8 +339,11 @@ class Registro extends Component {
                         data-reactroot=""
                         data-reactid="1"
                         data-react-checksum="15">
-                        <div className="Loginv2-container"
+
+                        <div
+                            className="Loginv2-container"
                             data-reactid="2">
+
                             <RegistroSocial
                                 data-reactid="3">
 
@@ -376,7 +376,7 @@ class Registro extends Component {
                                         </a></button>
                                 </RegistroConGmail>
 
-                            </SocialRegistro>
+                            </RegistroSocial>
 
                             <RegistroDivision data-reactid="12">
                                 <span class="LoginDivider-text"
@@ -388,7 +388,7 @@ class Registro extends Component {
 
                             <RegistroConEmail
                                 data-reactid="15">
-                                <form action="/login/?next="
+                                <form action="/inicioSesion/?next="
                                     method="post" data-reactid="16">
                                     <input type="hidden"
                                         name="csrfmiddlewaretoken"
@@ -526,9 +526,9 @@ class Registro extends Component {
                                 </div>
                                 <div class="AccountFooter-link"
                                     data-reactid="48">
-                                    <a href="/iniciosesion/"
+                                    <a href="/inicioSesion/"
                                         component={NavLink}
-                                        to="/InicioSesion"
+                                        to="/inicioSesion/"
                                         className="AccountFooter-btn"
                                         data-reactid="49">
                                         <span data-reactid="50"
@@ -549,13 +549,17 @@ const mapDispatchToProps = {
     setInicioSesion,
 }
 
-export default connect(null, mapDispatchToProps)(Registro);
+export default connect(null, mapDispatchToProps)(PaginaRegistro);
 
 const RegistroLink = () => (
     <p>
         No tiene aun una cuenta? <Link to="/registro/"> Registrase</Link>
     </p>
 );
-const FormRegistro = withRouter(ConFirebase(FormRegistro));
-export default PaginaRegistro;
+
+const FormRegistro =
+    withRouter(ConFirebase(
+        FormRegistro)
+    );
+
 export { FormRegistro, RegistroLink };

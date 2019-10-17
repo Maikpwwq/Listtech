@@ -141,8 +141,8 @@ const Contenido = styled.a`
 `;
 
 class Menu extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             title: 'Menu',
             titulo: '',
@@ -201,7 +201,7 @@ class Menu extends Component {
                         </Menua></Menuli>        
 
                         <Menuli>
-                            {!!authUser.roles[ROLES.ADMIN] && (
+                            {!!autorizarUsuario.roles[ROLES.ADMIN] && (
                             <Menua
                                   component={NavLink}
                                   to="/administrador/"
@@ -263,7 +263,7 @@ class Menu extends Component {
 }
 
 const mapStateToProps = state => ({
-    authUser: state.estadoSesion.authUser,
+    autorizarUsuario: state.estadoSesion.autorizarUsuario,
 });
 
 export default connect(mapStateToProps)(Menu);

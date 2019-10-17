@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './css/index.css';
+import './styles/css/index.css';
 
 import rootReducer from './reducers/rootReducer.js';
 import { Provider } from 'react-redux';
@@ -16,13 +16,15 @@ import * as serviceWorker from './serviceWorker';
 //const base = Rebase.createClass(app.database())
 //export {base}
 
+// Crear la Tienda de productos y servicios 
 const initialState = {};
-const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
+const tienda = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
-export default store;
+export default tienda;
 
+// Llamado a pantalla del layout de sesiones y rutas App.js 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={tienda}>
         <App/>
     </Provider>, 
     document.getElementById('root')

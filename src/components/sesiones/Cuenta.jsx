@@ -4,12 +4,12 @@ import { compose } from 'recompose';
 
 import { ConAutorizacion, ConVerificacionEmail } from './Sesion';
 import { ConFirebase } from '../administracion/Index-firebase';
-import { FormOlvidoClave } from '../Olvido-clave';
-import { FormCambioClave } from '../Cambio-clave';
+import { FormOlvidoClave } from '../usuarios/Olvido-clave';
+import { FormCambioClave } from '../usuarios/Cambio-clave';
 
 const SIGN_IN_METHODS = [
     {
-        id: 'password',
+        id: 'clave',
         provider: null,
     },
     {
@@ -22,12 +22,12 @@ const SIGN_IN_METHODS = [
     },
 ];
 
-const AccountPage = ({ authUser }) => (
+const AccountPage = ({ autorizarUsuario }) => (
     <div>
-        <h1>Account: {authUser.email}</h1>
+        <h1>Account: {autorizarUsuario.email}</h1>
         <FormOlvidoClave />
         <FormCambioClave />
-        <LoginManagement authUser={authUser} />
+        <LoginManagement autorizarUsuario={autorizarUsuario} />
     </div>
 );
 
@@ -47,7 +47,7 @@ class LoginManagementBase extends Component {
 
     fetchSignInMethods = () => {
         this.props.firebase.auth
-            .fetchSignInMethodsForEmail(this.props.authUser.email)
+            .fetchSignInMethodsForEmail(this.props.autorizarUsuario.email)
             .then(activeSignInMethods =>
                 this.setState({ activeSignInMethods, error: null }),
             )
@@ -61,10 +61,10 @@ class LoginManagementBase extends Component {
             .catch(error => this.setState({ error }));
     };
 
-    onDefaultLoginLink = password => {
+    onDefaultLoginLink = clave => {
         const credential = this.props.firebase.emailAuthProvider.credential(
-            this.props.authUser.email,
-            password,
+            this.props.autorizarUsuario.email,
+            clave,
         );
 
         this.props.firebase.auth.currentUser
@@ -95,7 +95,7 @@ class LoginManagementBase extends Component {
 
                         return (
                             <li key={signInMethod.id}>
-                                {signInMethod.id === 'password' ? (
+                                {signInMethod.id === 'clave' ? (
                                     <DefaultLoginToggle
                                         onlyOneLeft={onlyOneLeft}
                                         isEnabled={isEnabled}
@@ -150,17 +150,17 @@ class DefaultLoginToggle extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { passwordOne: '', passwordTwo: '' };
+        this.state = { claveOne: '', claveTwo: '' };
     }
 
-    onSubmit = event => {
+    onEnviar = event => {
         event.preventDefault();
 
-        this.props.onLink(this.state.passwordOne);
-        this.setState({ passwordOne: '', passwordTwo: '' });
+        this.props.onLink(this.state.claveOne);
+        this.setState({ claveOne: '', claveTwo: '' });
     };
 
-    onChange = event => {
+    onCambio = event => {
         this.setState({ [event.target.name]: event.target.value });
     };
 
@@ -172,10 +172,10 @@ class DefaultLoginToggle extends Component {
             onUnlink,
         } = this.props;
 
-        const { passwordOne, passwordTwo } = this.state;
+        const { claveUno, claveDos } = this.state;
 
         const isInvalid =
-            passwordOne !== passwordTwo || passwordOne === '';
+            claveUno !== claveDos || claveUno === '';
 
         return isEnabled ? (
             <button
@@ -186,20 +186,20 @@ class DefaultLoginToggle extends Component {
                 Deactivate {signInMethod.id}
             </button>
         ) : (
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onEnviar}>
                     <input
-                        name="passwordOne"
-                        value={passwordOne}
-                        onChange={this.onChange}
-                        type="password"
-                        placeholder="New Password"
+                        name="claveUno"
+                        value={claveUno}
+                        onChange={this.onCambio}
+                        type="clave"
+                        placeholder="Nueva Clave"
                     />
                     <input
-                        name="passwordTwo"
-                        value={passwordTwo}
-                        onChange={this.onChange}
-                        type="password"
-                        placeholder="Confirm New Password"
+                        name="claveDos"
+                        value={claveDos}
+                        onChange={this.onCambio}
+                        type="clave"
+                        placeholder="Confirmar Nueva clave"
                     />
 
                     <button disabled={isInvalid} type="submit">
@@ -213,10 +213,10 @@ class DefaultLoginToggle extends Component {
 const LoginManagement = ConFirebase(LoginManagementBase);
 
 const mapStateToProps = state => ({
-    authUser: state.sessionState.authUser,
+    autorizarUsuario: state.estadoSesion.autorizarUsuario,
 });
 
-const condition = authUser => !!authUser;
+const condition = autorizarUsuario => !!autorizarUsuario;
 
 export default compose(
     connect(mapStateToProps),

@@ -1,28 +1,28 @@
-const INITIAL_STATE = {
-    messages: null,
-    limit: 5,
+const INITIAL_estado = {
+    mensajes: null,
+    limite: 5,
 };
 
-const applySetMessages = (state, action) => ({
-    ...state,
-    messages: action.messages,
+const aplicarSetMensajes = (estado, accion) => ({
+    ...estado,
+    messages: accion.messages,
 });
 
-const applySetMessagesLimit = (state, action) => ({
-    ...state,
-    limit: action.limit,
+const aplicarSetLimiteMensajes = (estado, accion) => ({
+    ...estado,
+    limite: accion.limite,
 });
 
-function mensajeReducer(state = INITIAL_STATE, action) {
-    switch (action.type) {
-        case 'MESSAGES_SET': {
-            return applySetMessages(state, action);
+function mensajeReducer(estado = INITIAL_estado, accion) {
+    switch (accion.type) {
+        case 'SET_MENSAJES': {
+            return aplicarSetMensajes(estado, accion);
         }
-        case 'MESSAGES_LIMIT_SET': {
-            return applySetMessagesLimit(state, action);
+        case 'SET_LIMITE_MENSAJES': {
+            return aplicarSetLimiteMensajes(estado, accion);
         }
         default:
-            return state;
+            return estado;
     }
 }
 

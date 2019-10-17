@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { ConFirebase } from '../administracion/Index-firebase';
-import * as ROUTES from '../../rutas/App.js';
 
 const PaginaClaveOlvidada = () => (
     <div>
@@ -68,7 +67,7 @@ class FormClaveOlvidadaBase extends Component {
 
 const ClaveOlvidadaLink = () => (
     <p>
-        <Link to={ROUTES.PASSWORD_FORGET}>Olvido su contrasena?</Link>
+        <NavLink to="/cambioClave"> Olvido su contrasena?</NavLink>
     </p>
 );
 

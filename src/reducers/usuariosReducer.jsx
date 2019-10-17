@@ -1,31 +1,31 @@
-const INITIAL_STATE = {
-    users: null,
+const ESTADO_REPOSO = {
+    usuarios: null,
 };
 
-const applySetUsers = (state, action) => ({
-    ...state,
-    users: action.users,
+const aplicarSetUsuarios = (estado, accion) => ({
+    ...estado,
+    usuarios: accion.usuarios,
 });
 
-const applySetUser = (state, action) => ({
-    ...state,
-    users: {
-        ...state.users,
-        [action.uid]: action.user,
+const aplicarSetUsuario = (estado, accion) => ({
+    ...estado,
+    usuarios: {
+        ...estado.usuario,
+        [accion.uid]: accion.usuario,
     },
 });
 
-function userReducer(state = INITIAL_STATE, action) {
-    switch (action.type) {
-        case 'USERS_SET': {
-            return applySetUsers(state, action);
+function usuariosReducer(estado = ESTADO_REPOSO, accion) {
+    switch (accion.type) {
+        case 'SET_USUARIOS': {
+            return aplicarSetUsuarios(estado, accion);
         }
-        case 'USER_SET': {
-            return applySetUser(state, action);
+        case 'SET_USUARIO': {
+            return aplicarSetUsuario(estado, accion);
         }
         default:
-            return state;
+            return estado;
     }
 }
 
-export default userReducer;
+export default usuariosReducer;

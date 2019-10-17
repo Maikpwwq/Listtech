@@ -3,17 +3,17 @@ import React from 'react';
 import ObjetoMensaje from './Objeto-mensaje.jsx';
 
 const ListaMensajes = ({
-    authUser,
-    messages,
+    autorizarUsuario,
+    mensajes,
     onEditarMensaje,
     onRemoverMensaje,
 }) => (
         <ul>
-            {messages.map(message => (
+            {mensajes.map(mensaje => (
                 <ObjetoMensaje
-                    authUser={authUser}
-                    key={message.uid}
-                    message={message}
+                    autorizarUsuario={autorizarUsuario}
+                    key={mensaje.uid}
+                    mensaje={mensaje}
                     onEditarMensaje={onEditarMensaje}
                     onRemoverMensaje={onRemoverMensaje}
                 />

@@ -255,7 +255,6 @@ showSlides(1, 1);
     }
 */
 
-
 class Carrousel extends Component {
 
     constructor(props) {
@@ -268,22 +267,22 @@ class Carrousel extends Component {
     }
 
     nextProducto = () => {
-        const nuevoindex = this.state.Producto.index + 1;
+        const nuevoIndex = this.state.Producto.index + 1;
         this.setState({
-                Producto: data.Productos[nuevoindex]
+                Producto: data.Productos[nuevoIndex]
             })
     }
 
     prevProducto = () => {
-        const nuevoindex = this.state.Producto.index - 1;
+        const nuevoIndex = this.state.Producto.index - 1;
         this.setState({
-            Producto: data.Productos[nuevoindex]
+            Producto: data.Productos[nuevoIndex]
         })
     }
 
-    currentSlide = () => {
-        const actualindex = this.state.Producto.index;
-        console.log("Actual", actualindex);
+    CurrentSlide = () => {
+        const actualIndex = this.state.Producto.index;
+        console.log("Actual", actualIndex);
     }
 
     render() {
@@ -332,7 +331,7 @@ class Carrousel extends Component {
 
                     <CarrouselDescripcion id="carrusel_imagenes_marcas" >
                         <div>
-                            <span className="dot" onClick="currentSlide(1)">
+                            <span className="dot" onClick="CurrentSlide(1)">
                             </span>
                             <span className="dot" onClick="CurrentSlide(2)">
                             </span>

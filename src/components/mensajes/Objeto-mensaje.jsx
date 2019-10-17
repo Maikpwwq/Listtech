@@ -6,14 +6,14 @@ class ObjetoMensaje extends Component {
 
         this.state = {
             editMode: false,
-            editText: this.props.message.text,
+            editText: this.props.mensaje.text,
         };
     }
 
     onToggleEditMode = () => {
         this.setState(state => ({
             editMode: !state.editMode,
-            editText: this.props.message.text,
+            editText: this.props.mensaje.text,
         }));
     };
 
@@ -22,13 +22,13 @@ class ObjetoMensaje extends Component {
     };
 
     onAplicarEditarText = () => {
-        this.props.onEditarMensaje(this.props.message, this.state.editText);
+        this.props.onEditarMensaje(this.props.mensaje, this.state.editText);
 
         this.setState({ editMode: false });
     };
 
     render() {
-        const { authUser, message, onRemoverMensaje } = this.props;
+        const { autorizarUsuario, mensaje, onRemoverMensaje } = this.props;
         const { editMode, editText } = this.state;
 
         return (
@@ -41,12 +41,12 @@ class ObjetoMensaje extends Component {
                     />
                 ) : (
                         <span>
-                            <strong>{message.userId}</strong> {message.text}
-                            {message.editedAt && <span>(Edited)</span>}
+                            <strong>{mensaje.usuarioId}</strong> {mensaje.text}
+                            {mensaje.editedAt && <span>(Edited)</span>}
                         </span>
                     )}
 
-                {authUser.uid === message.userId && (
+                {autorizarUsuario.uid === mensaje.usuarioId && (
                     <span>
                         {editMode ? (
                             <span>
@@ -60,7 +60,7 @@ class ObjetoMensaje extends Component {
                         {!editMode && (
                             <button
                                 type="button"
-                                onClick={() => onRemoverMensaje(message.uid)}
+                                onClick={() => onRemoverMensaje(mensaje.uid)}
                             >
                                 Delete
                             </button>

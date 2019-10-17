@@ -1,20 +1,20 @@
-const INITIAL_STATE = {
-    authUser: null,
+const ESTADO_REPOSO = {
+    autorizarUsuario: null,
 };
 
-const applySetAuthUser = (state, action) => ({
-    ...state,
-    authUser: action.authUser,
+const aplicarSetAutorizarUsuario = (estado, accion) => ({
+    ...estado,
+    autorizarUsuario: accion.autorizarUsuario,
 });
 
-function sessionReducer(state = INITIAL_STATE, action) {
-    switch (action.type) {
-        case 'AUTH_USER_SET': {
-            return applySetAuthUser(state, action);
+function sesionReducer(estado = ESTADO_REPOSO, accion) {
+    switch (accion.type) {
+        case 'SET_AUTORIZAR_USUARIO': {
+            return aplicarSetAutorizarUsuario(estado, accion);
         }
         default:
-            return state;
+            return estado;
     }
 }
 
-export default sessionReducer;
+export default sesionReducer;

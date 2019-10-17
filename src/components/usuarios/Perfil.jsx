@@ -4,7 +4,7 @@ import logo from '../../imagenes/Listtech-Logo.png';
 
 import firebase from '../../init-firebase.js'
 import { connect } from 'react-redux';
-import { setUser, setLogin } from '../../actions/actions.js';
+import { setUsuario, setInicioSesion } from '../../actions/actions.js';
 
 import styled from 'styled-components'
 
@@ -81,8 +81,8 @@ class Perfil extends Component {
     logoutFacebook = () => {
         firebase().singOut()
             .then(() => {
-                this.props.setUser({});
-                this.props.setLogin(false);
+                this.props.setUsuario({});
+                this.props.setInicioSesion(false);
                 this.props.history.push('/');
                 console.log('Sesion finalizada');
             });
@@ -400,13 +400,13 @@ class Perfil extends Component {
 
 const mapStateToProps = state => {
     return {
-        user: state.user
+        usuario: state.usuario
     };
 };
 
 const mapDispatchToProps = {
-    setUser,
-    setLogin,
+    setUsuario,
+    setInicioSesion,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Perfil);                                   

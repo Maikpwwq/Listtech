@@ -1,15 +1,19 @@
 {
   "ExpandedNodes": [
     "",
-    "\\functions",
-    "\\functions\\lib",
-    "\\node_modules\\react",
-    "\\public",
     "\\src",
     "\\src\\actions",
     "\\src\\components",
-    "\\vendor"
+    "\\src\\components\\marca",
+    "\\src\\components\\mensajes",
+    "\\src\\components\\micelaneos",
+    "\\src\\components\\productos",
+    "\\src\\components\\sesiones",
+    "\\src\\components\\tienda",
+    "\\src\\components\\usuarios",
+    "\\src\\constantes",
+    "\\src\\constantes\\productos"
   ],
-  "SelectedNode": "\\src\\init-firebase.js",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

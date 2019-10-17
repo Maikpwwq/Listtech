@@ -4,15 +4,15 @@ import Social from '../components/marca/Social';
 import Contacto from '../components/marca/Contacto.jsx';
 import Formcontacto from '../components/usuarios/Form-contacto.jsx';
 
-import Pse from "../../imagenes/medios de pago/pse.png";
-import Visa from "../../imagenes/medios de pago/visa.png";
-import AmericanExpress from "../../imagenes/medios de pago/americanexpress.png";
-import MasterCard from "../../imagenes/medios de pago/mastercard.png";
-import Paypal from "../../imagenes/medios de pago/paypal.png";	
+import Pse from "../imagenes/medios de pago/pse.png";
+import Visa from "../imagenes/medios de pago/visa.png";
+import AmericanExpress from "../imagenes/medios de pago/americanexpress.png";
+import MasterCard from "../imagenes/medios de pago/mastercard.png";
+import Paypal from "../imagenes/medios de pago/paypal.png";	
 
-import logo from '../../imagenes/Listtech-Control-Acceso.png';
+import logo from '../imagenes/Listtech-Control-Acceso.png';
 
-import indicador from '../../imagenes/redes/indentador.png';
+import indicador from '../imagenes/redes/indentador.png';
 
 import styled from 'styled-components'
 

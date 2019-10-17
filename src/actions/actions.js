@@ -1,15 +1,16 @@
 export const setUsuario = payload => ({
-    type: 'SET_USER',
+    type: 'SET_USUARIO',
     payload,
 });
+// autorizarUsuario
 
 export const setInicioSesion = payload => ({
-    type: 'SET_LOGIN',
+    type: 'SET_INICIO_SESION',
     payload,
 });
 
 export const setEnviarForm = payload => ({
-    type: 'SET_ENVIARFORM',
+    type: 'SET_ENVIAR_FORM',
     payload,
 });
 

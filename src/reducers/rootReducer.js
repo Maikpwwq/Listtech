@@ -1,19 +1,21 @@
-import authReducer from './authReducer';
+import autorizacionReducer from './autorizacionReducer';
 import comprasReducer from './comprasReducer';
+import mensajesReducer from './mensajesReducer';
 import requerimientosReducer from './requerimientosReducer';
-import sesionReducer from './session';
-import usuariosReducer from './user';
-import mensajesReducer from './message';
+import sesionReducer from './sesionReducer';
+import usuariosReducer from './usuariosReducer';
+
 
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-    auth: authReducer,
+    autorizacion: autorizacionReducer,
     compras: comprasReducer,
-    requerimientos: requerimientosReducer
-    sesionState: sesionReducer,
-    useuarioState: usuariosReducer,
-    mensajeState: mensajesReducer,
+    estadoMensaje: mensajesReducer,
+    requerimientos: requerimientosReducer,
+    estadoSesion: sesionReducer,
+    estadoUsuario: usuariosReducer,
+    
 });
 
 export default rootReducer;

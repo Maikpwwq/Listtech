@@ -99,6 +99,13 @@ class Firebase extends Component {
         return this.auth.signInWithEmailAndPassword(email, clave)
     }
 
+    async register(name, email, clave) {
+        await this.auth.createUserWithEmailAndPassword(email, clave)
+        return this.auth.currentUser.updateProfile({
+            displayName: name
+        })
+    }
+
     doCrearUsuarioConEmailClave = (email, clave) =>
         this.auth.createUserWithEmailAndPassword(email, clave);
 
@@ -119,31 +126,31 @@ class Firebase extends Component {
 
     doCerrarSesion = () => { return this.auth.signOut() };
 
-    doClaveReset = email => this.auth.sendPasswordResetEmail(email);
+    doCambioClave = email => this.auth.sendPasswordResetEmail(email);
+
+    doOlvidoClave = email => this.auth.sendPasswordResetEmail(email);
+
+    doActualizarClave = clave =>
+        this.auth.currentUser.actualizarClave(clave);
 
     doEnviarEmailVerificacion = () =>
         this.auth.currentUser.sendEmailVerification({
             url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
         });
-
-    doActualizarClave = clave =>
-        this.auth.currentUser.actualizarClave(clave);
-
-    async register(name, email, clave) {
-        await this.auth.createUserWithEmailAndPassword(email, clave)
-        return this.auth.currentUser.updateProfile({
-            displayName: name
-        })
-    }
-
-    addQuote(quote) {
+        
+    addNota(nota) {
         if (!this.auth.currentUser) {
-            return alert('Not authorized')
+            return alert('No está autorizado')
         }
 
         return this.firestore.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).set({
-            quote
+            nota
         })
+    }
+
+    async getActualNotaUsuario() {
+        const nota = await this.firestore.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).get()
+        return nota.get('nota')
     }
 
     isInitialized() {
@@ -154,11 +161,6 @@ class Firebase extends Component {
 
     getCurrentUsername() {
         return this.auth.currentUser && this.auth.currentUser.displayName
-    }
-
-    async getCurrentUserQuote() {
-        const quote = await this.firestore.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).get()
-        return quote.get('quote')
     }
 
     // *** Merge Auth and DB User API *** //

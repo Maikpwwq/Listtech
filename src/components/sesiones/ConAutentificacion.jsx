@@ -9,20 +9,20 @@ const ConAutentificacion = Component => {
     constructor(props) {
       super(props);
 
-      this.props.onSetAuthUser(
-        JSON.parse(localStorage.getItem('authUser')),
+      this.props.onSetAutorizarUsuario(
+        JSON.parse(localStorage.getItem('autorizarUsuario')),
       );
     }
 
     componentDidMount() {
-      this.listener = this.props.firebase.onAuthUserListener(
-        authUser => {
-          localStorage.setItem('authUser', JSON.stringify(authUser));
-          this.props.onSetAuthUser(authUser);
+      this.listener = this.props.firebase.onautorizarUsuarioListener(
+        autorizarUsuario => {
+          localStorage.setItem('autorizarUsuario', JSON.stringify(autorizarUsuario));
+          this.props.onSetAutorizarUsuario(autorizarUsuario);
         },
         () => {
-          localStorage.removeItem('authUser');
-          this.props.onSetAuthUser(null);
+          localStorage.removeItem('autorizarUsuario');
+          this.props.onSetAutorizarUsuario(null);
         },
       );
     }
@@ -37,8 +37,8 @@ const ConAutentificacion = Component => {
   }
 
   const mapDispatchToProps = dispatch => ({
-    onSetAuthUser: authUser =>
-      dispatch({ type: 'AUTH_USER_SET', authUser }),
+    onSetAutorizarUsuario: autorizarUsuario =>
+        dispatch({ type: 'SET_AUTORIZAR_USUARIO', autorizarUsuario }),
   });
 
   return compose(

@@ -2,11 +2,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { compose } from 'recompose';
 
-import { conAutorizacion, conEmailVerificacion } from '../sesiones/Sesion.jsx';
+import { conAutorizacion, conVerificacionEmail } from '../sesiones/Sesion.jsx';
 import { ListaUsuarios, ObjetoUsuario } from '../usuarios/Usuarios.jsx';
 import * as ROLES from './Roles.js';
-
-import * as ROUTES from '../../constants/routes';
 
 const ConfiguracionAdministrador = () => (
   <div>
@@ -14,16 +12,16 @@ const ConfiguracionAdministrador = () => (
         <p>La página de administración es accesible para todos los usuarios que hayan iniciado sesión.</p>
 
     <Switch>
-      <Route exact path={ROUTES.ADMIN_DETAILS} component={ObjetoUsuario} />
-            <Route exact path={ROUTES.ADMIN} component={ListaUsuarios} />
+            <Route exact path="/objetoUsuario" component={ObjetoUsuario} />
+            <Route exact path="/listaUsuarios" component={ListaUsuarios} />
     </Switch>
   </div>
 );
 
-const condicion = authUser =>
-  authUser && !!authUser.roles[ROLES.ADMIN];
+const condicion = autorizarUsuario =>
+  autorizarUsuario && !!autorizarUsuario.roles[ROLES.ADMINISTRADOR];
 
 export default compose(
-  conEmailVerificacion,
+  conVerificacionEmail,
   conAutorizacion(condicion),
 )(ConfiguracionAdministrador);

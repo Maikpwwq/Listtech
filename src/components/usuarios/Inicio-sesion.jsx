@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 //import { useState } from 'react';
 
 import logo from '../../imagenes/Listtech-Logo.png';
-import { NavLink } from 'react-router-dom';
 
 import Firebase from '../../init-firebase.js'
 import { auth, database, facebookProvider, googleProvider } from '../../init-firebase.js'
@@ -12,13 +11,12 @@ import { auth, database, facebookProvider, googleProvider } from '../../init-fir
 import { connect } from 'react-redux';
 import { setUsuario, setInicioSesion } from '../../actions/actions'
 
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import { compose } from 'recompose';
 
-import { RegistroLink } from '../Registro.jsx';
-import { OlvidoClaveLink } from '../OlvidoClave';
+import { RegistroLink } from './Registro.jsx';
+import { OlvidoClaveLink } from './OlvidoClave';
 import { ConFirebase } from '../administracion/Index-firebase';
-import * as ROUTES from '../../rutas/App.js';
 
 import styled from 'styled-components'
 
@@ -129,7 +127,7 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
   esta cuenta y asociar sus cuentas en su página de perfil.
 `;
 
-class FormInicioSesion extends Component {
+class PaginaInicioSesion extends Component {
 
     constructor(props) {
         super(props);
@@ -459,7 +457,7 @@ class FormInicioSesion extends Component {
                                         className="AccountFooter-btn"
                                         Id="btnRegistro"
                                         component={NavLink}
-                                        to="/Registro"
+                                        to="/registro/"
                                         data-reactid="37">
                                         <span data-reactid="38"
                                         >Regístrate
@@ -477,16 +475,16 @@ class FormInicioSesion extends Component {
 }
 
 const mapDispatchToProps = {
-    setUser,
-    setLogin,
+    setUsuario,
+    setInicioSesion,
 }
 
-export default connect(null, mapDispatchToProps)(FormInicioSesion);
+export default connect(null, mapDispatchToProps)(PaginaInicioSesion);
 
-const FormInicioSesion = compose(
+/* const PaginaInicioSesion = compose(
     withRouter,
     ConFirebase,
-)(FormInicioSesion);
+)(PaginaInicioSesion); */
 
 const InicioSesionConGoogle = compose(
     withRouter,
@@ -498,6 +496,4 @@ const InicioSesionConFacebook = compose(
     ConFirebase,
 )(inicioSesionConFacebook);
 
-export default PaginaInicioSesion;
-
-export { FormInicioSesion, InicioSesionConGoogle, InicioSesionConFacebook };
+export { InicioSesionConGoogle, InicioSesionConFacebook }; // PaginaInicioSesion

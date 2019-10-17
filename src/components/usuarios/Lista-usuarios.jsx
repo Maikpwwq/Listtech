@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 
 import { ConFirebase } from '../administracion/Index-firebase';
-import * as ROUTES from '../../rutas/App.js';
 
 class ListaUsuarios extends Component {
     constructor(props) {
@@ -37,7 +36,7 @@ class ListaUsuarios extends Component {
 
         return (
             <div>
-                <h2>Users</h2>
+                <h2>Usuarios</h2>
                 {loading && <div> Cargando ...</div>}
                 <ul>
                     {users.map(user => (
@@ -52,7 +51,7 @@ class ListaUsuarios extends Component {
                                 <strong>Nombre de usuario:</strong> {user.username}
                             </span>
                             <span>
-                                <NavLink to={`${ROUTES.ADMIN}/${user.uid}`}>
+                                <NavLink to={`configuracionAdministrador/${user.uid}`}>
                                     Detalles
                                 </NavLink>
                             </span>

@@ -11,25 +11,27 @@ import { setUsuario, setInicioSesion } from '../actions/actions.js';
 import Layout from '../containers/Layout.jsx';
 import Cuerpo from '../containers/Cuerpo.jsx';
 
-//import Inicio from '../components/usuarios/Inicio.jsx'
+import Inicio from '../components/usuarios/Inicio.jsx'
 import Perfil from '../components/usuarios/Perfil.jsx';
 import DetalleProducto from '../components/productos/Detalle-producto.jsx';
-//import FichaProducto from '../components/productos/Ficha-producto.jsx';
+import FichaProducto from '../components/productos/Ficha-producto.jsx';
 import InicioSesion from '../components/usuarios/Inicio-sesion.jsx';
 import Registro from '../components/usuarios/Registro.jsx';
 import OlvidoClave from '../components/usuarios/Olvido-clave.jsx'
 import CambioClave from '../components/usuarios/Cambio-clave.jsx'
-//import CerrarSesion from '../components/usuarios/Cerrar-sesion.jsx'
+import CerrarSesion from '../components/usuarios/Cerrar-sesion.jsx'
 import Compras from '../components/tienda/Compras.jsx';
-//import Tienda from '../components/tienda/Tienda.jsx';
+import Tienda from '../components/tienda/Tienda.jsx';
 import Contacto from '../components/marca/Contacto.jsx';
 import Marcas from '../components/marca/Marcas.jsx';
 import Nosotros from '../components/marca/Nosotros.jsx';
 import ConoceMas from '../components/marca/ConoceMas.jsx';
 
 import ConfiguracionAdministrador from '../components/administracion/ConfiguracionAdministrador.jsx';
-import ListaMensajes from '../components/mensajes/ListaMensajes.jsx';
-import ListaUsuarios from '../components/usuarios/ListaUsuarios.jsx';
+import ListaMensajes from '../components/mensajes/Lista-mensajes.jsx';
+import ObjetoMensaje from '../components/mensajes/Objeto-mensaje.jsx';
+import ListaUsuarios from '../components/usuarios/Lista-usuarios.jsx';
+import ObjetoUsuario from '../components/usuarios/Objeto-usuario.jsx';
 
 import NotFound from '../paginas/NotFound';
 
@@ -59,8 +61,8 @@ const App = () => {
     useEffect(() => {
         firebase().onAuthStateChanged((user) => {
             if (user) {
-                this.props.setUser(user);
-                this.props.setLogin(true);
+                this.props.setUsuario(user);
+                this.props.setInicioSesion(true);
             }
         });
     }, []);
@@ -77,24 +79,36 @@ const App = () => {
                                 <Route exact path="/" component={Cuerpo} data={data.data} />
                                 <Route exact path="/inicio" component={Inicio} data={data.data} />
                                 <Route exact path="/perfil/:id" component={Perfil} />
-                                <Route exact path="/administracion/:id" component={Administradores} />
-                                <Route exact path="/detalleProducto/:id" component={DetalleProducto} />
-                                <Route exact path="/fichaProducto/:id" component={FichaProducto} />
+
+                                <Route exact path="/configuracionAdministrador/:id" component={ConfiguracionAdministrador} />
+                                <Route exact path="/configuracionAdministrador" component={ConfiguracionAdministrador} />      
+
+                                <Route exact path="/listaMensajes" component={ListaMensajes} />
+                                <Route exact path="/listaMensajes/:id" component={ListaMensajes} />
+                                <Route exact path="/objetoMensaje" component={ObjetoMensaje} />
+                                <Route exact path="/objetoMensaje/:id" component={ObjetoMensaje} />
+                                <Route exact path="/listaUsuarios" component={ListaUsuarios} />
+                                <Route exact path="/listaUsuarios/:id" component={ListaUsuarios} />
+                                <Route exact path="/objetoUsuario" component={ObjetoUsuario} />
+                                <Route exact path="/objetoUsuario/:id" component={ObjetoUsuario} />
+                                
                                 <Route exact path="/iniciarSesion" component={InicioSesion} />
-                                <Route exact path="/registro" component={Registro} />                                
+                                <Route exact path="/registro" component={Registro} />
                                 <Route exact path="/olvidoClave" component={OlvidoClave} />
                                 <Route exact path="/cambioClave" component={CambioClave} />
                                 <Route exact path="/cerrarSesion" component={CerrarSesion} />
+
+                                <Route exact path="/detalleProducto/:id" component={DetalleProducto} />
+                                <Route exact path="/fichaProducto/:id" component={FichaProducto} />
                                 <Route exact path="/compras" component={Compras} />
                                 <Route exact path="/tienda" component={Tienda} />
+
+
                                 <Route exact path="/contacto" component={Contacto} />
                                 <Route exact path="/marcas" component={Marcas} />
                                 <Route exact path="/nosotros" component={Nosotros} />
-                                <Route exact path="/conocemas" component={ConoceMas} />
-                                <Route exact path="/configuracionAdministrador" component={ConfiguracionAdministrador} />                                                                
-                                <Route exact path="/listaMensajes" component={ListaMensajes} />
-                                <Route exact path="/listaUsuarios" component={ListaUsuarios} />
-                                
+                                <Route exact path="/conocemas" component={ConoceMas} />                                                                                          
+
                                 <Route component={NotFound} />
                             </Switch>
                         </Layout>
@@ -107,8 +121,8 @@ const App = () => {
 
 
 const mapDispatchToProps = {
-    setUser,
-    setLogin,
+    setUsuario,
+    setInicioSesion,
 }
 
 export default connect(null, mapDispatchToProps)(App);

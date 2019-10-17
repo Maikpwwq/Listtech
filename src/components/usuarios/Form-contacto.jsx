@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import useEnviarForm from '../../hooks/useEnviarForm';
 import { connect } from 'react-redux';
 
-import { storage, database } from '../init-firebase';
+import { storage, database } from '../../init-firebase';
 
 import styled from 'styled-components'
 
