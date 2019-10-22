@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 import next from '../../imagenes/next.png';
 import prev from '../../imagenes/prev.png';
 
-import data from '../../constantes/productos/Productos.js'
+import data from '../../constantes/productos/Productos.jsx'
 
 import styled from 'styled-components'
 
@@ -155,51 +155,51 @@ const Next = styled.button`
 
 /*key = {`Carrousel-${index}`}*/
 /* 
-const initState = {}
-const lineaProductos = (state = initState, action) => {
+const initestado = {}
+const lineaProductos = (estado = initestado, action) => {
     switch (Producto.Linea) { 
     case '1 Cerraduras electrónicas':
             return {
-                ...state,
+                ...estado,
                 : action.payload
             }
 case '2 Cerraduras mecánicas':
             return {
-                ...state,
+                ...estado,
                 : action.payload
             }
 case '3 Accesorios Soporte':
             return {
-                ...state,
+                ...estado,
                 : action.payload
             }
 case '4 Salidas PUSH emergencia':
             return {
-                ...state,
+                ...estado,
                 : action.payload
             }
 case '5 Cierra puertas':
             return {
-                ...state,
+                ...estado,
                 : action.payload
             }
 case '6 Sensores y cantoneras electrónicas':
             return {
-                ...state,
+                ...estado,
                 : action.payload
             }
 case '7 Redes cableado estructurado':
             return {
-                ...state,
+                ...estado,
                 : action.payload
             }
 case '8 Acceso suspendido en alturas':
             return {
-                ...state,
+                ...estado,
                 : action.payload
             }
     default:
-            return state;
+            return estado;
     }
 }
 
@@ -260,34 +260,34 @@ class Carrousel extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
+        this.estado = {
             Productos: data.Productos,
             Producto: data.Productos[0]
         };    
     }
 
     nextProducto = () => {
-        const nuevoIndex = this.state.Producto.index + 1;
-        this.setState({
+        const nuevoIndex = this.estado.Producto.index + 1;
+        this.setEstado({
                 Producto: data.Productos[nuevoIndex]
             })
     }
 
     prevProducto = () => {
-        const nuevoIndex = this.state.Producto.index - 1;
-        this.setState({
+        const nuevoIndex = this.estado.Producto.index - 1;
+        this.setEstado({
             Producto: data.Productos[nuevoIndex]
         })
     }
 
     CurrentSlide = () => {
-        const actualIndex = this.state.Producto.index;
+        const actualIndex = this.estado.Producto.index;
         console.log("Actual", actualIndex);
     }
 
     render() {
 
-        const { Productos, Producto } = this.state;
+        const { Productos, Producto } = this.estado;
 
         console.log("Seleccion", Producto);
 
@@ -304,7 +304,7 @@ class Carrousel extends Component {
                                     Productos && Productos.map((Producto,index) => (
                                         <NavLink to={{
                                             pathname: `/productos/${index}-${Producto.name}`,
-                                            state: {...Productos}
+                                            estado: {...Productos}
                                         }}><Fichaproducto Producto={Producto}
                                             key={`Producto-${index}`}
                                             /*id={Producto._id}*/
@@ -348,10 +348,31 @@ class Carrousel extends Component {
 }
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (estado) => {
     return {
-        productos: state.producto.productos
+        productos: estado.producto.productos
     }
 }
     
-export default connect(mapStateToProps) (Carrousel);
+export default connect(mapStateToProps)(Carrousel);
+
+/*
+function Counter({initialCount}) {
+  const [count, setCount] = useestado(()=>{
+      const= initialCount="";
+      return initialCount;
+  }, [props.   ],);
+  return (
+    <>
+      Count: {count}
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+    </>
+  );
+}
+setestado(prevestado => {
+  // Object.assign would also work
+  return {...prevestado, ...updatedValues};
+});
+ */

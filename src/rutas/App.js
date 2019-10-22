@@ -1,15 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { CircularProgress } from '@material-ui/core';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import * as firebase from '../init-firebase.js'
+// importar Propiedades usuario  
+import { setUsuario, setInicioSesion, } from '../actions/actions.js';
 
-import { setUsuario, setInicioSesion } from '../actions/actions.js';
+// importar Registro por Firebase  
+import useFirebaseUsuario from '../hooks/useFirebaseUsuario';
+
+// importar listados de productos y mas 
+import useGetData from '../hooks/useGetData';
+
+// Rutas y paginas
+import NotFound from '../paginas/NotFound';
+
+// importar contenedores
 
 import Layout from '../containers/Layout.jsx';
 import Cuerpo from '../containers/Cuerpo.jsx';
+
+// importar componentes
 
 import Inicio from '../components/usuarios/Inicio.jsx'
 import Perfil from '../components/usuarios/Perfil.jsx';
@@ -33,81 +45,66 @@ import ObjetoMensaje from '../components/mensajes/Objeto-mensaje.jsx';
 import ListaUsuarios from '../components/usuarios/Lista-usuarios.jsx';
 import ObjetoUsuario from '../components/usuarios/Objeto-usuario.jsx';
 
-import NotFound from '../paginas/NotFound';
-
-import useGetData from '../hooks/useGetData';
-const data = useGetData();
-
 /* componentWillMount() {
-
 }
-
 componenteWillUnmount() {
-
 } */
 
-//<Route exact path="/tienda" component={Tienda} />
+// Llamado de sesiones y rutas "App.js "
 
 const App = () => {
 
-    const [firebaseInitialized, setFirebaseInitialized] = useState(false);
+    // Llamado al Hook de Asignacion id: usuario por Firebase
+    const FirebaseUsuario = useFirebaseUsuario();
 
-    useEffect(() => {        
-        firebase.isInitialized().then(val => {
-            setFirebaseInitialized(val)
-        })
-    }, []);
+    // Sesiones
 
-    useEffect(() => {
-        firebase().onAuthStateChanged((user) => {
-            if (user) {
-                this.props.setUsuario(user);
-                this.props.setInicioSesion(true);
-            }
-        });
-    }, []);
 
-    // Niveles de acceso segun rutas    
+    // Llamado al Hook importar datos de firebase 
+    const data = useGetData();
+
+    // Niveles de acceso segun rutas del buscador    
     return (
-        firebaseInitialized !== false ? (
+        FirebaseUsuario !== false ? (
             data.length === 0 ? <h1> Cargando ...</h1> :
+
                 <div className="App">
 
                     <BrowserRouter>
                         <Layout>
-                            <Switch>
+                            <Switch>                                
                                 <Route exact path="/" component={Cuerpo} data={data.data} />
-                                <Route exact path="/inicio" component={Inicio} data={data.data} />
-                                <Route exact path="/perfil/:id" component={Perfil} />
+                                <Route exact path="/inicio/" component={Inicio} data={data.data} />
+                                <Route exact path="/perfil/:id/" component={Perfil} />
 
-                                <Route exact path="/configuracionAdministrador/:id" component={ConfiguracionAdministrador} />
-                                <Route exact path="/configuracionAdministrador" component={ConfiguracionAdministrador} />      
+                                <Route exact path="/configuracionAdministrador/:id/" component={ConfiguracionAdministrador} />
+                                <Route exact path="/configuracionAdministrador/" component={ConfiguracionAdministrador} />      
 
-                                <Route exact path="/listaMensajes" component={ListaMensajes} />
-                                <Route exact path="/listaMensajes/:id" component={ListaMensajes} />
-                                <Route exact path="/objetoMensaje" component={ObjetoMensaje} />
-                                <Route exact path="/objetoMensaje/:id" component={ObjetoMensaje} />
-                                <Route exact path="/listaUsuarios" component={ListaUsuarios} />
-                                <Route exact path="/listaUsuarios/:id" component={ListaUsuarios} />
-                                <Route exact path="/objetoUsuario" component={ObjetoUsuario} />
-                                <Route exact path="/objetoUsuario/:id" component={ObjetoUsuario} />
+                                <Route exact path="/listaMensajes/" component={ListaMensajes} />
+                                <Route exact path="/listaMensajes/:id/" component={ListaMensajes} />
+                                <Route exact path="/objetoMensaje/" component={ObjetoMensaje} />
+                                <Route exact path="/objetoMensaje/:id/" component={ObjetoMensaje} />
+                                <Route exact path="/listaUsuarios/" component={ListaUsuarios} />
+                                <Route exact path="/listaUsuarios/:id/" component={ListaUsuarios} />
+                                <Route exact path="/objetoUsuario/" component={ObjetoUsuario} />
+                                <Route exact path="/objetoUsuario/:id/" component={ObjetoUsuario} />
                                 
-                                <Route exact path="/iniciarSesion" component={InicioSesion} />
-                                <Route exact path="/registro" component={Registro} />
-                                <Route exact path="/olvidoClave" component={OlvidoClave} />
-                                <Route exact path="/cambioClave" component={CambioClave} />
-                                <Route exact path="/cerrarSesion" component={CerrarSesion} />
+                                <Route exact path="/iniciarSesion/" component={InicioSesion} />
+                                <Route exact path="/registro/" component={Registro} />
+                                <Route exact path="/olvidoClave/" component={OlvidoClave} />
+                                <Route exact path="/cambioClave/" component={CambioClave} />
+                                <Route exact path="/cerrarSesion/" component={CerrarSesion} />
 
-                                <Route exact path="/detalleProducto/:id" component={DetalleProducto} />
-                                <Route exact path="/fichaProducto/:id" component={FichaProducto} />
-                                <Route exact path="/compras" component={Compras} />
-                                <Route exact path="/tienda" component={Tienda} />
+                                <Route exact path="/detalleProducto/:id/" component={DetalleProducto} />
+                                <Route exact path="/fichaProducto/:id/" component={FichaProducto} />
+                                <Route exact path="/compras/" component={Compras} />
+                                <Route exact path="/tienda/" component={Tienda} />
 
 
-                                <Route exact path="/contacto" component={Contacto} />
-                                <Route exact path="/marcas" component={Marcas} />
-                                <Route exact path="/nosotros" component={Nosotros} />
-                                <Route exact path="/conocemas" component={ConoceMas} />                                                                                          
+                                <Route exact path="/contacto/" component={Contacto} />
+                                <Route exact path="/marcas/" component={Marcas} />
+                                <Route exact path="/nosotros/" component={Nosotros} />
+                                <Route exact path="/conocemas/" component={ConoceMas} />                                                                                          
 
                                 <Route component={NotFound} />
                             </Switch>
@@ -119,11 +116,11 @@ const App = () => {
     );
 }
 
+// Asignar propiedades de inicio de sesion 
 
 const mapDispatchToProps = {
     setUsuario,
-    setInicioSesion,
+    setInicioSesion,    
 }
 
 export default connect(null, mapDispatchToProps)(App);
-        

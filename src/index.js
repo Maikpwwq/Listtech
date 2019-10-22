@@ -12,17 +12,17 @@ import App from './rutas/App.js';
 
 import * as serviceWorker from './serviceWorker';
 
+// Crear la "tienda" de productos y servicios
+const initialState = {};
+const tienda = createStore(rootReducer, initialState, applyMiddleware(thunk));
+
 //import Rebase from 're-base';
 //const base = Rebase.createClass(app.database())
 //export {base}
 
-// Crear la Tienda de productos y servicios 
-const initialState = {};
-const tienda = createStore(rootReducer, initialState, applyMiddleware(thunk));
-
 export default tienda;
 
-// Llamado a pantalla del layout de sesiones y rutas App.js 
+// Llamado a pantalla de la pagina de sesiones y rutas "App.js "
 ReactDOM.render(
     <Provider store={tienda}>
         <App/>

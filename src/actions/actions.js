@@ -1,14 +1,37 @@
+// Productos y servicios
+export const setListadoProductos = payload => ({
+    type: 'SET_LISTADO_PRODUCTOS',
+    payload,
+});
+
+// Sesion de usuario
+export const setEstado = payload => ({
+    type: 'SET_ESTADO_USUARIO',
+    payload,
+});
+
+export const setModal = payload => ({
+    type: 'SET_MODAL',
+    payload,
+});
+
+// autorizarUsuario
+export const autorizarUsuario = payload => ({
+    type: 'SET_AUTORIZAR_USUARIO',
+    payload,
+});
+
 export const setUsuario = payload => ({
     type: 'SET_USUARIO',
     payload,
 });
-// autorizarUsuario
 
 export const setInicioSesion = payload => ({
     type: 'SET_INICIO_SESION',
     payload,
 });
 
+// Formulario de contacto 
 export const setEnviarForm = payload => ({
     type: 'SET_ENVIAR_FORM',
     payload,
@@ -19,6 +42,7 @@ export const setRequerimiento = payload => ({
     payload,
 });
 
+// Tienda y Gestion de Compras
 export const setAceptar = payload => ({
     type: 'SET_PAGAR',
     payload,
@@ -38,3 +62,5 @@ export const addCompra = (compra) => {
         });
     }
 };
+
+// Mensajes

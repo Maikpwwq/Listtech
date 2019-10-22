@@ -87,11 +87,27 @@ const Lineali = styled.li`
     color: white;    }
 `;
 
+/*  
+ *  import { setListadoProductos } from '../actions/actions.js';
+ *    
+ <Switch>            
+<Route exact path="/productos/1 Biometría Control Acceso/" component={ListadoProductos1} />
+<Route exact path="/productos/2 Cerraduras electrónicas/" component={ListadoProductos2} />
+<Route exact path="/productos/3 Cerraduras mecánicas/" component={ListadoProductos3} />
+<Route exact path="/productos/4 Accesorios Soporte/" component={ListadoProductos4} />
+<Route exact path="/productos/5 Salidas PUSH emergencia/" component={ListadoProductos5} />
+<Route exact path="/productos/6 Cierra puertas/" component={ListadoProductos6} />
+<Route exact path="/productos/7 Sensores y cantoneras electrónicas/" component={ListadoProductos7} />
+<Route exact path="/productos/8 Redes cableado estructurado/" component={ListadoProductos8} />
+<Route exact path="/productos/9 Acceso suspendido en alturas/" component={ListadoProductos9} />
+</Switch>
+*/
+
 class Productosyservicios extends Component {
     constructor() {
         super();
-        this.state = {
-            title: 'Productos Y Servicios',
+        this.estado = {
+            titulo: 'Productos Y Servicios',
         }   
     }               
 
@@ -103,12 +119,24 @@ class Productosyservicios extends Component {
             <ProductosyServiciosstyle>
                 <div className="Productosyservicios-container ">
                     <ProductosHeader>
-                        {this.props.title}
+                        {this.props.titulo}
                     </ProductosHeader>
                     <ProductosyServiciosGrupo>
+
                         <ProductosyServiciosLinea
 
-                        > 1.	LI&#769;NEA CERRADURAS ELECTR&#769;NICAS
+                        > 1.  LI&#769;NEA BIOMETRI&#769;A CONTROL ACCESO
+                            <Lineaul>
+                                <Lineali> Cerraduras puertas de seguridad </Lineali>
+                                <Lineali> Cerraduras comerciales </Lineali>
+                                <Lineali> Conjuntos para entrada principal </Lineali>
+                                <Lineali> Automatizacio&#769;n vehicular - Barreras - Antenas </Lineali >
+                            </Lineaul>
+                        </ProductosyServiciosLinea>
+                        
+                        <ProductosyServiciosLinea
+
+                        > 2.	LI&#769;NEA CERRADURAS ELECTR&#769;NICAS
                             <Lineaul>                                                                
                                 <Lineali> Cerraduras puertas de seguridad </Lineali>
                                 <Lineali> Cerraduras comerciales </Lineali>
@@ -119,7 +147,7 @@ class Productosyservicios extends Component {
 
                         <ProductosyServiciosLinea
 
-                        > 2.	LI&#769;NEA CERRADURAS MECA&#769;NICAS
+                        > 3.	LI&#769;NEA CERRADURAS MECA&#769;NICAS
                             <Lineaul>
                                 <Lineali> Cerraduras puertas de seguridad </Lineali>
                                 <Lineali> Cerraduras comerciales </Lineali>
@@ -131,7 +159,7 @@ class Productosyservicios extends Component {
                         </ProductosyServiciosLinea>                     
 
                         <ProductosyServiciosLinea
-                        > 3.	LI&#769;NEA ACCESORIOS SOPORTE
+                        > 4.	LI&#769;NEA ACCESORIOS - SOPORTES
                             <Lineaul>
                                 <Lineali> Soportes superiores y paradas </Lineali >
                                 <Lineali> Barras de agarre  </Lineali >
@@ -143,7 +171,7 @@ class Productosyservicios extends Component {
 
                         <ProductosyServiciosLinea
 
-                        > 4.	LI&#769;NEA SALIDAS PUSH EMERGENCIA
+                        > 5.	LI&#769;NEA SALIDAS PUSH EMERGENCIA
                             <Lineaul>
                                 <Lineali> Vidrios laminados </Lineali >
                                 <Lineali> Barra Push - Vertical Rod  </Lineali >
@@ -155,7 +183,7 @@ class Productosyservicios extends Component {
 
                         <ProductosyServiciosLinea
 
-                        > 5.	LI&#769;NEA CIERRA PUERTAS
+                        > 6.	LI&#769;NEA CIERRA PUERTAS
                             <Lineaul>
                                 <Lineali> Brazos hidra&#769;ulicos </Lineali >
                                 <Lineali> Cierrapuertas de piso</Lineali >                                
@@ -164,7 +192,7 @@ class Productosyservicios extends Component {
 
                         <ProductosyServiciosLinea
 
-                        > 6.	LI&#769;NEA SENSORES Y CANTONERAS ELECTRO&#769;NICAS
+                        > 7.	LI&#769;NEA SENSORES Y CANTONERAS ELECTRO&#769;NICAS
                             <Lineaul>
                                 <Lineali> Sensores Movimiento-Proximidad-Impacto-Humo-Contacto </Lineali >
                                 <Lineali> Cantoneras - Huelgas Electrónicas </Lineali >
@@ -174,7 +202,7 @@ class Productosyservicios extends Component {
                         </ProductosyServiciosLinea>
                 
                         <ProductosyServiciosLinea
-                        > 7.	LI&#769;NEA REDES CABLEADO ESTRUCTURADO
+                        > 8.	LI&#769;NEA REDES CABLEADO ESTRUCTURADO
                             <Lineaul>
                                 <Lineali> Sistemas de intrusio&#769;n </Lineali >            
                                 <Lineali> Sistemas CCTV - Enlaces inala&#769;mbricos </Lineali >
@@ -189,7 +217,7 @@ class Productosyservicios extends Component {
 
                         <ProductosyServiciosLinea
 
-                        > 8.	LI&#769;NEA ACCESO SUSPENDIDO EN ALTURAS
+                        > 9.	LI&#769;NEA ACCESO SUSPENDIDO EN ALTURAS
                             <Lineaul>
                                 <Lineali> Andamios ele&#769;ctricos certificados </Lineali >
                                 <Lineali> Plataformas Colgantes Y Cremallera </Lineali >
@@ -202,10 +230,7 @@ class Productosyservicios extends Component {
                                 <Lineali> Torre Gru&#769;as </Lineali >
                                 <Lineali> Mecanismos de suspensio&#769;n </Lineali >                               
                             </Lineaul>
-                        </ProductosyServiciosLinea>                
-
-                        <ProductosyServiciosLinea
-                        >MECANISMOS DE SUSPENSIO&#769;N
+                            >MECANISMOS DE SUSPENSIO&#769;N
                             <Lineaul>
                                 <Lineali> Puntos de anclajes </Lineali >
                                 <Lineali> Anclajes certificados para lineas de vida horizontales y verticales </Lineali >
@@ -222,11 +247,14 @@ class Productosyservicios extends Component {
                                 <Lineali> Kits de rescate </Lineali >
                                 <Lineali> Freno de seguridad </Lineali >
                             </Lineaul>
-                        </ProductosyServiciosLinea>
+                        </ProductosyServiciosLinea>                
+                        
                     </ProductosyServiciosGrupo>                                                
+
                     <div className="Productosyservicios-tienda">
 
                     </div>
+
                 </div>
             </ProductosyServiciosstyle>
         );

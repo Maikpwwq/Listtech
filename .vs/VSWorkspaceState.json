@@ -4,16 +4,14 @@
     "\\src",
     "\\src\\actions",
     "\\src\\components",
-    "\\src\\components\\marca",
-    "\\src\\components\\mensajes",
-    "\\src\\components\\micelaneos",
-    "\\src\\components\\productos",
-    "\\src\\components\\sesiones",
-    "\\src\\components\\tienda",
+    "\\src\\components\\administracion",
     "\\src\\components\\usuarios",
     "\\src\\constantes",
-    "\\src\\constantes\\productos"
+    "\\src\\constantes\\productos",
+    "\\src\\containers",
+    "\\src\\reducers",
+    "\\src\\styles"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\constantes\\productos\\Productos.js",
   "PreviewInSolutionExplorer": false
 }

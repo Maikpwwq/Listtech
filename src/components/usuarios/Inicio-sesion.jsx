@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-//import { useState } from 'react';
-
-import logo from '../../imagenes/Listtech-Logo.png';
-
-import Firebase from '../../init-firebase.js'
-import { auth, database, facebookProvider, googleProvider } from '../../init-firebase.js'
-
-/*import * as firebaseui from 'firebaseui'*/
-
 import { connect } from 'react-redux';
-import { setUsuario, setInicioSesion } from '../../actions/actions'
 
 import { withRouter, NavLink } from 'react-router-dom';
 import { compose } from 'recompose';
 
+// imagenes
+import logo from '../../imagenes/Listtech-Logo.png';
+
+// Firebase
+import Firebase from '../../init-firebase.js'
+import { auth, database } from '../../init-firebase.js' //facebookProvider, googleProvider 
+/*import * as firebaseui from 'firebaseui'*/
+
+import { setUsuario, setInicioSesion } from '../../actions/actions'
+
+// Cargar Paginas 
+
 import { RegistroLink } from './Registro.jsx';
-import { OlvidoClaveLink } from './OlvidoClave';
+import { OlvidoClaveLink } from './Olvido-clave.jsx';
 import { ConFirebase } from '../administracion/Index-firebase';
 
 import styled from 'styled-components'
@@ -111,7 +113,7 @@ const FooterRegistro = styled.div`
     // Handle Errors here.
      var errorCode = error.code;
      var errorMessage = error.message;
-    // The email of the user's account used.
+    // The email of the usuario's account used.
      var email = error.email;
     // The firebase.auth.AuthCredential type that was used.
      var credential = error.credential;
@@ -131,20 +133,20 @@ class PaginaInicioSesion extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
+        this.estado = {
             txtEmail : document.getElementById('txtEmail'),
-            txtPassword : document.getElementById('txtPassword'),
-            btnLogin : document.getElementById('btnLogin'),
+            txtClave : document.getElementById('txtClave'),
+            btnInicioSesion : document.getElementById('btnInicioSesion'),
             btnRegistro : document.getElementById('btnRegistro'),
-            btnLogout : document.getElementById('btnLogout'),
+            btnCerrarSesion: document.getElementById('btnCerrarSesion'),
             email: '',
-            password: '',
+            clave: '',
             error: null,
         }
 
 
-        this.iniciarSesionConFacebook = this.iniciarSesionConFacebook.bind(this);
-        this.iniciarSesionConGmail = this.iniciarSesionConGmail.bind(this);
+        this.inicioSesionConFacebook = this.inicioSesionConFacebook.bind(this);
+        this.inicioSesionConGmail = this.inicioSesionConGmail.bind(this);
         this.EnviarForm = this.EnviarForm.bind(this);
         this.onCambios = this.onCambios.bind(this);
         this.onCargar = this.onCargar.bind(this);
@@ -154,71 +156,71 @@ class PaginaInicioSesion extends Component {
 
     // { setUsuario, setInicioSesion }
 
-    iniciarSesionConFacebook = (event) => {
+    inicioSesionConFacebook = (event) => {
         this.props.firebase
-            .doIniciarSesionConFacebook()
-            .then(socialAuthUser => {
-                // Create a user in your Firebase Realtime Database too
+            .doInicioSesionConFacebook()
+            .then(socialAutorizarUsuario => {
+                // Create a usuario in your Firebase Realtime Database too
                 return
 
-                this.props.firebase.user(socialAuthUser.user.uid).set({
-                    username: socialAuthUser.additionalUserInfo.profile.name,
-                    email: socialAuthUser.additionalUserInfo.profile.email,
+                this.props.firebase.usuario(socialAutorizarUsuario.usuario.uid).set({
+                    usuarioname: socialAutorizarUsuario.additionalUsuarioInfo.profile.name,
+                    email: socialAutorizarUsuario.additionalUsuarioInfo.profile.email,
                     roles: {},
                 });
             })
-            .then(({ user }) => {
-                this.props.setUser(user);
-                this.props.setLogin(true);
-                this.props.setToken = user.credential.accessToken;
-                this.props.history.push('/perfil');
-                console.log(user);
+            .then(({ usuario }) => {
+                this.props.setUsuario(usuario);
+                this.props.setInicioSesion(true);
+                this.props.setToken = usuario.credential.accessToken;
+                this.props.history.push('/perfil/');
+                console.log(usuario);
             })
             .then(() => {
-                this.setState({ error: null });
-                this.props.history.push(ROUTES.HOME);
+                this.setEstado({ error: null });
+                this.props.history.push('/inicio/');
             })
             .catch(error => {
                 if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
                     error.message = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
-                this.setState({ error });
+                this.setEstado({ error });
             });
 
         event.preventDefault();      
     };
 
-    iniciarSesionConGmail = (event) => {
+    inicioSesionConGmail = (event) => {
         this.props.firebase
-            .doIniciarSesionConGmail()
-            .then(socialAuthUser => {
-                // Create a user in your Firebase Realtime Database too
+            .doInicioSesionConGmail()
+            .then(socialAutorizarUsuario => {
+                // Create a usuario in your Firebase Realtime Database too
                 return
 
-                this.props.firebase.user(socialAuthUser.user.uid).set({
-                    username: socialAuthUser.additionalUserInfo.profile.name,
-                    email: socialAuthUser.additionalUserInfo.profile.email,
+                this.props.firebase.usuario(socialAutorizarUsuario.usuario.uid).set({
+                    usuarioname: socialAutorizarUsuario.additionalUsuarioInfo.profile.name,
+                    email: socialAutorizarUsuario.additionalUsuarioInfo.profile.email,
                     roles: {},
                 });
             })
-            .then(({ user }) => {
-                this.props.setUser(user);
-                this.props.setLogin(true);
-                this.props.setToken = user.credential.accessToken;
-                this.props.history.push('/perfil');
-                console.log(user);
+            .then(({ usuario }) => {
+                this.props.setUsuario(usuario);
+                this.props.setInicioSesion(true);
+                this.props.setToken = usuario.credential.accessToken;
+                this.props.history.push('/perfil/');
+                console.log(usuario);
             })
             .then(() => {
-                this.setState({ error: null });
-                this.props.history.push(ROUTES.HOME);
+                this.setEstado({ error: null });
+                this.props.history.push('/inicio/');
             })
             .catch(error => {
                 if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
                     error.message = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
-                this.setState({ error });
+                this.setEstado({ error });
             });
 
         event.preventDefault();
@@ -229,40 +231,40 @@ class PaginaInicioSesion extends Component {
         const value = target.value;
         const name = target.name;        
         // El evento altera los datos guardados 
-        this.setState({
+        this.setEstado({
             [name]: value
         });
-        console.log(this.state, 'Escribiendo ...');
+        console.log(this.estado, 'Escribiendo ...');
     }; 
 
     onEnviar = (event) => {
         //Previene que el formulario recargue la pagina
         event.preventDefault(); 
-        console.log(this.state, 'Enviando la data ...');
-        alert('Se envio correctamente su solicitud: ' + this.state.value);
+        console.log(this.estado, 'Enviando la data ...');
+        alert('Se envio correctamente su solicitud: ' + this.estado.value);
 
         this.props.firebase
-            .doSignInWithEmailAndPassword(email, password)
+            .doSignInWithEmailAndclave(email, clave)
             .then(() => {
-                this.setState({ ...INITIAL_STATE });
-                this.props.history.push(ROUTES.HOME);
+                this.setEstado({ ...ESTADO_REPOSO });
+                this.props.history.push('/inicio/');
             })
             .catch(error => {
-                this.setState({ error });
+                this.setEstado({ error });
             });
         
         const form = new FormData(event.target);
         const newDate = new Date().toISOString();
-        // const [fotoPerfil, setFotoPerfil] = useState('');
+        // const [fotoPerfil, setFotoPerfil] = useestado('');
         const usuario = {
-            'fotoPerfil': this.props.user.photoURL,
-            'userContact': this.props.user.email,
-            'userName': this.props.user.displayName,
+            'fotoPerfil': this.props.usuario.photoURL,
+            'usuarioContact': this.props.usuario.email,
+            'usuarioName': this.props.usuario.displayName,
             'date': newDate,
             'nombre': form.get('nombre'),
             'email': form.get('email'),
             'telefono': form.get('telefono'),
-            'password':form.get('password'),
+            'clave':form.get('clave'),
         }
 
         database.ref('Usuarios').push(usuario)
@@ -274,24 +276,24 @@ class PaginaInicioSesion extends Component {
     btnIniciarSesion = ('click', (event) => {
         // Get Email and pass
         const email = this.txtEmail.value;
-        const pass = this.txtPassword.value;
+        const clave = this.txtClave.value;
         // Sing in
-        const promise = auth.singInWithEmailAndPassword(email, pass);
+        const promise = auth.singInWithEmailAndClave(email, clave);
         promise.catch(e => console.log(e.message));
     });
 
     // Evento de Registro
     btnRegistro = ('click', (event) => {
-        this.props.history.replace('/registro')
+        this.props.history.replace('/registro/')
         .catch(e => console.log(e.message));
     });
 
     //<!--  -->
     render() {
 
-        const { email, password, error } = this.state;
+        const { email, clave, error } = this.estado;
 
-        const isInvalid = password === '' || email === '';
+        const isInvalid = clave === '' || email === '';
 
         return (
             <FormIniciarSesion
@@ -399,14 +401,14 @@ class PaginaInicioSesion extends Component {
 
                                     <FormInput
                                         data-reactid="23">
-                                        <input type="password"
-                                            name="password"
+                                        <input type="clave"
+                                            name="clave"
                                             required=""
                                             autocomplete="off"
                                             placeholder="Tu contraseña"
                                             className="FormInput-field"
                                             value=""
-                                            Id="txtPassword"
+                                            Id="txtclave"
                                             onChange={this.onCambios}
                                             data-reactid="24" />
                                         <label className="FormInput-label"
@@ -427,9 +429,9 @@ class PaginaInicioSesion extends Component {
                                         >Inicia sesión</span>
                                     </ButtonIniciar>
 
-                                    <div className="IniciarSesionConEmail-lostpassword"
+                                    <div className="IniciarSesionConEmail-lostclave"
                                         data-reactid="30">
-                                        <a href="/password/reset/"
+                                        <a href="/olvidoClave/"
                                             data-reactid="31">
                                             <span data-reactid="32">
                                                 ¿Olvidaste tu contraseña?
@@ -453,7 +455,7 @@ class PaginaInicioSesion extends Component {
 
                                 <div class="AccountFooter-link"
                                     data-reactid="36">
-                                    <a href="/registro/"
+                                    <a 
                                         className="AccountFooter-btn"
                                         Id="btnRegistro"
                                         component={NavLink}

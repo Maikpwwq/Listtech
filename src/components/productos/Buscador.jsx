@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import { NavLink } from 'react-router-dom';
 
+// importar accion pagina Modal  
+import { setModal } from '../../actions/actions.js';
+import useModal from '../../hooks/useModal';
+
+// Cargar Componentes
 import Modal from '../micelaneos/Modal.jsx';
 import Social from '../marca/Social';
 
 import InicioSesion from '../usuarios/Inicio-sesion';
 import Registro from '../usuarios/Registro';
 
+// Cargar imagenes
 import logo from '../../imagenes/Listtech-Logo.png'
 import carrito from '../../imagenes/medios de pago/carrito_ico.png'
 
@@ -104,8 +110,9 @@ const Submitinput = styled.input`
 
 const Buscador = props => {
 
-    const [modal, setModal] = useState(false);
-    const showModal = () => {
+    const modal = useModal();
+
+    const mostrarModal = () => {
         setModal(!modal)
     }
 
@@ -113,25 +120,31 @@ const Buscador = props => {
         <BuscadorStyle>
             <BuscadorHeader>
 
-                <BuscadorIngreso showModal={showModal}>
+                <BuscadorIngreso mostrarModal={mostrarModal}>
                     < Acceder className="">
 
-                        {props.login ?
-                            <NavLink to="/perfil"> Mi cuenta </NavLink>
+                        {props.inicioSesion ?
+                            <NavLink
+                                to="/perfil"
+                            > Mi cuenta
+                                </NavLink>
                             :
-                            <NavLink to="/inicioSesion"> Inicio de sesio&#769;n </NavLink>
+                            <NavLink
+                                to="/inicioSesion"
+                            > Inicio de sesio&#769;n
+                                </NavLink>
                         }
 
                         <NavLink to="/registro"> Cliente nuevo </NavLink>
 
                         <Modal
                             show={modal}
-                            close={showModal}
+                            close={mostrarModal}
                         >
-                            {props.login ?
+                            {props.inicioSesion ?
                             <Registro />
                             :
-                            <div className="Modal-login">
+                            <div className="Modal-inicioSesion">
                                 <InicioSesion />
                             </div>
                             }
@@ -181,10 +194,14 @@ const Buscador = props => {
     )
 };
 
-const mapStateToProps = state => {
+const mapDispatchToProps = {
+    setModal,   
+}
+
+const mapStateToProps = estado => {
     return {
-        login: state.login,
+        inicioSesion: estado.inicioSesion,
     };
 };
 
-export default connect(mapStateToProps)(Buscador);   
+export default connect(mapStateToProps, mapDispatchToProps)(Buscador);   

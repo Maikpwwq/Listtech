@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { useState } from 'react';
+//import { useestado } from 'react';
 import logo from '../../imagenes/Listtech-Logo.png';
 
 import { NavLink, withRouter } from 'react-router-dom';
@@ -128,10 +128,10 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
 `;
 
 class PaginaRegistro extends Component {
-    autorizarUsuario
+    AutorizarUsuario
     constructor(props) {
         super(props);
-        this.state = {
+        this.estado = {
             txtNombre : document.getElementById('txtNombre'),
             txtEmail : document.getElementById('txtEmail'),
             txtTelefono : document.getElementById('txtTelefono'),
@@ -152,13 +152,13 @@ class PaginaRegistro extends Component {
     RegistroConFacebook = () => {        
         this.props.firebase
             .doRegistrarseConFacebook()
-            .then(socialautorizarUsuario => {
+            .then(socialAutorizarUsuario => {
                 // Create a usuario in your Firebase Realtime Database too
                 return
 
-                this.props.firebase.usuario(socialautorizarUsuario.usuario.uid).set({
-                    usuarioname: socialautorizarUsuario.additionalusuarioInfo.profile.name,
-                    email: socialautorizarUsuario.additionalusuarioInfo.profile.email,
+                this.props.firebase.usuario(socialAutorizarUsuario.usuario.uid).set({
+                    usuarioname: socialAutorizarUsuario.additionalusuarioInfo.profile.name,
+                    email: socialAutorizarUsuario.additionalusuarioInfo.profile.email,
                     roles: {},
                 });
             })
@@ -170,7 +170,7 @@ class PaginaRegistro extends Component {
                 console.log(usuario);
             })
             .then(() => {
-                this.setState({ error: null });
+                this.setestado({ error: null });
                 this.props.history.push('/inicio/');
             })
             .catch(error => {
@@ -178,7 +178,7 @@ class PaginaRegistro extends Component {
                     error.message = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
-                this.setState({ error });
+                this.setestado({ error });
             });
 
         event.preventDefault();
@@ -187,13 +187,13 @@ class PaginaRegistro extends Component {
     RegistroConGmail = () => {
         this.props.firebase
             .doRegistrarseConGmail()
-            .then(socialautorizarUsuario => {
+            .then(socialAutorizarUsuario => {
                 // Create a usuario in your Firebase Realtime Database too
                 return
 
-                this.props.firebase.usuario(socialautorizarUsuario.usuario.uid).set({
-                    usuarioname: socialautorizarUsuario.additionalusuarioInfo.profile.name,
-                    email: socialautorizarUsuario.additionalusuarioInfo.profile.email,
+                this.props.firebase.usuario(socialAutorizarUsuario.usuario.uid).set({
+                    usuarioname: socialAutorizarUsuario.additionalusuarioInfo.profile.name,
+                    email: socialAutorizarUsuario.additionalusuarioInfo.profile.email,
                     roles: {},
                 });
             })
@@ -205,7 +205,7 @@ class PaginaRegistro extends Component {
                 console.log(usuario);
             })
             .then(() => {
-                this.setState({ error: null });
+                this.setEstado({ error: null });
                 this.props.history.push('/inicio/');
             })
             .catch(error => {
@@ -213,16 +213,16 @@ class PaginaRegistro extends Component {
                     error.message = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
-                this.setState({ error });
+                this.setEstado({ error });
             });
 
         event.preventDefault();
     };
 
-    firebaseusuario = () => {
-        auth().onAuthStateChanged(this.firebaseusuario)
-        if (this.firebaseusuario) {
-            console.log(this.firebaseusuario);
+    firebaseUsuario = () => {
+        auth().onAuthestadoChanged(this.firebaseUsuario)
+        if (this.firebaseUsuario) {
+            console.log(this.firebaseUsuario);
         }
         else {
             console.log('Sin iniciar sesión aun');
@@ -239,23 +239,23 @@ class PaginaRegistro extends Component {
             }
         }
         // El evento altera los datos guardados 
-        this.setState({
+        this.setEstado({
             [name]: value
         });
-        console.log(this.state, 'Escribiendo ...');
+        console.log(this.estado, 'Escribiendo ...');
     };
 
     onEnviar = (event) => {
         //Previene que el formulario recargue la pagina
         event.preventDefault();
-        console.log(this.state, 'Enviando la data ...');
-        alert('Se envio correctamente su solicitud: ' + this.state.value);
+        console.log(this.estado, 'Enviando la data ...');
+        alert('Se envio correctamente su solicitud: ' + this.estado.value);
 
         this.props.firebase
             .doCrearUsuarioConEmailClave(email, claveUno)
-            .then((autorizarUsuario) => {
+            .then((AutorizarUsuario) => {
                 // Create a usuario in your Firebase realtime database
-                return this.props.firebase.usuario(autorizarUsuario.usuario.uid).set({
+                return this.props.firebase.usuario(AutorizarUsuario.usuario.uid).set({
                     usuarioname,
                     email,
                     roles,
@@ -263,7 +263,7 @@ class PaginaRegistro extends Component {
             })
 
             .then(() => {
-                this.setState({ ...ESTADO_REPOSO });
+                this.setestado({ ...ESTADO_REPOSO });
                 this.props.history.push('/inicio/');
             })
 
@@ -272,12 +272,12 @@ class PaginaRegistro extends Component {
                     error.message = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
-                this.setState({ error });
+                this.setestado({ error });
             });
 
         const form = new FormData(event.target);
         const newDate = new Date().toISOString();
-        // const [fotoPerfil, setFotoPerfil]  = useState('');
+        // const [fotoPerfil, setFotoPerfil]  = useestado('');
         const usuario = {
             'fotoPerfil': this.props.usuario.photoURL,
             'usuarioContact': this.props.usuario.email,

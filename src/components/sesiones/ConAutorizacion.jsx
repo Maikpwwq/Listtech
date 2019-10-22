@@ -7,6 +7,14 @@ import { compose } from 'recompose';
 import { ConFirebase } from '../administracion/Index-firebase';
 
 class ConAutorizacion extends Component {
+
+    constructor(props) {
+        super(props);
+        this.estado = {
+            condition = '',
+        }
+    }   
+
     componentDidMount() {
         this.listener = this.props.firebase.onAutorizarUsuarioListener(
             autorizarUsuario => {
@@ -34,9 +42,7 @@ const mapStateToProps = estado => ({
     autorizarUsuario: estado.estadoSesion.autorizarUsuario,
 });
 
-return compose(
+export default compose(
     withRouter, ConFirebase,
     connect(mapStateToProps),
 )(ConAutorizacion);
-
-export default ConAutorizacion;

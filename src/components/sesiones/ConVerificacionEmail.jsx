@@ -15,20 +15,25 @@ class ConVerificacionEmail extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { isSent: false };
+        this.estado = {
+            isSent: false
+        };
+
     }
 
     onSendEmailVerification = () => {
         this.props.firebase
             .doEnviarVerificacionEmail()
-            .then(() => this.setState({ isSent: true }));
+            .then(() => this.setEstado({ isSent: true }));
     };
 
     render() {
-        return necesitaVerificacionEmail(this.props.autorizarUsuario) ? (
+        return
+
+        necesitaVerificacionEmail(this.props.autorizarUsuario) ? (
             <div>
 
-                {this.state.isSent ? (
+                {this.estado.isSent ? (
                     <p>
                         Confirmación de correo electrónico enviada: compruebe sus correos electrónicos
                         (incluido carpeta de correo no deseado) para un correo electrónico de confirmación.
@@ -45,7 +50,7 @@ class ConVerificacionEmail extends Component {
                 <button
                     type="button"
                     onClick={this.onEnviarVerificacionEmail}
-                    disabled={this.state.isSent}
+                    disabled={this.estado.isSent}
                 >
                     Enviar E-Mail de confirmacion
                     </button>
@@ -55,15 +60,12 @@ class ConVerificacionEmail extends Component {
                 <Component {...this.props} />
             );
     }
-}
+};
 
-const mapStateToProps = state => ({
-    autorizarUsuario: state.estadoSesion.autorizarUsuario,
-})
-
-return compose(
+const mapStateToProps = estado => ({
+    autorizarUsuario: estado.estadoSesion.autorizarUsuario,
+});
+    
+export default compose(
     ConFirebase,
-    connect(mapStateToProps),
-)(ConVerificacionEmail);
-
-export default ConVerificacionEmail;    
+    connect(mapStateToProps)(ConVerificacionEmail));    

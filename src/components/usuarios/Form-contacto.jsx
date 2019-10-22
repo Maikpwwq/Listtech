@@ -1,11 +1,14 @@
-import React, { Component, useState } from 'react';
-import PropTypes from 'prop-types';
-//import Textarea from './use/Textarea';
-
-import useEnviarForm from '../../hooks/useEnviarForm';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { storage, database } from '../../init-firebase';
+
+// importar acciones para formulario de contacto  
+import useEnviarForm from '../../hooks/useEnviarForm';
+import { setRequerimiento, setEnviarForm } from '../../actions/actions.js';
+
+import PropTypes from 'prop-types';
+//import Textarea from './use/Textarea';
 
 import styled from 'styled-components'
 
@@ -73,7 +76,7 @@ const Titulo = styled.label`
 class Formcontacto extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.estado = {
             title: 'Formulario de Contacto',
             titulo: 'Agregue un titulo',
             solicitud: 'cotizacion',
@@ -83,12 +86,14 @@ class Formcontacto extends Component {
             mensaje: 'Especifique el requerimiento estaremos en contacto pronto',
             contactar: 'Enviar',
             SendForm: false,
-        }
-        this.setSendForm = this.setSendForm.bind(this);
-        this.state.SendForm = this.state.SendForm.bind(this);
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-        this.onChange = this.onChange.bind(this);           
+            value: this.props.value
+        }        
+        
+        this.setEnviarForm = this.setEnviarForm.bind(this);
+        this.estado.EnviarForm = this.estado.EnviarForm.bind(this);
+        this.onCambios = this.onCambios.bind(this);
+        this.onEnviar = this.onEnviar.bind(this);
+        this.onCargar = this.onCargar.bind(this);           
     }
 
     static defaultProps = {
@@ -101,10 +106,6 @@ class Formcontacto extends Component {
         value: PropTypes.string
     }
 
-    state = {
-        value: this.props.value
-    };   
-
     onCambios = (event) => {
         const target = event.target;
         const value = target.value;
@@ -115,10 +116,10 @@ class Formcontacto extends Component {
             }
         }
         // El evento altera los datos guardados 
-        this.setState({
+        this.setestado({
             [name]: value
         });
-        console.log(this.state, 'Escribiendo ...');
+        console.log(this.estado, 'Escribiendo ...');
     };  
 
     onCargar = (event) => {
@@ -138,11 +139,13 @@ class Formcontacto extends Component {
 
     onEnviar = ('submit',(event) => {
         event.preventDefault(); //Previene que el formulario recargue la pagina
-        console.log(this.state, 'Enviando la data ...');
-        alert('Se envio correctamente su solicitud: ' + this.state.value);         
+        console.log(this.estado, 'Enviando la data ...');
+        alert('Se envio correctamente su solicitud: ' + this.estado.value);         
 
         const form = new FormData(event.target);
         const newDate = new Date().toISOString();
+        // Llamado al Hook de Envio de Formulario de contacto
+        const EnviarForm = useEnviarForm();
 
         const requerimiento = {
             'date': newDate,
@@ -167,15 +170,16 @@ class Formcontacto extends Component {
             email: form.email.value,
             telefono: form.telefono.value,
         }));
+        
+        // Empujar el requerimiento a la base de datos y asignar su verificacion
+        database.ref('Requerimientos').push(requerimiento)
+            .then(() => this.setEnviarForm(true))
+            .catch(() => this.setEnviarForm(false))                
 
         // Resetear los valores en blanco
         //form.nombre.value = '',
         //form.email.value = '',            
 
-        // Empujar el requerimiento a la base de datos y asignar su verificacion
-        database.ref('Requerimientos').push(requerimiento)
-            .then(() => this.setEnviarForm(true))
-            .catch(() => this.setEnviarForm(false))                
     });
 
     render() {
@@ -187,16 +191,16 @@ class Formcontacto extends Component {
                     action="/Formcontacto"
                     method="post"
                 >
-                    {this.SendForm &&
+                    {this.EnviarForm &&
                         <div><span>
                             !Guardado con exito!
                         </span></div>
                     }
 
-                    {!this.SendForm &&
+                    {!this.EnviarForm &&
                     <FormContactoGrupo>
                         <FormContheader>
-                            {this.state.title}
+                            {this.estado.title}
                         </FormContheader>
                           <Titulo>
                             Titulo del mensaje:
@@ -204,7 +208,7 @@ class Formcontacto extends Component {
                         <Textinput
                             type="text"
                             name="titulo"
-                            value={this.state.titulo}
+                            value={this.estado.titulo}
                             onChange={this.onCambios}
                             className="form-control"
                             //defaultValue=""
@@ -216,7 +220,7 @@ class Formcontacto extends Component {
                         </Titulo>
                         <select
                             name="solicitud"
-                            value={this.state.solicitud}
+                            value={this.estado.solicitud}
                             onChange={this.onCambios}
                         >
                             <option value="pqrs">PQRS</option>
@@ -229,7 +233,7 @@ class Formcontacto extends Component {
                         <Textinput
                             type="text"
                             name="nombre"
-                            value={this.state.nombre}
+                            value={this.estado.nombre}
                             onChange={this.onCambios}
                             className="form-control"                            
                             defaultChecked=""
@@ -241,7 +245,7 @@ class Formcontacto extends Component {
                         <Textinput
                             type="email"
                             name="email"
-                            value={this.state.email}
+                            value={this.estado.email}
                             onChange={this.onCambios}
                             className="form-control"                           
                             defaultChecked=""
@@ -253,7 +257,7 @@ class Formcontacto extends Component {
                         <Textinput
                             type="number"
                             name="telefono"
-                            value={this.state.telefono}
+                            value={this.estado.telefono}
                             onChange={this.onCambios}
                             className="form-control"                           
                             defaultChecked=""
@@ -267,7 +271,7 @@ class Formcontacto extends Component {
                             rows="7"
                             cols="30"
                             name="mensaje"
-                            value={this.state.mensaje}
+                            value={this.estado.mensaje}
                             onChange={this.onCambios}
                             className="materialize-textarea"                            
                             defaultChecked=""
@@ -277,7 +281,7 @@ class Formcontacto extends Component {
                         <input
                             type="submit"
                             name="contactar"
-                            value={this.state.contactar}
+                            value={this.estado.contactar}
                             className="form-control"                            
                             defaultChecked=""
                             placeholder="Ingrese una descripcion de su Requerimiento"
@@ -300,10 +304,16 @@ class Formcontacto extends Component {
     };
 }
 
-const mapStateToProps = state => {
+
+const mapDispatchToProps = {
+    setRequerimiento,
+    setEnviarForm,
+}
+
+const mapestadoToProps = estado => {
     return {
-        user: state.user,
+        usuario: estado.usuario,
     }
 }
 
-export default connect(mapStateToProps)(Formcontacto);
+export default connect(mapestadoToProps, mapDispatchToProps)(Formcontacto);

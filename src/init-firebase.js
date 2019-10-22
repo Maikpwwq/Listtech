@@ -7,7 +7,7 @@ import * as app from "firebase/app";
 import * as auth from "firebase/auth";
 import * as database from "firebase/database";
 import * as storage from "firebase/storage";    
-import * as firestore from 'firebase/firebase-firestore';
+import * as firestore from "firebase/firebase-firestore";
 
 // Initialize Firebase
 "use strict";
@@ -95,7 +95,7 @@ class Firebase extends Component {
 
     // *** Auth API ***
 
-    doIniciarSesion (email, clave) {
+    doInicioSesion (email, clave) {
         return this.auth.signInWithEmailAndPassword(email, clave)
     }
 
@@ -109,19 +109,22 @@ class Firebase extends Component {
     doCrearUsuarioConEmailClave = (email, clave) =>
         this.auth.createUserWithEmailAndPassword(email, clave);
 
-    doRegistraseConEmailClave = (email, clave) =>
+    doIniciarSesionConEmailClave = (email, clave) =>
+        this.auth.createUserWithEmailAndPassword(email, clave);
+
+    doRegistraConEmailClave = (email, clave) =>
         this.auth.signInWithEmailAndPassword(email, clave);
 
-    doIniciarSesionConFacebook = () =>
+    doInicioSesionConFacebook = () =>
         this.auth.logInWithPopup(this.facebookProvider);
 
-    doIniciarSesionConGmail = () =>
+    doInicioSesionConGmail = () =>
         this.auth.logInWithPopup(this.googleProvider);
 
-    doRegistrarseConGoogle = () =>
+    doRegistrarConGoogle = () =>
         this.auth.signInWithPopup(this.googleProvider);
 
-    doRegistrarseConFacebook = () =>
+    doRegistrarConFacebook = () =>
         this.auth.signInWithPopup(this.facebookProvider);
 
     doCerrarSesion = () => { return this.auth.signOut() };
@@ -164,10 +167,10 @@ class Firebase extends Component {
     }
 
     // *** Merge Auth and DB User API *** //
-    onAuthUserListener = (next, fallback) =>
-        this.auth.onAuthStateChanged(authUser => {
-            if (authUser) {
-                this.user(authUser.uid)
+    onAutorizarUsuarioListener = (next, fallback) =>
+        this.auth.onAuthStateChanged(autorizarUsuario => {
+            if (autorizarUsuario) {
+                this.user(autorizarUsuario.uid)
                     .once('value')
                     .then(snapshot => {
                         const dbUser = snapshot.val();
@@ -176,14 +179,14 @@ class Firebase extends Component {
                             dbUser.roles = {};
                         }
                         // merge auth and db user
-                        authUser = {
-                            uid: authUser.uid,
-                            email: authUser.email,
-                            emailVerified: authUser.emailVerified,
-                            providerData: authUser.providerData,
+                        autorizarUsuario = {
+                            uid: autorizarUsuario.uid,
+                            email: autorizarUsuario.email,
+                            emailVerified: autorizarUsuario.emailVerified,
+                            providerData: autorizarUsuario.providerData,
                             ...dbUser,
                         };
-                        next(authUser);
+                        next(autorizarUsuario);
                     });
             } else {
                 fallback();
@@ -191,15 +194,24 @@ class Firebase extends Component {
         });
 
     // *** User API ***
-    user = uid => this.db.ref(`users/${uid}`);
-    users = () => this.db.ref('users');
+    usuario = uid => this.db.ref(`usuarios/${uid}`);
+    usuarios = () => this.db.ref('usuarios');
 
     // *** Message API ***
-    message = uid => this.db.ref(`messages/${uid}`);
-    messages = () => this.db.ref('messages');
+    mensaje = uid => this.db.ref(`mensajes/${uid}`);
+    mensajes = () => this.db.ref('mensajes');
+    
+    // *** Productos API ***
+    producto = uid => this.db.ref(`producto/${uid}`);
+    productos = () => this.db.ref('producto');
 
+    // *** Requerimientos API ***
+    requerimiento = uid => this.db.ref(`requerimientos/${uid}`);
+    requerimientos = () => this.db.ref('requerimientos');
+
+    // listaUsuariosMensajes/:id  /objetoUsuarioMensaje/:id/  /perfil /: id /  /fichaProducto/: id /  /detalleProducto/: id /
 }
 
 export default new Firebase();
 
-// export { storage, database, auth, facebookProvider, googleProvider }
+export { storage, database, auth } //, facebookProvider, googleProvider

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { useCallback } from 'react';
 
 import logo from '../../imagenes/Listtech-Logo.png';
 
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-/*<script type="text/javascript">
-    var dropdown=new TINY.dropdown.init("dropdown", {id: 'menu', active:'menuhover'});
-</script> */
+import ROLES from './Roles';
+
+import { setListadoProductos } from '../../actions/actions.js'; 
 
 import styled from 'styled-components'
 
@@ -148,7 +149,21 @@ class Menu extends Component {
             titulo: '',
         }
     }
-   
+
+    /* llamar desde el menu a los listados de productos
+     const memoriaListadoProductos = useCallback(
+       () => {
+         doSomething(a, b);
+       },
+       [a, b],
+     );
+    */
+
+    DropdownContenido = new TINY.dropdown.init("dropdown", {
+        id: 'menu',
+        active: 'menuhover'
+    });
+
     render() {
 
         console.log('Renderizado Menu')        
@@ -161,6 +176,16 @@ class Menu extends Component {
                             <Menuimg src={logo} alt="logo" />                            
                         </NavLink></Menuli>
 
+                        <Menuli>
+                            {!!autorizarUsuario.roles[ROLES.ADMIN] && (
+                                <Menua
+                                    component={NavLink}
+                                    to="/configuracionAdministrador/"
+                                > Administrador
+                            </Menua>
+                            )}
+                        </Menuli>
+
                         <Menuli><figure >                            
                             <Menua
                              href="https://Dezzpo.com"
@@ -170,89 +195,62 @@ class Menu extends Component {
                             </Menua>
                         </figure></Menuli>
 
-                        <Menuli><NavLink to="/inicio"
+                        <Menuli><NavLink
                             component={NavLink}
                             to="/inicio"    
                             >Inicio
                         </NavLink></Menuli>
 
-                        <Menuli><Menua href="/marcas/"
+                        <Menuli><Menua 
                             component={NavLink}
-                            to="/marcas"    
+                            to="/marcas/"
+                            href="/marcas/"
                             >MARCAS
                         </Menua></Menuli>
 
-                        <Menuli ><Menua href="/nosotros/"
+                        <Menuli ><Menua 
                             component={NavLink}
-                            to="/nosotros"    
+                            to="/nosotros/"    
                             >NOSOTROS
                         </Menua></Menuli>
 
-                        <Menuli><Menua href="/conoceMas"
+                        <Menuli><Menua
                             component={NavLink}
-                            to="/conoceMas"
+                            to="/conoceMas/"
                                 >CONOCE MA&#769;S
                         </Menua></Menuli>
 
-                        <Menuli><Menua href="/contacto/"                        
+                        <Menuli><Menua 
                             component={NavLink}
-                            to="/Contacto"    
+                            to="/contacto/"    
                             >CONTACTO
-                        </Menua></Menuli>        
+                        </Menua></Menuli>                                
 
-                        <Menuli>
-                            {!!autorizarUsuario.roles[ROLES.ADMIN] && (
-                            <Menua
-                                  component={NavLink}
-                                  to="/administrador/"
-                                > Administrador
-                            </Menua>
-                            )}
-                        </Menuli>
-
-                        <Desplegar><DesplegarMenu href="javascript:void(0)"
+                        <Desplegar><DesplegarMenu
+                            href="javascript:void(0)"
                                 >PRODUCTOS Y SERVICIOS
                             </DesplegarMenu>
 
                             <DropdownContenido>                                
-                                <Contenido href="./productos/1 Cerraduras electrónicas">
-                                    1.	LI&#769;NEA CERRADURAS ELECTRO&#769;NICAS</Contenido>
-                                <Contenido href="./productos/2 Cerraduras mecánicas">
-                                    2.	LI&#769;NEA CERRADURAS MECA&#769;NICAS</Contenido>
-                                <Contenido href="./productos/3 Accesorios Soporte">
-                                    3.	LI&#769;NEA ACCESORIOS SOPORTE</Contenido>
-                                <Contenido href="./productos/4 Salidas PUSH emergencia">
-                                    4.	LI&#769;NEA SALIDAS PUSH EMERGENCIA</Contenido>
-                                <Contenido href="./productos/5 Cierra puertas">
-                                    5.	LI&#769;NEA CIERRA PUERTAS</Contenido>
-                                <Contenido href="./productos/6 Sensores y cantoneras electrónicas">
-                                    6.	LI&#769;NEA SENSORES Y CANTONERAS ELECTRO&#769;NICAS</Contenido>
-                                <Contenido href="./producto/7 Redes cableado estructurado">
-                                    7.	LÍNEA REDES CABLEADO ESTRUCTURADO</Contenido>
-                                <Contenido href="./productos/8 Acceso suspendido en alturas">
-                                    8.	LÍNEA ACCESO SUSPENDIDO EN ALTURAS</Contenido>
-                            </DropdownContenido>
-
-                            <DropdownContenido>
-                                <Contenido href="/producto/candados-y-cerrojos-de-seguridad">
-                                    CERRADURAS ELE&#769;CTRONICAS</Contenido>
-                                <Contenido href="/producto/candados-y-cerrojos-de-seguridad">
-                                    CERRADURAS MECA&#769;NICAS</Contenido>
-                                <Contenido href="/producto/control-de-acceso-peatonal-y-vehicular">
-                                    CIERRA PUERTAS</Contenido>
-                                <Contenido href="/producto/proteccion-e-incendios">
-                                    BISAGRAS Y PIVOTES</Contenido>
-                                <Contenido href="/producto/proteccion-e-incendios">
-                                    REDES CABLEADO ESTRUCTURADO</Contenido>
-                                <Contenido href="/producto/cableado-estructurado">
-                                    SALIDAS PUSH EMERGENCI&#769;A</Contenido>
-                                <Contenido href="/producto/cableado-estructurado">
-                                    SENSORES Y HUELGAS ELECTRONICAS</Contenido>
-                                <Contenido href="/producto/soluciones-de-acceso-suspendido-alturas">
-                                    SOLUCIONES DE ACCESO SUSPENDIDO ALTURAS</Contenido>
-                                <Contenido href="/producto/mecanismos-de-suspension">
-                                    MECANISMOS DE SUSPENSION</Contenido>
-                            </DropdownContenido>                                                                
+                                <Contenido href="/productos/1 Biometría Control Acceso">
+                                    1.  LI&#769;NEA BIOMETRI&#769;A CONTROL ACCESO</Contenido>
+                                <Contenido href="/productos/2 Cerraduras electrónicas">
+                                    2.  LI&#769;NEA CERRADURAS ELECTRO&#769;NICAS</Contenido>
+                                <Contenido href="/productos/3 Cerraduras mecánicas">
+                                    3.	LI&#769;NEA CERRADURAS MECA&#769;NICAS</Contenido>
+                                <Contenido href="/productos/4 Accesorios Soporte">
+                                    4.	LI&#769;NEA ACCESORIOS SOPORTE</Contenido>
+                                <Contenido href="/productos/5 Salidas PUSH emergencia">
+                                    5.	LI&#769;NEA SALIDAS PUSH EMERGENCIA</Contenido>
+                                <Contenido href="/productos/6 Cierra puertas">
+                                    6.	LI&#769;NEA CIERRA PUERTAS</Contenido>
+                                <Contenido href="/productos/7 Sensores y cantoneras electrónicas">
+                                    7.	LI&#769;NEA SENSORES Y CANTONERAS ELECTRO&#769;NICAS</Contenido>
+                                <Contenido href="/producto/8 Redes cableado estructurado">
+                                    8.	LÍNEA REDES CABLEADO ESTRUCTURADO</Contenido>
+                                <Contenido href="/productos/9 Acceso suspendido en alturas">
+                                    9.	LÍNEA ACCESO SUSPENDIDO EN ALTURAS</Contenido>
+                            </DropdownContenido>                                                           
 
                         </Desplegar> 
                     </MenuGrupo>
@@ -262,8 +260,12 @@ class Menu extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    autorizarUsuario: state.estadoSesion.autorizarUsuario,
+const mapStateToProps = estado => ({
+    autorizarUsuario: estado.estadoSesion.autorizarUsuario,
 });
 
-export default connect(mapStateToProps)(Menu);
+const mapDispatchToProps = {
+    setListadoProductos,   
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

@@ -135,21 +135,21 @@ const FichaproductoDescripcion = styled.div`
 
 const Fichaproducto = ({ Producto }) => {
 
-    this.handleComprar = this.handleComprar.bind(this);
+    this.onComprar = this.onComprar.bind(this);
 
     const { id, index, titulo, imagen, precio, marca, descripcion, garantia, solicitud } = Producto
 
-    // compras: [...this.state.compras, compra]
+    // compras: [...this.estado.compras, compra]
     
-    this.handleComprar = (event) => {
+    this.onComprar = (event) => {
         event.preventDefault();
         const compras = {};
-        this.props.addCompra(this.state);
-        this.props.onAddComprar(this.state);
+        this.props.addCompra(this.estado);
+        this.props.onAddComprar(this.estado);
         if (window.confirm('Deseas agregar este producto al carrito de compras')) {
             //this.setActive(!active)
-            this.setState({
-                comprar: this.state.compras.filter((event, i) => {
+            this.setEstado({
+                comprar: this.estado.compras.filter((event, i) => {
                     return i == index
                 })
             })
@@ -187,8 +187,8 @@ const Fichaproducto = ({ Producto }) => {
 
                             <FichaproductoInteraccion>
                                 <button className="btn btn-danger"
-                                    onClick={this.handleComprar}
-                                    onAddComprar={this.state.comprar}
+                                    onClick={this.onComprar}
+                                    onAddComprar={this.estado.comprar}
                                 > {solicitud} Agregar a compras
                                 </button>
                             </FichaproductoInteraccion>                        
