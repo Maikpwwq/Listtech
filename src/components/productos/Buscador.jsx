@@ -13,6 +13,7 @@ import Social from '../marca/Social';
 
 import InicioSesion from '../usuarios/Inicio-sesion';
 import Registro from '../usuarios/Registro';
+// import SignOutButton from '../SignOut';
 
 // Cargar imagenes
 import logo from '../../imagenes/Listtech-Logo.png'

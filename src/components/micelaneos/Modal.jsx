@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, from 'react';
 
 import { connect } from 'react-redux';
 import classNames from 'classnames';
@@ -7,16 +7,16 @@ function Modal(props) {
 
     const ModalClass =
         classNames('Modal-wrapper', (event) => {
-            showModal: props.show
+            mostrarModal: props.mostrar
     });
 
     return (
         <div classNames="Modal">
 
-            {props.show &&
+            {props.mostrar &&
                 <div
                 className="Modal-overlay"
-                onClick={props.close}
+                onClick={props.cerrar}
                 />
             }
 
@@ -28,11 +28,11 @@ function Modal(props) {
     );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = estado => {
     return {
-        close: state.close,
-        children: state.children,
-        show: state.show,
+        cerrar: estado.cerrar,
+        children: estado.children,
+        mostrar: estado.mostrar,
     };
 };
 

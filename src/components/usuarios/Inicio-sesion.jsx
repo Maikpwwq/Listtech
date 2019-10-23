@@ -17,7 +17,7 @@ import { setUsuario, setInicioSesion } from '../../actions/actions'
 // Cargar Paginas 
 
 import { RegistroLink } from './Registro.jsx';
-import { OlvidoClaveLink } from './Olvido-clave.jsx';
+import { ClaveOlvidadaLink } from './Olvido-clave.jsx';
 import { ConFirebase } from '../administracion/Index-firebase';
 
 import styled from 'styled-components'
@@ -135,12 +135,25 @@ class PaginaInicioSesion extends Component {
         super(props);
         this.estado = {
             txtEmail : document.getElementById('txtEmail'),
-            txtClave : document.getElementById('txtClave'),
+            txtClave: document.getElementById('txtClave'),
+
+            txtNombre: document.getElementById('txtNombre'),
+            txtEmail: document.getElementById('txtEmail'),
+            txtTelefono: document.getElementById('txtTelefono'),
+           
+            fotoPerfil: this.props.usuario.photoURL,
+            usuarioContacto: this.props.usuario.email,
+            usuarioName: this.props.usuario.displayName,
+            date: newDate,
+            nombre: 'nombre',
+            email: 'email',
+            telefono: 'telefono',
+            clave: 'clave',
+
             btnInicioSesion : document.getElementById('btnInicioSesion'),
             btnRegistro : document.getElementById('btnRegistro'),
             btnCerrarSesion: document.getElementById('btnCerrarSesion'),
-            email: '',
-            clave: '',
+           
             error: null,
         }
 
@@ -244,7 +257,7 @@ class PaginaInicioSesion extends Component {
         alert('Se envio correctamente su solicitud: ' + this.estado.value);
 
         this.props.firebase
-            .doSignInWithEmailAndclave(email, clave)
+            .doInicioSesionConEmailClave(email, clave)
             .then(() => {
                 this.setEstado({ ...ESTADO_REPOSO });
                 this.props.history.push('/inicio/');
@@ -273,12 +286,12 @@ class PaginaInicioSesion extends Component {
     };    
 
     // Evento Iniciar Sesion    
-    btnIniciarSesion = ('click', (event) => {
+    btnInicioSesion = ('click', (event) => {
         // Get Email and pass
         const email = this.txtEmail.value;
         const clave = this.txtClave.value;
         // Sing in
-        const promise = auth.singInWithEmailAndClave(email, clave);
+        const promise = auth.inicioSesionConEmailClave(email, clave);
         promise.catch(e => console.log(e.message));
     });
 
@@ -326,7 +339,7 @@ class PaginaInicioSesion extends Component {
                                 <IniciarSesionConFacebook
                                     data-reactid="4">
                                     <button onClick={this.iniciarSesionConFacebook}>
-                                        <a href="/iniciarSesion/facebook/"
+                                        <a href="/inicioSesion/facebook/"
                                             className="btn-fcbk btn--big btn--responsive"
                                             data-reactid="5">
                                             <span class="icon--line icon-fcbk"
@@ -339,7 +352,7 @@ class PaginaInicioSesion extends Component {
                                 <IniciarSesionConGmail
                                     data-reactid="8">
                                     <button onClick={this.iniciarSesionConGmail}>
-                                        <a href="/iniciarSesion/gmail/"
+                                        <a href="/inicioSesion/gmail/"
                                             class="btn-twt btn--big btn--responsive"
                                             data-reactid="9">
                                             <span className="icon--line icon-twt"
@@ -368,7 +381,7 @@ class PaginaInicioSesion extends Component {
                                 action="/FormAcceso"
                                 method="post"
                             >
-                                <form action="/iniciarSesion/?next="
+                                <form action="/inicioSesion/?next="
                                     method="post" data-reactid="16">
 
                                     <input type="hidden"
@@ -488,14 +501,14 @@ export default connect(null, mapDispatchToProps)(PaginaInicioSesion);
     ConFirebase,
 )(PaginaInicioSesion); */
 
-const InicioSesionConGoogle = compose(
+const InicioSesionConGmail = compose(
     withRouter,
     ConFirebase,
-)(inicioSesionConGoogle);
+)(inicioSesionConGmail);
 
 const InicioSesionConFacebook = compose(
     withRouter,
     ConFirebase,
 )(inicioSesionConFacebook);
 
-export { InicioSesionConGoogle, InicioSesionConFacebook }; // PaginaInicioSesion
+export { InicioSesionConGmail, InicioSesionConFacebook }; // PaginaInicioSesion

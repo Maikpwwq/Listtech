@@ -1,7 +1,13 @@
 import React,{ Component }  from 'react';
 import { connect } from 'react-redux'
+
+import Fichaproducto from '../productos/Ficha-producto';
+
 import Next from '../../imagenes/next.png';
 import Prev from '../../imagenes/prev.png';
+
+import data from '../../constantes/productos/Productos.jsx'
+
 
 import styled from 'styled-components';
 
@@ -33,6 +39,8 @@ class PaginaTienda extends Component {
         super(props);
         this.state = {
             slideIndex: 1,
+            Compras: data.Compras,
+            Compra: data.Compras[0]
         }
         this.showSlides = this.showSlides.bind(this);
         this.PlusSlides = this.PlusSlides.bind(this);
@@ -77,36 +85,26 @@ class PaginaTienda extends Component {
                         <TiendaListaProducto>
 
                             <TiendaProducto>
-                                <Titulo />
-                                <a href="/components/Tienda">
-                                    <productoimg src="" alt="" />
-                                </a>
-                                <Precio />
-                            </TiendaProducto>
-
-                            <TiendaProducto>
-                                <Titulo />
-                                <a href="/components/Tienda">
-                                    <productoimg src="" alt="" />
-                                </a>
-                                <Precio />
-                            </TiendaProducto>
-
-                            <TiendaProducto>
-                                <Titulo />
-                                <a href="/components/Tienda">
-                                    <productoimg src="" alt="" />
-                                </a>
-                                <Precio />
+                                {
+                                    Compras && Compras.map((Compra, index) => (
+                                        <NavLink to={{
+                                            pathname: `/compras/${index}-${Compra.name}`,
+                                            estado: { ...Compras }
+                                        }}><Fichaproducto Compra={Compra}
+                                            key={`Compra-${index}`}
+                                            /*id={Compra._id}*/
+                                            /></NavLink>
+                                    ))
+                                }  
                             </TiendaProducto>
 
                         </TiendaListaProducto>
 
                         <Next id="Carrusel-next-imagenes-marcas" onClick="this.PlusSlides(1)">&#10095;>
-                        <img src={next} alt="" />
+                        <img src={Next} alt="" />
                         </Next>
                         <Prev id="Carrusel-prev-imagenes-marcas" onClick="this.PlusSlides(-1)">&#10094;>
-                        <img src={prev} alt="" />
+                        <img src={Prev} alt="" />
                         </Prev>
 
                     </TiendaProductos>
@@ -125,4 +123,10 @@ class PaginaTienda extends Component {
     };
 }
 
-export default connect(CurrentSlide, PlusSlides, showSlides)(Tienda);
+const mapStateToProps = (estado) => {
+    return {
+        productos: estado.compra.compras
+    }
+}
+
+export default connect(mapStateToProps)(PaginaTienda);//, CurrentSlide, PlusSlides, showSlides

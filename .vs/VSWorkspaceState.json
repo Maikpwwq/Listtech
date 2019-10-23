@@ -1,17 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\build",
+    "\\public",
     "\\src",
-    "\\src\\actions",
     "\\src\\components",
     "\\src\\components\\administracion",
+    "\\src\\components\\marca",
+    "\\src\\components\\sesiones",
     "\\src\\components\\usuarios",
-    "\\src\\constantes",
     "\\src\\constantes\\productos",
-    "\\src\\containers",
-    "\\src\\reducers",
-    "\\src\\styles"
+    "\\src\\hooks"
   ],
-  "SelectedNode": "\\src\\constantes\\productos\\Productos.js",
+  "SelectedNode": "\\src\\init-firebase.js",
   "PreviewInSolutionExplorer": false
 }

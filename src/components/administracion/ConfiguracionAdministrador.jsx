@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { compose } from 'recompose';
 
-import { conAutorizacion, conVerificacionEmail } from '../sesiones/Sesion.jsx';
+import { ConAutorizacion, ConVerificacionEmail } from '../sesiones/Sesion';
 
 import { ListaUsuarios, ObjetoUsuario } from '../usuarios/Usuarios.jsx';
 import * as ROLES from './Roles.js';
@@ -20,9 +20,9 @@ const ConfiguracionAdministrador = () => (
 );
 
 const condicion = autorizarUsuario =>
-  autorizarUsuario && !!autorizarUsuario.roles[ROLES.ADMINISTRADOR];
+    autorizarUsuario && !!autorizarUsuario.roles[ROLES.ADMINISTRADOR];
 
 export default compose(
-  conVerificacionEmail,
-  conAutorizacion(condicion),
+  ConVerificacionEmail,
+  ConAutorizacion(condicion),
 )(ConfiguracionAdministrador);

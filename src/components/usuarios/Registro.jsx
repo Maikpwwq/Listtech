@@ -8,8 +8,8 @@ import { ConFirebase } from '../administracion/Index-firebase';
 
 import * as ROLES from '../administracion/Roles';
 
-import { auth, database, facebookProvider, googleProvider } from '../../init-firebase.js'
-import * as firebase from 'firebase/app';
+import { auth, database } from '../../init-firebase.js' //facebookProvider, googleProvider 
+import * as firebase from '../../init-firebase.js';
 
 /*import * as firebaseui from 'firebaseui'*/
 
@@ -136,14 +136,30 @@ class PaginaRegistro extends Component {
             txtEmail : document.getElementById('txtEmail'),
             txtTelefono : document.getElementById('txtTelefono'),
             txtclave : document.getElementById('txtclave'),
+            txtconfirmarclave: document.getElementById('txtconfirmarclave'),
+
+            fotoPerfil: this.props.usuario.photoURL,
+            usuarioContacto: this.props.usuario.email,
+            usuarioName: this.props.usuario.displayName,
+            date: newDate,
+            nombre:'nombre',
+            email: 'email',
+            telefono: 'telefono',
+            clave: 'clave',
+            claveUno: form.getElementById('txtclave'),
+            claveDos: form.getElementById('txtconfirmarclave'),       
+
             btnInicioSesion: document.getElementById('btnInicioSesion'),
             btnRegistro : document.getElementById('btnRegistro'),
             btnCerrarSesion: document.getElementById('btnCerrarSesion'),
 
+            error: null,
         }
+
+
         this.RegistroConFacebook = this.RegistroConFacebook.bind(this);
         this.RegistroConGmail = this.RegistroConGmail.bind(this);
-        this.SendForm = this.SendForm.bind(this);
+        this.EnviarForm = this.EnviarForm.bind(this);
         this.firebaseusuario = this.firebaseusuario.bind(this);
         this.onCambios = this.onCambios.bind(this);
         this.onEnviar = this.onEnviar.bind(this);      
@@ -151,7 +167,7 @@ class PaginaRegistro extends Component {
 
     RegistroConFacebook = () => {        
         this.props.firebase
-            .doRegistrarseConFacebook()
+            .doRegistroConFacebook()
             .then(socialAutorizarUsuario => {
                 // Create a usuario in your Firebase Realtime Database too
                 return
@@ -220,7 +236,7 @@ class PaginaRegistro extends Component {
     };
 
     firebaseUsuario = () => {
-        auth().onAuthestadoChanged(this.firebaseUsuario)
+        auth().onCambioEstadoAutentificacion(this.firebaseUsuario)
         if (this.firebaseUsuario) {
             console.log(this.firebaseUsuario);
         }
@@ -263,7 +279,7 @@ class PaginaRegistro extends Component {
             })
 
             .then(() => {
-                this.setestado({ ...ESTADO_REPOSO });
+                this.setEstado({ ...ESTADO_REPOSO });
                 this.props.history.push('/inicio/');
             })
 
@@ -272,7 +288,7 @@ class PaginaRegistro extends Component {
                     error.message = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
-                this.setestado({ error });
+                this.setEstado({ error });
             });
 
         const form = new FormData(event.target);
@@ -287,6 +303,8 @@ class PaginaRegistro extends Component {
             'email': form.get('email'),
             'telefono': form.get('telefono'),
             'clave': form.get('clave'),
+            'claveUno': form.get('claveUno'),
+            'claveDos': form.get('claveDos'),
         }
 
         database.ref('usuarios').push(usuario)
@@ -351,7 +369,7 @@ class PaginaRegistro extends Component {
                                     data-reactid="4">
 
                                     <button onClick={this.RegistroConFacebook}>
-                                        <a href="/Registro/facebook/"
+                                        <a href="/registro/facebook/"
                                             className="btn-fcbk btn--big btn--responsive"
                                             data-reactid="5">
                                             <span class="icon--line icon-fcbk"
@@ -365,7 +383,7 @@ class PaginaRegistro extends Component {
                                     data-reactid="8">
 
                                     <button onClick={this.RegistroConGmail}>
-                                        <a href="/Registro/gmail/"
+                                        <a href="/registro/gmail/"
                                             class="btn-twt btn--big btn--responsive "
                                             data-reactid="9">
                                             <span className="icon--line icon-twt"

@@ -3,6 +3,9 @@ import { CircularProgress } from '@material-ui/core';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { compose } from 'recompose';
+
+import { ConAutentificacion } from '../components/sesiones/Sesion';
 
 // importar Propiedades usuario  
 import { setUsuario, setInicioSesion, } from '../actions/actions.js';
@@ -15,14 +18,15 @@ import useGetData from '../hooks/useGetData';
 
 // Rutas y paginas
 import NotFound from '../paginas/NotFound';
+import { Navegador } from './Navegador';
 
 // importar contenedores
 
 import Layout from '../containers/Layout.jsx';
-import Cuerpo from '../containers/Cuerpo.jsx';
 
 // importar componentes
 
+import Cuerpo from '../containers/Cuerpo.jsx';
 import Inicio from '../components/usuarios/Inicio.jsx'
 import Perfil from '../components/usuarios/Perfil.jsx';
 import DetalleProducto from '../components/productos/Detalle-producto.jsx';
@@ -70,15 +74,17 @@ const App = () => {
 
                 <div className="App">
 
+                    <Navegador/>
+
                     <BrowserRouter>
                         <Layout>
-                            <Switch>                                
+                            <Switch>
                                 <Route exact path="/" component={Cuerpo} data={data.data} />
                                 <Route exact path="/inicio/" component={Inicio} data={data.data} />
                                 <Route exact path="/perfil/:id/" component={Perfil} />
 
                                 <Route exact path="/configuracionAdministrador/:id/" component={ConfiguracionAdministrador} />
-                                <Route exact path="/configuracionAdministrador/" component={ConfiguracionAdministrador} />      
+                                <Route exact path="/configuracionAdministrador/" component={ConfiguracionAdministrador} />
 
                                 <Route exact path="/listaMensajes/" component={ListaMensajes} />
                                 <Route exact path="/listaMensajes/:id/" component={ListaMensajes} />
@@ -88,8 +94,8 @@ const App = () => {
                                 <Route exact path="/listaUsuarios/:id/" component={ListaUsuarios} />
                                 <Route exact path="/objetoUsuario/" component={ObjetoUsuario} />
                                 <Route exact path="/objetoUsuario/:id/" component={ObjetoUsuario} />
-                                
-                                <Route exact path="/iniciarSesion/" component={InicioSesion} />
+
+                                <Route exact path="/inicioSesion/" component={InicioSesion} />
                                 <Route exact path="/registro/" component={Registro} />
                                 <Route exact path="/olvidoClave/" component={OlvidoClave} />
                                 <Route exact path="/cambioClave/" component={CambioClave} />
@@ -104,7 +110,7 @@ const App = () => {
                                 <Route exact path="/contacto/" component={Contacto} />
                                 <Route exact path="/marcas/" component={Marcas} />
                                 <Route exact path="/nosotros/" component={Nosotros} />
-                                <Route exact path="/conocemas/" component={ConoceMas} />                                                                                          
+                                <Route exact path="/conocemas/" component={ConoceMas} />
 
                                 <Route component={NotFound} />
                             </Switch>
@@ -112,15 +118,19 @@ const App = () => {
                     </BrowserRouter>
 
                 </div>
-        ) : <div id="loader"><CircularProgress /></div>
+        ) : <div id="loader">
+                <CircularProgress />
+            </div>
     );
-}
+};
 
 // Asignar propiedades de inicio de sesion 
 
 const mapDispatchToProps = {
     setUsuario,
-    setInicioSesion,    
-}
+    setInicioSesion,
+};
 
-export default connect(null, mapDispatchToProps)(App);
+export default compose(
+    conAutentificacion,
+    connect(null, mapDispatchToProps)(App)); 

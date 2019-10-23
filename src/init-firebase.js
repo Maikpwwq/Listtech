@@ -11,7 +11,7 @@ import * as firestore from "firebase/firebase-firestore";
 
 // Initialize Firebase
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// Object.defineProperty(exports, "__esModule", { value: true });
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
@@ -24,42 +24,7 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
-class Firebase extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: null,
-            error: null
-        }
-
-        // Initialize Firebase
-        app.initializeApp({
-            credential: app.credential.cert((firebaseConfig)),
-            databaseURL: 'https://listtech-28538.firebaseio.com/' // URL de nuestro proyecto
-        });       
-
-        // * this.serverValue = app.database.ServerValue;
-        this.emailAuthProvider = new app.auth.EmailAuthProvider;
-
-        this.auth = this.auth.bind(this);
-        this.firestore = this.firestore.bind(this);       
-        this.storage = this.storage.bind(this);
-        this.db = this.database.bind(this);
-
-        // Facebook Provider URL de redireccionamiento de OAuth:
-
-        //provider.addScope('https://listtech-28538.firebaseapp.com/__/auth/handler');
-        //provider.addScope('user_birthday');    
-
-        // Google Provider
-
-
-        this.facebookProvider = new app.auth.FacebookAuthProvider();
-        this.googleProvider = new app.auth.GoogleAuthProvider();
-    }
-
-    auth = () => {
+/* auth = () => {
         app.auth()
     };
 
@@ -74,7 +39,50 @@ class Firebase extends Component {
 
     db = () => {
         app.database()
-    };
+    }; */
+
+class Firebase extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            usuario: null,
+            error: null
+        }
+
+        // Initialize Firebase
+        app.initializeApp({
+            credential: app.credential.cert((firebaseConfig)),
+            databaseURL: 'https://listtech-28538.firebaseio.com/' // URL de nuestro proyecto
+        });       
+
+        // * this.serverValue = app.database.ServerValue;
+        this.emailAuthProvider = new app.auth.EmailAuthProvider;
+
+        /* Firebase APIs */
+        this.auth = app.auth();
+        this.db = app.database();
+        this.firestore = app.firestore();
+        this.storage = app.storage();
+        this.auth = this.auth.bind(this);
+        this.firestore = this.firestore.bind(this);       
+        this.storage = this.storage.bind(this);
+        this.db = this.database.bind(this);
+
+        app.firestore.settings({
+            timestampsInSnapshots: true
+        })
+
+        /* Social Sign In Method Provider */
+        // Facebook Provider URL de redireccionamiento de OAuth:
+        // Google Provider   
+
+        // provider.addScope('https://listtech-28538.firebaseapp.com/__/auth/handler');
+        // provider.addScope('usuario_birthday');    
+
+        this.facebookProvider = new app.auth.FacebookAuthProvider();
+        this.googleProvider = new app.auth.GoogleAuthProvider();
+    }  
 
     // Lenguaje del OAuth
     lenguaje = () => {
@@ -91,100 +99,103 @@ class Firebase extends Component {
     dbRef = app.database().ref().child('text');
     //dbRef.on('value', snap => root.innerText = snap.val());
 
-    //     
+    //         
 
     // *** Auth API ***
-
-    doInicioSesion (email, clave) {
-        return this.auth.signInWithEmailAndPassword(email, clave)
-    }
-
     async register(name, email, clave) {
-        await this.auth.createUserWithEmailAndPassword(email, clave)
-        return this.auth.currentUser.updateProfile({
+        await this.auth.crearUsuarioConEmailClave(email, clave)
+        return this.auth.usuarioActual.actualizarPerfil({
             displayName: name
         })
     }
 
-    doCrearUsuarioConEmailClave = (email, clave) =>
-        this.auth.createUserWithEmailAndPassword(email, clave);
+    doInicioSesion(email, clave) {
+        return this.auth.inicioSesionConEmailClave(email, clave)
+    }
 
-    doIniciarSesionConEmailClave = (email, clave) =>
-        this.auth.createUserWithEmailAndPassword(email, clave);
+    doCrearUsuarioConEmailClave = (email, clave) =>
+        this.auth.crearUsuarioConEmailClave(email, clave);
+
+    doInicioSesionConEmailClave = (email, clave) =>
+        this.auth.inicioSesionConEmailClave(email, clave);
 
     doRegistraConEmailClave = (email, clave) =>
-        this.auth.signInWithEmailAndPassword(email, clave);
+        this.auth.registroConEmailClave(email, clave);
 
     doInicioSesionConFacebook = () =>
-        this.auth.logInWithPopup(this.facebookProvider);
+        this.auth.inicioSesionConPopup(this.facebookProvider);
 
     doInicioSesionConGmail = () =>
-        this.auth.logInWithPopup(this.googleProvider);
+        this.auth.inicioSesionConPopup(this.googleProvider);
 
     doRegistrarConGoogle = () =>
-        this.auth.signInWithPopup(this.googleProvider);
+        this.auth.registroConPopup(this.googleProvider);
 
     doRegistrarConFacebook = () =>
-        this.auth.signInWithPopup(this.facebookProvider);
+        this.auth.registroConPopup(this.facebookProvider);
 
-    doCerrarSesion = () => { return this.auth.signOut() };
+    doCerrarSesion = () => { return this.auth.cerrarSesion() };
 
-    doCambioClave = email => this.auth.sendPasswordResetEmail(email);
+    doCambioClave = email => this.auth.envioEmailCambioClave(email);
 
-    doOlvidoClave = email => this.auth.sendPasswordResetEmail(email);
+    doOlvidoClave = email => this.auth.envioEmailOlvidoClave(email);
 
     doActualizarClave = clave =>
-        this.auth.currentUser.actualizarClave(clave);
+        this.auth.usuarioActual.actualizarClave(clave);
 
     doEnviarEmailVerificacion = () =>
-        this.auth.currentUser.sendEmailVerification({
+        this.auth.usuarioActual.envioEmailVerificacion({
             url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
         });
         
+    // *** Notas o mensajes de usuario API ***
+
     addNota(nota) {
-        if (!this.auth.currentUser) {
+        if (!this.auth.usuarioActual) {
             return alert('No está autorizado')
         }
 
-        return this.firestore.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).set({
+        return this.firestore.doc(`usuarios_codedamn_video/${this.auth.usuarioActual.uid}`).set({
             nota
         })
     }
 
     async getActualNotaUsuario() {
-        const nota = await this.firestore.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).get()
+        const nota = await this.firestore.doc(`usuarios_codedamn_video/${this.auth.usuarioActual.uid}`).get()
         return nota.get('nota')
+    }    
+
+    // *** Propiedades de usuario API ***
+
+    getUsuarioActualname() {
+        return this.auth.usuarioActual && this.auth.usuarioActual.displayName
     }
 
-    isInitialized() {
+    isCorriendo() {
         return new Promise(resolve => {
-            this.auth.onAuthStateChanged(resolve)
+            this.auth.onCambioEstadoAutorizacion (resolve)
         })
     }
 
-    getCurrentUsername() {
-        return this.auth.currentUser && this.auth.currentUser.displayName
-    }
-
-    // *** Merge Auth and DB User API *** //
+    // *** Merge Auth and DB usuario API *** //
     onAutorizarUsuarioListener = (next, fallback) =>
-        this.auth.onAuthStateChanged(autorizarUsuario => {
+        this.auth.onCambioEstadoAutorizacion (autorizarUsuario => {
             if (autorizarUsuario) {
-                this.user(autorizarUsuario.uid)
+                this.usuario(autorizarUsuario.uid)
                     .once('value')
                     .then(snapshot => {
-                        const dbUser = snapshot.val();
+                        const dbUsuario = snapshot.val();
                         // default empty roles
-                        if (!dbUser.roles) {
-                            dbUser.roles = {};
+                        if (!dbUsuario.roles) {
+                            dbUsuario.roles = {};
                         }
-                        // merge auth and db user
+                        // merge auth and db usuario
                         autorizarUsuario = {
                             uid: autorizarUsuario.uid,
                             email: autorizarUsuario.email,
-                            emailVerified: autorizarUsuario.emailVerified,
+                            emailVerificado: autorizarUsuario.emailVerificado,
                             providerData: autorizarUsuario.providerData,
-                            ...dbUser,
+                            ...dbUsuario,
                         };
                         next(autorizarUsuario);
                     });
@@ -193,7 +204,7 @@ class Firebase extends Component {
             }
         });
 
-    // *** User API ***
+    // *** usuario API ***
     usuario = uid => this.db.ref(`usuarios/${uid}`);
     usuarios = () => this.db.ref('usuarios');
 
@@ -205,6 +216,10 @@ class Firebase extends Component {
     producto = uid => this.db.ref(`producto/${uid}`);
     productos = () => this.db.ref('producto');
 
+    // *** Compras API ***
+    compra = uid => this.db.ref(`compra/${uid}`);
+    compras = () => this.db.ref('compra');
+
     // *** Requerimientos API ***
     requerimiento = uid => this.db.ref(`requerimientos/${uid}`);
     requerimientos = () => this.db.ref('requerimientos');
@@ -214,4 +229,4 @@ class Firebase extends Component {
 
 export default new Firebase();
 
-export { storage, database, auth } //, facebookProvider, googleProvider
+export { storage, database, auth, isCorriendo } //, facebookProvider, googleProvider

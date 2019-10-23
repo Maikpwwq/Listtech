@@ -2,7 +2,7 @@ import React from 'react';
 
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
-import Cuerpo from './Cuerpo.jsx';
+// import Cuerpo from './Cuerpo.jsx';
 
 /*import styled, { ThemeProvider } from 'styles-components';*/
 import styled from 'styled-components'
@@ -100,16 +100,16 @@ const Layout = props => {
         <LayoutStyle>
             <LayoutTheme>
                 <Header />
-                <Cuerpo>
+                
                     {props.children}
-                </Cuerpo>               
+                               
                 <Footer />
             </LayoutTheme>
         </LayoutStyle>
     )
 };
 
-
+// <Cuerpo>
 export default Layout;
 
 /*

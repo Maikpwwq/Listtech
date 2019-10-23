@@ -1,1 +1,3 @@
-export const ADMINISTRADOR = 'ADMIN';
+const ADMINISTRADOR = 'ADMINISTRADOR';
+
+export default (ADMINISTRADOR);

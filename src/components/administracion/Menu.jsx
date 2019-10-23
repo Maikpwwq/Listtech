@@ -160,7 +160,7 @@ class Menu extends Component {
     */
 
     DropdownContenido = new TINY.dropdown.init("dropdown", {
-        id: 'menu',
+        id: 'Menu',
         active: 'menuhover'
     });
 
@@ -177,7 +177,7 @@ class Menu extends Component {
                         </NavLink></Menuli>
 
                         <Menuli>
-                            {!!autorizarUsuario.roles[ROLES.ADMIN] && (
+                            {!!autorizarUsuario.roles[ROLES.ADMINISTRADOR] && (
                                 <Menua
                                     component={NavLink}
                                     to="/configuracionAdministrador/"

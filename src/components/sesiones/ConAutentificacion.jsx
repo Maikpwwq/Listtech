@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 
 import { ConFirebase } from '../administracion/Index-firebase';
 
-class ConAutentificacion extends React.Component {
+class ConAutentificacion extends Component {
     constructor(props) {
         super(props);
 
@@ -14,7 +14,7 @@ class ConAutentificacion extends React.Component {
     }
 
     componentDidMount() {
-        this.listener = this.props.firebase.onautorizarUsuarioListener(
+        this.listener = this.props.firebase.onAutorizarUsuarioListener(
             autorizarUsuario => {
                 localStorage.setItem('autorizarUsuario', JSON.stringify(autorizarUsuario));
                 this.props.onSetAutorizarUsuario(autorizarUsuario);

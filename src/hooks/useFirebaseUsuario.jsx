@@ -24,13 +24,13 @@ const useFirebaseUsuario = () => {
     const [firebaseInitialized, setFirebaseInitialized] = useState(false);
 
     useEffect(() => {
-        firebase.isInitialized().then(val => {
+        firebase.isCorriendo().then(val => {
             setFirebaseInitialized(val)           
         })
     }, []);
 
     useEffect(() => {
-        firebase().onAuthStateChanged((usuario) => {
+        firebase().onCambioEstadoAutentificacion((usuario) => {
             if (usuario) {
                 this.props.setUsuario(usuario);
                 this.props.setInicioSesion(true);                
