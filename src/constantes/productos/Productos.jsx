@@ -6,10 +6,10 @@
 3 Cerraduras mecánicas
 4 Accesorios Soportes
 5 Salidas PUSH emergencia
-7 Cierra puertas
-8 Sensores y cantoneras electrónicas
-9 Redes cableado estructurado
-10 Acceso suspendido en alturas
+6 Cierra puertas
+7 Sensores y cantoneras electrónicas
+8 Redes cableado estructurado
+9 Acceso suspendido en alturas
 
 1   LÍNEA BIOMETRÍA CONTROL ACCESO
 2.	LÍNEA CERRADURAS ELECTRÓNICAS
