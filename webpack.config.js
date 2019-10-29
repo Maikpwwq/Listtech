@@ -7,7 +7,9 @@ const DashboardPlugin = require("webpack-dashboard/plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-    // mode: 'production', //'development'
+    mode: 'development',  // 'production'
+    devtool: "inline-source-map", //'source-map'
+    // entry: "./app.ts",
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -47,7 +49,7 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'style-loader', 'postcss-loader'],
                 options: {
                     importLoaders: 1,
-                }
+                },
 
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
                 use: [{
@@ -55,6 +57,11 @@ module.exports = {
                         options: {
                             name: "[path][name]-[hash:8].[ext]"
                         }
+                }],
+
+                test: /\.tsx?$/,
+                use: [{
+                    loader: "ts-loader"
                 }]
             }
         ]

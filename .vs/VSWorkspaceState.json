@@ -1,17 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\build",
-    "\\public",
+    "\\functions",
+    "\\functions\\lib",
+    "\\functions\\src",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\administracion",
-    "\\src\\components\\marca",
-    "\\src\\components\\sesiones",
-    "\\src\\components\\usuarios",
+    "\\src\\components\\mensajes",
+    "\\src\\components\\micelaneos",
     "\\src\\constantes\\productos",
-    "\\src\\hooks"
+    "\\src\\imagenes"
   ],
-  "SelectedNode": "\\src\\init-firebase.js",
+  "SelectedNode": "\\src\\components\\marca\\Marcas.jsx",
   "PreviewInSolutionExplorer": false
 }
