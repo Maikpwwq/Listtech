@@ -5,7 +5,7 @@ import { compose } from 'recompose';
 import { ConAutorizacion, ConVerificacionEmail } from '../sesiones/Sesion';
 
 import { ListaUsuarios, ObjetoUsuario } from '../usuarios/Usuarios.jsx';
-import * as ROLES from './Roles.js';
+import { ADMINISTRADOR } from './Roles.js';
 
 const ConfiguracionAdministrador = () => (
   <div>
@@ -20,7 +20,7 @@ const ConfiguracionAdministrador = () => (
 );
 
 const condicion = autorizarUsuario =>
-    autorizarUsuario && !!autorizarUsuario.roles[ROLES.ADMINISTRADOR];
+    autorizarUsuario && !!autorizarUsuario.roles{ ADMINISTRADOR };
 
 export default compose(
   ConVerificacionEmail,

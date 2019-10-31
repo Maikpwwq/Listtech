@@ -4,12 +4,13 @@ import { compose } from 'recompose';
 
 import { ConFirebase } from '../administracion/Index-firebase';
 
-const necesitaVerificacionEmail = autorizarUsuario =>
+const necesitaVerificacionEmail = (autorizarUsuario) => {
     autorizarUsuario &&
     !autorizarUsuario.emailVerified &&
     autorizarUsuario.providerData
         .map(provider => provider.providerId)
         .includes('clave');
+};
 
 class ConVerificacionEmail extends Component {
     constructor(props) {
@@ -28,9 +29,11 @@ class ConVerificacionEmail extends Component {
     };
 
     render() {
+
         return
 
-        necesitaVerificacionEmail(this.props.autorizarUsuario) ? (
+        neceitaVerificacionEmail(this.props.autorizarUsuario) ? (
+
             <div>
 
                 {this.estado.isSent ? (

@@ -48,7 +48,7 @@ class Firebase extends Component {
         this.state = {
             usuario: null,
             error: null
-        }
+        };
 
         // Initialize Firebase
         app.initializeApp({
@@ -71,7 +71,7 @@ class Firebase extends Component {
 
         app.firestore.settings({
             timestampsInSnapshots: true
-        })
+        });
 
         /* Social Sign In Method Provider */
         // Facebook Provider URL de redireccionamiento de OAuth:
@@ -82,7 +82,7 @@ class Firebase extends Component {
 
         this.facebookProvider = new app.auth.FacebookAuthProvider();
         this.googleProvider = new app.auth.GoogleAuthProvider();
-    }  
+    };  
 
     // Lenguaje del OAuth
     lenguaje = () => {
@@ -102,16 +102,16 @@ class Firebase extends Component {
     //         
 
     // *** Auth API ***
-    async register(name, email, clave) {
+    async register (name, email, clave) => {
         await this.auth.crearUsuarioConEmailClave(email, clave)
         return this.auth.usuarioActual.actualizarPerfil({
             displayName: name
         })
-    }
+    };
 
-    doInicioSesion(email, clave) {
+    doInicioSesion = (email, clave) => {
         return this.auth.inicioSesionConEmailClave(email, clave)
-    }
+    };
 
     doCrearUsuarioConEmailClave = (email, clave) =>
         this.auth.crearUsuarioConEmailClave(email, clave);
@@ -136,11 +136,11 @@ class Firebase extends Component {
 
     doCerrarSesion = () => { return this.auth.cerrarSesion() };
 
-    doCambioClave = email => this.auth.envioEmailCambioClave(email);
+    doCambioClave = (email) => this.auth.envioEmailCambioClave(email);
 
-    doOlvidoClave = email => this.auth.envioEmailOlvidoClave(email);
+    doOlvidoClave = (email) => this.auth.envioEmailOlvidoClave(email);
 
-    doActualizarClave = clave =>
+    doActualizarClave = (clave) =>
         this.auth.usuarioActual.actualizarClave(clave);
 
     doEnviarEmailVerificacion = () =>
@@ -150,36 +150,37 @@ class Firebase extends Component {
         
     // *** Notas o mensajes de usuario API ***
 
-    addNota(nota) {
+    addNota = (nota) => {
         if (!this.auth.usuarioActual) {
             return alert('No está autorizado')
-        }
+        };
 
         return this.firestore.doc(`usuarios_codedamn_video/${this.auth.usuarioActual.uid}`).set({
             nota
-        })
-    }
+        });
+    };
 
-    async getActualNotaUsuario() {
+    async getActualNotaUsuario () => {
         const nota = await this.firestore.doc(`usuarios_codedamn_video/${this.auth.usuarioActual.uid}`).get()
         return nota.get('nota')
-    }    
+    };   
 
     // *** Propiedades de usuario API ***
 
-    getUsuarioActualname() {
+    getUsuarioActualname = () => {
         return this.auth.usuarioActual && this.auth.usuarioActual.displayName
-    }
+    };
 
-    isCorriendo() {
+    isCorriendo = () => {
         return new Promise(resolve => {
             this.auth.onCambioEstadoAutorizacion (resolve)
-        })
-    }
+        });
+    };
 
     // *** Merge Auth and DB usuario API *** //
     onAutorizarUsuarioListener = (next, fallback) =>
         this.auth.onCambioEstadoAutorizacion (autorizarUsuario => {
+
             if (autorizarUsuario) {
                 this.usuario(autorizarUsuario.uid)
                     .once('value')
@@ -199,7 +200,9 @@ class Firebase extends Component {
                         };
                         next(autorizarUsuario);
                     });
-            } else {
+            };
+
+            else {
                 fallback();
             }
         });
@@ -225,8 +228,8 @@ class Firebase extends Component {
     requerimientos = () => this.db.ref('requerimientos');
 
     // listaUsuariosMensajes/:id  /objetoUsuarioMensaje/:id/  /perfil /: id /  /fichaProducto/: id /  /detalleProducto/: id /
-}
+};
 
 export default new Firebase();
 
-export { storage, database, auth, isCorriendo } //, facebookProvider, googleProvider
+export { storage, database, auth, isCorriendo }; //, facebookProvider, googleProvider

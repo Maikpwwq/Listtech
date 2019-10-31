@@ -1,3 +1,4 @@
+
 // Productos y servicios
 export const setListadoProductos = payload => ({
     type: 'SET_LISTADO_PRODUCTOS',
@@ -64,3 +65,45 @@ export const addCompra = (compra) => {
 };
 
 // Mensajes
+
+export function agregarMensaje(text) {
+  return { 
+    type: 'ADD_TODO',
+    payload,
+  };
+};
+
+export function eliminarMensaje(id) {
+  return { 
+    type: 'DELETE_TODO',
+    payload,
+  };
+};
+
+export function editarMensaje(id, text) {
+  return { 
+    type: 'EDIT_TODO',
+    payload,
+  };
+};
+
+export function enviarMensaje(id) {
+  return { 
+    type: 'COMPLETE_TODO',
+    payload,
+  };
+};
+
+export function mensajeEntregado() {
+  return { 
+    type: 'COMPLETE_ALL',
+    payload,
+  };
+};
+
+export function limpiarEntrega() {
+  return { 
+    type: 'CLEAR_COMPLETED',
+    payload,
+  };
+};

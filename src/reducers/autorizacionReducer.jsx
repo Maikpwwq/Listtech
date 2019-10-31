@@ -1,6 +1,11 @@
 /* import React from 'react'; */
+import Actions from '../actions/actions';
 
-const estadoReposo = {}
+const estadoReposo = [{
+  text: 'Use Redux',
+  completed: false,
+  id: 0
+}];
 
 const autorizacionReducer = (estado = estadoReposo, accion) => {
     switch (accion.type) {

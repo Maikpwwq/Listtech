@@ -8,7 +8,7 @@ class ObjetoMensaje extends Component {
             editMode: false,
             editText: this.props.mensaje.text,
         };
-    }
+    };
 
     onToggleEditMode = () => {
         this.setState(state => ({

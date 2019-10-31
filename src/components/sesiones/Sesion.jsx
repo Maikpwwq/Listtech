@@ -4,6 +4,6 @@ import ConVerificacionEmail from './ConVerificacionEmail';
 
 export default {
     ConAutentificacion,
+    ConVerificacionEmail,    
     ConAutorizacion,
-    ConVerificacionEmail,
 };

@@ -11,9 +11,11 @@ class ConAutorizacion extends Component {
     constructor(props) {
         super(props);
         this.estado = {
-            condicion : '',
+            
         }
-    }   
+
+        this.condicion = this.condicion.bind(this);     
+    };   
 
     componentDidMount() {
         this.listener = this.props.firebase.onAutorizarUsuarioListener(
@@ -24,22 +26,19 @@ class ConAutorizacion extends Component {
             },
             () => this.props.history.push('/inicioSesion/'),
         );
-    }
+    };
 
     componentWillUnmount() {
         this.listener();
-    }
+    };
 
     render() {
         return condicion(this.props.autorizarUsuario) ? (
             <Component {...this.props} />
         ) : null;
-    }
+    };
 };
 
-/* Extraido de ConfiguracionAdministrador
- * const condicion = autorizarUsuario =>
-    autorizarUsuario && !!autorizarUsuario.roles[ROLES.ADMINISTRADOR]; */
 
 const mapStateToProps = estado => ({
     autorizarUsuario: estado.estadoSesion.autorizarUsuario,

@@ -43,7 +43,7 @@ const Invitado = styled.div`
     box-shadow: 0 1px 8px 0 rgba(0,0,0,0.08)
 `;
 
-const VisorRegistro = styled.div`
+const VistaRegistro = styled.div`
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     color: #1c3643;
@@ -51,7 +51,7 @@ const VisorRegistro = styled.div`
     -webkit-font-smoothing: antialiased;
 `;
 
-const SocialRegistro = styled.div`
+const RegistroSocial = styled.div`
     padding: 24px 32px 0px 32px;
     display: block;
 `;
@@ -135,34 +135,29 @@ class PaginaRegistro extends Component {
             txtNombre : document.getElementById('txtNombre'),
             txtEmail : document.getElementById('txtEmail'),
             txtTelefono : document.getElementById('txtTelefono'),
-            txtclave : document.getElementById('txtclave'),
-            txtconfirmarclave: document.getElementById('txtconfirmarclave'),
-
             fotoPerfil: this.props.usuario.photoURL,
             usuarioContacto: this.props.usuario.email,
             usuarioName: this.props.usuario.displayName,
-            date: newDate,
+            date: 'newDate',
             nombre:'nombre',
             email: 'email',
             telefono: 'telefono',
             clave: 'clave',
-            claveUno: form.getElementById('txtclave'),
-            claveDos: form.getElementById('txtconfirmarclave'),       
-
-            btnInicioSesion: document.getElementById('btnInicioSesion'),
-            btnRegistro : document.getElementById('btnRegistro'),
-            btnCerrarSesion: document.getElementById('btnCerrarSesion'),
-
+            claveUno: 'txtclave',
+            txtclave : document.getElementById('txtclave'),
+            txtconfirmarclave: document.getElementById('txtconfirmarclave'),           
+            claveDos: 'txtconfirmarclave',       
             error: null,
         }
-
-
         this.RegistroConFacebook = this.RegistroConFacebook.bind(this);
         this.RegistroConGmail = this.RegistroConGmail.bind(this);
         this.EnviarForm = this.EnviarForm.bind(this);
         this.firebaseusuario = this.firebaseusuario.bind(this);
         this.onCambios = this.onCambios.bind(this);
         this.onEnviar = this.onEnviar.bind(this);      
+        this.btnInicioSesion = this.btnInicioSesion.bind(this);   
+        this.btnRegistro = this.btnRegistro.bind(this);  
+        this.btnCerrarSesion = this.btnCerrarSesion.bind(this);  
     }
 
     RegistroConFacebook = () => {        
@@ -518,7 +513,7 @@ class PaginaRegistro extends Component {
                                         </p>
                                     </FormInput>
 
-                                    <ButtonRegistro
+                                    <BtnRegistro
                                         data-reactid="43"
                                         disabled={isInvalid}
                                         type="submit"
@@ -528,7 +523,7 @@ class PaginaRegistro extends Component {
                                             type="submit"
                                             onClick={this.btnRegistro}
                                         >Registrarse</span>
-                                    </ButtonRegistro>
+                                    </BtnRegistro>
 
                                 </form>
 
@@ -571,7 +566,8 @@ export default connect(null, mapDispatchToProps)(PaginaRegistro);
 
 const RegistroLink = () => (
     <p>
-        No tiene aun una cuenta? <Link to="/registro/"> Registrase</Link>
+        No tiene aun una cuenta? 
+       <NavLink to="/registro/"> Registrase</NavLink>
     </p>
 );
 

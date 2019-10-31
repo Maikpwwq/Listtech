@@ -1,6 +1,7 @@
-import React,{ Component }  from 'react';
+import React, { Component }  from 'react';
 import { connect } from 'react-redux'
 
+import { NavLink } from 'react-router-dom';
 import Fichaproducto from '../productos/Ficha-producto';
 
 import Next from '../../imagenes/next.png';
@@ -33,11 +34,15 @@ const TiendaProducto = styled.form`
     
 `;
 
+const TiendaDescripcion = styled.form`
+    
+`;
+
 class PaginaTienda extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
+        this.estado = {
             slideIndex: 1,
             Compras: data.Compras,
             Compra: data.Compras[0]
@@ -93,7 +98,8 @@ class PaginaTienda extends Component {
                                         }}><Fichaproducto Compra={Compra}
                                             key={`Compra-${index}`}
                                             /*id={Compra._id}*/
-                                            /></NavLink>
+                                            />
+                                        </NavLink>
                                     ))
                                 }  
                             </TiendaProducto>
@@ -121,12 +127,12 @@ class PaginaTienda extends Component {
             </TiendaStyle>
         )
     };
-}
+};
 
 const mapStateToProps = (estado) => {
     return {
-        productos: estado.compra.compras
+        compras: estado.compra.compras
     }
-}
+};
 
 export default connect(mapStateToProps)(PaginaTienda);//, CurrentSlide, PlusSlides, showSlides

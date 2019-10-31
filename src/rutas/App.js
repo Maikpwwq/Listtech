@@ -56,23 +56,35 @@ componenteWillUnmount() {
 
 // Llamado de sesiones y rutas "App.js "
 
-const App = () => {
+class App extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.estado = {
+            
+        };
 
     // Llamado al Hook de Asignacion id: usuario por Firebase
-    const FirebaseUsuario = useFirebaseUsuario();
+    this.FirebaseUsuario = useFirebaseUsuario();
 
     // Sesiones
 
 
     // Llamado al Hook importar datos de firebase 
-    const data = useGetData();
+    this.data = useGetData();
 
+   };
+
+    
     // Niveles de acceso segun rutas del buscador    
+render() {
     return (
         FirebaseUsuario !== false ? (
-            data.length === 0 ? <h1> Cargando ...</h1> :
-
-                <div className="App">
+            data.length === 0 ? 
+        <h1> Cargando ...</h1> 
+        :
+        <div className="App">
 
                     <Navegador/>
 
@@ -101,10 +113,10 @@ const App = () => {
                                 <Route exact path="/cambioClave/" component={CambioClave} />
                                 <Route exact path="/cerrarSesion/" component={CerrarSesion} />
 
-                                <Route exact path="/detalleProducto/:id/" component={DetalleProducto} />
-                                <Route exact path="/fichaProducto/:id/" component={FichaProducto} />
-                                <Route exact path="/compras/" component={Compras} />
-                                <Route exact path="/tienda/" component={Tienda} />
+                                <Route exact path="/detalleProducto/:id/" component={DetalleProducto} data={data.data}/>
+                                <Route exact path="/fichaProducto/:id/" component={FichaProducto} data={data.data}/>
+                                <Route exact path="/compras/" component={Compras} data={data.data}/>
+                                <Route exact path="/tienda/" component={Tienda} data={data.data}/>
 
 
                                 <Route exact path="/contacto/" component={Contacto} />
@@ -118,13 +130,19 @@ const App = () => {
                     </BrowserRouter>
 
                 </div>
-        ) : <div id="loader">
-                <CircularProgress />
-            </div>
-    );
+        ) 
+        :
+        <div id="loader">
+            <CircularProgress />
+        </div>
+    )};
 };
 
 // Asignar propiedades de inicio de sesion 
+
+const mapStateToProps = {
+    autorizarUsuario,
+};
 
 const mapDispatchToProps = {
     setUsuario,
@@ -133,4 +151,4 @@ const mapDispatchToProps = {
 
 export default compose(
     conAutentificacion,
-    connect(null, mapDispatchToProps)(App)); 
+    connect(mapStateToProps, mapDispatchToProps)(App)); 

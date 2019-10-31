@@ -13,9 +13,9 @@ const PaginaInicio = () => (
     </div>
 );
 
-const condition = authUser => !!authUser;
+const condicion = autorizarUsuario => !!autorizarUsuario;
 
 export default compose(
     ConVerificacionEmail,
-    ConAutorizacion(condition),
+    ConAutorizacion(condicion),
 )(PaginaInicio);

@@ -17,7 +17,7 @@ import { setUsuario, setInicioSesion } from '../../actions/actions'
 // Cargar Paginas 
 
 import { RegistroLink } from './Registro.jsx';
-import { ClaveOlvidadaLink } from './Olvido-clave.jsx';
+import { OlvidoClaveLink } from './Olvido-clave.jsx';
 import { ConFirebase } from '../administracion/Index-firebase';
 
 import styled from 'styled-components'
@@ -91,7 +91,7 @@ const FormInput = styled.div`
     }    
 `;
 
-const ButtonIniciar = styled.div`
+const BtnIniciar = styled.div`
     background: -webkit - linear - gradient(right, #95ca3e 0 %, #95ca3e 50 %, #85c638 100 %);  
     -webkit-box-shadow: 0 1px 1px 0 #58902d;
     box-shadow: 0 1px 1px 0 #58902d;
@@ -144,7 +144,7 @@ class PaginaInicioSesion extends Component {
             fotoPerfil: this.props.usuario.photoURL,
             usuarioContacto: this.props.usuario.email,
             usuarioName: this.props.usuario.displayName,
-            date: newDate,
+            date: 'newDate',
             nombre: 'nombre',
             email: 'email',
             telefono: 'telefono',
@@ -433,14 +433,14 @@ class PaginaInicioSesion extends Component {
                                         </p>
                                     </FormInput>
 
-                                    <ButtonIniciar data-reactid="28"
+                                    <BtnIniciar data-reactid="28"
                                         disabled={isInvalid}
                                         type="submit"
                                     >
                                         <span data-reactid="29"
                                             Id="btnIniciarSesion"
                                         >Inicia sesión</span>
-                                    </ButtonIniciar>
+                                    </BtnIniciar>
 
                                     <div className="IniciarSesionConEmail-lostclave"
                                         data-reactid="30">

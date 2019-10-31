@@ -148,7 +148,7 @@ class Menu extends Component {
             title: 'Menu',
             titulo: '',
         }
-    }
+    };
 
     /* llamar desde el menu a los listados de productos
      const memoriaListadoProductos = useCallback(
@@ -159,7 +159,9 @@ class Menu extends Component {
      );
     */
 
-    DropdownContenido = new TINY.dropdown.init("dropdown", {
+// TINY.dropdown.init("dropdown", {
+
+    DropdownContenido = new dropdown.init("dropdown", {
         id: 'Menu',
         active: 'menuhover'
     });
