@@ -101,7 +101,7 @@ const Maincolumns = styled.div`
     </MainStyle>    
 );*/
 
-const Cuerpo = ( props ) => (
+const Destino = ( props ) => (
     <MainStyle>
         <MainContainer>
             <MainDark>
@@ -132,4 +132,4 @@ const Cuerpo = ( props ) => (
     </MainStyle>
 );
 
-export default Cuerpo;
+export default Destino;

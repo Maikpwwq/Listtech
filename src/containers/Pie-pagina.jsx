@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+
+// importacion components
 import Social from '../components/marca/Social';
 import Contacto from '../components/marca/Contacto.jsx';
 import Formcontacto from '../components/usuarios/Form-contacto.jsx';
-
+// importacion imagenes
 import Pse from "../imagenes/medios de pago/pse.png";
 import Visa from "../imagenes/medios de pago/visa.png";
 import AmericanExpress from "../imagenes/medios de pago/americanexpress.png";
@@ -14,9 +18,10 @@ import logo from '../imagenes/Listtech-Control-Acceso.png';
 
 import indicador from '../imagenes/redes/indentador.png';
 
+// Styled Components
 import styled from 'styled-components'
 
-const Footerstyle = styled.footer`
+const PiePaginastyle = styled.PiePagina`
     background - color: #3c3c3c;
     padding: 10px;
     text-align: center;
@@ -26,7 +31,7 @@ const Footerstyle = styled.footer`
     width: 100%;
 `;
 
-const FooterComponent = styled.footer`
+const PiePaginaComponent = styled.PiePagina`
     text-align: right;
     box-sizing: border-box;
     width: 100%;
@@ -37,7 +42,7 @@ const FooterComponent = styled.footer`
     background: #000;
 `;
 
-const FooterLogo = styled.img`
+const PiePaginaLogo = styled.img`
     border-radius: 6%;
     width: 360px;
     height: auto;
@@ -48,11 +53,11 @@ const FooterLogo = styled.img`
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
 `;
 
-const FooterHeader = styled.header`
+const PiePaginaHeader = styled.header`
    
 `;
 
-const Footerrow = styled.div`
+const PiePaginarow = styled.div`
     display: -webkit-flex;
     display: flex;
     @media (max-width: 600px) {    
@@ -61,7 +66,7 @@ const Footerrow = styled.div`
     }
 `;
 
-const Footercolumns = styled.div`
+const PiePaginacolumns = styled.div`
     padding: 10px;
     height: auto; 
     text-align: right;
@@ -71,7 +76,7 @@ const Footercolumns = styled.div`
     vertical-align: top;    
 `;
 
-const FooterMenu = styled.nav`
+const PiePaginaMenu = styled.nav`
     padding: 19px;
     font-size: 36px;
     font-weight: 390;
@@ -93,7 +98,7 @@ const EnlacesMenu = styled.a`
     width: 100%;
 `;
 
-const FooterSiguenos = styled.nav`
+const PiePaginaSiguenos = styled.nav`
     text-align: center;
     display: block;
 `;
@@ -135,7 +140,7 @@ const MediosPago = styled.a`
     display: inline-block;
 `;
 
-const FooterCopyright = styled.div`
+const PiePaginaCopyright = styled.div`
     text-align: center;
     padded:top; 
     spaced:bottom;
@@ -164,63 +169,94 @@ const FooterCopyright = styled.div`
  </script>
  */
 
-class Footer extends Component {
+class PiePagina extends Component {
     constructor() {
         super();
         this.state = {
-            title: 'Footer',            
+            title: 'PiePagina',            
         }
     }
 
     render() {
         return (
-            <Footerstyle>
-                <FooterComponent>
-                    <Footerrow>
-                        <FooterHeader className="Footer-header">
+            <PiePaginastyle>
+                <PiePaginaComponent>
+                    <PiePaginarow>
+
+                        <PiePaginaHeader
+                            className="PiePagina-header">
                             {this.props.title}
-                        </FooterHeader>
-                        <Footercolumns>
-                            <FooterMenu>
+                        </PiePaginaHeader>
+
+                        <PiePaginacolumns>
+                            <PiePaginaMenu>
+
                                 <ul>
                                     <li>
-                                        <EnlacesMenu href="/mas/informacion"><img src={indicador} alt="indicador" />
-                                            <h2>Informacio&#769;n</h2></EnlacesMenu>
+                                        <EnlacesMenu>
+                                            <img src={indicador} alt="indicador" />
+                                            <NavLink
+                                                to="/informacion/"
+                                            > Informacio&#769;n
+                                            </NavLink>                                           
+                                        </EnlacesMenu>
                                     </li>
                                     <li>
-                                        <EnlacesMenu href="/mas/politicas-privacidad"> <img src={indicador} alt="indicador" />
-                                            <h3>Poli&#769;ticas de privacidad</h3></EnlacesMenu>
+                                        <EnlacesMenu>                                           
+                                            <img src={indicador} alt="indicador" />
+                                            <NavLink
+                                                to="/politicaPrivacidad/"
+                                            > Poli&#769;ticas de privacidad
+                                            </NavLink>                                           
+                                        </EnlacesMenu>
                                     </li>
                                     <li>
-                                        <EnlacesMenu href="/mas/promociones"><img src={indicador} alt="indicador" />
-                                            <h3>Promociones</h3></EnlacesMenu>
+                                        <EnlacesMenu>
+                                            <img src={indicador} alt="indicador" />
+                                            <NavLink
+                                                to="/promociones/"
+                                            > Promociones
+                                            </NavLink>                                           
+                                        </EnlacesMenu>
                                     </li>
                                     <li>
-                                        <EnlacesMenu href="mas/eventos"><img src={indicador} alt="indicador" />
-                                            <h3>Eventos</h3></EnlacesMenu>
+                                        <EnlacesMenu>                                            
+                                            <img src={indicador} alt="indicador" />
+                                            <NavLink
+                                                to="/eventos/"
+                                            > Eventos
+                                            </NavLink>                                           
+                                        </EnlacesMenu>
                                     </li>
                                 </ul>
+
                                 <Contacto />
-                            </FooterMenu>
-                        </Footercolumns>
-                        <Footercolumns>
-                            <FooterSiguenos>
+
+                            </PiePaginaMenu>
+                        </PiePaginacolumns>
+
+                        <PiePaginacolumns>
+                            <PiePaginaSiguenos>
                                 <ul>
                                     <li>
-                                        <FooterLogo src={logo} alt="" />
+                                        <PiePaginaLogo src={logo} alt="" />
                                     </li>
                                 </ul>
                                 <Social />
                                 <Formcontacto />
-                            </FooterSiguenos>
-                        </Footercolumns>
-                    </Footerrow>
+                            </PiePaginaSiguenos>
+                        </PiePaginacolumns>
+
+                    </PiePaginarow>
 
                     <Chat>
-                        <ChatWhatsapp href="https://api.whatsapp.com/send?phone=573156787036"
-                            class="btn_chat" target="_blank" rel="noopener noreferrer"
-                        >Chatea en li&#769;nea
-                    </ChatWhatsapp>
+                        <ChatWhatsapp
+                            href="https://api.whatsapp.com/send?phone=573156787036"
+                            class="btn_chat"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Chatea en li&#769;nea
+                        </ChatWhatsapp>
                     </Chat>
 
                     <FormasPago>
@@ -238,14 +274,15 @@ class Footer extends Component {
                         </ListaPago>
                     </FormasPago>
 
-                    <FooterCopyright>
+                    <PiePaginaCopyright>
                         <p> Copyright 2019 | Listtech SAS Todos los derechos reservados</p>
-                    </FooterCopyright>
-                </FooterComponent>
+                    </PiePaginaCopyright>
 
-            </Footerstyle>            
+                </PiePaginaComponent>
+
+            </PiePaginastyle>            
         );
     }
 }
 
-export default Footer;                               
+export default connect (PiePagina);                               

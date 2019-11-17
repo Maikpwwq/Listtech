@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
-import { useCallback } from 'react';
-
-import logo from '../../imagenes/Listtech-Logo.png';
+import React, { Component, useCallback } from 'react';
 
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import ROLES from './Roles';
-
 import { setListadoProductos } from '../../actions/actions.js'; 
 
+// importar preferencias administrador
+import ROLES from './Roles';
+
+// importar imagenes
+import logo from '../../imagenes/Listtech-Logo.png';
+
+// Stylo de los componentes
 import styled from 'styled-components'
 
 /* Style the Menu */
@@ -142,6 +144,7 @@ const Contenido = styled.a`
 `;
 
 class Menu extends Component {
+
     constructor(props) {
         super(props);
         this.state = {

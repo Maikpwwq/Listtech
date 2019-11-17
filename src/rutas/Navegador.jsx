@@ -42,6 +42,9 @@ const NavegacionNoAutorizada = () => (
         <li>
             <NavLink to="/inicioSesion/">Inicio Sesion</NavLink>
         </li>
+        <li>
+            <NavLink to="/registro/">Registro</NavLink>
+        </li>
     </ul>
 );
 

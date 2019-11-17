@@ -64,46 +64,46 @@ export const addCompra = (compra) => {
     }
 };
 
-// Mensajes
+// Mensajes => payload =>
 
-export function agregarMensaje(text) {
+export function agregarMensaje(text, payload) {
   return { 
     type: 'ADD_TODO',
     payload,
   };
 };
 
-export function eliminarMensaje(id) {
+export function eliminarMensaje(id, payload) {
   return { 
-    type: 'DELETE_TODO',
+    type: 'ELIMINAR_TODO',
     payload,
   };
 };
 
-export function editarMensaje(id, text) {
+export function editarMensaje(id, text, payload) {
   return { 
-    type: 'EDIT_TODO',
+    type: 'EDITAR_TODO',
     payload,
   };
 };
 
-export function enviarMensaje(id) {
+export function enviarMensaje(id, payload) {
   return { 
     type: 'COMPLETE_TODO',
     payload,
   };
 };
 
-export function mensajeEntregado() {
+export function mensajeEntregado(payload) {
   return { 
-    type: 'COMPLETE_ALL',
+    type: 'ENTREGA_COMPLETA',
     payload,
   };
 };
 
-export function limpiarEntrega() {
+export function limpiarEntrega(payload) {
   return { 
-    type: 'CLEAR_COMPLETED',
+    type: 'LIMPIEZA_COMPLETA',
     payload,
   };
 };

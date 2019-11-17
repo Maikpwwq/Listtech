@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 
-import { ConAutentificacion } from '../components/sesiones/Sesion';
+import {conAutentificacion} from '../components/sesiones/Sesion';
 
 // importar Propiedades usuario  
 import { setUsuario, setInicioSesion, } from '../actions/actions.js';
@@ -17,16 +17,16 @@ import useFirebaseUsuario from '../hooks/useFirebaseUsuario';
 import useGetData from '../hooks/useGetData';
 
 // Rutas y paginas
-import NotFound from '../paginas/NotFound';
+import NoEncontrado from '../paginas/NoEncontrado';
 import { Navegador } from './Navegador';
 
 // importar contenedores
 
-import Layout from '../containers/Layout.jsx';
+import PaginaDistribucion from '../containers/Pagina-distribucion.jsx';
 
 // importar componentes
 
-import Cuerpo from '../containers/Cuerpo.jsx';
+import Destino from '../containers/Destino.jsx';
 import Inicio from '../components/usuarios/Inicio.jsx'
 import Perfil from '../components/usuarios/Perfil.jsx';
 import DetalleProducto from '../components/productos/Detalle-producto.jsx';
@@ -42,6 +42,11 @@ import Contacto from '../components/marca/Contacto.jsx';
 import Marcas from '../components/marca/Marcas.jsx';
 import Nosotros from '../components/marca/Nosotros.jsx';
 import ConoceMas from '../components/marca/ConoceMas.jsx';
+
+import Promociones from '../components/productos/Promociones.jsx';
+import Eventos from '../components/marca/Eventos.jsx';
+import PoliticaPrivacidad from '../components/marca/Politica-privacidad.jsx';
+import Informacion from '../components/marca/Informacion.jsx';
 
 import ConfiguracionAdministrador from '../components/administracion/ConfiguracionAdministrador.jsx';
 import ListaMensajes from '../components/mensajes/Lista-mensajes.jsx';
@@ -89,9 +94,9 @@ render() {
                     <Navegador/>
 
                     <BrowserRouter>
-                        <Layout>
+                        <PaginaDistribucion>
                             <Switch>
-                                <Route exact path="/" component={Cuerpo} data={data.data} />
+                                <Route exact path="/" component={Destino} data={data.data} />
                                 <Route exact path="/inicio/" component={Inicio} data={data.data} />
                                 <Route exact path="/perfil/:id/" component={Perfil} />
 
@@ -117,16 +122,19 @@ render() {
                                 <Route exact path="/fichaProducto/:id/" component={FichaProducto} data={data.data}/>
                                 <Route exact path="/compras/" component={Compras} data={data.data}/>
                                 <Route exact path="/tienda/" component={Tienda} data={data.data}/>
-
+                                <Route exact path="/promociones/" component={Promociones} />
 
                                 <Route exact path="/contacto/" component={Contacto} />
                                 <Route exact path="/marcas/" component={Marcas} />
                                 <Route exact path="/nosotros/" component={Nosotros} />
                                 <Route exact path="/conocemas/" component={ConoceMas} />
+                                <Route exact path="/eventos/" component={Eventos} />
+                                <Route exact path="/politicaPrivacidad/" component={PoliticaPrivacidad} />
+                                <Route exact path="/informacion/" component={Informacion} />                                
 
-                                <Route component={NotFound} />
+                                <Route component={NoEncontrado} />
                             </Switch>
-                        </Layout>
+                        </PaginaDistribucion>
                     </BrowserRouter>
 
                 </div>

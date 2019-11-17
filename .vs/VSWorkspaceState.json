@@ -1,16 +1,19 @@
 {
   "ExpandedNodes": [
     "",
-    "\\functions",
-    "\\functions\\lib",
-    "\\functions\\src",
     "\\src",
+    "\\src\\actions",
     "\\src\\components",
-    "\\src\\components\\mensajes",
-    "\\src\\components\\micelaneos",
+    "\\src\\components\\administracion",
+    "\\src\\components\\productos",
+    "\\src\\components\\sesiones",
+    "\\src\\components\\tienda",
+    "\\src\\components\\usuarios",
+    "\\src\\constantes",
     "\\src\\constantes\\productos",
-    "\\src\\imagenes"
+    "\\src\\hooks",
+    "\\src\\reducers"
   ],
-  "SelectedNode": "\\src\\components\\marca\\Marcas.jsx",
+  "SelectedNode": "\\src\\constantes\\productos\\Productos.jsx",
   "PreviewInSolutionExplorer": false
 }

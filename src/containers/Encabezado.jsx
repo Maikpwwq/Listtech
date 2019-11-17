@@ -5,14 +5,14 @@ import Menu from '../components/administracion/Menu.jsx';
 
 import styled from 'styled-components'
 
-/* Style the header */
+/* Style the Encabezado */
 
-const HeaderStyle = styled.div`
+const EncabezadoStyle = styled.div`
     text-align: center;    
     box-sizing: border-box;   
 `;
 
-const HeaderComponent = styled.header`
+const EncabezadoComponent = styled.Encabezado`
     background - color: #0099cc;
     padding: 30px;    
     display: inline;
@@ -23,24 +23,24 @@ const HeaderComponent = styled.header`
     width: 100%;
 `;
 
-class Header extends Component {
+class Encabezado extends Component {
     constructor() {
         super();
         this.state = {
-            title: 'Header',
+            title: 'Encabezado',
         }
     }
 
     render() {
         return (
-            <HeaderStyle>
-                <HeaderComponent>
+            <EncabezadoStyle>
+                <EncabezadoComponent>
                     <Buscador />
                     <Menu />
-                </HeaderComponent>
-            </HeaderStyle>            
+                </EncabezadoComponent>
+            </EncabezadoStyle>            
         );
     }
 }
 
-export default Header;   
+export default Encabezado;   

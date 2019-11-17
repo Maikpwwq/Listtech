@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Footer from './Footer.jsx';
-import Header from './Header.jsx';
+import PiePagina from './PiePagina.jsx';
+import Encabezado from './Encabezado.jsx';
 // import Cuerpo from './Cuerpo.jsx';
 
 /*import styled, { ThemeProvider } from 'styles-components';*/
@@ -51,14 +51,14 @@ const GlobalStyle = createGlobalStyle`
  
 */
 
-/* Style Layout */
-const LayoutStyle = styled.div`
+// Style PaginaDistribucion
+const PaginaDistribucionStyle = styled.div`
     text-align: center;    
     box-sizing: border-box;   
 `;
 
 // Dark Theme 
-const LayoutTheme = styled.div`
+const PaginaDistribucionTheme = styled.div`
     font - family: Arial, Helvetica, sans - serif;
     font-weight: 400;
     letter-spacing:1.2px;
@@ -94,23 +94,23 @@ const LayoutTheme = styled.div`
 `;
 
 
-const Layout = props => {
+const PaginaDistribucion = props => {
 
     return (
-        <LayoutStyle>
-            <LayoutTheme>
-                <Header />
+        <PaginaDistribucionStyle>
+            <PaginaDistribucionTheme>
+                <Encabezado />
                 
                     {props.children}
                                
-                <Footer />
-            </LayoutTheme>
-        </LayoutStyle>
+                <PiePagina />
+            </PaginaDistribucionTheme>
+        </PaginaDistribucionStyle>
     )
 };
 
 // <Cuerpo>
-export default Layout;
+export default PaginaDistribucion;
 
 /*
  const themes = {

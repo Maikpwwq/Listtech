@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 // importar accion pagina Modal  
@@ -13,12 +13,13 @@ import Social from '../marca/Social';
 
 import InicioSesion from '../usuarios/Inicio-sesion';
 import Registro from '../usuarios/Registro';
-// import SignOutButton from '../SignOut';
+// import BtnCerrarSesion from '../usuarios/Cerrar-sesion.jsx';
 
 // Cargar imagenes
 import logo from '../../imagenes/Listtech-Logo.png'
 import carrito from '../../imagenes/medios de pago/carrito_ico.png'
 
+// Stylo de los componentes del Buscador
 import styled from 'styled-components'
 
 const BuscadorStyle = styled.div`
@@ -72,11 +73,13 @@ const BuscadorLogo = styled.img`
 
 const Acceder = styled.div`
     
-`
+`;
+
 const CarroCompras = styled.div`
     align: center;
     padding: 10px 10px;
 `;
+
 /*const Social = styled.div`
     display: inline;
 `;*/
@@ -122,34 +125,39 @@ const Buscador = props => {
             <BuscadorHeader>
 
                 <BuscadorIngreso mostrarModal={mostrarModal}>
-                    < Acceder className="">
 
+                    <Modal
+                        show={modal}
+                        close={mostrarModal}
+                    >
                         {props.inicioSesion ?
-                            <NavLink
-                                to="/perfil"
-                            > Mi cuenta
-                                </NavLink>
-                            :
-                            <NavLink
-                                to="/inicioSesion"
-                            > Inicio de sesio&#769;n
-                                </NavLink>
-                        }
-
-                        <NavLink to="/registro"> Cliente nuevo </NavLink>
-
-                        <Modal
-                            show={modal}
-                            close={mostrarModal}
-                        >
-                            {props.inicioSesion ?
                             <Registro />
                             :
                             <div className="Modal-inicioSesion">
                                 <InicioSesion />
                             </div>
-                            }
-                        </Modal>
+                        }
+                    </Modal>
+
+                    < Acceder>
+
+                        {props.inicioSesion ?
+
+                            <NavLink
+                                to="/perfil/"
+                            > Cuenta mi perfil
+                                </NavLink>
+                            :
+                            <NavLink
+                                to="/inicioSesion/"
+                            > Inicio de sesio&#769;n
+                                </NavLink>
+                        }
+
+                        <NavLink
+                            to="/registro/"
+                        > Cliente nuevo
+                            </NavLink>                        
 
                     </Acceder>
 
