@@ -4,20 +4,20 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 // importar accion pagina Modal  
-import { setModal } from '../../actions/actions.js';
-import useModal from '../../hooks/useModal';
+import { setModal } from '../actions/actions.js';
+import useModal from '../hooks/useModal';
 
 // Cargar Componentes
-import Modal from '../micelaneos/Modal.jsx';
-import Social from '../marca/Social';
+import Modal from '../components/micelaneos/Modal.jsx';
+import Social from '../components/marca/Social';
 
-import InicioSesion from '../usuarios/Inicio-sesion';
-import Registro from '../usuarios/Registro';
+import InicioSesion from '../components/usuarios/Inicio-sesion';
+import Registro from '../components/usuarios/Registro';
 // import BtnCerrarSesion from '../usuarios/Cerrar-sesion.jsx';
 
 // Cargar imagenes
-import logo from '../../imagenes/Listtech-Logo.png'
-import carrito from '../../imagenes/medios de pago/carrito_ico.png'
+import logo from '../imagenes/Listtech-Logo.png'
+import carrito from '../imagenes/medios de pago/carrito_ico.png'
 
 // Stylo de los componentes del Buscador
 import styled from 'styled-components'

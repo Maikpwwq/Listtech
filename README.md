@@ -1,6 +1,9 @@
-Rama actual en desarrollo para el sitio web https://www.Listtech.co
+Rama Desarrollo sitio web "https://www.Listtech.co"
+Homepage "https://maikpwwq.github.io/Listtech/"
+Repositorio Git "https://github.com/Maikpwwq/Listtech.git"
+Observar Bugs "https://github.com/Maikpwwq/Listtech/issues"
 
-<img src={gs://listtech-28538.appspot.com/Marca Listtech/Marca-Listtech-Logo.png} />
+![LogoTipo] (gs://listtech-28538.appspot.com/Marca Listtech/Marca-Listtech-Logo.png)
 
 Adquiere bienestar al contar con talento humano calificado y 
 experimentado en prevención. Ofrecemos exclusivos Sistemas 
@@ -28,11 +31,11 @@ Ciudad  > Bogotá, Colombia <br>
 
 =======
 
-<img src={gs://listtech-28538.appspot.com/Marca Listtech/Mapa del sitio Listtech.png} />
+![Mapa del sitio] (gs://listtech-28538.appspot.com/Marca Listtech/Mapa del sitio Listtech.png)
 
 =======
 
-Este proyecto fue desarrollado con React - Redux - Firebase
+Este proyecto fue desarrollado con React - Redux - Firebase - Node 10.16.3 - Npm 6.13.0
 
 Was bootstrapped with [Create React App]
 (https://github.com/facebook/create-react-app).

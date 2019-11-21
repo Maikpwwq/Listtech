@@ -67,12 +67,12 @@ class Perfil extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            userdisplayName: '{ props.user.displayName }',
-            userphotoURL: '{ props.user.photoURL }',
-            useremail: '{ props.user.email }',
+            usuarioNombre: '',
+            usuariodisplayNombre: '{ props.usuario.displayNombre }',
+            usuariophotoURL: '{ props.usuario.photoURL }',
+            usuarioemail: '{ props.usuario.email }',
             avatar: '',
-            porfesion: '',
+            profesion: '',
             direccion: '',
             cumpleanos: '',
         };
@@ -89,7 +89,7 @@ class Perfil extends Component {
     };
 
     ChangeHandler = (event) => {
-        this.setState({ username: event.target.value });
+        this.setState({ usuarioNombre: event.target.value });
     }
 
     /*if(!firebase.getCurrentUsername()) {
@@ -390,12 +390,7 @@ class Perfil extends Component {
                 </PerfilContainer>
             </PerfilStyled>    
         )
-    }
-    
-    /*async function logout() {
-        await firebase.logout()
-        props.history.push('/')
-    }*/
+    }   
 };
 
 const mapStateToProps = state => {

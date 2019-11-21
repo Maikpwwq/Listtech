@@ -86,7 +86,7 @@ const PaginaDistribucion = props => {
     const TemaContexto = React.createContext(temas.light);
 
     function AlternarTema() {
-        const Tema = useContext(TemaContexto);
+        const Tema = React.useContext(TemaContexto);
     }
 
     return (

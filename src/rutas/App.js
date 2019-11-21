@@ -26,7 +26,7 @@ import PaginaDistribucion from '../containers/Pagina-distribucion.jsx';
 
 // importar componentes
 
-import Destino from '../containers/Destino.jsx';
+import Destino from '../paginas/Destino.jsx';
 import Inicio from '../components/usuarios/Inicio.jsx'
 import Perfil from '../components/usuarios/Perfil.jsx';
 import DetalleProducto from '../components/productos/Detalle-producto.jsx';

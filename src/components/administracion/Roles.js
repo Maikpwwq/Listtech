@@ -1,3 +1,14 @@
-const ADMINISTRADOR = 'ADMINISTRADOR';
+//
 
-export default (ADMINISTRADOR);
+function Roles() {
+
+    const ADMINISTRADOR = 'ADMINISTRADOR';
+    const Administrador = props.usuarios.roles.administrador;
+
+    return (
+        ADMINISTRADOR,
+        Administrador
+        )
+};
+
+export default (Roles);

@@ -4,7 +4,7 @@ import Nosotros from '../components/marca/Nosotros.jsx';
 import Marcas from '../components/marca/Marcas.jsx';
 import Productosyservicios from '../components/productos/Productos-y-servicios.jsx';
 import ConoceMas from '../components/marca/ConoceMas.jsx';
-import Carrousel from '../components/productos/Carrousel';
+import Carrusel from '../components/productos/Carrusel';
 
 import styled from 'styled-components'
 
@@ -114,7 +114,7 @@ const Destino = ( props ) => (
                         </Maincolumns>
 
                         <Maincolumns>
-                            <Carrousel />
+                            <Carrusel />
                         </Maincolumns>
 
                         <Maincolumns>

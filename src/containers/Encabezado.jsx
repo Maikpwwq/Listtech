@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Buscador from '../components/productos/Buscador.jsx';
+import Buscador from './Buscador.jsx';
 import Menu from '../components/administracion/Menu.jsx';
 
 import styled from 'styled-components'

@@ -136,7 +136,7 @@ const Fichaproducto = ({ Producto }) => {
 
     this.onComprar = this.onComprar.bind(this);
 
-    const { id, index, titulo, imagen, precio, marca, descripcion, garantia, solicitud } = Producto
+    const { id, index, titulo, url, precio, marca, descripcion, garantia, solicitud } = Producto
 
     // compras: [...this.estado.compras, compra]
     

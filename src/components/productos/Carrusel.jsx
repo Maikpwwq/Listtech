@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 import next from '../../imagenes/next.png';
 import prev from '../../imagenes/prev.png';
 
-import data from '../../constantes/productos/Productos.jsx'
+// import data from '../../constantes/productos/Productos.jsx'
 
 import styled from 'styled-components'
 
@@ -166,12 +166,12 @@ const Siguiente = styled.button`
 */
 
 // console.log("Seleccion", Producto);
-function Carrusel({ EstadoInicial }) {
+function Carrusel({ EstadoInicial, Productos, data }) {
 
     const [producto, setProducto] = useestado(() => {
         const EstadoInicial = data.Productos[0];
         return EstadoInicial;
-    }, [props.   ]);
+    }, [props.Productos]);
 
     const [productos, setProductos] = useestado(EstadoInicial);
 

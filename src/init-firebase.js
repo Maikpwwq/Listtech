@@ -10,7 +10,7 @@ import * as storage from "firebase/storage";
 import * as firestore from "firebase/firebase-firestore";
 
 // Initialize Firebase
-"use strict";
+// "use strict";
 // Object.defineProperty(exports, "__esModule", { value: true });
 
 // TODO: Replace the following with your app's Firebase project configuration
@@ -136,6 +136,11 @@ class Firebase extends Component {
 
     doCerrarSesion = () => { return this.auth.cerrarSesion() };
 
+    async cerrarSesion() {
+        await this.auth.cerrarSesion()
+        this.props.history.push('/')
+    };
+
     doCambioClave = (email) => this.auth.envioEmailCambioClave(email);
 
     doOlvidoClave = (email) => this.auth.envioEmailOlvidoClave(email);
@@ -207,17 +212,21 @@ class Firebase extends Component {
             }
         });
 
-    // *** usuario API ***
+    // *** usuarios API ***
     usuario = uid => this.db.ref(`usuarios/${uid}`);
     usuarios = () => this.db.ref('usuarios');
 
-    // *** Message API ***
+    // *** Mensajes API ***
     mensaje = uid => this.db.ref(`mensajes/${uid}`);
     mensajes = () => this.db.ref('mensajes');
     
     // *** Productos API ***
     producto = uid => this.db.ref(`producto/${uid}`);
     productos = () => this.db.ref('producto');
+
+    // *** Comentarios API ***
+    comentario = uid => this.db.ref(`comentario/${uid}`);
+    comentarios = () => this.db.ref('comentario');
 
     // *** Compras API ***
     compra = uid => this.db.ref(`compra/${uid}`);
@@ -232,4 +241,4 @@ class Firebase extends Component {
 
 export default new Firebase();
 
-export { storage, database, auth, isCorriendo }; //, facebookProvider, googleProvider
+export { storage, database, auth }; // , isCorriendo, facebookProvider, googleProvider
