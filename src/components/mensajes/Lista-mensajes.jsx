@@ -10,6 +10,7 @@ const ListaMensajes = ({
 }) => (
         <ul>
             {mensajes.map(mensaje => (
+
                 <ObjetoMensaje
                     autorizarUsuario={autorizarUsuario}
                     key={mensaje.uid}
@@ -17,6 +18,7 @@ const ListaMensajes = ({
                     onEditarMensaje={onEditarMensaje}
                     onRemoverMensaje={onRemoverMensaje}
                 />
+
             ))}
         </ul>
     );

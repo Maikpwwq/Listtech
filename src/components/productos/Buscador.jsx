@@ -207,10 +207,10 @@ const mapDispatchToProps = {
     setModal,   
 }
 
-const mapStateToProps = estado => {
+const mapestadoToProps = estado => {
     return {
         inicioSesion: estado.inicioSesion,
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Buscador);   
+export default connect(mapestadoToProps, mapDispatchToProps)(Buscador);   

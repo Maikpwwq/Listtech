@@ -4,44 +4,44 @@ class ObjetoMensaje extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
+        this.estado = {
             editMode: false,
-            editText: this.props.mensaje.text,
+            editTexto: this.props.mensaje.texto,
         };
     };
 
     onToggleEditMode = () => {
-        this.setState(state => ({
-            editMode: !state.editMode,
-            editText: this.props.mensaje.text,
+        this.setState(estado => ({
+            editMode: !estado.editMode,
+            editTexto: this.props.mensaje.texto,
         }));
     };
 
-    onChangeEditText = event => {
-        this.setState({ editText: event.target.value });
+    onChangeEditTexto = event => {
+        this.setState({ editTexto: event.target.value });
     };
 
-    onAplicarEditarText = () => {
-        this.props.onEditarMensaje(this.props.mensaje, this.state.editText);
+    onAplicarEditarTexto = () => {
+        this.props.onEditarMensaje(this.props.mensaje, this.estado.editTexto);
 
         this.setState({ editMode: false });
     };
 
     render() {
         const { autorizarUsuario, mensaje, onRemoverMensaje } = this.props;
-        const { editMode, editText } = this.state;
+        const { editMode, editTexto } = this.estado;
 
         return (
             <li>
                 {editMode ? (
                     <input
-                        type="text"
-                        value={editText}
-                        onChange={this.onChangeEditText}
+                        type="texto"
+                        value={editTexto}
+                        onChange={this.onChangeEditTexto}
                     />
                 ) : (
                         <span>
-                            <strong>{mensaje.usuarioId}</strong> {mensaje.text}
+                            <strong>{mensaje.usuarioId}</strong> {mensaje.texto}
                             {mensaje.editedAt && <span>(Edited)</span>}
                         </span>
                     )}
@@ -50,7 +50,7 @@ class ObjetoMensaje extends Component {
                     <span>
                         {editMode ? (
                             <span>
-                                <button onClick={this.onSaveEditText}>Aplicar</button>
+                                <button onClick={this.onSaveEditTexto}>Aplicar</button>
                                 <button onClick={this.onToggleEditMode}>Restablecer</button>
                             </span>
                         ) : (

@@ -15,10 +15,7 @@ const StyledFicha = styled.div`
     padding: 0;
     display: inline;
 `;
-
-
-    /*display: none;*/
-    /* Fading animation */
+    
 const FichaProducto = styled.div`
     -webkit - animation - name: fade;
     -webkit - animation - duration: 1.5s;
@@ -35,6 +32,8 @@ const FichaProducto = styled.div`
     text-align: left;
     margin: 0 auto;
 
+    /*display: none;*/
+    /* Fading animation */
     @-webkit - keyframes fade {
         from { opacity: .4 }
         to { opacity: 1 }
@@ -168,9 +167,10 @@ const Fichaproducto = ({ Producto }) => {
                     <IndexSpan> {index + 1} </IndexSpan>
                     <Titulo>{titulo}</Titulo>
                     <Productoimg
-                        style={{ backgroung: `url('${imagen}')` }}
-                        src={imagen}
-                        alt={'imagen'} />
+                        style={{ backgroung: `url('${url
+                            }')` }}
+                        src={url}
+                        alt={'url'} />
                 </Fichaheader>
 
                 <FichaDetalles className="project-list section">

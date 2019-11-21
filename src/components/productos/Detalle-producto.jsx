@@ -25,7 +25,7 @@ const DetalleProducto = ({ Producto }) => {
 
     console.log('Ver a detalle', { Producto });
     /*
-    const [modal, setModal] = useState(false);
+    const [modal, setModal] = useestado(false);
     const showModal = () => {
         setModal(!modal)
     }

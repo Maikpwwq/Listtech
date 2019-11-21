@@ -5,13 +5,14 @@ import { compose } from 'recompose';
 import { ConFirebase } from '../administracion/Index-firebase';
 
 class ConAutentificacion extends Component {
+
     constructor(props) {
         super(props);
 
         this.props.onSetAutorizarUsuario(
             JSON.parse(localStorage.getItem('autorizarUsuario')),
         );
-    }
+    };
 
     componentDidMount() {
         this.listener = this.props.firebase.onAutorizarUsuarioListener(
@@ -24,15 +25,17 @@ class ConAutentificacion extends Component {
                 this.props.onSetAutorizarUsuario(null);
             },
         );
-    }
+    };
 
     componentWillUnmount() {
         this.listener();
-    }
+    };
 
     render() {
-        return <Component {...this.props} />;
-    }
+        return (
+            <Component {...this.props} />
+        );
+    };
 };  
 
 const mapDispatchToProps = dispatch => ({

@@ -112,7 +112,7 @@ const FooterRegistro = styled.div`
  /* .catch (({ error }) => {
     // Handle Errors here.
      var errorCode = error.code;
-     var errorMessage = error.message;
+     var errormensaje = error.mensaje;
     // The email of the usuario's account used.
      var email = error.email;
     // The firebase.auth.AuthCredential type that was used.
@@ -150,6 +150,8 @@ class PaginaInicioSesion extends Component {
             telefono: 'telefono',
             clave: 'clave',
 
+            ESTADO_REPOSO: 'null',
+
             btnInicioSesion : document.getElementById('btnInicioSesion'),
             btnRegistro : document.getElementById('btnRegistro'),
             btnCerrarSesion: document.getElementById('btnCerrarSesion'),
@@ -166,7 +168,7 @@ class PaginaInicioSesion extends Component {
         this.onEnviar = this.onEnviar.bind(this);       
 
     }
-
+    
     // { setUsuario, setInicioSesion }
 
     inicioSesionConFacebook = (event) => {
@@ -195,7 +197,7 @@ class PaginaInicioSesion extends Component {
             })
             .catch(error => {
                 if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
-                    error.message = ERROR_MSG_ACCOUNT_EXISTS;
+                    error.mensaje = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
                 this.setEstado({ error });
@@ -230,7 +232,7 @@ class PaginaInicioSesion extends Component {
             })
             .catch(error => {
                 if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
-                    error.message = ERROR_MSG_ACCOUNT_EXISTS;
+                    error.mensaje = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
                 this.setEstado({ error });
@@ -292,13 +294,13 @@ class PaginaInicioSesion extends Component {
         const clave = this.txtClave.value;
         // Sing in
         const promise = auth.inicioSesionConEmailClave(email, clave);
-        promise.catch(e => console.log(e.message));
+        promise.catch(e => console.log(e.mensaje));
     });
 
     // Evento de Registro
     btnRegistro = ('click', (event) => {
         this.props.history.replace('/registro/')
-        .catch(e => console.log(e.message));
+        .catch(e => console.log(e.mensaje));
     });
 
     //<!--  -->
@@ -453,7 +455,7 @@ class PaginaInicioSesion extends Component {
                                     </div>
                                 </form>
 
-                                {error && <p>{error.message}</p>}
+                                {error && <p>{error.mensaje}</p>}
 
                             </IniciarSesionConEmail>
                             
@@ -504,11 +506,11 @@ export default connect(null, mapDispatchToProps)(PaginaInicioSesion);
 const InicioSesionConGmail = compose(
     withRouter,
     ConFirebase,
-)(inicioSesionConGmail);
+)(this.inicioSesionConGmail);
 
 const InicioSesionConFacebook = compose(
     withRouter,
     ConFirebase,
-)(inicioSesionConFacebook);
+)(this.inicioSesionConFacebook);
 
 export { InicioSesionConGmail, InicioSesionConFacebook }; // PaginaInicioSesion

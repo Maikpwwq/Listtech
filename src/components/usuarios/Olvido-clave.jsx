@@ -65,7 +65,7 @@ class FormClaveOlvidadaBase extends Component {
     }
 }
 
-const ClaveOlvidadaLink = () => (
+const OlvidoClaveLink = () => (
     <p>
         <NavLink to="/cambioClave"> Olvido su contrasena?</NavLink>
     </p>
@@ -75,4 +75,4 @@ const FormClaveOlvidada = ConFirebase(FormClaveOlvidadaBase);
 
 export default PaginaClaveOlvidada;
 
-export { FormClaveOlvidada, ClaveOlvidadaLink };
+export { FormClaveOlvidada, OlvidoClaveLink };

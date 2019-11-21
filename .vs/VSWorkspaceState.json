@@ -5,15 +5,12 @@
     "\\src\\actions",
     "\\src\\components",
     "\\src\\components\\administracion",
+    "\\src\\components\\marca",
     "\\src\\components\\productos",
     "\\src\\components\\sesiones",
-    "\\src\\components\\tienda",
-    "\\src\\components\\usuarios",
-    "\\src\\constantes",
-    "\\src\\constantes\\productos",
-    "\\src\\hooks",
-    "\\src\\reducers"
+    "\\src\\containers",
+    "\\src\\rutas"
   ],
-  "SelectedNode": "\\src\\constantes\\productos\\Productos.jsx",
+  "SelectedNode": "\\src\\rutas\\Navegador.jsx",
   "PreviewInSolutionExplorer": false
 }

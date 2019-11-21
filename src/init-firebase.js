@@ -102,7 +102,7 @@ class Firebase extends Component {
     //         
 
     // *** Auth API ***
-    async register (name, email, clave) => {
+    async register (name, email, clave) {
         await this.auth.crearUsuarioConEmailClave(email, clave)
         return this.auth.usuarioActual.actualizarPerfil({
             displayName: name
@@ -160,7 +160,7 @@ class Firebase extends Component {
         });
     };
 
-    async getActualNotaUsuario () => {
+    async getActualNotaUsuario () {
         const nota = await this.firestore.doc(`usuarios_codedamn_video/${this.auth.usuarioActual.uid}`).get()
         return nota.get('nota')
     };   
@@ -200,7 +200,7 @@ class Firebase extends Component {
                         };
                         next(autorizarUsuario);
                     });
-            };
+            }
 
             else {
                 fallback();

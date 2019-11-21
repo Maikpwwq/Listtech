@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 
-import {conAutentificacion} from '../components/sesiones/Sesion';
+import {ConAutentificacion} from '../components/sesiones/Sesion';
 
 // importar Propiedades usuario  
 import { setUsuario, setInicioSesion, } from '../actions/actions.js';
@@ -18,7 +18,7 @@ import useGetData from '../hooks/useGetData';
 
 // Rutas y paginas
 import NoEncontrado from '../paginas/NoEncontrado';
-import { Navegador } from './Navegador';
+import Navegador from './Navegador.jsx';
 
 // importar contenedores
 
@@ -70,80 +70,86 @@ class App extends Component {
             
         };
 
-    // Llamado al Hook de Asignacion id: usuario por Firebase
-    this.FirebaseUsuario = useFirebaseUsuario();
+        // Llamado al Hook de Asignacion id: usuario por Firebase
+        this.FirebaseUsuario = useFirebaseUsuario();
 
-    // Sesiones
+        // Sesiones
 
 
-    // Llamado al Hook importar datos de firebase 
-    this.data = useGetData();
+        // Llamado al Hook importar datos de firebase     
+        
+        this.data = this.data.bind(this);
+        this.FirebaseUsuario = this.FirebaseUsuario.bind(this);
+    };
 
-   };
+    data = useGetData();
 
-    
     // Niveles de acceso segun rutas del buscador    
-render() {
-    return (
-        FirebaseUsuario !== false ? (
-            data.length === 0 ? 
-        <h1> Cargando ...</h1> 
-        :
-        <div className="App">
+    render() {
+        
+        return (
+            this.FirebaseUsuario !== false ? (
+                this.data.length === 0 ?
+                    (
+                        <h1> Cargando ...</h1>
+                    ) : (
+                        <div className="App">
 
-                    <Navegador/>
+                            <Navegador />
 
-                    <BrowserRouter>
-                        <PaginaDistribucion>
-                            <Switch>
-                                <Route exact path="/" component={Destino} data={data.data} />
-                                <Route exact path="/inicio/" component={Inicio} data={data.data} />
-                                <Route exact path="/perfil/:id/" component={Perfil} />
+                            <BrowserRouter>
+                                <PaginaDistribucion>
+                                    <Switch>
+                                        <Route exact path="/" component={Destino} data={data.data} />
+                                        <Route exact path="/inicio/" component={Inicio} data={data.data} />
+                                        <Route exact path="/perfil/:id/" component={Perfil} />
 
-                                <Route exact path="/configuracionAdministrador/:id/" component={ConfiguracionAdministrador} />
-                                <Route exact path="/configuracionAdministrador/" component={ConfiguracionAdministrador} />
+                                        <Route exact path="/configuracionAdministrador/:id/" component={ConfiguracionAdministrador} />
+                                        <Route exact path="/configuracionAdministrador/" component={ConfiguracionAdministrador} />
 
-                                <Route exact path="/listaMensajes/" component={ListaMensajes} />
-                                <Route exact path="/listaMensajes/:id/" component={ListaMensajes} />
-                                <Route exact path="/objetoMensaje/" component={ObjetoMensaje} />
-                                <Route exact path="/objetoMensaje/:id/" component={ObjetoMensaje} />
-                                <Route exact path="/listaUsuarios/" component={ListaUsuarios} />
-                                <Route exact path="/listaUsuarios/:id/" component={ListaUsuarios} />
-                                <Route exact path="/objetoUsuario/" component={ObjetoUsuario} />
-                                <Route exact path="/objetoUsuario/:id/" component={ObjetoUsuario} />
+                                        <Route exact path="/listaMensajes/" component={ListaMensajes} />
+                                        <Route exact path="/listaMensajes/:id/" component={ListaMensajes} />
+                                        <Route exact path="/objetoMensaje/" component={ObjetoMensaje} />
+                                        <Route exact path="/objetoMensaje/:id/" component={ObjetoMensaje} />
+                                        <Route exact path="/listaUsuarios/" component={ListaUsuarios} />
+                                        <Route exact path="/listaUsuarios/:id/" component={ListaUsuarios} />
+                                        <Route exact path="/objetoUsuario/" component={ObjetoUsuario} />
+                                        <Route exact path="/objetoUsuario/:id/" component={ObjetoUsuario} />
 
-                                <Route exact path="/inicioSesion/" component={InicioSesion} />
-                                <Route exact path="/registro/" component={Registro} />
-                                <Route exact path="/olvidoClave/" component={OlvidoClave} />
-                                <Route exact path="/cambioClave/" component={CambioClave} />
-                                <Route exact path="/cerrarSesion/" component={CerrarSesion} />
+                                        <Route exact path="/inicioSesion/" component={InicioSesion} />
+                                        <Route exact path="/registro/" component={Registro} />
+                                        <Route exact path="/olvidoClave/" component={OlvidoClave} />
+                                        <Route exact path="/cambioClave/" component={CambioClave} />
+                                        <Route exact path="/cerrarSesion/" component={CerrarSesion} />
 
-                                <Route exact path="/detalleProducto/:id/" component={DetalleProducto} data={data.data}/>
-                                <Route exact path="/fichaProducto/:id/" component={FichaProducto} data={data.data}/>
-                                <Route exact path="/compras/" component={Compras} data={data.data}/>
-                                <Route exact path="/tienda/" component={Tienda} data={data.data}/>
-                                <Route exact path="/promociones/" component={Promociones} />
+                                        <Route exact path="/detalleProducto/:id/" component={DetalleProducto} data={data.data} />
+                                        <Route exact path="/fichaProducto/:id/" component={FichaProducto} data={data.data} />
+                                        <Route exact path="/compras/" component={Compras} data={data.data} />
+                                        <Route exact path="/tienda/" component={Tienda} data={data.data} />
+                                        <Route exact path="/promociones/" component={Promociones} />
 
-                                <Route exact path="/contacto/" component={Contacto} />
-                                <Route exact path="/marcas/" component={Marcas} />
-                                <Route exact path="/nosotros/" component={Nosotros} />
-                                <Route exact path="/conocemas/" component={ConoceMas} />
-                                <Route exact path="/eventos/" component={Eventos} />
-                                <Route exact path="/politicaPrivacidad/" component={PoliticaPrivacidad} />
-                                <Route exact path="/informacion/" component={Informacion} />                                
+                                        <Route exact path="/contacto/" component={Contacto} />
+                                        <Route exact path="/marcas/" component={Marcas} />
+                                        <Route exact path="/nosotros/" component={Nosotros} />
+                                        <Route exact path="/conocemas/" component={ConoceMas} />
+                                        <Route exact path="/eventos/" component={Eventos} />
+                                        <Route exact path="/politicaPrivacidad/" component={PoliticaPrivacidad} />
+                                        <Route exact path="/informacion/" component={Informacion} />
 
-                                <Route component={NoEncontrado} />
-                            </Switch>
-                        </PaginaDistribucion>
-                    </BrowserRouter>
+                                        <Route component={NoEncontrado} />
+                                    </Switch>
+                                </PaginaDistribucion>
+                            </BrowserRouter>
 
-                </div>
-        ) 
-        :
-        <div id="loader">
-            <CircularProgress />
-        </div>
-    )};
+                        </div>
+                    )
+            ) : (
+                    <div id="loader">
+                        <CircularProgress />
+                    </div>
+                )
+        )
+    };
 };
 
 // Asignar propiedades de inicio de sesion 
@@ -158,5 +164,5 @@ const mapDispatchToProps = {
 };
 
 export default compose(
-    conAutentificacion,
+    ConAutentificacion,
     connect(mapStateToProps, mapDispatchToProps)(App)); 

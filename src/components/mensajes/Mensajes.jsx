@@ -9,8 +9,8 @@ class Mensajes extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            text: '',
+        this.estado = {
+            texto: '',
             loading: false,
         };
     }
@@ -24,7 +24,7 @@ class Mensajes extends Component {
     }
 
     componentDidUpdate(props) {
-        if (props.limit !== this.props.limit) {
+        if (props.limite !== this.props.limite) {
             this.onActualizarMensajes();
         }
     }
@@ -33,7 +33,7 @@ class Mensajes extends Component {
         this.props.firebase
             .mensajes()
             .orderByChild('createdAt')
-            .limitToLast(this.props.limit)
+            .limiteToLast(this.props.limite)
             .on('value', snapshot => {
                 this.props.onSetMensajes(snapshot.val());
 
@@ -45,53 +45,56 @@ class Mensajes extends Component {
         this.props.firebase.mensajes().off();
     }
 
-    onChangeText = event => {
-        this.setState({ text: event.target.value });
+    onChangeTexto = event => {
+        this.setState({ texto: event.target.value });
     };
 
     onCrearMensaje = (event, autorizarUsuario) => {
         this.props.firebase.mensajes().push({
-            text: this.state.text,
+            texto: this.estado.texto,
             userId: autorizarUsuario.uid,
             createdAt: this.props.firebase.serverValue.TIMESTAMP,
         });
 
-        this.setState({ text: '' });
+        this.setState({ texto: '' });
 
         event.preventDefault();
     };
 
-    onEditarMensaje = (message, text) => {
-        const { uid, ...messageSnapshot } = message;
+    onEditarMensaje = (mensaje, texto) => {
+        const { uid, ...mensajeSnapshot } = mensaje;
 
-        this.props.firebase.message(message.uid).set({
-            ...messageSnapshot,
-            text,
+        this.props.firebase.mensaje(mensaje.uid).set({
+            ...mensajeSnapshot,
+            texto,
             editedAt: this.props.firebase.serverValue.TIMESTAMP,
         });
     };
 
     onRemoverMensaje = uid => {
-        this.props.firebase.message(uid).remove();
+        this.props.firebase.mensaje(uid).remove();
     };
 
     onNextPage = () => {
-        this.props.onSetLimiteMensajes(this.props.limit + 5);
+        this.props.onSetLimiteMensajes(this.props.limite + 5);
     };
 
     render() {
+
         const { mensajes } = this.props;
-        const { text, loading } = this.state;
+        const { texto, loading } = this.estado;
 
         return (
             <div>
                 {!loading && mensajes && (
-                    <button type="button" onClick={this.onNextPage}>
-                        Mas
-          </button>
+                    <button
+                        type="button"
+                        onClick={this.onNextPage}
+                    > Mas
+                    </button>
                 )}
 
-                {loading && <div>Cargando ...</div>}
+                {loading && <div> Cargando ...</div>}
 
                 {mensajes && (
                     <ListaMensajes
@@ -102,7 +105,10 @@ class Mensajes extends Component {
                     />
                 )}
 
-                {!mensajes && <div>No tiene mensajes justo ahora...</div>}
+                {!mensajes &&
+                    <div>
+                        No tiene mensajes justo ahora...</div>
+                }
 
                 <form
                     onSubmit={event =>
@@ -110,9 +116,9 @@ class Mensajes extends Component {
                     }
                 >
                     <input
-                        type="text"
-                        value={text}
-                        onChange={this.onChangeText}
+                        type="texto"
+                        value={texto}
+                        onChange={this.onChangeTexto}
                     />
                     <button type="submit">
                         Enviar
@@ -123,15 +129,15 @@ class Mensajes extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    autorizarUsuario: state.estadoSesion.autorizarUsuario,
-    mensajes: Object.keys(state.estadoMensaje.mensajes || {}).map(
+const mapStateToProps = estado => ({
+    autorizarUsuario: estado.estadoSesion.autorizarUsuario,
+    mensajes: Object.keys(estado.estadoMensaje.mensajes || {}).map(
         key => ({
-            ...state.estadoMensaje.mensajes[key],
+            ...estado.estadoMensaje.mensajes[key],
             uid: key,
         }),
     ),
-    limit: state.estadoMensaje.limite,
+    limite: estado.estadoMensaje.limite,
 });
 
 const mapDispatchToProps = dispatch => ({

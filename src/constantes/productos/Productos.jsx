@@ -2042,6 +2042,7 @@ const data = {
         }
     ],
 
+    "Compras": [],
 
     "Requerimientos": [],
 

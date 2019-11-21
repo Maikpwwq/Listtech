@@ -212,3 +212,62 @@ class Carousel extends Component {
 
 // Render Carousel component
 render(<Carousel slides={carouselSlidesData} />, carouselContainer);
+
+/*
+var slideIndex = [1,1];
+showSlides(slideIndex);  
+        this.slideIndex = 1;
+        this.showSlides = this.showSlides.bind(this);
+        this.showSlides = this.showSlides(this.slideIndex);
+    }
+
+// Class the members of each slideshow group with different CSS classes
+var slideId = [
+
+"1 Biometría Control Acceso"
+"2 Cerraduras electrónicas"
+"3 Cerraduras mecánicas"
+"4 Accesorios y Soportes"
+"5 Salidas PUSH emergencia"
+"6 Cierra puertas"
+"7 Sensores y cantoneras electrónicas"
+"8 Redes cableado estructurado"
+"9 Acceso suspendido en alturas"
+]
+
+showSlides(1, 0);
+showSlides(1, 1);
+
+    // Next/previous controls
+    PlusSlides= (n, no) => {
+        this.showSlides(this.slideIndex[no] += n, no);
+    }
+
+    // Thumbnail image controls
+    CurrentSlide= (n,no) => {
+        this.showSlides(this.slideIndex[no] = n, no);
+    } 
+
+    showSlides= (n, no) => {
+        console.log('Renderizado Productos');
+        var i = ([]);
+        var slides = document.getElementsByClassName(slideId[no]);        
+        // var dots
+        var descripciones = document.getElementsByClassName("CarruselDescripcion");
+
+        if(n > slides.length) { this.slideIndex[no] = 1 }
+        if (n < 1) { this.slideIndex[no] = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < descripciones.length; i++) {
+            descripciones[i].className = descripciones[i].className.replace(" active", "");
+        }
+        slides[this.slideIndex[no] - 1].style.display = "block";
+        descripciones[this.slideIndex - 1].className += " active";
+}
+
+setState(prevestado => {
+  // Object.assign would also work
+  return {...prevestado, ...updatedValues};
+});*/

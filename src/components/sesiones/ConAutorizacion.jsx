@@ -20,7 +20,7 @@ class ConAutorizacion extends Component {
     componentDidMount() {
         this.listener = this.props.firebase.onAutorizarUsuarioListener(
             autorizarUsuario => {
-                if (!condicion(autorizarUsuario)) {
+                if (!this.condicion(autorizarUsuario)) {
                     this.props.history.push('/inicioSesion/');
                 }
             },
@@ -33,9 +33,10 @@ class ConAutorizacion extends Component {
     };
 
     render() {
-        return condicion(this.props.autorizarUsuario) ? (
-            <Component {...this.props} />
-        ) : null;
+        return (
+            this.condicion(this.props.autorizarUsuario) ? (
+                <Component {...this.props} />
+            ) : null );
     };
 };
 

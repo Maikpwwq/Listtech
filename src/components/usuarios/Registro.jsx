@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-//import { useestado } from 'react';
+import { NavLink, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+// importar acciones
+import { setUsuario, setInicioSesion } from '../../actions/actions'
+
+// importar imagenes
 import logo from '../../imagenes/Listtech-Logo.png';
 
-import { NavLink, withRouter } from 'react-router-dom';
-
+// importar firebase 
 import { ConFirebase } from '../administracion/Index-firebase';
-
-import * as ROLES from '../administracion/Roles';
-
 import { auth, database } from '../../init-firebase.js' //facebookProvider, googleProvider 
 import * as firebase from '../../init-firebase.js';
 
-/*import * as firebaseui from 'firebaseui'*/
-
-import { connect } from 'react-redux';
-import { setUsuario, setInicioSesion } from '../../actions/actions'
-
+// import { useestado } from 'react';
+// import * as ROLES from '../administracion/Roles';
+// import * as firebaseui from 'firebaseui'
 // import { Typography, Paper, Avatar, Button, FormControl, Input, InputLabel } from '@material-ui/core'
 
 /* Style Registro */
@@ -110,7 +110,7 @@ const FooterInicioSesion = styled.div`
 /* .catch (({ error }) => {
    // Handle Errors here.
     var errorCode = error.code;
-    var errorMessage = error.message;
+    var errormensaje = error.mensaje;
    // The email of the usuario's account used.
     var email = error.email;
    // The firebase.auth.AuthCredential type that was used.
@@ -134,21 +134,29 @@ class PaginaRegistro extends Component {
         this.estado = {
             txtNombre : document.getElementById('txtNombre'),
             txtEmail : document.getElementById('txtEmail'),
-            txtTelefono : document.getElementById('txtTelefono'),
+            txtTelefono: document.getElementById('txtTelefono'),
+            txtclave: document.getElementById('txtclave'),
+            txtconfirmarclave: document.getElementById('txtconfirmarclave'),           
+
             fotoPerfil: this.props.usuario.photoURL,
             usuarioContacto: this.props.usuario.email,
             usuarioName: this.props.usuario.displayName,
+
             date: 'newDate',
             nombre:'nombre',
             email: 'email',
             telefono: 'telefono',
             clave: 'clave',
             claveUno: 'txtclave',
-            txtclave : document.getElementById('txtclave'),
-            txtconfirmarclave: document.getElementById('txtconfirmarclave'),           
-            claveDos: 'txtconfirmarclave',       
+            claveDos: 'txtconfirmarclave',    
+            
+            ESTADO_REPOSO: 'null',
+
+            btnRegistro: document.getElementById('btnRegistro'),
+
             error: null,
         }
+
         this.RegistroConFacebook = this.RegistroConFacebook.bind(this);
         this.RegistroConGmail = this.RegistroConGmail.bind(this);
         this.EnviarForm = this.EnviarForm.bind(this);
@@ -186,7 +194,7 @@ class PaginaRegistro extends Component {
             })
             .catch(error => {
                 if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
-                    error.message = ERROR_MSG_ACCOUNT_EXISTS;
+                    error.mensaje = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
                 this.setestado({ error });
@@ -221,7 +229,7 @@ class PaginaRegistro extends Component {
             })
             .catch(error => {
                 if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
-                    error.message = ERROR_MSG_ACCOUNT_EXISTS;
+                    error.mensaje = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
                 this.setEstado({ error });
@@ -245,7 +253,7 @@ class PaginaRegistro extends Component {
         const value = target.value;
         const name = target.name;
         if (name === "telefono") {
-            if (!Number(value)) {
+            if (!Numero(value)) {
                 alert("Tu numero telefónico deben ser números");
             }
         }
@@ -280,7 +288,7 @@ class PaginaRegistro extends Component {
 
             .catch(error => {
                 if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
-                    error.message = ERROR_MSG_ACCOUNT_EXISTS;
+                    error.mensaje = ERROR_MSG_ACCOUNT_EXISTS;
                 }
 
                 this.setEstado({ error });
@@ -318,7 +326,7 @@ class PaginaRegistro extends Component {
         this.props.history.replace('/perfil')
 
         promise
-            .catch(e => console.log(e.message));
+            .catch(e => console.log(e.mensaje));
     });    
 
     render() {
@@ -452,7 +460,7 @@ class PaginaRegistro extends Component {
 
                                     <FormInput
                                         data-reactid="28">
-                                        <input type="number"
+                                        <input type="Numero"
                                             name="telefono" required=""
                                             id="txtTelefono"
                                             autocomplete="off"
@@ -527,7 +535,7 @@ class PaginaRegistro extends Component {
 
                                 </form>
 
-                                {error && <p>{error.message}</p>}
+                                {error && <p>{error.mensaje}</p>}
 
                             </RegistroConEmail>
 

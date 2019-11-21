@@ -28,7 +28,7 @@ function Modal(props) {
     );
 }
 
-const mapStateToProps = estado => {
+const mapestadoToProps = estado => {
     return {
         cerrar: estado.cerrar,
         children: estado.children,
@@ -36,4 +36,4 @@ const mapStateToProps = estado => {
     };
 };
 
-export default connect(mapStateToProps)(Modal);
+export default connect(mapestadoToProps)(Modal);
