@@ -15,23 +15,23 @@ class ListaUsuarios extends Component {
     }
 
     componentDidMount() {
-        if (!this.props.users.length) {
+        if (!this.props.usuarios.length) {
             this.setState({ loading: true });
         }
 
-        this.props.firebase.users().on('value', snapshot => {
-            this.props.onSetUsers(snapshot.val());
+        this.props.firebase.usuarios().on('value', snapshot => {
+            this.props.onSetUsuarios(snapshot.val());
 
             this.setState({ loading: false });
         });
     }
 
     componentWillUnmount() {
-        this.props.firebase.users().off();
+        this.props.firebase.usuarios().off();
     }
 
     render() {
-        const { users } = this.props;
+        const { usuarios } = this.props;
         const { loading } = this.state;
 
         return (
@@ -39,7 +39,7 @@ class ListaUsuarios extends Component {
                 <h2>Usuarios</h2>
                 {loading && <div> Cargando ...</div>}
                 <ul>
-                    {users.map(user => (
+                    {usuarios.map(user => (
                         <li key={user.uid}>
                             <span>
                                 <strong>ID:</strong> {user.uid}
@@ -64,14 +64,14 @@ class ListaUsuarios extends Component {
 }
 
 const mapStateToProps = state => ({
-    users: Object.keys(state.userState.users || {}).map(key => ({
-        ...state.userState.users[key],
+    usuarios: Object.keys(state.usuariosState.usuarios || {}).map(key => ({
+        ...state.usuariosState.usuarios[key],
         uid: key,
     })),
 });
 
 const mapDispatchToProps = dispatch => ({
-    onSetUsers: users => dispatch({ type: 'USERS_SET', users }),
+    onSetUsuarios: usuarios => dispatch({ type: 'USUARIOS_SET', usuarios }),
 });
 
 export default compose(

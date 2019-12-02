@@ -1,6 +1,6 @@
 //
 
-function Roles() {
+function Roles(props) {
 
     const ADMINISTRADOR = 'ADMINISTRADOR';
     const Administrador = props.usuarios.roles.administrador;

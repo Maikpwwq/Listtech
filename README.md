@@ -3,7 +3,7 @@ Homepage "https://maikpwwq.github.io/Listtech/"
 Repositorio Git "https://github.com/Maikpwwq/Listtech.git"
 Observar Bugs "https://github.com/Maikpwwq/Listtech/issues"
 
-![LogoTipo] (gs://listtech-28538.appspot.com/Marca Listtech/Marca-Listtech-Logo.png)
+![LogoTipo] ("gs://listtech-28538.appspot.com/Marca Listtech/Marca-Listtech-Logo.png")
 
 Adquiere bienestar al contar con talento humano calificado y 
 experimentado en prevención. Ofrecemos exclusivos Sistemas 
@@ -31,7 +31,7 @@ Ciudad  > Bogotá, Colombia <br>
 
 =======
 
-![Mapa del sitio] (gs://listtech-28538.appspot.com/Marca Listtech/Mapa del sitio Listtech.png)
+![Mapa del sitio] ("gs://listtech-28538.appspot.com/Marca Listtech/Mapa del sitio Listtech.png")
 
 =======
 

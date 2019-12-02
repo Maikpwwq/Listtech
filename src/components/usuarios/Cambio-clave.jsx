@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { ConFirebase } from '../administracion/Index-firebase';
 
-const INITIAL_STATE = {
+const ESTADO_REPOSO = {
     claveUno: '',
     claveDos: '',
     error: null,
@@ -21,7 +21,7 @@ class FormCambioClave extends Component {
         this.props.firebase
             .doActualizarClave(claveUno)
             .then(() => {
-                this.setState({ ...INITIAL_STATE });
+                this.setState({ ...ESTADO_REPOSO });
             })
             .catch(error => {
                 this.setState({ error });

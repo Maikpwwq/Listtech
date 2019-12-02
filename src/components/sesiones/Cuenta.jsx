@@ -22,7 +22,7 @@ const SIGN_IN_METHODS = [
     },
 ];
 
-const AccountPage = ({ autorizarUsuario }) => (
+const PaginaCuenta = ({ autorizarUsuario }) => (
     <div>
         <h1>Account: {autorizarUsuario.email}</h1>
         <FormOlvidoClave />
@@ -36,7 +36,7 @@ class LoginManagementBase extends Component {
         super(props);
 
         this.state = {
-            activeSignInMethods: [],
+            metodosActivosInicioSesion: [],
             error: null,
         };
     }
@@ -48,8 +48,8 @@ class LoginManagementBase extends Component {
     fetchSignInMethods = () => {
         this.props.firebase.auth
             .fetchSignInMethodsForEmail(this.props.autorizarUsuario.email)
-            .then(activeSignInMethods =>
-                this.setState({ activeSignInMethods, error: null }),
+            .then(metodosActivosInicioSesion =>
+                this.setState({ metodosActivosInicioSesion, error: null }),
             )
             .catch(error => this.setState({ error }));
     };
@@ -81,25 +81,25 @@ class LoginManagementBase extends Component {
     };
 
     render() {
-        const { activeSignInMethods, error } = this.state;
+        const { metodosActivosInicioSesion, error } = this.state;
 
         return (
             <div>
-                Sign In Methods:
+                Metodos Inicio Sesion:
         <ul>
-                    {SIGN_IN_METHODS.map(signInMethod => {
-                        const onlyOneLeft = activeSignInMethods.length === 1;
-                        const isEnabled = activeSignInMethods.includes(
-                            signInMethod.id,
+                    {SIGN_IN_METHODS.map(MetodoInicioSesion => {
+                        const onlyOneLeft = metodosActivosInicioSesion.length === 1;
+                        const isEnabled = metodosActivosInicioSesion.includes(
+                            metodosInicioSesion.id,
                         );
 
                         return (
-                            <li key={signInMethod.id}>
-                                {signInMethod.id === 'clave' ? (
+                            <li key={metodosInicioSesion.id}>
+                                {metodosInicioSesion.id === 'clave' ? (
                                     <DefaultLoginToggle
                                         onlyOneLeft={onlyOneLeft}
                                         isEnabled={isEnabled}
-                                        signInMethod={signInMethod}
+                                        metodosInicioSesion={metodosInicioSesion}
                                         onLink={this.onDefaultLoginLink}
                                         onUnlink={this.onUnlink}
                                     />
@@ -107,7 +107,7 @@ class LoginManagementBase extends Component {
                                         <SocialLoginToggle
                                             onlyOneLeft={onlyOneLeft}
                                             isEnabled={isEnabled}
-                                            signInMethod={signInMethod}
+                                            metodosInicioSesion={metodosInicioSesion}
                                             onLink={this.onSocialLoginLink}
                                             onUnlink={this.onUnlink}
                                         />
@@ -125,24 +125,24 @@ class LoginManagementBase extends Component {
 const SocialLoginToggle = ({
     onlyOneLeft,
     isEnabled,
-    signInMethod,
+    metodosInicioSesion,
     onLink,
     onUnlink,
 }) =>
     isEnabled ? (
         <button
             type="button"
-            onClick={() => onUnlink(signInMethod.id)}
+            onClick={() => onUnlink(metodosInicioSesion.id)}
             disabled={onlyOneLeft}
         >
-            Deactivate {signInMethod.id}
+            Deactivate {metodosInicioSesion.id}
         </button>
     ) : (
             <button
                 type="button"
-                onClick={() => onLink(signInMethod.provider)}
+                onClick={() => onLink(metodosInicioSesion.provider)}
             >
-                Link {signInMethod.id}
+                Link {metodosInicioSesion.id}
             </button>
         );
 
@@ -168,7 +168,7 @@ class DefaultLoginToggle extends Component {
         const {
             onlyOneLeft,
             isEnabled,
-            signInMethod,
+            metodosInicioSesion,
             onUnlink,
         } = this.props;
 
@@ -180,10 +180,10 @@ class DefaultLoginToggle extends Component {
         return isEnabled ? (
             <button
                 type="button"
-                onClick={() => onUnlink(signInMethod.id)}
+                onClick={() => onUnlink(metodosInicioSesion.id)}
                 disabled={onlyOneLeft}
             >
-                Deactivate {signInMethod.id}
+                Deactivate {metodosInicioSesion.id}
             </button>
         ) : (
                 <form onSubmit={this.onEnviar}>
@@ -203,7 +203,7 @@ class DefaultLoginToggle extends Component {
                     />
 
                     <button disabled={isInvalid} type="submit">
-                        Link {signInMethod.id}
+                        Link {metodosInicioSesion.id}
                     </button>
                 </form>
             );
@@ -216,10 +216,10 @@ const mapStateToProps = state => ({
     autorizarUsuario: state.estadoSesion.autorizarUsuario,
 });
 
-const condition = autorizarUsuario => !!autorizarUsuario;
+const condicion = autorizarUsuario => !!autorizarUsuario;
 
 export default compose(
     connect(mapStateToProps),
     ConVerificacionEmail,
-    ConAutorizacion(condition),
-)(AccountPage);
+    ConAutorizacion(condicion),
+)(PaginaCuenta);

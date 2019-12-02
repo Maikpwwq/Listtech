@@ -14,14 +14,14 @@ class ObjetoUsuario extends Component {
     }
 
     componentDidMount() {
-        if (!this.props.user) {
+        if (!this.props.usuario) {
             this.setState({ loading: true });
         }
 
         this.props.firebase
-            .user(this.props.match.params.id)
+            .usuario(this.props.match.params.id)
             .on('value', snapshot => {
-                this.props.onSetUser(
+                this.props.onSetUsuario(
                     snapshot.val(),
                     this.props.match.params.id,
                 );
@@ -31,32 +31,40 @@ class ObjetoUsuario extends Component {
     }
 
     componentWillUnmount() {
-        this.props.firebase.user(this.props.match.params.id).off();
+        this.props.firebase.usuario(this.props.match.params.id).off();
     }
 
     onEnviarEmailActualizarClave = () => {
-        this.props.firebase.doActualizarClave(this.props.user.email);
+        this.props.firebase.doActualizarClave(this.props.usuario.email);
     };
 
     render() {
-        const { user } = this.props;
+        const { usuario } = this.props;
         const { loading } = this.state;
 
         return (
             <div>
-                <h2>User ({this.props.match.params.id})</h2>
-                {loading && <div> Cargando ...</div>}
+                <h2> Usuario ({this.props.match.params.id})</h2>
 
-                {user && (
+                {
+                    loading && <div>
+                        Cargando ...
+                        </div>
+                }
+
+                {usuario && (
                     <div>
                         <span>
-                            <strong>ID:</strong> {user.uid}
+                            <strong>ID:</strong>
+                            {usuario.uid}
                         </span>
                         <span>
-                            <strong>E-Mail:</strong> {user.email}
+                            <strong>E-Mail:</strong>
+                            {usuario.email}
                         </span>
                         <span>
-                            <strong>Nombre de ususario:</strong> {user.username}
+                            <strong>Nombre de ususario:</strong>
+                            {usuario.usuarioname}
                         </span>
                         <span>
                             <button
@@ -74,11 +82,16 @@ class ObjetoUsuario extends Component {
 }
 
 const mapStateToProps = (state, props) => ({
-    user: (state.userState.users || {})[props.match.params.id],
+    usuario: (state.usuarioState.usuarios || {})
+    [props.match.params.id],
 });
 
 const mapDispatchToProps = dispatch => ({
-    onSetUser: (user, uid) => dispatch({ type: 'USER_SET', user, uid }),
+    onSetUsuario: (usuario, uid) => dispatch({
+        type: 'USUARIO_SET',
+        usuario,
+        uid
+    }),
 });
 
 export default compose(

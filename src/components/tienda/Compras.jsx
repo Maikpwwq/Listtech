@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
+
 import PropTypes from 'prop-types';
 
-
+// Cargar Componentes
 import Fichaproducto from '../productos/Ficha-producto';
 
+/* Style Pagina Grupo Compras */
 import styled from 'styled-components'
 
-/* Style Pagina Grupo Compras */
 const ResumenCompras = styled.div`
 
 `;
@@ -42,7 +43,7 @@ class Compras extends Component {
         this.props.onAddComprar(this.estado);
         if (window.confirm('Ahora se liquidara su orden de pago')) {
             setActive(!active)
-            this.setestado({
+            this.setState({
                 comprar: this.estado.compras.filter((event, i) => {
                     return i == index
                 })

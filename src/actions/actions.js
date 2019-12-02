@@ -27,6 +27,11 @@ export const setUsuario = payload => ({
     payload,
 });
 
+export const setFirebaseInitialized = payload => ({
+    type: 'SET_INICIO_FIREBASE',
+    payload,
+});
+
 export const setInicioSesion = payload => ({
     type: 'SET_INICIO_SESION',
     payload,

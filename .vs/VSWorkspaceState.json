@@ -1,16 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\actions",
-    "\\src\\components",
-    "\\src\\components\\administracion",
-    "\\src\\components\\marca",
-    "\\src\\components\\productos",
-    "\\src\\components\\sesiones",
-    "\\src\\containers",
-    "\\src\\rutas"
+    "\\src\\components\\usuarios"
   ],
-  "SelectedNode": "\\src\\rutas\\Navegador.jsx",
   "PreviewInSolutionExplorer": false
 }

@@ -43,7 +43,7 @@ const Invitado = styled.div`
     box-shadow: 0 1px 8px 0 rgba(0,0,0,0.08)
 `;
 
-const VistaRegistro = styled.div`
+const RegistroVista = styled.div`
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     color: #1c3643;

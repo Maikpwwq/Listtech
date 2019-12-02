@@ -1,8 +1,15 @@
 import React from 'react';
 
-import FichaProducto from './Ficha-producto.jsx';
-import Producto from '../../constantes/productos/Productos';
+// importar accion pagina Modal  
+import { setModal } from '../actions/actions.js';
+import useModal from '../hooks/useModal';
 
+// Cargar Componentes
+import Modal from '../components/micelaneos/Modal.jsx';
+import Producto from '../../constantes/productos/Productos';
+import FichaProducto from './Ficha-producto.jsx';
+
+// Styled pagina detalle producto
 import styled from 'styled-components'
 
 const DetalleProductoStyled = styled.div`
@@ -21,27 +28,15 @@ const DetalleProductoContent = styled.div`
 
 const DetalleProducto = ({ Producto }) => {
 
-    const { index, titulo, imagen, precio, marca, descripcion, garantia, solicitud } = Producto
+    const { index, titulo, url, precio, marca, descripcion, garantia, solicitud } = Producto
 
     console.log('Ver a detalle', { Producto });
-    /*
-    const [modal, setModal] = useestado(false);
+    
+    const [modal, setModal] = useState(false);
     const showModal = () => {
         setModal(!modal)
     }
 
-    <Modal
-        show={modal}
-        close={showModal}
-    >
-        {props.login ? <Registro />
-            :
-            <div className="Modal-login">
-                <InicioSesion />
-            </div>
-        }
-    </Modal>
-    */
     return (
         <DetalleProductoStyled>
 
@@ -49,7 +44,16 @@ const DetalleProducto = ({ Producto }) => {
 
                 <DetalleProductoContent>
 
-                    <FichaProducto> Ver a detalle </FichaProducto>
+                    <Modal
+                        show={modal}
+                        close={showModal}>                       
+                    </Modal>
+
+                    <FichaProducto>
+
+                        Ver a detalle
+
+                    </FichaProducto>
 
                 </DetalleProductoContent>
 
@@ -58,5 +62,8 @@ const DetalleProducto = ({ Producto }) => {
         </DetalleProductoStyled>
 )};
 
+const mapDispatchToProps = {
+    setModal,
+}
 
-export default DetalleProducto;
+export default connect(null, mapDispatchToProps)(DetalleProducto);

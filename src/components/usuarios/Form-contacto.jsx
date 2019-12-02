@@ -72,21 +72,26 @@ const Titulo = styled.label`
 `;
 
 
+const ESTADO_REPOSO = {    
+    title: 'Formulario de Contacto',
+    titulo: 'Agregue un titulo',
+    solicitud: 'cotizacion',
+    nombre: 'Nombre',
+    email: 'Ingrese una cuenta de correo valida',
+    telefono: 'Su numero de contacto',
+    mensaje: 'Especifique el requerimiento estaremos en contacto pronto',
+    contactar: 'Enviar',
+    SendForm: false,
+    value: this.props.value,
+    error: null,
+};
+
 //Form_contacto component
 class Formcontacto extends Component {
     constructor(props) {
         super(props);
         this.estado = {
-            title: 'Formulario de Contacto',
-            titulo: 'Agregue un titulo',
-            solicitud: 'cotizacion',
-            nombre: 'Nombre',
-            email: 'Ingrese una cuenta de correo valida',
-            telefono: 'Su numero de contacto',
-            mensaje: 'Especifique el requerimiento estaremos en contacto pronto',
-            contactar: 'Enviar',
-            SendForm: false,
-            value: this.props.value
+            ...INITIAL_STATE            
         }        
         
         this.setEnviarForm = this.setEnviarForm.bind(this);
@@ -102,22 +107,22 @@ class Formcontacto extends Component {
 
     static propTypes = {
         id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
+        nombre: PropTypes.string.isRequired,
         value: PropTypes.string
     }
 
     onCambios = (event) => {
         const target = event.target;
         const value = target.value;
-        const name = target.name;
-        if (name === "telefono") {
+        const nombre = target.nombre;
+        if (nombre === "telefono") {
             if (!Number(value)) {
                 alert("Tu numero telefónico deben ser números");
             }
         }
         // El evento altera los datos guardados 
         this.setestado({
-            [name]: value
+            [nombre]: value
         });
         console.log(this.estado, 'Escribiendo ...');
     };  
@@ -125,8 +130,8 @@ class Formcontacto extends Component {
     onCargar = (event) => {
         const file = event.target.files[0];
         const storageRef = storage.ref();
-        const name = (+new Date()) + '-' + file.name
-        const uploadfile = storageRef.child(name).put(file);
+        const nombre = (+new Date()) + '-' + file.nombre
+        const uploadfile = storageRef.child(nombre).put(file);
 
         uploadfile
             .then((snapshot) => {
@@ -310,10 +315,10 @@ const mapDispatchToProps = {
     setEnviarForm,
 }
 
-const mapestadoToProps = estado => {
+const mapStateToProps = estado => {
     return {
         usuario: estado.usuario,
     }
 }
 
-export default connect(mapestadoToProps, mapDispatchToProps)(Formcontacto);
+export default connect(mapStateToProps, mapDispatchToProps)(Formcontacto);

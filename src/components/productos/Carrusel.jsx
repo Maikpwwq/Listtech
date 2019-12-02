@@ -181,7 +181,7 @@ function Carrusel({ EstadoInicial, Productos, data }) {
             case '1 Biometría Control Acceso':
                 return {
                     ...estado,
-               them : action.payload
+                    them: action.payload
                 };
             case '2 Cerraduras electrónicas':
                 return {

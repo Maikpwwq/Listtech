@@ -64,10 +64,10 @@ class PaginaTienda extends Component {
     };
 };
 
-const mapestadoToProps = (estado) => {
+const mapStateToProps = (estado) => {
     return {
         compras: estado.compra.compras
     }
 };
 
-export default connect(mapestadoToProps)(PaginaTienda);
+export default connect(mapStateToProps)(PaginaTienda);

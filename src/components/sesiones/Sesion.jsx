@@ -1,9 +1,20 @@
-import ConAutentificacion from './ConAutentificacion';
-import ConAutorizacion from './ConAutorizacion';
-import ConVerificacionEmail from './ConVerificacionEmail';
+import ConAutentificacion from './ConAutentificacion.jsx';
+import ConAutorizacion from './ConAutorizacion.jsx';
+import ConVerificacionEmail from './ConVerificacionEmail.jsx';
+
+
+function Sesion({ autorizarUsuario }) {
+    <div>
+        <ConAutentificacion />
+        <ConAutorizacion />
+        <ConVerificacionEmail />   
+    </div>
+}; 
 
 export default {
-    ConAutentificacion,    
-    ConAutorizacion,
-    ConVerificacionEmail 
+     Sesion
 };
+
+/* const ConAutentificacion = ConAutentificacion();
+   const ConAutorizacion = ConAutorizacion(); 
+   const ConVerificacionEmail = ConVerificacionEmail(); */
