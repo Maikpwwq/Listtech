@@ -1,15 +1,9 @@
-import React, { Component, useCallback } from 'react';
+import React, { Component } from 'react'
 
-import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-
-import { setListadoProductos } from '../../actions/actions.js'; 
-
-// importar preferencias administrador
-import ROLES from './Roles';
+import { NavLink } from 'react-router-dom'
 
 // importar imagenes
-import logo from '../../imagenes/Listtech-Logo.png';
+import logo from '../../imagenes/Listtech-Logo.png'
 
 // Stylo de los componentes
 import styled from 'styled-components'
@@ -17,13 +11,13 @@ import styled from 'styled-components'
 /* Style the Menu */
 const MenuStyle = styled.div`
     background-color: black;
-    text-color: white; 
+    text-color: white;
     text-align: right;
     box-sizing: border-box;
     padding: 0;
     width: 100%;
     z-index: 500;
-`;
+`
 
 /*navbar navbar-dark*/
 const Menunav = styled.nav`
@@ -39,17 +33,24 @@ const Menunav = styled.nav`
     -webkit-flex-direction: row;
     flex-direction: row;
     }    
-`;
+`
 
-const MenuGrupo = styled.ul`  
-    text-uppercase:true; 
+const MenuGrupo = styled.ul`
+    text-uppercase: true;
     overflow: hidden;
     background-color: #333;
-    margin: 0 auto;
-    padding: 0;
-    width: 90%;
-    top: 0;    
-`;
+    margin: 0 0;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+    }
+`
 
 /* Style the img logo */
 const Menuimg = styled.img`
@@ -60,14 +61,18 @@ const Menuimg = styled.img`
     border: 2px solid #black;
     margin: 0 auto;
     display: block;
-    box-shadow: 0 0 10px rgba(0,0,0,0.6);
-`;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+`
 
 /*position: fixed;*/
 
 const Menuli = styled.li`
     border-right: 1px solid #bbb;
     float: left;  
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
     &::active {
     background - color: #4CAF50;
@@ -76,21 +81,23 @@ const Menuli = styled.li`
     &li::last-child {
     border-right: none;
     }   
-`;
-    
+`
+
 const Menua = styled.a`
     display: inline-block;
     color: white;
     text - align: center;
     padding: 14px 16px;
     text - decoration: none;
-`;
+`
 
 /*  PopupMenu Productos y servicios align: left; */
 
 const DropdownContenido = styled.div`
     background-color: #f9f9f9;    
-    display: none;        
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;        
     position: absolute; 
     overflow: visible;
     padding: 15px 15px;   
@@ -99,9 +106,9 @@ const DropdownContenido = styled.div`
     z-index: 1000;
 
     &:hover {
-    background - color: #f1f1f1;
+        background - color: #f1f1f1;
     }
-`;
+`
 
 const DesplegarMenu = styled.button`
     display: inline-block;
@@ -117,160 +124,135 @@ const DesplegarMenu = styled.button`
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
 
     &:hover ${DropdownContenido}{
-    display: block;
+        visibility: visible;
     }
-`;
+`
 
 const Desplegar = styled.div`
     border-right: 1px solid #bbb;
     color: white;
     padding: 5px;
-    position:relative;
-    display: block;
+    position: relative;
+    display: inline-block;
 
-    &:hover ${DesplegarMenu}{
-    background-color: #0066ff;
+    &:hover ${DesplegarMenu} {
+        background-color: #0066ff;
     }
-`;
+`
 
 const Contenido = styled.a`
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    
+
     &:hover {
-    background-color: #f1f1f1;
+        background-color: #f1f1f1;
     }
-`;
+`
 
 class Menu extends Component {
-
     constructor(props) {
-        super(props);
+        super(props)
+
         this.state = {
             title: 'Menu',
-            titulo: '',
+            titulo: 'ViewMenu',
         }
-    };
-
-    /* llamar desde el menu a los listados de productos
-     const memoriaListadoProductos = useCallback(
-       () => {
-         doSomething(a, b);
-       },
-       [a, b],
-     );
-    */
-
-// TINY.dropdown.init("dropdown", {
-
-    DropdownContenido = new dropdown.init("dropdown", {
-        id: 'Menu',
-        active: 'menuhover'
-    });
+    }
 
     render() {
-
-        console.log('Renderizado Menu')        
+        console.log('Renderizado Menu')
 
         return (
             <MenuStyle>
-                <Menunav>                                            
+                <Menunav>
                     <MenuGrupo id="Menu">
-                        <Menuli><NavLink to="/">                            
-                            <Menuimg src={logo} alt="logo" />                            
-                        </NavLink></Menuli>
-
                         <Menuli>
-                            {!!autorizarUsuario.roles[ROLES.ADMINISTRADOR] && (
-                                <Menua
-                                    component={NavLink}
-                                    to="/configuracionAdministrador/"
-                                > Administrador
-                            </Menua>
-                            )}
+                            <NavLink to="/">
+                                <Menuimg src={logo} alt="logo" />
+                            </NavLink>
                         </Menuli>
 
-                        <Menuli><figure >                            
-                            <Menua
-                             href="https://Dezzpo.com"
-                             target="_blank"
-                             rel="noopener noreferrer"
-                            > <Menuimg src={logo} alt="logo" />
-                            </Menua>
-                        </figure></Menuli>
-
-                        <Menuli><NavLink
-                            component={NavLink}
-                            to="/inicio"    
-                            >Inicio
-                        </NavLink></Menuli>
-
-                        <Menuli><Menua 
-                            component={NavLink}
-                            to="/marcas/"
-                            href="/marcas/"
-                            >MARCAS
-                        </Menua></Menuli>
-
-                        <Menuli ><Menua 
-                            component={NavLink}
-                            to="/nosotros/"    
-                            >NOSOTROS
-                        </Menua></Menuli>
-
-                        <Menuli><Menua
-                            component={NavLink}
-                            to="/conoceMas/"
-                                >CONOCE MA&#769;S
-                        </Menua></Menuli>
-
-                        <Menuli><Menua 
-                            component={NavLink}
-                            to="/contacto/"    
-                            >CONTACTO
-                        </Menua></Menuli>                                
-
-                        <Desplegar><DesplegarMenu
-                            href="javascript:void(0)"
-                                >PRODUCTOS Y SERVICIOS
+                        <Desplegar>
+                            <DesplegarMenu href="javascript:void(0)">
+                                PRODUCTOS Y SERVICIOS
                             </DesplegarMenu>
 
-                            <DropdownContenido>                                
-                                <Contenido href="/productos/1 Biometría Control Acceso">
-                                    1.  LI&#769;NEA BIOMETRI&#769;A CONTROL ACCESO</Contenido>
-                                <Contenido href="/productos/2 Cerraduras electrónicas">
-                                    2.  LI&#769;NEA CERRADURAS ELECTRO&#769;NICAS</Contenido>
-                                <Contenido href="/productos/3 Cerraduras mecánicas">
-                                    3.	LI&#769;NEA CERRADURAS MECA&#769;NICAS</Contenido>
+                            <DropdownContenido>
+                                <Contenido href="/productos/1 Biometrï¿½a Control Acceso">
+                                    1. LI&#769;NEA BIOMETRI&#769;A CONTROL
+                                    ACCESO
+                                </Contenido>
+                                <Contenido href="/productos/2 Cerraduras electrï¿½nicas">
+                                    2. LI&#769;NEA CERRADURAS ELECTRO&#769;NICAS
+                                </Contenido>
+                                <Contenido href="/productos/3 Cerraduras mecï¿½nicas">
+                                    3. LI&#769;NEA CERRADURAS MECA&#769;NICAS
+                                </Contenido>
                                 <Contenido href="/productos/4 Accesorios Soporte">
-                                    4.	LI&#769;NEA ACCESORIOS SOPORTE</Contenido>
+                                    4. LI&#769;NEA ACCESORIOS SOPORTE
+                                </Contenido>
                                 <Contenido href="/productos/5 Salidas PUSH emergencia">
-                                    5.	LI&#769;NEA SALIDAS PUSH EMERGENCIA</Contenido>
+                                    5. LI&#769;NEA SALIDAS PUSH EMERGENCIA
+                                </Contenido>
                                 <Contenido href="/productos/6 Cierra puertas">
-                                    6.	LI&#769;NEA CIERRA PUERTAS</Contenido>
-                                <Contenido href="/productos/7 Sensores y cantoneras electrónicas">
-                                    7.	LI&#769;NEA SENSORES Y CANTONERAS ELECTRO&#769;NICAS</Contenido>
+                                    6. LI&#769;NEA CIERRA PUERTAS
+                                </Contenido>
+                                <Contenido href="/productos/7 Sensores y cantoneras electrï¿½nicas">
+                                    7. LI&#769;NEA SENSORES Y CANTONERAS
+                                    ELECTRO&#769;NICAS
+                                </Contenido>
                                 <Contenido href="/producto/8 Redes cableado estructurado">
-                                    8.	LÍNEA REDES CABLEADO ESTRUCTURADO</Contenido>
+                                    8. Lï¿½NEA REDES CABLEADO ESTRUCTURADO
+                                </Contenido>
                                 <Contenido href="/productos/9 Acceso suspendido en alturas">
-                                    9.	LÍNEA ACCESO SUSPENDIDO EN ALTURAS</Contenido>
-                            </DropdownContenido>                                                           
+                                    9. Lï¿½NEA ACCESO SUSPENDIDO EN ALTURAS
+                                </Contenido>
+                            </DropdownContenido>
+                        </Desplegar>
 
-                        </Desplegar> 
+                        <Menuli>
+                            <Menua>
+                                <NavLink
+                                    style={{ display: 'hidden' }}
+                                    to="/configuracionAdministrador/"
+                                >
+                                    ADMINISTRADOR
+                                </NavLink>
+                            </Menua>
+                        </Menuli>
+
+                        {/* <Menuli>
+                            <Menua>
+                                <NavLink to="/inicio">INICIO</NavLink>
+                            </Menua>
+                        </Menuli> */}
+
+                        <Menuli>
+                            <Menua>
+                                <NavLink to="/nosotros/">NOSOTROS</NavLink>
+                            </Menua>
+                        </Menuli>
+
+                        <Menuli>
+                            <Menua>
+                                <NavLink to="/conoceMas/">
+                                    CONOCE MA&#769;S
+                                </NavLink>
+                            </Menua>
+                        </Menuli>
+
+                        <Menuli>
+                            <Menua href="#contacto">
+                                {/* <NavLink to="/contacto/"></NavLink> */}
+                                CONTACTO
+                            </Menua>
+                        </Menuli>
                     </MenuGrupo>
                 </Menunav>
-            </MenuStyle>            
-        );
+            </MenuStyle>
+        )
     }
 }
 
-const mapStateToProps = estado => ({
-    autorizarUsuario: estado.estadoSesion.autorizarUsuario,
-});
-
-const mapDispatchToProps = {
-    setListadoProductos,   
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default Menu

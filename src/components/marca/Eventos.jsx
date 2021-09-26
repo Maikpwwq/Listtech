@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import styled from 'styled-components'
 
@@ -6,24 +6,19 @@ import styled from 'styled-components'
 
 const EventosContainer = styled.div`
     text-align: center;
-    box-sizing: border-box;    
-`;
+    box-sizing: border-box;
+`
 
 class Eventos extends Component {
-
     constructor(props) {
-        super(props);
+        super(props)
 
-        this.estado = {
-
-        };
-    };
+        this.estado = {}
+    }
 
     render() {
-        return (
-            <EventosContainer> Cargando ...</EventosContainer>
-        )
-    };
-};
+        return <EventosContainer> Cargando ...</EventosContainer>
+    }
+}
 
-export default Eventos;
+export default Eventos

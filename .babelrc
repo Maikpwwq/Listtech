@@ -1,48 +1,26 @@
 {
   "presets": [
     [
-      "@babel/preset-env",
+      "@babel/preset-env", // transpila a js de navegador em5
       {
-        "loose": true,
-        "modules": false,
-        "useBuiltIns": "usage",
-        "shippedProposals": true,
-        "targets": {
-          "browsers": [ ">0.25%", "not dead" ]
-        }
+        "corejs": 3.11, // ultima version de coreJs polyfills
+        "useBuiltIns": "usage" // al detectar el uso
       }
     ],
     [
-
       "@babel/preset-react",
       {
-        "useBuiltIns": true,
-        "pragma": "React.createElement"
+        "runtime": "automatic" // evita importar react en cada pagina
       }
-    ],
-    "@babel/flow"
+    ]
   ],
-
+  "env": {
+    "development": {
+      "presets": [["@babel/preset-react", { "development": true }]]
+    }
+  },
   "plugins": [
-    [
-      "@babel/plugin-proposal-class-properties",
-      {
-        "loose": true
-      }
-    ],
-
     "@babel/plugin-syntax-dynamic-import",
-    "babel-plugin-macros",
-    "polished",
-
-    [
-      "@babel/plugin-transform-runtime",
-      {
-        "helpers": true,
-        "regenerator": true
-      }
-    ],
-    "transform-class-properties",
-    "styled-components"
+    "@babel/plugin-proposal-class-properties"    
   ]
 }

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import Fichaproducto from './Ficha-producto';
+// import Fichaproducto from './Ficha-producto';
 
 import { NavLink } from 'react-router-dom'; 
 
@@ -154,13 +154,13 @@ const Siguiente = styled.button`
 `;
 
 /*
-"1 Biometría Control Acceso"
-"2 Cerraduras electrónicas"
-"3 Cerraduras mecánicas"
+"1 Biometrï¿½a Control Acceso"
+"2 Cerraduras electrï¿½nicas"
+"3 Cerraduras mecï¿½nicas"
 "4 Accesorios y Soportes"
 "5 Salidas PUSH emergencia"
 "6 Cierra puertas"
-"7 Sensores y cantoneras electrónicas"
+"7 Sensores y cantoneras electrï¿½nicas"
 "8 Redes cableado estructurado"
 "9 Acceso suspendido en alturas"
 */
@@ -168,65 +168,65 @@ const Siguiente = styled.button`
 // console.log("Seleccion", Producto);
 function Carrusel({ EstadoInicial, Productos, data }) {
 
-    const [producto, setProducto] = useestado(() => {
-        const EstadoInicial = data.Productos[0];
-        return EstadoInicial;
-    }, [props.Productos]);
+    // const [producto, setProducto] = useestado(() => {
+    //     const EstadoInicial = data.Productos[0];
+    //     return EstadoInicial;
+    // }, [props.Productos]);
 
-    const [productos, setProductos] = useestado(EstadoInicial);
+    // const [productos, setProductos] = useestado(EstadoInicial);
 
-    const lineaProductos = (estado = EstadoInicial, action) => {
-        switch (Producto.Linea) {
+    // lineaProductos (estado , action) => {
+    //     switch (Producto.Linea) {
 
-            case '1 Biometría Control Acceso':
-                return {
-                    ...estado,
-                    them: action.payload
-                };
-            case '2 Cerraduras electrónicas':
-                return {
-                    ...estado,
-                    them: action.payload
-                };
-            case '3 Cerraduras mecánicas':
-                return {
-                    ...estado,
-                    them: action.payload
-                };
-            case '4 Accesorios y Soportes':
-                return {
-                    ...estado,
-                    them: action.payload
-                };
-            case '5 Salidas PUSH emergencia':
-                return {
-                    ...estado,
-                    them: action.payload
-                };
-            case '6 Cierra puertas':
-                return {
-                    ...estado,
-                    them: action.payload
-                };
-            case '7 Sensores y cantoneras electrónicas':
-                return {
-                    ...estado,
-                    them: action.payload
-                };
-            case '8 Redes cableado estructurado':
-                return {
-                    ...estado,
-                    them: action.payload
-                };
-            case '9 Acceso suspendido en alturas':
-                return {
-                    ...estado,
-                    them: action.payload
-                };    
-            default:
-                return estado;
-        }
-    }
+    //         case '1 Biometrï¿½a Control Acceso':
+    //             return {
+    //                 ...estado,
+    //                 them: action.payload
+    //             };
+    //         case '2 Cerraduras electrï¿½nicas':
+    //             return {
+    //                 ...estado,
+    //                 them: action.payload
+    //             };
+    //         case '3 Cerraduras mecï¿½nicas':
+    //             return {
+    //                 ...estado,
+    //                 them: action.payload
+    //             };
+    //         case '4 Accesorios y Soportes':
+    //             return {
+    //                 ...estado,
+    //                 them: action.payload
+    //             };
+    //         case '5 Salidas PUSH emergencia':
+    //             return {
+    //                 ...estado,
+    //                 them: action.payload
+    //             };
+    //         case '6 Cierra puertas':
+    //             return {
+    //                 ...estado,
+    //                 them: action.payload
+    //             };
+    //         case '7 Sensores y cantoneras electrï¿½nicas':
+    //             return {
+    //                 ...estado,
+    //                 them: action.payload
+    //             };
+    //         case '8 Redes cableado estructurado':
+    //             return {
+    //                 ...estado,
+    //                 them: action.payload
+    //             };
+    //         case '9 Acceso suspendido en alturas':
+    //             return {
+    //                 ...estado,
+    //                 them: action.payload
+    //             };    
+    //         default:
+    //             return estado;
+    //     }
+    // }
 
     render() {
         return (
@@ -284,10 +284,4 @@ function Carrusel({ EstadoInicial, Productos, data }) {
     };
 }
 
-const mapestadoToProps = (estado) => {
-    return {
-        productos: estado.producto.productos
-    }
-}
-    
-export default connect(mapestadoToProps)(Carrusel);
+export default Carrusel;

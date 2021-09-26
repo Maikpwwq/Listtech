@@ -1,9 +1,35 @@
 {
-  "name": "listtech-control-de-acceso",
-  "version": "0.1.0",
-  "description": "Rama actual de desarrollo para el sitio web Listtech.com.co - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "private": true,
+  "name": "listtech-seguridad-inteligente",
+  "version": "1.0.0",
+  "description": "ADQUIERE BIENESTAR AL CONTAR CON TALENTO HUMANO CALIFICADO Y EXPERIMENTADO EN PREVENCIÓN. OFRECEMOS EXCLUSIVOS SISTEMAS ELECTRÓNICOS. ASESORÍA, SOPORTE, INTEGRACIÓN E INSTALACIÓN DE SEGURIDAD INTELIGENTE Y PROTECCIÓN TECNOLÓGICA.",
   "main": "index.js",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "dev-serve": "webpack --watch",
+    "deploy": "gh-pages -d dist",
+    "build": "webpack --config config/webpack.prod.js",
+    "start": "webpack serve --config config/webpack.dev.js",
+    "test": "jest",
+    "lint": "eslint --fix --ext .js,.jsx .",
+    "prettier": "prettier --write",
+    "firebase": "firebase deploy --only hosting:app-comunidad-dezzpo"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.14.4"
+  },
+  "browserslist": {
+    "production": [
+      "> 0.25%",
+      "not dead",
+      "not ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "keywords": [
     "Listtech",
     "acceso",
@@ -32,143 +58,67 @@
     "proximidad",
     "dactilar"
   ],
-  "author": "Michael Arias Fajardo &",
+  "author": "@nkiqi",
   "license": "ISC",
-  "dependencies": {
-    "@google-cloud/storage": "^4.0.0",
-    "@material-ui/core": "^3.9.2",
-    "@material-ui/icons": "^3.0.2",
-    "antd": "^3.24.3",
-    "babel-eslint": "^10.0.3",
-    "babel-plugin-polished": "^1.1.0",
-    "child-process-promise": "^2.2.1",
-    "classnames": "^2.2.6",
-    "composer": "^4.1.0",
-    "core-js": "^3.3.5",
-    "create-react-app": "^3.2.0",
-    "debug": "^4.1.1",
-    "dotenv-webpack": "^1.7.0",
-    "eslint": "^6.6.0",
-    "eslint-config-fbjs": "^3.1.1",
-    "eslint-config-prettier": "^6.6.0",
-    "eslint-loader": "^3.0.2",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-better-styled-components": "^1.1.2",
-    "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^23.1.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.16.0",
-    "firebase-admin": "^8.7.0",
-    "firebase-functions": "^3.3.0",
-    "firebase-tools": "^7.7.0",
-    "flat": "^4.1.0",
-    "flow-bin": "^0.102.0",
-    "flow-typed": "^2.6.2",
-    "fstream": "^1.0.12",
-    "g": "^2.0.1",
-    "gh-pages": "^2.1.1",
-    "graphql": "^14.5.8",
-    "inspectpack": "^4.2.2",
-    "jest": "^24.9.0",
-    "jest-util": "^24.9.0",
-    "luxon": "^1.21.0",
-    "node-pre-gyp": "^0.12.0",
-    "npm": "^6.13.1",
-    "popper.js": "^1.16.0",
-    "prettier": "^1.18.2",
-    "re-base": "^4.0.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.2.0",
-    "readable-stream": "^2.3.6",
-    "redux-thunk": "^2.3.0",
-    "set-value": "^3.0.1",
-    "storybook": "^5.1.11",
-    "storybook-chromatic": "^3.0.3",
-    "styled-components": "^4.4.1",
-    "tailwindcss": "^1.1.3",
-    "tar": "^4.4.13",
-    "tooltip.js": "^1.3.3",
-    "ts-loader": "^6.2.1",
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.4",
-    "yup": "^0.27.0"
+  "bugs": {
+    "url": "https://github.com/Maikpwwq/Listtech/issues"
   },
-  "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-flow": "^7.0.0",
-    "@babel/preset-react": "^7.6.3",
-    "babel-loader": "^8.0.6",
-    "duplicate-package-checker-webpack-plugin": "^3.0.0",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "favicons-webpack-plugin": "^1.0.2",
-    "firebase": "^7.2.2",
-    "firebase-init": "^1.3.2",
-    "firebaseui": "^4.2.0",
-    "formik": "^1.5.8",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "https-proxy-agent": "^3.0.1",
-    "lodash": "^4.17.15",
-    "postcss-loader": "^3.0.0",
-    "prettierrc": "0.0.0-5",
-    "react-devtools": "^4.2.0",
-    "react-inspector": "^4.0.0",
-    "react-redux": "^7.1.1",
-    "react-select": "^3.0.8",
-    "redux": "^4.0.4",
-    "tailwind": "^4.0.0"
-  },
-  "engines": {
-    "node": ">= 10.16.3",
-    "npm": ">= 6.13.0"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app",
-    "plugins": [
-      "react-hooks"
-    ],
-    "rules": {
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn"
-    }
-  },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not ie <= 11",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 2 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "directories": {
-    "test": "test"
-  },
+  "homepage": "https://maikpwwq.github.io/Listtech/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Maikpwwq/Listtech.git"
   },
-  "bugs": {
-    "url": "https://github.com/Maikpwwq/Listtech/issues"
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.4",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "file-loader": "^6.2.0",
+    "gh-pages": "^3.1.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^26.6.3",
+    "lodash-webpack-plugin": "^0.11.6",
+    "mini-css-extract-plugin": "^1.5.0",
+    "node-sass": "^6.0.1",
+    "prettier": "2.3.2",
+    "react-refresh": "^0.10.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^5.0.0",
+    "styled-components": "^4.4.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.36.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   },
-  "homepage": "https://maikpwwq.github.io/Listtech/"
+  "dependencies": {
+    "@fontsource/roboto": "^4.2.3",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "bootstrap": "^5.0.2",
+    "core-js": "^3.11.2",
+    "dotenv": "^8.2.0",
+    "firebase": "^9.0.0-beta.7",
+    "firebase-admin": "^9.11.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-redux": "^7.1.1"
+  }
 }

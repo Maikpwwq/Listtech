@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import styled from 'styled-components'
 
@@ -6,24 +6,19 @@ import styled from 'styled-components'
 
 const PromocionesContainer = styled.div`
     text-align: center;
-    box-sizing: border-box;    
-`;
+    box-sizing: border-box;
+`
 
 class Promociones extends Component {
-
     constructor(props) {
-        super(props);
+        super(props)
 
-        this.estado = {
-
-        };
-    };
+        this.estado = {}
+    }
 
     render() {
-        return (
-            <PromocionesContainer> Cargando ...</PromocionesContainer>
-        )
-    };
-};
+        return <PromocionesContainer> Cargando ...</PromocionesContainer>
+    }
+}
 
-export default Promociones;
+export default Promociones

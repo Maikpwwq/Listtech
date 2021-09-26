@@ -20,7 +20,6 @@ const SocialHeader = styled.div`
 const SocialRedes = styled.div`
     display: inblock;
     width: 100%;
-    background: black;
     border-radius: 3px;
     padding: 6px 6px;
     margin: 1px 6px;
@@ -72,7 +71,7 @@ const GetColor= name => ({
 </ThemeProvider>
 */
 
-class Social extends Component {
+class SocialLogos extends Component {
     constructor() {
         super()
         this.state = {
@@ -84,10 +83,11 @@ class Social extends Component {
         return (
             <SocialStyled>
                 <SocialRedes>
-                    <SocialHeader>
-                        <span className="text-body-main-white">
-                            <strong> {this.state.title} </strong>
-                        </span>
+                    <SocialHeader className="text-heading-white">
+                        <strong>
+                            {this.state.title}
+                            <br />
+                        </strong>
                     </SocialHeader>
 
                     <Socialgrupo>
@@ -105,7 +105,6 @@ class Social extends Component {
                                         src={logoinstagram}
                                         alt="Instagram"
                                     />{' '}
-                                    <spam>Instagram</spam>
                                 </a>
                             </SocialSiguenos>
 
@@ -118,7 +117,6 @@ class Social extends Component {
                                     rel="noopener noreferrer"
                                 >
                                     <img src={logotwitter} alt="Twitter" />{' '}
-                                    <spam>Twitter</spam>
                                 </a>
                             </SocialSiguenos>
 
@@ -131,7 +129,6 @@ class Social extends Component {
                                     rel="noopener noreferrer"
                                 >
                                     <img src={logofacebook} alt="Facebook" />
-                                    <spam>Facebook</spam>
                                 </a>
                             </SocialSiguenos>
 
@@ -144,7 +141,6 @@ class Social extends Component {
                                     rel="noopener noreferrer"
                                 >
                                     <img src={logolinkedin} alt="Linkedin" />
-                                    <spam>Linked In</spam>
                                 </a>
                             </SocialSiguenos>
 
@@ -157,7 +153,6 @@ class Social extends Component {
                                     rel="noopener noreferrer"
                                 >
                                     <img src={logoyoutube} alt="Youtube" />
-                                    <spam>Youtube</spam>
                                 </a>
                             </SocialSiguenos>
                         </SocialLista>
@@ -168,4 +163,4 @@ class Social extends Component {
     }
 }
 
-export default Social
+export default SocialLogos

@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import Buscador from './Buscador.jsx';
-import Menu from '../components/administracion/Menu.jsx';
+import Buscador from './Buscador.jsx'
+import Menu from '../components/administracion/Menu.jsx'
 
 import styled from 'styled-components'
 
 /* Style the Encabezado */
 
 const EncabezadoStyle = styled.div`
-    text-align: center;    
-    box-sizing: border-box;   
-`;
+    text-align: center;
+    box-sizing: border-box;
+`
 
-const EncabezadoComponent = styled.Encabezado`
+const EncabezadoComponent = styled.div`
     background - color: #0099cc;
     padding: 30px;    
     display: inline;
@@ -21,11 +21,11 @@ const EncabezadoComponent = styled.Encabezado`
     margin: 0 auto;
     padding: 0;
     width: 100%;
-`;
+`
 
 class Encabezado extends Component {
     constructor() {
-        super();
+        super()
         this.state = {
             title: 'Encabezado',
         }
@@ -38,9 +38,9 @@ class Encabezado extends Component {
                     <Buscador />
                     <Menu />
                 </EncabezadoComponent>
-            </EncabezadoStyle>            
-        );
+            </EncabezadoStyle>
+        )
     }
 }
 
-export default Encabezado;   
+export default Encabezado

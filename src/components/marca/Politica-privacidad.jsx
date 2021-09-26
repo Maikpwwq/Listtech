@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import styled from 'styled-components'
 
@@ -6,24 +6,24 @@ import styled from 'styled-components'
 
 const PoliticaPrivacidadContainer = styled.div`
     text-align: center;
-    box-sizing: border-box;    
-`;
+    box-sizing: border-box;
+`
 
 class PoliticaPrivacidad extends Component {
-
     constructor(props) {
-        super(props);
+        super(props)
 
-        this.estado = {
-
-        };
-    };
+        this.estado = {}
+    }
 
     render() {
         return (
-            <PoliticaPrivacidadContainer> Cargando ...</PoliticaPrivacidadContainer>
+            <PoliticaPrivacidadContainer>
+                {' '}
+                Cargando ...
+            </PoliticaPrivacidadContainer>
         )
-    };
-};
+    }
+}
 
-export default PoliticaPrivacidad;
+export default PoliticaPrivacidad
